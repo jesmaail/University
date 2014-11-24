@@ -81,9 +81,6 @@
 		<hr/>		
 
 		<div id="orderdetails">
-			<?php
-				//$query = mysql_query("SELECT name, quantity, unitprice, (quantity * unitprice) as total FROM item, tran WHERE item.itemid = tran.itemid AND orderid =".$id." AND cat = 'chilled'ORDER BY tran.itemid");			 
-			?>
 			<table style="width: 900px">
 				<tr>
 					<td><b>Order Details</b>
@@ -113,6 +110,62 @@
 				</tr>
 				<?php 
 				$query = mysql_query("SELECT name, quantity, unitprice, (quantity * unitprice) as total FROM item, tran WHERE item.itemid = tran.itemid AND orderid =".$id." AND cat = 'drinks' ORDER BY tran.itemid");	
+				while($items =mysql_fetch_array($query)){ ?>
+					<tr>
+						<td><?php echo $items["name"];?></td>
+						<td><?php echo $items["quantity"];?></td>
+						<td>&pound;<?php echo $items["unitprice"];?></td>
+						<td>&pound;<?php echo $items["total"];?></td>
+					</tr>
+				<?php
+				}?>
+				<tr>
+					<td><b>foodcupboard</b>
+				</tr>
+				<?php 
+				$query = mysql_query("SELECT name, quantity, unitprice, (quantity * unitprice) as total FROM item, tran WHERE item.itemid = tran.itemid AND orderid =".$id." AND cat = 'foodcupboard' ORDER BY tran.itemid");	
+				while($items =mysql_fetch_array($query)){ ?>
+					<tr>
+						<td><?php echo $items["name"];?></td>
+						<td><?php echo $items["quantity"];?></td>
+						<td>&pound;<?php echo $items["unitprice"];?></td>
+						<td>&pound;<?php echo $items["total"];?></td>
+					</tr>
+				<?php
+				}?>
+				<tr>
+					<td><b>fresh</b>
+				</tr>
+				<?php 
+				$query = mysql_query("SELECT name, quantity, unitprice, (quantity * unitprice) as total FROM item, tran WHERE item.itemid = tran.itemid AND orderid =".$id." AND cat = 'fresh' ORDER BY tran.itemid");	
+				while($items =mysql_fetch_array($query)){ ?>
+					<tr>
+						<td><?php echo $items["name"];?></td>
+						<td><?php echo $items["quantity"];?></td>
+						<td>&pound;<?php echo $items["unitprice"];?></td>
+						<td>&pound;<?php echo $items["total"];?></td>
+					</tr>
+				<?php
+				}?>
+				<tr>
+					<td><b>frozen</b>
+				</tr>
+				<?php 
+				$query = mysql_query("SELECT name, quantity, unitprice, (quantity * unitprice) as total FROM item, tran WHERE item.itemid = tran.itemid AND orderid =".$id." AND cat = 'frozen' ORDER BY tran.itemid");	
+				while($items =mysql_fetch_array($query)){ ?>
+					<tr>
+						<td><?php echo $items["name"];?></td>
+						<td><?php echo $items["quantity"];?></td>
+						<td>&pound;<?php echo $items["unitprice"];?></td>
+						<td>&pound;<?php echo $items["total"];?></td>
+					</tr>
+				<?php
+				}?>
+				<tr>
+					<td><b>nonfood</b>
+				</tr>
+				<?php 
+				$query = mysql_query("SELECT name, quantity, unitprice, (quantity * unitprice) as total FROM item, tran WHERE item.itemid = tran.itemid AND orderid =".$id." AND cat = 'nonfood' ORDER BY tran.itemid");	
 				while($items =mysql_fetch_array($query)){ ?>
 					<tr>
 						<td><?php echo $items["name"];?></td>
