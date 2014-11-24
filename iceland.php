@@ -175,6 +175,17 @@
 					</tr>
 				<?php
 				}?>
+				<?php 
+				$query = mysql_query("SELECT sum(quantity * unitprice) as grand, sum(quantity) as totalQ FROM item, tran WHERE item.itemid = tran.itemid AND orderid =".$id." ORDER BY tran.itemid");	
+				while($items =mysql_fetch_array($query)){ ?>
+					<tr>
+						<td><b>Grand Total</b></td>
+						<td><?php echo $items["totalQ"];?></td>
+						<td></td>
+						<td><b>&pound;<?php echo $items["grand"];?></b></td>
+					</tr>
+				<?php
+				}?>
 		</div>
 	</div>
 
