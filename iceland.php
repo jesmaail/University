@@ -24,19 +24,25 @@
 		<h1> Order Acknowledgement </h1>
 		<img src = "logo.svg" style="float:right"/>
 	</div>
-	<hr/>
-	<div id="top">
 
+	<hr/>
+
+	<div id="top">
+		<?php
+			$id = 11;
+			$query = mysql_query("SELECT name, email, address FROM cust, orderpay WHERE orderid =".$id);
+			$customer =mysql_fetch_array($query);
+		?>
 		<div id="deliverydetails" style="float:left">			
 			<table> 
 				<b>Delivery Details</b>
 				<tr>
 					<td>Order #: </td>
-					<td><?php 	?></td>
+					<td><?php echo $id	?></td>
 				</tr>
 				<tr>
 					<td>Name: </td>
-					<td><?php 	?></td>
+					<td><?php echo $customer["name"] ?></td>
 				</tr>
 				<tr>
 					<td>Email: </td>
