@@ -82,27 +82,46 @@
 
 		<div id="orderdetails">
 			<?php
-				$query = mysql_query("	SELECT name, quantity, unitprice, (quantity * unitprice) as total 
-										FROM item, tran 
-										WHERE item.itemid = tran.itemid 
-										AND orderid =".$id." 
-										ORDER BY tran.itemid");			 
-				
+				//$query = mysql_query("SELECT name, quantity, unitprice, (quantity * unitprice) as total FROM item, tran WHERE item.itemid = tran.itemid AND orderid =".$id." AND cat = 'chilled'ORDER BY tran.itemid");			 
 			?>
-
-			<table>
-
-			<?php
-				
+			<table style="width: 900px">
+				<tr>
+					<td><b>Order Details</b>
+				</tr>
+				<tr>
+					<td>Product Details</td>
+					<td>Ordered</td>
+					<td>Price</td>
+					<td>Total</td>
+				</tr>
+				<tr>
+					<td><b>chilled</b>
+				</tr>
+				<?php 
+				$query = mysql_query("SELECT name, quantity, unitprice, (quantity * unitprice) as total FROM item, tran WHERE item.itemid = tran.itemid AND orderid =".$id." AND cat = 'chilled' ORDER BY tran.itemid");	
 				while($items =mysql_fetch_array($query)){ ?>
 					<tr>
-						<td><?php echo $items["name"]; ?></td>
-						<td><?php echo $items["quantity"]; ?></td>
-						<td>&pound;<?php echo $items["unitprice"]; ?></td>
+						<td><?php echo $items["name"];?></td>
+						<td><?php echo $items["quantity"];?></td>
+						<td>&pound;<?php echo $items["unitprice"];?></td>
+						<td>&pound;<?php echo $items["total"];?></td>
 					</tr>
 				<?php
-				}
-			?>
+				}?>
+				<tr>
+					<td><b>drinks</b>
+				</tr>
+				<?php 
+				$query = mysql_query("SELECT name, quantity, unitprice, (quantity * unitprice) as total FROM item, tran WHERE item.itemid = tran.itemid AND orderid =".$id." AND cat = 'drinks' ORDER BY tran.itemid");	
+				while($items =mysql_fetch_array($query)){ ?>
+					<tr>
+						<td><?php echo $items["name"];?></td>
+						<td><?php echo $items["quantity"];?></td>
+						<td>&pound;<?php echo $items["unitprice"];?></td>
+						<td>&pound;<?php echo $items["total"];?></td>
+					</tr>
+				<?php
+				}?>
 		</div>
 	</div>
 
