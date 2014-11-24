@@ -186,6 +186,25 @@
 					</tr>
 				<?php
 				}?>
+				<?php
+				$query = mysql_query("	SELECT (sum(quantity * unitprice) - totalpay) as discount
+										FROM orderpay, item, tran
+										WHERE item.itemid = tran.itemid
+										AND orderpay.orderid =".$id."
+										AND tran.orderid =".$id."
+										ORDER BY tran.itemid
+									");
+
+
+				while($items =mysql_fetch_array($query)){ ?>
+					<tr>
+						<td><b>Discount</b></td>
+						<td></td>
+						<td></td>
+						<td><b>&pound;<?php echo $items["discount"];?></b></td>
+					</tr>
+				<?php
+				}?>
 		</div>
 	</div>
 
