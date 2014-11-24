@@ -30,7 +30,7 @@
 	<div id="top">
 		<?php
 			$id = 11;
-			$query = mysql_query("SELECT name, email, address FROM cust, orderpay WHERE cust.custid = orderpay.custid AND orderid =".$id);
+			$query = mysql_query("SELECT name, email, address, city FROM cust, orderpay WHERE cust.custid = orderpay.custid AND orderid =".$id);
 			$customer =mysql_fetch_array($query);
 		?>
 		<div id="deliverydetails" style="float:left">			
@@ -46,11 +46,15 @@
 				</tr>
 				<tr>
 					<td>Email: </td>
-					<td><?php 	?></td>
+					<td><?php echo $customer["email"] ?></td>
 				</tr>
 				<tr>
 					<td>Address: </td>
-					<td><?php 	?></td>
+					<td><?php echo $customer["address"] ?></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><?php echo $customer["city"] ?></td>
 				</tr>
 			</table>
 		</div>
