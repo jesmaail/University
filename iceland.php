@@ -30,7 +30,7 @@
 	<div id="top">
 		<?php
 			$id = 11;
-			$query = mysql_query("SELECT name, email, address FROM cust, orderpay WHERE orderid =".$id);
+			$query = mysql_query("SELECT name, email, address FROM cust, orderpay WHERE cust.custid = orderpay.custid AND orderid =".$id);
 			$customer =mysql_fetch_array($query);
 		?>
 		<div id="deliverydetails" style="float:left">			
