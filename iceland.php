@@ -19,8 +19,12 @@
 	?>
 	<div id="content" style="width: 900px; margin:auto">
 		<div id="header">
-			<h1> Order Acknowledgement </h1>
-			<!-- <img src = "logo.svg" style="float:right"/> -->
+			<table>
+				<tr>
+					<td width="80%"><h1> Order Acknowledgement </h1></td>
+					<td><img src = "logo.svg" height="60" width="240"/></td>
+				</tr>
+			</table>
 		</div>
 
 		<hr/>
