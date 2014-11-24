@@ -22,7 +22,7 @@
 			<table>
 				<tr>
 					<td width="80%"><h1> Order Acknowledgement </h1></td>
-					<td><img src = "logo.svg" height="60" width="240"/></td>
+					<td><img src = "logo.svg" height="50" width="200"/></td>
 				</tr>
 			</table>
 		</div>
@@ -212,8 +212,16 @@
 		</div>
 
 		<div id="btmImages" style="width:900px; background-color:#E7E7E7">
-			<p style="text-align:center"> *Lines are open Monday to Saturday 6am-10pm and Sunday 8am-10pm </p>
-
+			<p style="text-align:center"> *Lines are open Monday to Saturday 6am-10pm and Sunday 8am-10pm. </p>
+			<table style="width:900px">
+				<tr>
+					<td width = "30%"></td>
+					<td><img src = "ppLogo.jpg" height="50" width="100"/></td>
+					<td><img src = "mc-logo.png" height="25" width="75"/></td>
+					<td><img src = "v-logo.jpg" height="50" width="100"/></td>
+					<td width = "30%"></td>
+				</tr>
+			</table>
 		</div>
 	</div>
 
