@@ -80,7 +80,7 @@
 
 		<hr/>		
 
-		<div id="orderdetails">
+		<div id="orderdetails" style="width: 900px">
 			<table style="width: 900px">
 				<tr>
 					<td><b>Order Details</b>
@@ -195,7 +195,6 @@
 										ORDER BY tran.itemid
 									");
 
-
 				while($items =mysql_fetch_array($query)){ ?>
 					<tr>
 						<td><b>Discount</b></td>
@@ -205,6 +204,12 @@
 					</tr>
 				<?php
 				}?>
+			</table>
+		</div>
+
+		<div id="btmImages" style="width:900px; background-color:#E7E7E7">
+			<p style="text-align:center"> *Lines are open Monday to Saturday 6am-10pm and Sunday 8am-10pm </p>
+
 		</div>
 	</div>
 
