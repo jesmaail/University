@@ -232,16 +232,17 @@
 		</div>
 		<hr/>
 		<br/>
-
-		<table style="width:900px">
-			<tr>
-				<td><b>Query</b></td>
-				<td>Order #:</td>
-				<td> <input type="Text" value="11" name = "id"/> </td>
-				<td width="50%"></td>
-				<td><input type="button" value="Submit" name="submit"/></td>
-			</tr>
-		</table>
+		<form method="post">
+			<table style="width:900px">
+				<tr>
+					<td><b>Query</b></td>
+					<td>Order #:</td>
+					<td> <input type="Text" value=<?php echo $id?> name = "id"/> </td>
+					<td width="50%"></td>
+					<td><input type="submit"></td>
+				</tr>
+			</table>
+		</form>
 	</div>
 
 	</body>
