@@ -216,7 +216,7 @@
 		</div>
 
 		<div id="btmImages" style="width:900px; background-color:#E7E7E7">
-			<p style="text-align:center"> *Lines are open Monday to Saturday 6am-10pm and Sunday 8am-10pm. </p>
+			<p style="text-align:center"> †Lines are open Monday to Saturday 6am-10pm and Sunday 8am-10pm. </p>
 			<table style="width:900px">
 				<tr>
 					<td width="30%"></td>
