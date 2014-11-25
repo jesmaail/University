@@ -34,7 +34,7 @@
 				if (isset($_POST['submit'])){
 					$id = $_POST['id'];
 				}else{
-					$id = 15;
+					$id = 11;
 				}
 				$query = mysql_query("SELECT name, email, address, city, totalpay, cardtype, cardnum, date FROM cust, orderpay WHERE cust.custid = orderpay.custid AND orderid =".$id);
 				$details =mysql_fetch_array($query);
@@ -203,7 +203,10 @@
 										ORDER BY tran.itemid
 									");
 
-				while($items =mysql_fetch_array($query)){ ?>
+				// while($items =mysql_fetch_array($query)){ 
+				$items = mysql_fetch_array($query);
+				if($items["discount"] > 0){
+					?>
 					<tr>
 						<td><b>Discount</b></td>
 						<td></td>
@@ -234,9 +237,9 @@
 			<tr>
 				<td><b>Query</b></td>
 				<td>Order #:</td>
-				<td> <input type="Text" value="id" name = "id"/> </td>
+				<td> <input type="Text" value="11" name = "id"/> </td>
 				<td width="50%"></td>
-				<td><input type="button" value="Submit" name="submit"/> </td>
+				<td><input type="button" value="Submit" name="submit"/></td>
 			</tr>
 		</table>
 	</div>
