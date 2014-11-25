@@ -22,7 +22,7 @@
 			<table>
 				<tr>
 					<td width="80%"><h1> Order Acknowledgement </h1></td>
-					<td><img src = "logo.svg" height="50" width="200"/></td>
+					<td><img src="logo.svg" height="50" width="200"/></td>
 				</tr>
 			</table>
 		</div>
@@ -31,11 +31,12 @@
 
 		<div id="top">
 			<?php
-				if (isset($_POST['submit'])){
+				if (isset($_POST['id'])){
 					$id = $_POST['id'];
 				}else{
 					$id = 11;
 				}
+
 				$query = mysql_query("SELECT name, email, address, city, totalpay, cardtype, cardnum, date FROM cust, orderpay WHERE cust.custid = orderpay.custid AND orderid =".$id);
 				$details =mysql_fetch_array($query);
 			?>
@@ -237,7 +238,7 @@
 				<tr>
 					<td><b>Query</b></td>
 					<td>Order #:</td>
-					<td> <input type="Text" value=<?php echo $id?> name = "id"/> </td>
+					<td> <input type="Text" value=<?php echo $id?> name="id"/> </td>
 					<td width="50%"></td>
 					<td><input type="submit"></td>
 				</tr>
