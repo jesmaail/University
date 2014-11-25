@@ -31,7 +31,11 @@
 
 		<div id="top">
 			<?php
-				$id = 11;
+				if (isset($_POST['submit'])){
+					$id = $_POST['id'];
+				}else{
+					$id = 15;
+				}
 				$query = mysql_query("SELECT name, email, address, city, totalpay, cardtype, cardnum, date FROM cust, orderpay WHERE cust.custid = orderpay.custid AND orderid =".$id);
 				$details =mysql_fetch_array($query);
 			?>
@@ -215,14 +219,26 @@
 			<p style="text-align:center"> *Lines are open Monday to Saturday 6am-10pm and Sunday 8am-10pm. </p>
 			<table style="width:900px">
 				<tr>
-					<td width = "30%"></td>
+					<td width="30%"></td>
 					<td><img src = "ppLogo.jpg" height="50" width="100"/></td>
 					<td><img src = "mc-logo.png" height="25" width="75"/></td>
 					<td><img src = "v-logo.jpg" height="50" width="100"/></td>
-					<td width = "30%"></td>
+					<td width="30%"></td>
 				</tr>
 			</table>
 		</div>
+		<hr/>
+		<br/>
+
+		<table style="width:900px">
+			<tr>
+				<td><b>Query</b></td>
+				<td>Order #:</td>
+				<td> <input type="Text" value="id" name = "id"/> </td>
+				<td width="50%"></td>
+				<td><input type="button" value="Submit" name="submit"/> </td>
+			</tr>
+		</table>
 	</div>
 
 	</body>
