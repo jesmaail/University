@@ -1,19 +1,35 @@
 # README #
 
 ##Question 1: Recursion, Lists and Accumulating Parameters
+
 (a) Write the following program and compile it:
+
 % Program: ROYAL
-parent(queenmother,elisabeth). parent(elisabeth,charles).
-parent(elisabeth,andrew). parent(elisabeth,anne).
-parent(elisabeth,edward). parent(diana,william).
-parent(diana,harry). parent(sarah,beatrice).
-parent(anne,peter). parent(anne,zara).
-parent(george,elisabeth). parent(philip,charles).
-parent(philip,andrew). parent(philip,edward).
-parent(charles,william). parent(charles,harry).
-parent(andrew,beatrice). parent(andrew,eugene).
-parent(mark,peter). parent(mark,zara).
-parent(william,georgejun). parent(kate,georgejun).
+
+parent(queenmother,elisabeth). 
+parent(elisabeth,charles).
+parent(elisabeth,andrew). 
+parent(elisabeth,anne).
+parent(elisabeth,edward). 
+parent(diana,william).
+parent(diana,harry). 
+parent(sarah,beatrice).
+parent(anne,peter). 
+parent(anne,zara).
+parent(george,elisabeth). 
+parent(philip,charles).
+parent(philip,andrew). 
+parent(philip,edward).
+parent(charles,william).
+parent(charles,harry).
+parent(andrew,beatrice). 
+parent(andrew,eugene).
+parent(mark,peter). 
+parent(mark,zara).
+parent(william,georgejun). 
+parent(kate,georgejun).
+
+
 Define the following predicates on the persons in the program ROYAL.
 (1) the_royal_females/1 (a list of all female members of the Royal
 Family)
