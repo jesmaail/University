@@ -1,4 +1,4 @@
-# README #
+#CS-205 Prolog Coursework #
 
 ##Question 1: Recursion, Lists and Accumulating Parameters
 
@@ -44,4 +44,4 @@ Family)
 Translate the following questions into Prolog queries and try them out:  
 (8) Who is the mother of Beatrice?  
 (9) Who has a child (one or more)?  
-(10) Who is a desencendant of the Queenmother?  
+(10) Who is a desencendant of the Queenmother?
