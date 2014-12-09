@@ -2,6 +2,8 @@
 %Christopher Lacey - 
 %Patrick Schlumberger-Socha - 
 
+%[Total:57 marks]
+
 %Question 1(a) - [5 marks]
 
 %Program: ROYAL
@@ -29,30 +31,9 @@ parent(william, georgejun).
 parent(kate, georgejun).
 
 %1
-%Swear there is a cleaner way to do this and the males!
-the_royal_females(X) :-
-					X==queenmother;
-					X==elisabeth;
-					X==anne;
-					X==diana;
-					X==sarah;
-					X==beatrice;
-					X==zara;
-					X==kate.
+the_royal_females(X) :- member(X, [queenmother, elisabeth, anne, diana, sarah, beatrice, zara, kate]).
 %2
-the_royal_males(X) :-
-					X==charles;
-					X==andrew;
-					X==edward;
-					X==william;
-					X==harry;
-					X==peter;
-					X==george;
-					X==phillip;
-					X==eugene;
-					X==mark;
-					X==georgejun.
-
+the_royal_males(X) :- member(X, [charles, andrew, edward, william, harry, peter, george, philip, eugene, mark, georgejun]).
 %3
 the_royal_family(X) :- 
 				the_royal_males(X);
@@ -128,3 +109,50 @@ aunt(X,Y) :-
 
 %------------------------------------------------------------
 %Question 1(c) - [5 marks]
+%may have to do it the way she requests though? Double Check!
+palindrome_list(L) :- reverse(L,L).
+
+%------------------------------------------------------------
+%Question 1(d) - [5 marks]
+% i- Recursive predicate
+%% euclidsq([], [], 0).
+%% euclidq(X, Y, ED).
+
+
+% ii- A tail recursive predicate
+%% equclidsqr_acc(X,Y,A,ED)
+
+%------------------------------------------------------------
+%---- QUESTION 2 ----
+%------------------------------------------------------------
+%Question 2(a) - [4 marks]
+%% member_rem(X,[X|Xs],Xs).
+%% member_rem(Y,[X|Xs],[X|R]) :- member_rem(Y,Xs,R).
+member_rem(E,L,R) :-
+    select(E, L, R).
+
+%------------------------------------------------------------
+%Question 2(b) - [4 marks]
+%gen_list_n(N,D,L),
+%which generates a list(L) of N distinct elements,
+%from the List D, where length of D is >= N
+
+gen_list_n(0,[], _).
+gen_list_n(N,[X|Xs],L) :-
+		N > 0,				
+		N1 is N-1,
+		member_rem(X,L,R),		%Remove X from list and store in R
+		\+(member(R, L)),			%if member(R, L) is false
+		gen_list_n(N1, Xs, R).		%Recursively call back
+
+gen_n(0,_,[]).
+gen_n(N,D,[X|Xs]) :-
+		N >0,
+		N1 is N-1,
+		member_rem(X,D,D1),
+		gen_n(N1,D1,Xs).
+
+%All above is probably wrong - majorlymindfucked.
+
+%------------------------------------------------------------
+%Question 2(c) - [4 marks]
