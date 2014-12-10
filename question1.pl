@@ -1,6 +1,6 @@
 %Joseph Esmaail - 713992
-%Christopher Lacey - 
-%Patrick Schlumberger-Socha - 
+%Christopher Lacey - 709297
+%Patrick Schlumberger-Socha - 786153
 
 %------------------------------------
 % ---- Question 1 ----
