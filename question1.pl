@@ -148,7 +148,7 @@ euclidsqr([X|Xs],[Y|Ys],ED) :-
 % ii- A tail recursive predicate
 euclidsqr_acc([],[],0,0).
 euclidsqr_acc([X|Xs],[Y|Ys],A,ED) :-
-		euclidsqr_acc(Xs,Ys,A1,ED1),
-		A is A1+(X-Y)*(X-Y),
-		ED is ED1+1.
+		euclidsqr_acc(Xs,Ys,A1,ED1),	
+		A is A1+(X-Y)*(X-Y),		%Stores intermediate calculations
+		ED is ED1+1.				%Count for length of the lists
 		
