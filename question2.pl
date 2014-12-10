@@ -8,9 +8,13 @@
 
 %Question 2(a)
 %-------------
-%% member_rem(X,[X|Xs],Xs).
-%% member_rem(Y,[X|Xs],[X|R]) :- member_rem(Y,Xs,R).
-member_rem(E,L,R) :- select(E,L,R).
+% Using the select(E,L,R) will work but felt too straightforward for coursework assessment.
+
+%% member_rem(E,L,R) :- select(E,L,R).
+
+member_rem(X,[X|Xs],Xs).
+member_rem(Y,[X|Xs],[X|R]) :- member_rem(Y,Xs,R).
+
 
 %------------------------------------------------------------
 %Question 2(b)
@@ -22,7 +26,7 @@ gen_list_n(N,D,[X|Xs]) :-
 		member_rem(X,D,R),
 		gen_list_n(N1,R,Xs).
 
-gen4(L) :- gen_list_n(4,[1,2,3,4],L).
+gen4(L) :- gen_list_n(4,[1,2,3,4],L).	%Calls gen_list_n for a list of 4 distinct elements [1,2,3,4].
 
 %------------------------------------------------------------
 %Question 2(c)
@@ -73,7 +77,7 @@ solve([R1,R2,R3,R4]) :-
 %Question 2(f)
 %-------------
 solve_in_steps([R1,R2,R3,R4]) :-		%Same Solution as above however does each row one by one.
-		gen4(R1),
+		gen4(R1),						
 		R1 = [R11,R12,_,_],
 		R11 > R12,
 

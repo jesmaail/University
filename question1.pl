@@ -8,7 +8,6 @@
 
 %Question 1(a)
 %-------------
-
 %Program: ROYAL
 parent(queenmother, elisabeth).
 parent(elisabeth, charles).
@@ -35,29 +34,31 @@ parent(kate, georgejun).
 
 %1
 the_royal_females(X) :- member(X, [queenmother, elisabeth, anne, diana, sarah, beatrice, zara, kate]).
+
 %2
 the_royal_males(X) :- member(X, [charles, andrew, edward, william, harry, peter, george, philip, eugene, mark, georgejun]).
+
 %3
-the_royal_family(X) :- 
-		the_royal_males(X);
+the_royal_family(X) :- 			%A royal family member will be part of the list of either males or females.
+		the_royal_males(X);		
 		the_royal_females(X).
 
 %4
-mother(X,Y) :- 
+mother(X,Y) :- 					%A mother is defined as a parent who is a female.
 		parent(X,Y),
 		the_royal_females(X).
 
 %5
-has_child(X) :- parent(X,_).
+has_child(X) :- parent(X,_).	%A member has a child if they are a parent.
 
 %6
-ancestor(X,Y) :- parent(X,Y).
+ancestor(X,Y) :- parent(X,Y).	%Ancestor is either a parent, or a parent of a parent, etc.
 ancestor(X,Y) :- 
 		parent(X,Z),
 		ancestor(Z,Y).
 
 %7
-descendant(X,Y) :- ancestor(Y,X).
+descendant(X,Y) :- ancestor(Y,X).	%A descendant works the opposite way to an ancestor.
 
 %--Translate the following into queries--
 %8 Who is the Mother of Beatrice?
@@ -81,6 +82,7 @@ descendant(X,Y) :- ancestor(Y,X).
 
 	%^note:duplicates ommitted.
 
+
 %10 Who is a descendant of the Queenmother?
 %	descendant(A, queenmother).
 %	A = elisabeth;
@@ -101,8 +103,8 @@ descendant(X,Y) :- ancestor(Y,X).
 %Question 1(b)
 %-------------
 
-%sibling/2
-sibling(X,Y) :- 
+% -- sibling/2 --
+sibling(X,Y) :- 		%Two members are siblings so long as they have a common parent.
 		parent(A,X),
 		parent(A,Y).
 %Query: Who are the siblings of charles?
@@ -114,8 +116,8 @@ sibling(X,Y) :-
 % 	X = andrew;
 % 	X = edward.
 
-%aunt/2
-aunt(X,Y) :- 
+% -- aunt/2 --
+aunt(X,Y) :- 			%One member is the aunt of another if they are the sibling of the parent and also female.
 		parent(Z,Y),
 		sibling(X,Z),
 		the_royal_females(X).
@@ -128,8 +130,8 @@ aunt(X,Y) :-
 
 %palindrome_list(L) :- reverse(L,L).
 
-palindrome_list([]).	%base case when empty
-palindrome_list([_]).	%base case when singleton
+palindrome_list([]).		%base case when empty
+palindrome_list([_]).		%base case when singleton
 palindrome_list([X|Xs]) :- 
 		last_element([X], A, Xs),
 		palindrome_list(A).
