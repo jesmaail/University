@@ -6,7 +6,8 @@
 % ---- Question 1 ----
 %------------------------------------
 
-%Question 1(a) - [5 marks]
+%Question 1(a)
+%-------------
 
 %Program: ROYAL
 parent(queenmother, elisabeth).
@@ -38,13 +39,13 @@ the_royal_females(X) :- member(X, [queenmother, elisabeth, anne, diana, sarah, b
 the_royal_males(X) :- member(X, [charles, andrew, edward, william, harry, peter, george, philip, eugene, mark, georgejun]).
 %3
 the_royal_family(X) :- 
-				the_royal_males(X);
-				the_royal_females(X).
+		the_royal_males(X);
+		the_royal_females(X).
 
 %4
 mother(X,Y) :- 
-			parent(X,Y),
-			the_royal_females(X).
+		parent(X,Y),
+		the_royal_females(X).
 
 %5
 has_child(X) :- parent(X,_).
@@ -52,8 +53,8 @@ has_child(X) :- parent(X,_).
 %6
 ancestor(X,Y) :- parent(X,Y).
 ancestor(X,Y) :- 
-				parent(X,Z),
-				ancestor(Z,Y).
+		parent(X,Z),
+		ancestor(Z,Y).
 
 %7
 descendant(X,Y) :- ancestor(Y,X).
@@ -77,45 +78,67 @@ descendant(X,Y) :- ancestor(Y,X).
 	%A = mark;
 	%A = william;
 	%A = kate.
+
 	%^note:duplicates ommitted.
 
 %10 Who is a descendant of the Queenmother?
-	%descendant(A, queenmother).
-	%A = elisabeth;
-	%A = charles;
-	%A = andrew;
-	%A = anne;
-	%A = edward;
-	%A = william;
-	%A = harry;
-	%A = georgejun;
-	%A = beatrice;
-	%A = eugene;
-	%A = peter;
-	%A = zara.
+%	descendant(A, queenmother).
+%	A = elisabeth;
+%	A = charles;
+%	A = andrew;
+%	A = anne;
+%	A = edward;
+%	A = william;
+%	A = harry;
+%	A = georgejun;
+%	A = beatrice;
+%	A = eugene;
+%	A = peter;
+%	A = zara.
 
 
 %------------------------------------------------------------
-%Question 1(b) - [5 marks]
-%Use predicates of Q1a to define predicates sibling/2 and aunt/2
-%Query: Who are the siblings of charles?
+%Question 1(b)
+%-------------
 
+%sibling/2
 sibling(X,Y) :- 
-			parent(A,X),
-			parent(A,Y).
+		parent(A,X),
+		parent(A,Y).
+%Query: Who are the siblings of charles?
+% 	sibling(charles,X).
+% 	X = andrew;
+% 	X = anne;
+% 	X = edward;
+% 	X = charles;
+% 	X = andrew;
+% 	X = edward.
 
+%aunt/2
 aunt(X,Y) :- 
-			parent(Z,Y),
-			sibling(X,Z),
-			the_royal_females(X).
+		parent(Z,Y),
+		sibling(X,Z),
+		the_royal_females(X).
 
 %------------------------------------------------------------
-%Question 1(c) - [5 marks]
-%may have to do it the way she requests though? Double Check!
-palindrome_list(L) :- reverse(L,L).
+%Question 1(c)
+%-------------
+%Calling the reverse method will work,
+%but it does not meet the requirements set out in the coursework :)
+
+%palindrome_list(L) :- reverse(L,L).
+
+palindrome_list([]).	%base case when empty
+palindrome_list([_]).	%base case when singleton
+palindrome_list([X|Xs]) :- 
+		last_element([X], A, Xs),
+		palindrome_list(A).
+
+last_element(L,X,R) :- append(X,L,R).
 
 %------------------------------------------------------------
-%Question 1(d) - [5 marks]
+%Question 1(d)
+%-------------
 % i- Recursive predicate
 %% euclidsq([], [], 0).
 %% euclidq(X, Y, ED).

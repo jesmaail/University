@@ -6,17 +6,20 @@
 % ---- Question 2 ----
 %------------------------------------
 
-%Question 2(a) - [4 marks]
+%Question 2(a)
+%-------------
+
 %% member_rem(X,[X|Xs],Xs).
 %% member_rem(Y,[X|Xs],[X|R]) :- member_rem(Y,Xs,R).
-member_rem(E,L,R) :- select(E, L, R).
+member_rem(E,L,R) :- select(E,L,R).
 
 %------------------------------------------------------------
-%Question 2(b) - [4 marks]
+%Question 2(b)
+%-------------
 
 gen_list_n(0,_,[]).
 gen_list_n(N,D,[X|Xs]) :-
-		N >0,
+		N > 0,
 		N1 is N-1,
 		member_rem(X,D,R),
 		gen_list_n(N1,R,Xs).
@@ -24,7 +27,8 @@ gen_list_n(N,D,[X|Xs]) :-
 gen4(L) :- gen_list_n(4,[1,2,3,4],L).
 
 %------------------------------------------------------------
-%Question 2(c) - [4 marks]
+%Question 2(c)
+%-------------
 
 distinct_in_entries([],[]).
 distinct_in_entries([X|Xs], [Y|Ys]) :- 
@@ -32,7 +36,8 @@ distinct_in_entries([X|Xs], [Y|Ys]) :-
 		distinct_in_entries(Xs,Ys).
 
 %------------------------------------------------------------
-%Question 2(d) - [5 marks]
+%Question 2(d)
+%-------------
 
 gen_poss_sln(R1,R2,R3,R4) :-
 		gen4(R1),
@@ -47,8 +52,8 @@ gen_poss_sln(R1,R2,R3,R4) :-
 		distinct_in_entries(R3,R4).
 
 %------------------------------------------------------------
-%Question 2(e) - [5 marks]
-
+%Question 2(e)
+%-------------
 solve([R1,R2,R3,R4]) :-
 		gen_poss_sln(R1,R2,R3,R4),
 		R1=[R11,R12,_,_],
@@ -61,3 +66,31 @@ solve([R1,R2,R3,R4]) :-
 		R31 > R32,
 		R33 < R34,
 		R43 < R44.
+
+%------------------------------------------------------------
+%Question 2(f)
+%-------------
+solve_in_steps([R1,R2,R3,R4]) :-
+		gen4(R1),
+		R1=[R11,R12,_,_],
+		R11 > R12,
+
+		gen4(R2),
+		distinct_in_entries(R1,R2),
+		R2=[R21,R22,_,R24],
+		R21<R22,
+
+		gen4(R3),
+		distinct_in_entries(R1,R3),
+		distinct_in_entries(R2,R3),
+		R3=[R31,R32,R33,R34],
+		R24>R34,
+		R31>R32,
+		R33<R34,
+
+		gen4(R4),
+		distinct_in_entries(R1,R4),
+		distinct_in_entries(R2,R4),
+		distinct_in_entries(R3,R4),
+		R4=[_,_,R43,R44],
+		R43<R44.
