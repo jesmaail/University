@@ -140,9 +140,15 @@ last_element(L,X,R) :- append(X,L,R).
 %Question 1(d)
 %-------------
 % i- Recursive predicate
-%% euclidsq([], [], 0).
-%% euclidq(X, Y, ED).
-
+euclidsqr([],[],0).
+euclidsqr([X|Xs],[Y|Ys],ED) :-
+		euclidsqr(Xs,Ys,ED1),
+		ED is ED1+(X-Y)*(X-Y).
 
 % ii- A tail recursive predicate
-%% equclidsqr_acc(X,Y,A,ED)
+euclidsqr_acc([],[],0,0).
+euclidsqr_acc([X|Xs],[Y|Ys],A,ED) :-
+		euclidsqr_acc(Xs,Ys,A1,ED1),
+		A is A1+(X-Y)*(X-Y),
+		ED is ED1+1.
+		

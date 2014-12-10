@@ -8,7 +8,6 @@
 
 %Question 2(a)
 %-------------
-
 %% member_rem(X,[X|Xs],Xs).
 %% member_rem(Y,[X|Xs],[X|R]) :- member_rem(Y,Xs,R).
 member_rem(E,L,R) :- select(E,L,R).
@@ -16,7 +15,6 @@ member_rem(E,L,R) :- select(E,L,R).
 %------------------------------------------------------------
 %Question 2(b)
 %-------------
-
 gen_list_n(0,_,[]).
 gen_list_n(N,D,[X|Xs]) :-
 		N > 0,
@@ -29,7 +27,6 @@ gen4(L) :- gen_list_n(4,[1,2,3,4],L).
 %------------------------------------------------------------
 %Question 2(c)
 %-------------
-
 distinct_in_entries([],[]).
 distinct_in_entries([X|Xs], [Y|Ys]) :- 
 		X =\= Y,
@@ -38,7 +35,6 @@ distinct_in_entries([X|Xs], [Y|Ys]) :-
 %------------------------------------------------------------
 %Question 2(d)
 %-------------
-
 gen_poss_sln(R1,R2,R3,R4) :-
 		gen4(R1),
 		gen4(R2),
