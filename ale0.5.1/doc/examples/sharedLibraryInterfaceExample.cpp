@@ -48,8 +48,8 @@ int main(int argc, char** argv) {
     // Get the vector of legal actions
     ActionVect legal_actions = ale.getLegalActionSet();
 
-    // Play 10 episodes
-    for (int episode=0; episode<10; episode++) {
+    // Play 10 episodes  ###CHANGED TO 100###
+    for (int episode=0; episode<100; episode++) {
         float totalReward = 0;
         while (!ale.game_over()) {
             Action a = legal_actions[rand() % legal_actions.size()];
