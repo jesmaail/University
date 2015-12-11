@@ -1,11 +1,11 @@
 USE_SDL := 1
 
 # This will likely need to be changed to suit your installation.
-ALE := ale0.5.1/
+ALE := ../ale0.5.1/
 
 FLAGS := -I$(ALE)/src -I$(ALE)/src/controllers -I$(ALE)/src/os_dependent -I$(ALE)/src/environment -I$(ALE)/src/external -L$(ALE)
 CXX := g++
-FILE := exampleAgent
+FILE := preprocessAgent
 LDFLAGS := -lale -lz
 
 UNAME_S := $(shell uname -s)
@@ -22,10 +22,10 @@ ifeq ($(strip $(USE_SDL)), 1)
   LDFLAGS += $(shell sdl-config --libs)
 endif
 
-all: exampleAgent
+all: preprocessAgent
 
-exampleAgent:
+screenshotAgent:
 	$(CXX) $(DEFINES) $(FLAGS) $(FILE).cpp $(LDFLAGS) -o $(FILE)
 
 clean:
-	rm -rf exampleAgent *.o
+	rm -rf preprocessAgent *.o

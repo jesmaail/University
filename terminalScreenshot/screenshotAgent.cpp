@@ -3,9 +3,11 @@
 
 #include <iostream>
 #include <ale_interface.hpp>
+#include <vector>
 #ifdef __USE_SDL
   #include <SDL.h>
 #endif
+
 using namespace std;
 
 int main(int argc, char** argv){
@@ -43,8 +45,8 @@ int main(int argc, char** argv){
 
 					for(int j=0; j<height; j++){
 						for(int i=0; i<width; i++){
-
 							pixel_t pix = screen.get(j, i);
+
 							if(pix < 5)
 								pix = ' ';
 							else

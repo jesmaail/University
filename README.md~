@@ -6,5 +6,5 @@ Arcade Learning Environment for Dissertation
 
 rm agentName && make -f Makefile.agentName
 
-reset && ./agentName '../rom.bin' 
+reset && ./agentName '../space_invaders.bin' 
 
