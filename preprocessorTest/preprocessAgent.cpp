@@ -15,12 +15,15 @@ int main(int argc, char** argv){
 	int highscore = 0;	//initialise highscore
 	bool screenshot = false;
 	int width, height;
+	fstream fout;
+	fout.open("screen.dat");
+	fout.clear();
 
 	ALEInterface ale;	//Initialise Arcade Learning Environment
 
 	#ifdef __USE_SDL	//Simple Direct Media Layer, for observing game as it is played
-		ale.setBool("display_screen", true);
-		ale.setBool("sound", true);
+		ale.setBool("display_screen", false);
+		ale.setBool("sound", false);
 	#endif
 
 	ale.loadROM(argv[1]);	//load game specified game ROM
@@ -44,26 +47,31 @@ int main(int argc, char** argv){
 					height = screen.height();
 					int img [height][width];
 
+					fout << screen.get(50, 50);
+
 					for(int j=0; j<height; j++){
 						for(int i=0; i<width; i++){
 							pixel_t pix = screen.get(j, i);
-							//int pix = screen.get(j, i);
+							int intPix = screen.get(j, i);
+							img[j][i] = intPix;
 
-							//img[j][i].push_back(pix);
-							//img[j][i] = pix;
-
-							if(pix < 5)
-								pix = ' ';
-							else
-								pix = '#';
+							//fout << pix;
+							//fout << " ";
+							// if(pix < 5)
+							// 	pix = ' ';
+							// else
+							// 	pix = '#';
 
 							if(j < 32 || j >= (height-18)){								
-								printf("%c",pix);
+								//printf("%d",intPix);
 							}							
 						}				
-						printf("\n");
+						//printf("\n");
+						//fout << "NEWLINE" << endl;
+						//fout << endl;
 					}
 					screenshot = true;
+					fout.close();
 				}
 			}else{
 				count = -1;
