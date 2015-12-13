@@ -36,8 +36,16 @@ reset && ./agentName '../rom.bin'
 * Devise Neural Network Structure
 
 * Implement C++ classes for Neural Network
+  * NeuralNetwork
+  * Layer
+  * ConvLayer : Layer
+  * FullConnLayer : Layer
+  * Neuron
+  * ConvNeuron : Neuron
 
 * Apply Neural Network to ALE
+  * Main class (Environment Wrapper)
+  * Q-Learning
 
 
 ###Final Dissertation/Implementation
