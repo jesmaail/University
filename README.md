@@ -15,20 +15,20 @@ reset && ./agentName '../rom.bin'
 
 #Agile Sprints
 ###~~Intial Document~~
-~~* Preliminary Research~~
+* ~~Preliminary Research~~
 
 ###~~Gregynog Presentation~~
-~~* Get to grips with the Arcade Learning Environment (ALE)~~
+* ~~Get to grips with the Arcade Learning Environment (ALE)~~
 
-~~* Develop agent for input interaction with ALE~~
+* ~~Develop agent for input interaction with ALE~~
 
-~~* Develop agent for output interaction with ALE~~
+* ~~Develop agent for output interaction with ALE~~
 
-~~* Create Presentation~~
+* ~~Create Presentation~~
 
 
 ###Interim Document
-~~* Break down next steps to take for implementation~~
+* ~~Break down next steps to take for implementation~~
 
 * Develop Preprocessor
   * Crop input image to region of interest
