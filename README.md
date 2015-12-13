@@ -12,10 +12,10 @@ reset && ./agentName '../rom.bin'
 
 
 #Agile Sprints
-~~###Intial Document~~
+###~~Intial Document~~
 ~~*Preliminary Research~~
 
-~~###Gregynog Presentation~~
+###~~Gregynog Presentation~~
 ~~*Get to grips with the Arcade Learning Environment (ALE)~~
 
 ~~*Develop agent for input interaction with ALE~~
@@ -29,9 +29,9 @@ reset && ./agentName '../rom.bin'
 ~~*Break down next steps to take for implementation~~
 
 *Develop Preprocessor
-	*Crop input image to region of interest
-	~~*Convert 2byte hex values to RGB~~~~
-	~~*Convert RGB to Grayscale~~
+ *Crop input image to region of interest
+ *~~Convert 2byte hex values to RGB~~
+ *~~Convert RGB to Grayscale~~
 
 *Devise Neural Network Structure
 
