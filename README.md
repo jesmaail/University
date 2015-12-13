@@ -29,9 +29,9 @@ reset && ./agentName '../rom.bin'
 ~~*Break down next steps to take for implementation~~
 
 *Develop Preprocessor
- *Crop input image to region of interest
- *~~Convert 2byte hex values to RGB~~
- *~~Convert RGB to Grayscale~~
+  *Crop input image to region of interest
+  *~~Convert 2byte hex values to RGB~~
+  *~~Convert RGB to Grayscale~~
 
 *Devise Neural Network Structure
 
