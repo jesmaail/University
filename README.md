@@ -1,6 +1,8 @@
 # Playing Video Games with Neural Networks and Reinforcement Learning
 3rd Year Dissertation project
+
 Joseph Shihab Esmaail
+
 Swansea University
 
 
