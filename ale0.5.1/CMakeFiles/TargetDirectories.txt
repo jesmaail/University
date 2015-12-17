@@ -1,5 +1,5 @@
-/home/joseph/Documents/diss/ale/Arcade-Learning-Environment-0.5.1/CMakeFiles/ale-bin.dir
-/home/joseph/Documents/diss/ale/Arcade-Learning-Environment-0.5.1/CMakeFiles/ale-c-lib.dir
-/home/joseph/Documents/diss/ale/Arcade-Learning-Environment-0.5.1/CMakeFiles/ale-lib.dir
-/home/joseph/Documents/diss/ale/Arcade-Learning-Environment-0.5.1/CMakeFiles/sharedLibraryInterfaceExample.dir
-/home/joseph/Documents/diss/ale/Arcade-Learning-Environment-0.5.1/CMakeFiles/videoRecordingExample.dir
+/home/joseph/Documents/dissertation/ale0.5.1/CMakeFiles/ale-lib.dir
+/home/joseph/Documents/dissertation/ale0.5.1/CMakeFiles/videoRecordingExample.dir
+/home/joseph/Documents/dissertation/ale0.5.1/CMakeFiles/ale-c-lib.dir
+/home/joseph/Documents/dissertation/ale0.5.1/CMakeFiles/ale-bin.dir
+/home/joseph/Documents/dissertation/ale0.5.1/CMakeFiles/sharedLibraryInterfaceExample.dir

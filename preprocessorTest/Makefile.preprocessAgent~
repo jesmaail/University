@@ -4,7 +4,7 @@ USE_SDL := 1
 ALE := ../ale0.5.1/
 
 FLAGS := -I$(ALE)/src -I$(ALE)/src/controllers -I$(ALE)/src/os_dependent -I$(ALE)/src/environment -I$(ALE)/src/external -L$(ALE)
-CXX := g++
+CXX := g++ 
 FILE := preprocessAgent
 LDFLAGS := -lale -lz
 
@@ -24,8 +24,8 @@ endif
 
 all: preprocessAgent
 
-screenshotAgent:
-	$(CXX) $(DEFINES) $(FLAGS) $(FILE).cpp $(LDFLAGS) -o $(FILE)
+preprocessAgent:
+	$(CXX) $(DEFINES) $(FLAGS) $(FILE).cpp GrayscaleConvert.cpp $(LDFLAGS) -o $(FILE)
 
 clean:
 	rm -rf preprocessAgent *.o

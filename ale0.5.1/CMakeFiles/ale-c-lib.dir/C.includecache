@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/joseph/Documents/diss/ale/Arcade-Learning-Environment-0.5.1/src/emucore/unzip.c
+/home/joseph/Documents/dissertation/ale0.5.1/src/emucore/unzip.c
 stdio.h
 -
 stdlib.h
@@ -16,7 +16,7 @@ string.h
 zlib.h
 -
 unzip.h
-/home/joseph/Documents/diss/ale/Arcade-Learning-Environment-0.5.1/src/emucore/unzip.h
+/home/joseph/Documents/dissertation/ale0.5.1/src/emucore/unzip.h
 stddef.h
 -
 string.h
@@ -26,15 +26,15 @@ stdlib.h
 errno.h
 -
 
-/home/joseph/Documents/diss/ale/Arcade-Learning-Environment-0.5.1/src/emucore/unzip.h
+/home/joseph/Documents/dissertation/ale0.5.1/src/emucore/unzip.h
 zlib.h
 -
 
-/home/joseph/Documents/diss/ale/Arcade-Learning-Environment-0.5.1/src/external/TinyMT/tinymt32.c
+/home/joseph/Documents/dissertation/ale0.5.1/src/external/TinyMT/tinymt32.c
 tinymt32.h
-/home/joseph/Documents/diss/ale/Arcade-Learning-Environment-0.5.1/src/external/TinyMT/tinymt32.h
+/home/joseph/Documents/dissertation/ale0.5.1/src/external/TinyMT/tinymt32.h
 
-/home/joseph/Documents/diss/ale/Arcade-Learning-Environment-0.5.1/src/external/TinyMT/tinymt32.h
+/home/joseph/Documents/dissertation/ale0.5.1/src/external/TinyMT/tinymt32.h
 stdint.h
 -
 inttypes.h

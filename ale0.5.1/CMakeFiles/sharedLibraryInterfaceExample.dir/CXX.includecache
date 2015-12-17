@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/joseph/Documents/diss/ale/Arcade-Learning-Environment-0.5.1/doc/examples/sharedLibraryInterfaceExample.cpp
+/home/joseph/Documents/dissertation/ale0.5.1/doc/examples/sharedLibraryInterfaceExample.cpp
 iostream
 -
 ale_interface.hpp
