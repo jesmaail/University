@@ -57,29 +57,20 @@ int main(int argc, char** argv){
 					width = screen.width();
 					height = screen.height();
 					int img[height][width];
+					int x = 0;
 
-					for(int j=0; j<height; j++){
-						for(int i=0; i<width; i++){
-							if(j < 32 || j >= (height-18)){
-								
-							}else{
-								int intPix = screen.get(j, i);
-								img[j][i] = intPix;
-							}					
-						}					
-
-					}
-					screenshot = true;					
-
-					for(int j=0; j<height-50; j++){
-						for(int i=0; i<width; i++){
-							int val = img[j][i];
-							img[j][i] = grayscaleValue[val];
-							fout << img[j][i];
+					for(int j=32; j<height-18; j++){
+						for (int i=0; i<width; i++){
+							int intPix = screen.get(j, i);
+							img[x][i] = grayscaleValue[intPix];
+							fout << img[x][i];
 							fout << " ";
 						}
+						x++;
 						fout << endl;
 					}
+
+					screenshot = true;
 					fout.close();
 				}
 			}else{
