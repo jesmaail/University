@@ -33,6 +33,14 @@ void Layer::AddNeuronVector(vector<Neuron> ns){
 ConvLayer::ConvLayer(){
 }
 
+float ConvLayer::GetBias(){
+	return m_bias;
+}
+
+void ConvLayer::SetBias(float bias){
+	m_bias = bias;
+}
+
 int ConvLayer::GetFilterNum(){
 	return m_filterNum;
 }
@@ -57,8 +65,18 @@ void ConvLayer::SetStride(int stride){
 	m_stride = stride; 
 }
 
+vector<vector<Neuron>> ConvLayer::GetNeurons(){
+	return m_neurons;
+}
+
+void ConvLayer::SetNeurons(vector<vector<Neuron>> neurons){
+	m_neurons = neurons;
+}
+
 
 
 //#### Fully Connected Layer #############################
+/*
 FullConnLayer::FullConnLayer(){
 }
+*/
