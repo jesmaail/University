@@ -35,7 +35,7 @@ class NeuralNetwork{
 private:
 	vector<ConvLayer> m_convLayers;
 	vector<FullConnLayer> m_fcLayers;
-	Layer m_inputLayer;		//Need getters/setters
+	ConvLayer m_inputLayer;		//Need getters/setters
 	ConvLayer m_secondLayer;
 	ConvLayer m_thirdLayer;
 	FullConnLayer m_fourthLayer;
@@ -47,14 +47,22 @@ public:
 	~NeuralNetwork(){};
 
 	void populateInputLayer(vector<vector<int>> img);
-
 	void populateSecondLayer();
-
 	void populateThirdLayer();
-
 	void populateFourthLayer();
-
 	void populateOutputLayer();
+
+	ConvLayer GetInputLayer();
+	ConvLayer GetSecondLayer();
+	ConvLayer GetThirdLayer();
+	FullConnLayer GetFourthLayer();
+	FullConnLayer GetOutputLayer();
+
+	void SetInputLayer(ConvLayer l);
+	void SetSecondLayer(ConvLayer l);
+	void SetThirdLayer(ConvLayer l);
+	void SetFourthLayer(FullConnLayer l);
+	void SetOutputLayer(FullConnLayer l);
 
 	vector<ConvLayer> GetConvLayers();
 	void SetConvLayers(vector<ConvLayer> layers);
@@ -75,7 +83,6 @@ private:
 public:
 	Neuron();
 	Neuron(float bias);
-	//Neuron(Neuron const &n);
 
 	~Neuron(){};
 
@@ -98,13 +105,24 @@ class ConvNeuron : Neuron{
 private:
 	float m_bias;
 	float m_value;
-	vector<int> m_weights;
+	vector<vector<float>> m_weights;
 	vector<Connection> m_connections;
 
 public:
 	ConvNeuron();
-
 	~ConvNeuron(){};
+
+	float GetBias();
+	void SetBias(float b);
+
+	float GetValue();
+	void SetValue(float v);
+
+	void SetWeights(vector<vector<float>> weights);
+	vector<vector<float>> GetWeights();
+
+	void SetConnections(vector<Connection> c);
+	vector<Connection> GetConnections();
 };
 
 
@@ -117,7 +135,6 @@ private:
 
 public:
 	Connection(Neuron *n, float weight);
-	//Connection(Connection const &conn);
 
 	~Connection(){};
 
@@ -147,7 +164,7 @@ public:
 	void SetBias(float bias);
 
 	vector<Neuron> GetNeurons();
-	void AddNeuron(Neuron *n);
+	void AddNeuron(Neuron n);
 	void AddNeuronVector(vector<Neuron> ns);
 };
 
@@ -161,7 +178,7 @@ private:
 	int m_filterSize;
 	int m_stride;
 
-	vector<vector<Neuron>> m_neurons;
+	vector<vector<ConvNeuron>> m_neurons;
 
 public:
 	ConvLayer();
@@ -180,8 +197,8 @@ public:
 	int GetStride();
 	void SetStride(int stride);
 
-	vector<vector<Neuron>> GetNeurons();
-	void SetNeurons(vector<vector<Neuron>> neurons);
+	vector<vector<ConvNeuron>> GetNeurons();
+	void SetNeurons(vector<vector<ConvNeuron>> neurons);
 };
 
 

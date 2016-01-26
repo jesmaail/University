@@ -17,7 +17,7 @@ vector<Neuron> Layer::GetNeurons(){
 	return m_neurons;
 }
 
-void Layer::AddNeuron(Neuron *n){
+void Layer::AddNeuron(Neuron n){
 
 }
 
@@ -65,11 +65,11 @@ void ConvLayer::SetStride(int stride){
 	m_stride = stride; 
 }
 
-vector<vector<Neuron>> ConvLayer::GetNeurons(){
+vector<vector<ConvNeuron>> ConvLayer::GetNeurons(){
 	return m_neurons;
 }
 
-void ConvLayer::SetNeurons(vector<vector<Neuron>> neurons){
+void ConvLayer::SetNeurons(vector<vector<ConvNeuron>> neurons){
 	m_neurons = neurons;
 }
 

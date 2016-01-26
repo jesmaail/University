@@ -10,6 +10,9 @@ Neuron::Neuron(float bias)
 	: m_bias(bias){
 }
 
+
+
+
 float Neuron::Activation(){
 	//sigmoid function
 }
@@ -17,6 +20,9 @@ float Neuron::Activation(){
 float Neuron::CalculateValue(){
 	//foreach loop here with summation including bias and weights
 }
+
+
+
 
 float Neuron::GetValue(){
 	return m_value;
@@ -26,6 +32,9 @@ void Neuron::SetValue(float value){
 	m_value = value;
 }
 
+
+
+
 float Neuron::GetBias(){
 	return m_bias;
 }
@@ -33,6 +42,9 @@ float Neuron::GetBias(){
 void Neuron::SetBias(float bias){
 	m_bias = bias;
 }
+
+
+
 
 vector<Connection> Neuron::GetConnections(){
 	return m_connections;
@@ -55,12 +67,57 @@ ConvNeuron:: ConvNeuron(){
 
 
 
+float ConvNeuron::GetBias(){
+	return m_bias;
+}
+
+void ConvNeuron::SetBias(float b){
+	m_bias = b;
+}
+
+
+
+
+float ConvNeuron::GetValue(){
+	return m_value;
+}
+
+void ConvNeuron::SetValue(float v){
+	m_value = v;
+}
+
+
+
+
+void ConvNeuron::SetWeights(vector<vector<float>> weights){
+	m_weights = weights;
+}
+
+vector<vector<float>> ConvNeuron::GetWeights(){
+	return m_weights;
+}
+
+
+
+
+void ConvNeuron::SetConnections(vector<Connection> c){
+	m_connections = c;
+}
+
+vector<Connection> ConvNeuron::GetConnections(){
+	return m_connections;
+}
+
+
 
 //#### Connection ########################################
 
 Connection:: Connection(Neuron *n, float weight)
 	: m_neuron(n), m_weight(weight){
 }
+
+
+
 
 Neuron Connection::GetNeuron(){
 	return *m_neuron;
@@ -69,6 +126,9 @@ Neuron Connection::GetNeuron(){
 void Connection::SetNeuron(Neuron &n){
 	*m_neuron = n;
 }
+
+
+
 
 float Connection::GetWeight(){
 	return m_weight;
