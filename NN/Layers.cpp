@@ -1,6 +1,5 @@
+#pragma once
 #include "NeuralNetwork.h"
-
-//#### Layer #############################################
 
 Layer::Layer(){
 }
@@ -27,8 +26,6 @@ void Layer::AddNeuronVector(vector<Neuron> ns){
 
 
 
-
-//#### Convolutional Layer ###############################
 
 ConvLayer::ConvLayer(){
 }
@@ -101,7 +98,6 @@ void ConvLayer::SetNeurons(vector<vector<ConvNeuron>> neurons){
 
 
 
-//#### Fully Connected Layer #############################
 
 FullConnLayer::FullConnLayer(){
 }

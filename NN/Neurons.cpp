@@ -1,6 +1,6 @@
+#pragma once
 #include "NeuralNetwork.h"
 
-//#### Neuron ###########################################
 Neuron::Neuron(){
 	SetValue(2);
 	SetBias(0);
@@ -14,11 +14,13 @@ Neuron::Neuron(float bias)
 
 
 float Neuron::Activation(){
-	//sigmoid function
+	//sigmoid functionr
+	return 0; //ph
 }
 
 float Neuron::CalculateValue(){
 	//foreach loop here with summation including bias and weights
+	return 0; //ph
 }
 
 
@@ -61,7 +63,6 @@ void Neuron::addConnection(Connection c){
 
 
 
-//#### Convolutional Neuron ##############################
 ConvNeuron:: ConvNeuron(){
 
 }
@@ -112,34 +113,4 @@ vector<Connection> ConvNeuron::GetConnections(){
 
 void ConvNeuron::addConnection(Connection c){
 	m_connections.push_back(c);
-}
-
-
-
-
-//#### Connection ########################################
-Connection::Connection(Neuron *n, float weight)
-	: m_neuron(n), m_weight(weight){
-}
-
-
-
-
-Neuron Connection::GetNeuron(){
-	return *m_neuron;
-}
-
-void Connection::SetNeuron(Neuron &n){
-	*m_neuron = n;
-}
-
-
-
-
-float Connection::GetWeight(){
-	return m_weight;
-}
-
-void Connection::SetWeight(float weight){
-	m_weight = weight;
 }

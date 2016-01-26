@@ -1,3 +1,4 @@
+#pragma once
 #include "NeuralNetwork.h"
 
 int main(){
@@ -87,8 +88,11 @@ void NeuralNetwork::populateSecondLayer(){
 				for (int j = x - 1; j <= x + 2; j++){					
 					//ConvNeuron cn = m_inputLayer.GetNeurons[i][j];
 					//Connection conn(&m_inputLayer.GetNeurons[i][j], cn.GetWeights[i][j]);
-					Connection conn(prevLayer.GetNeurons[i][j], prevLayer.GetWeights[i][j]);
-					n.addConnection(conn);
+
+					/*vector<vector<Neuron>> &ns = &prevLayer.GetNeurons;
+					vector <vector<float>> &ws = &prevLayer.GetWeights;
+					Connection conn(ns[i][j], ws[i][j]);
+					n.addConnection(conn);*/
 				}
 			}
 			neuronRow.push_back(n);
@@ -122,8 +126,11 @@ void NeuralNetwork::populateThirdLayer(){
 			//Add Connections to neuron
 			for (int i = y - 1; i <= y + 2; i++){
 				for (int j = x - 1; j <= x + 2; j++){
-					Connection conn(prevLayer.GetNeurons[i][j], prevLayer.GetWeights[i][j]);
-					n.addConnection(conn);
+					/*vector<vector<Neuron>> ns = prevLayer.GetNeurons;
+					vector <vector<float>> ws = prevLayer.GetWeights;
+					Connection conn(&ns[i][j], ws[i][j]);
+					//Connection conn(prevLayer.GetNeurons[i][j], prevLayer.GetWeights[i][j]);
+					n.addConnection(conn);*/
 				}
 			}
 			neuronRow.push_back(n);
@@ -148,8 +155,11 @@ void NeuralNetwork::populateFourthLayer(){
 		Neuron n;
 		for (int i = 0; i < 9; i++){
 			for (int j = 0; j < 9; j++){
-				Connection conn(prevLayer.GetNeurons[i][j], weight);
-				n.addConnection(conn);
+				/*vector<vector<Neuron>> ns = prevLayer.GetNeurons;
+				vector <vector<float>> ws = prevLayer.GetWeights;
+				Connection conn(&ns[i][j], ws[i][j]);
+				//Connection conn(prevLayer.GetNeurons[i][j], weight);
+				n.addConnection(conn);*/
 			}
 		}
 		neurons.push_back(n);
@@ -171,8 +181,10 @@ void NeuralNetwork::populateOutputLayer(){
 	for (int i = 0; i < s; i++){
 		Neuron n;
 		for (int j = 0; j < t; j++){
-			Connection conn(prevLayer.GetNeurons[j], weight);
-			n.addConnection(conn);
+			/*vector<vector<Neuron>> ns = prevLayer.GetNeurons;
+			Connection conn(&ns[i][j], weight);
+			//Connection conn(prevLayer.GetNeurons[j], weight);
+			n.addConnection(conn);*/
 		}
 		neurons.push_back(n);
 	}
