@@ -54,12 +54,14 @@ void Neuron::SetConnections(vector<Connection> conns){
 	m_connections = conns;
 }
 
+void Neuron::addConnection(Connection c){
+	m_connections.push_back(c);
+}
 
 
 
 
 //#### Convolutional Neuron ##############################
-
 ConvNeuron:: ConvNeuron(){
 
 }
@@ -108,11 +110,15 @@ vector<Connection> ConvNeuron::GetConnections(){
 	return m_connections;
 }
 
+void ConvNeuron::addConnection(Connection c){
+	m_connections.push_back(c);
+}
+
+
 
 
 //#### Connection ########################################
-
-Connection:: Connection(Neuron *n, float weight)
+Connection::Connection(Neuron *n, float weight)
 	: m_neuron(n), m_weight(weight){
 }
 

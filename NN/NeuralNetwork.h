@@ -40,6 +40,7 @@ private:
 	ConvLayer m_thirdLayer;
 	FullConnLayer m_fourthLayer;
 	FullConnLayer m_outputLayer;
+	int m_actionSetSize;
 
 public:
 	NeuralNetwork();
@@ -69,7 +70,32 @@ public:
 
 	vector<FullConnLayer> GetFullConnLayers();
 	void SetFullConnLayers(vector<FullConnLayer> layers);
+
+	int GetActionSetSize();
+	void SetActionSetSize(int s);
 };
+
+
+
+//Connection
+class Connection{
+private:
+	Neuron *m_neuron;
+	float m_weight;
+
+public:
+	Connection(Neuron *n, float weight);
+
+	~Connection(){};
+
+
+	Neuron GetNeuron();
+	void SetNeuron(Neuron &n);
+
+	float GetWeight();
+	void SetWeight(float weight);
+};
+
 
 
 
@@ -97,6 +123,8 @@ public:
 
 	vector<Connection> GetConnections();
 	void SetConnections(vector<Connection> conns);
+
+	void addConnection(Connection c);
 };
 
 
@@ -123,28 +151,10 @@ public:
 
 	void SetConnections(vector<Connection> c);
 	vector<Connection> GetConnections();
+
+	void addConnection(Connection c);
 };
 
-
-
-//Connection
-class Connection{
-private:
-	Neuron *m_neuron;
-	float m_weight;
-
-public:
-	Connection(Neuron *n, float weight);
-
-	~Connection(){};
-
-
-	Neuron GetNeuron();
-	void SetNeuron(Neuron &n);
-
-	float GetWeight();
-	void SetWeight(float weight);
-};
 
 
 
@@ -216,4 +226,7 @@ public:
 	FullConnLayer();
 	
 	~FullConnLayer(){};
+
+	vector<Neuron> GetNeurons();
+	void SetNeurons(vector<Neuron> n);
 };

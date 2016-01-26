@@ -102,7 +102,14 @@ void ConvLayer::SetNeurons(vector<vector<ConvNeuron>> neurons){
 
 
 //#### Fully Connected Layer #############################
-/*
+
 FullConnLayer::FullConnLayer(){
 }
-*/
+
+vector<Neuron> FullConnLayer::GetNeurons(){
+	return m_neurons;
+}
+
+void FullConnLayer::SetNeurons(vector<Neuron> n){
+	m_neurons = n;
+}
