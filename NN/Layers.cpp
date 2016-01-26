@@ -33,6 +33,9 @@ void Layer::AddNeuronVector(vector<Neuron> ns){
 ConvLayer::ConvLayer(){
 }
 
+
+
+
 float ConvLayer::GetBias(){
 	return m_bias;
 }
@@ -40,6 +43,9 @@ float ConvLayer::GetBias(){
 void ConvLayer::SetBias(float bias){
 	m_bias = bias;
 }
+
+
+
 
 int ConvLayer::GetFilterNum(){
 	return m_filterNum;
@@ -49,6 +55,9 @@ void ConvLayer::SetFilterNum(int num){
 	m_filterNum = num;
 }
 
+
+
+
 int ConvLayer::GetFilterSize(){
 	return m_filterSize;
 }
@@ -57,6 +66,9 @@ void ConvLayer::SetFilterSize(int size){
 	m_filterSize = size;
 }
 
+
+
+
 int ConvLayer::GetStride(){
 	return m_stride;
 }
@@ -64,6 +76,20 @@ int ConvLayer::GetStride(){
 void ConvLayer::SetStride(int stride){
 	m_stride = stride; 
 }
+
+
+
+
+vector<vector<float>> ConvLayer::GetWeights(){
+	return m_weights;
+}
+
+void ConvLayer::SetWeights(vector<vector<float>> w){
+	m_weights = w;
+}
+
+
+
 
 vector<vector<ConvNeuron>> ConvLayer::GetNeurons(){
 	return m_neurons;

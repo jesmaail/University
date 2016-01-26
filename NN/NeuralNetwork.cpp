@@ -7,6 +7,11 @@ int main(){
 NeuralNetwork::NeuralNetwork(){
 	vector<vector<int>> img;
 	Preprocessor pp(img);
+	/*ConvLayer input = GetInputLayer();
+	ConvLayer second = GetSecondLayer();
+	ConvLayer third = GetThirdLayer();
+	FullConnLayer fourth = GetFourthLayer();
+	FullConnLayer output = GetOutputLayer();*/
 
 	populateInputLayer(pp.GetPPImg());
 }
@@ -15,6 +20,7 @@ NeuralNetwork::NeuralNetwork(){
 
 
 void NeuralNetwork::populateInputLayer(vector<vector<int>> img){
+	ConvLayer layer;
 	vector<ConvNeuron> neuronRow;
 	vector<vector<ConvNeuron>> neurons;
 
@@ -28,12 +34,17 @@ void NeuralNetwork::populateInputLayer(vector<vector<int>> img){
 	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
 	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
 
+	layer.SetWeights(filter);
+	layer.SetFilterNum(16);
+	layer.SetFilterSize(8);
+	layer.SetBias(0);
+
 	int imgSize = 84;
 	for (int i = 0; i < imgSize; i++){
 		for (int j=0; j<imgSize; j++){
 			ConvNeuron n;
 			n.SetValue(img[j][i]);
-			n.SetWeights(filter);
+			//n.SetWeights(filter);
 			neuronRow.push_back(n);
 		}
 
@@ -41,23 +52,41 @@ void NeuralNetwork::populateInputLayer(vector<vector<int>> img){
 		neuronRow.clear();
 	}
 
-	m_inputLayer.SetNeurons(neurons);
+	layer.SetNeurons(neurons);
+	SetInputLayer(layer);
+	//m_inputLayer.SetNeurons(neurons);
 }
 
 void NeuralNetwork::populateSecondLayer(){
+	ConvLayer layer;
+	ConvLayer prevLayer = GetInputLayer();
+	int stride = prevLayer.GetStride();
+
 	vector<ConvNeuron> neuronRow;
 	vector<vector<ConvNeuron>> neurons;
 
+	vector<vector<float>> filter;
+	filter.push_back({ 1, 2, 3, 4});
+	filter.push_back({ 1, 2, 3, 4});
+	filter.push_back({ 1, 2, 3, 4});
+	filter.push_back({ 1, 2, 3, 4});
+
+	layer.SetWeights(filter);
+	layer.SetFilterNum(32);
+	layer.SetFilterSize(4);
+	layer.SetBias(0);
+
 	int imgSize = 84 - 4;
-	for (int y = 3; y < imgSize; y+=4){
-		for (int x = 3; x < imgSize; x+=4){
+	for (int y = 3; y < imgSize; y += stride){
+		for (int x = 3; x < imgSize; x += stride){
 			ConvNeuron n;
 
 			//Add Connections to neuron
 			for (int i = y - 1; i <= y + 2; i++){
-				for (int j = x - 1; j <= x + 2; j++){
-					ConvNeuron cn = m_inputLayer.GetNeurons[i][j];
-					Connection conn(&m_inputLayer.GetNeurons[i][j], cn.GetWeights[i][j]);
+				for (int j = x - 1; j <= x + 2; j++){					
+					//ConvNeuron cn = m_inputLayer.GetNeurons[i][j];
+					//Connection conn(&m_inputLayer.GetNeurons[i][j], cn.GetWeights[i][j]);
+					Connection conn(prevLayer.GetNeurons[i][j], prevLayer.GetWeights[i][j]);
 				}
 			}
 			neuronRow.push_back(n);
@@ -66,7 +95,9 @@ void NeuralNetwork::populateSecondLayer(){
 		neuronRow.clear();
 	}
 
-	m_secondLayer.SetNeurons(neurons);
+	layer.SetNeurons(neurons);
+	SetSecondLayer(layer);
+	//m_secondLayer.SetNeurons(neurons);
 }
 
 void NeuralNetwork::populateThirdLayer(){

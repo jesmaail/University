@@ -177,6 +177,7 @@ private:
 	int m_filterNum;
 	int m_filterSize;
 	int m_stride;
+	vector<vector<float>> m_weights;
 
 	vector<vector<ConvNeuron>> m_neurons;
 
@@ -196,6 +197,9 @@ public:
 
 	int GetStride();
 	void SetStride(int stride);
+
+	vector<vector<float>> GetWeights();
+	void SetWeights(vector<vector<float>> w);
 
 	vector<vector<ConvNeuron>> GetNeurons();
 	void SetNeurons(vector<vector<ConvNeuron>> neurons);
