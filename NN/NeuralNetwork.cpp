@@ -1,7 +1,40 @@
 #pragma once
 #include "NeuralNetwork.h"
+#include <iostream>
 
 int main(){
+	vector<vector<int>> imagePH;
+	vector<int> phRow;
+	for (int i = 0; i < 84; i++){
+		for (int j = 0; j < 84; j++){
+			phRow.push_back(i*j);
+		}
+		imagePH.push_back(phRow);
+		phRow.clear();
+	}
+	//std::cout << imagePH.size() << ", " <<imagePH[0].size()<< std::endl;
+	
+	NeuralNetwork nn;
+	nn.populateInputLayer(imagePH);
+	vector<vector<ConvNeuron>> ns = nn.GetInputLayer().GetNeurons();
+	int output1 = ns.size();
+	int output2 = ns[0].size();
+	
+	std::cout << "Layer 1: " << output1 << ", " << output2 << std::endl;
+
+
+	nn.populateSecondLayer();
+	ns = nn.GetSecondLayer().GetNeurons();
+	output1 = ns.size();
+	output2 = ns[0].size();
+
+	std::cout << "Layer 2: " << output1 << ", " << output2 << std::endl;
+	
+	//################################
+	// Just to keep debug window open!
+	int ph;
+	std::cin >> ph;
+	//################################
 	return 0;
 }
 
@@ -41,8 +74,10 @@ void NeuralNetwork::populateInputLayer(vector<vector<int>> img){
 	layer.SetBias(0);
 
 	int imgSize = 84;
-	for (int i = 0; i < imgSize; i++){
-		for (int j=0; j<imgSize; j++){
+	int iBound = img.size();
+	int jBound = img[0].size();
+	for (int i = 0; i < iBound; i++){
+		for (int j = 0; j < jBound; j++){
 			ConvNeuron n;
 			n.SetValue(img[j][i]);
 			//n.SetWeights(filter); //now done to layer
@@ -78,6 +113,7 @@ void NeuralNetwork::populateSecondLayer(){
 	layer.SetFilterSize(4);
 	layer.SetBias(0);
 
+	//need to fix loop here!
 	int imgSize = 84 - 4;
 	for (int y = 3; y < imgSize; y += stride){
 		for (int x = 3; x < imgSize; x += stride){
