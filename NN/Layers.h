@@ -6,7 +6,7 @@ using std::vector;
 
 class Layer{
 private:
-	float m_bias;
+	double m_bias;
 	vector<Neuron> m_neurons;
 
 public:
@@ -15,8 +15,8 @@ public:
 	~Layer(){};
 
 
-	float GetBias();
-	void SetBias(float bias);
+	double GetBias();
+	void SetBias(double bias);
 
 	vector<Neuron> GetNeurons();
 	void AddNeuron(Neuron n);
@@ -28,12 +28,12 @@ public:
 
 class ConvLayer : Layer{
 private:
-	float m_bias;
+	double m_bias;
 
 	int m_filterNum;
 	int m_filterSize;
 	int m_stride;
-	vector<vector<float>> m_weights;
+	vector<vector<double>> m_weights;
 
 	vector<vector<ConvNeuron>> m_neurons;
 
@@ -42,8 +42,8 @@ public:
 
 	~ConvLayer(){};
 
-	float GetBias();
-	void SetBias(float bias);
+	double GetBias();
+	void SetBias(double bias);
 
 	int GetFilterNum();
 	void SetFilterNum(int num);
@@ -54,8 +54,8 @@ public:
 	int GetStride();
 	void SetStride(int stride);
 
-	vector<vector<float>> GetWeights();
-	void SetWeights(vector<vector<float>> w);
+	vector<vector<double>> GetWeights();
+	void SetWeights(vector<vector<double>> w);
 
 	vector<vector<ConvNeuron>> GetNeurons();
 	void SetNeurons(vector<vector<ConvNeuron>> neurons);
@@ -65,7 +65,7 @@ public:
 
 class FullConnLayer : Layer{
 private:
-	float m_bias;
+	double m_bias;
 	vector<Neuron> m_neurons;
 
 public:

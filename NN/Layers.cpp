@@ -4,11 +4,11 @@
 Layer::Layer(){
 }
 
-float Layer::GetBias(){
+double Layer::GetBias(){
 	return m_bias;
 }
 
-void Layer::SetBias(float bias){
+void Layer::SetBias(double bias){
 	m_bias = bias;
 }
 
@@ -33,11 +33,11 @@ ConvLayer::ConvLayer(){
 
 
 
-float ConvLayer::GetBias(){
+double ConvLayer::GetBias(){
 	return m_bias;
 }
 
-void ConvLayer::SetBias(float bias){
+void ConvLayer::SetBias(double bias){
 	m_bias = bias;
 }
 
@@ -77,11 +77,11 @@ void ConvLayer::SetStride(int stride){
 
 
 
-vector<vector<float>> ConvLayer::GetWeights(){
+vector<vector<double>> ConvLayer::GetWeights(){
 	return m_weights;
 }
 
-void ConvLayer::SetWeights(vector<vector<float>> w){
+void ConvLayer::SetWeights(vector<vector<double>> w){
 	m_weights = w;
 }
 

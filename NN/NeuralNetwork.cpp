@@ -25,7 +25,7 @@ void NeuralNetwork::populateInputLayer(vector<vector<int>> img){
 	vector<ConvNeuron> neuronRow;
 	vector<vector<ConvNeuron>> neurons;
 
-	vector<vector<float>> filter;
+	vector<vector<double>> filter;
 	filter.push_back({ 1, 2, 3, 4, 5, 6 ,7 ,8 });
 	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
 	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
@@ -67,7 +67,7 @@ void NeuralNetwork::populateSecondLayer(){
 	vector<ConvNeuron> neuronRow;
 	vector<vector<ConvNeuron>> neurons;
 
-	vector<vector<float>> filter;
+	vector<vector<double>> filter;
 	filter.push_back({ 1, 2, 3, 4});
 	filter.push_back({ 1, 2, 3, 4});
 	filter.push_back({ 1, 2, 3, 4});
@@ -90,7 +90,7 @@ void NeuralNetwork::populateSecondLayer(){
 					//Connection conn(&m_inputLayer.GetNeurons[i][j], cn.GetWeights[i][j]);
 
 					/*vector<vector<Neuron>> &ns = &prevLayer.GetNeurons;
-					vector <vector<float>> &ws = &prevLayer.GetWeights;
+					vector <vector<double>> &ws = &prevLayer.GetWeights;
 					Connection conn(ns[i][j], ws[i][j]);
 					n.addConnection(conn);*/
 				}
@@ -127,7 +127,7 @@ void NeuralNetwork::populateThirdLayer(){
 			for (int i = y - 1; i <= y + 2; i++){
 				for (int j = x - 1; j <= x + 2; j++){
 					/*vector<vector<Neuron>> ns = prevLayer.GetNeurons;
-					vector <vector<float>> ws = prevLayer.GetWeights;
+					vector <vector<double>> ws = prevLayer.GetWeights;
 					Connection conn(&ns[i][j], ws[i][j]);
 					//Connection conn(prevLayer.GetNeurons[i][j], prevLayer.GetWeights[i][j]);
 					n.addConnection(conn);*/
@@ -149,14 +149,14 @@ void NeuralNetwork::populateFourthLayer(){
 	ConvLayer prevLayer = GetThirdLayer();
 	vector<Neuron> neurons;
 
-	float weight = 0;
+	double weight = 0;
 	
 	for (int k = 0; k < 256; k++){
 		Neuron n;
 		for (int i = 0; i < 9; i++){
 			for (int j = 0; j < 9; j++){
 				/*vector<vector<Neuron>> ns = prevLayer.GetNeurons;
-				vector <vector<float>> ws = prevLayer.GetWeights;
+				vector <vector<double>> ws = prevLayer.GetWeights;
 				Connection conn(&ns[i][j], ws[i][j]);
 				//Connection conn(prevLayer.GetNeurons[i][j], weight);
 				n.addConnection(conn);*/
@@ -176,7 +176,7 @@ void NeuralNetwork::populateOutputLayer(){
 
 	int s = GetActionSetSize();
 	int t = prevLayer.GetNeurons().size();
-	float weight = 0;
+	double weight = 0;
 
 	for (int i = 0; i < s; i++){
 		Neuron n;

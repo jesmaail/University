@@ -2,7 +2,7 @@
 #include "NeuralNetwork.h"
 
 
-Connection::Connection(Neuron &n, float weight)
+Connection::Connection(Neuron &n, double weight)
 : m_neuron(&n), m_weight(weight){
 }
 
@@ -20,10 +20,10 @@ void Connection::SetNeuron(Neuron* n){
 
 
 
-float Connection::GetWeight(){
+double Connection::GetWeight(){
 	return m_weight;
 }
 
-void Connection::SetWeight(float weight){
+void Connection::SetWeight(double weight){
 	m_weight = weight;
 }

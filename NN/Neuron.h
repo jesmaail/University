@@ -8,24 +8,24 @@ class Connection;
 
 class Neuron{
 private:
-	float m_bias;
-	float m_value;
+	double m_bias;
+	double m_value;
 	vector<Connection> m_connections;
 
 public:
 	Neuron();
-	Neuron(float bias);
+	Neuron(double bias);
 
 	~Neuron(){};
 
-	float Activation();
-	float CalculateValue();
+	double Activation();
+	double CalculateValue();
 
-	float GetValue();
-	void SetValue(float value);
+	double GetValue();
+	void SetValue(double value);
 
-	float GetBias();
-	void SetBias(float bias);
+	double GetBias();
+	void SetBias(double bias);
 
 	vector<Connection> GetConnections();
 	void SetConnections(vector<Connection> conns);
@@ -38,23 +38,23 @@ public:
 
 class ConvNeuron : Neuron{
 private:
-	float m_bias;
-	float m_value;
-	vector<vector<float>> m_weights;
+	double m_bias;
+	double m_value;
+	vector<vector<double>> m_weights;
 	vector<Connection> m_connections;
 
 public:
 	ConvNeuron();
 	~ConvNeuron(){};
 
-	float GetBias();
-	void SetBias(float b);
+	double GetBias();
+	void SetBias(double b);
 
-	float GetValue();
-	void SetValue(float v);
+	double GetValue();
+	void SetValue(double v);
 
-	void SetWeights(vector<vector<float>> weights);
-	vector<vector<float>> GetWeights();
+	void SetWeights(vector<vector<double>> weights);
+	vector<vector<double>> GetWeights();
 
 	void SetConnections(vector<Connection> c);
 	vector<Connection> GetConnections();

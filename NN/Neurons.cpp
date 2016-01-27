@@ -6,19 +6,19 @@ Neuron::Neuron(){
 	SetBias(0);
 }
 
-Neuron::Neuron(float bias)
+Neuron::Neuron(double bias)
 	: m_bias(bias){
 }
 
 
 
 
-float Neuron::Activation(){
+double Neuron::Activation(){
 	//sigmoid functionr
 	return 0; //ph
 }
 
-float Neuron::CalculateValue(){
+double Neuron::CalculateValue(){
 	//foreach loop here with summation including bias and weights
 	return 0; //ph
 }
@@ -26,22 +26,22 @@ float Neuron::CalculateValue(){
 
 
 
-float Neuron::GetValue(){
+double Neuron::GetValue(){
 	return m_value;
 }
 
-void Neuron::SetValue(float value){
+void Neuron::SetValue(double value){
 	m_value = value;
 }
 
 
 
 
-float Neuron::GetBias(){
+double Neuron::GetBias(){
 	return m_bias;
 }
 
-void Neuron::SetBias(float bias){
+void Neuron::SetBias(double bias){
 	m_bias = bias;
 }
 
@@ -70,33 +70,33 @@ ConvNeuron:: ConvNeuron(){
 
 
 
-float ConvNeuron::GetBias(){
+double ConvNeuron::GetBias(){
 	return m_bias;
 }
 
-void ConvNeuron::SetBias(float b){
+void ConvNeuron::SetBias(double b){
 	m_bias = b;
 }
 
 
 
 
-float ConvNeuron::GetValue(){
+double ConvNeuron::GetValue(){
 	return m_value;
 }
 
-void ConvNeuron::SetValue(float v){
+void ConvNeuron::SetValue(double v){
 	m_value = v;
 }
 
 
 
 
-void ConvNeuron::SetWeights(vector<vector<float>> weights){
+void ConvNeuron::SetWeights(vector<vector<double>> weights){
 	m_weights = weights;
 }
 
-vector<vector<float>> ConvNeuron::GetWeights(){
+vector<vector<double>> ConvNeuron::GetWeights(){
 	return m_weights;
 }
 

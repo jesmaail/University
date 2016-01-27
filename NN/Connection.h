@@ -6,10 +6,10 @@ class Neuron;
 class Connection{
 private:
 	Neuron *m_neuron;
-	float m_weight;
+	double m_weight;
 
 public:
-	Connection(Neuron &n, float weight);
+	Connection(Neuron &n, double weight);
 
 	~Connection(){};
 
@@ -17,6 +17,6 @@ public:
 	Neuron* GetNeuron();
 	void SetNeuron(Neuron* n);
 
-	float GetWeight();
-	void SetWeight(float weight);
+	double GetWeight();
+	void SetWeight(double weight);
 };
