@@ -26,7 +26,7 @@ public:
 
 
 
-class ConvLayer : Layer{
+class ConvLayer : public Layer{
 private:
 	double m_bias;
 
@@ -54,7 +54,7 @@ public:
 	int GetStride();
 	void SetStride(int stride);
 
-	vector<vector<double>> GetWeights();
+	vector<vector<double>> &GetWeights();
 	void SetWeights(vector<vector<double>> w);
 
 	vector<vector<ConvNeuron>> GetNeurons();
@@ -63,7 +63,7 @@ public:
 
 
 
-class FullConnLayer : Layer{
+class FullConnLayer : public Layer{
 private:
 	double m_bias;
 	vector<Neuron> m_neurons;

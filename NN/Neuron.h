@@ -36,7 +36,7 @@ public:
 
 
 
-class ConvNeuron : Neuron{
+class ConvNeuron : public Neuron{
 private:
 	double m_bias;
 	double m_value;
@@ -60,4 +60,5 @@ public:
 	vector<Connection> GetConnections();
 
 	void addConnection(Connection c);
+	void addConnection(ConvConnection c);
 };

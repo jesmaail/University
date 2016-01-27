@@ -2,7 +2,7 @@
 #include "NeuralNetwork.h"
 
 
-Connection::Connection(Neuron &n, double weight)
+Connection::Connection(Neuron n, double weight)
 : m_neuron(&n), m_weight(weight){
 }
 
@@ -26,4 +26,16 @@ double Connection::GetWeight(){
 
 void Connection::SetWeight(double weight){
 	m_weight = weight;
+}
+
+
+
+
+ConvConnection::ConvConnection(ConvNeuron n, double w){
+	m_neuron = &n;
+	m_weight = w;
+}
+
+ConvNeuron* ConvConnection::GetNeuron(){
+	return m_neuron;
 }

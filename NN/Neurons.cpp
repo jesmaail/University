@@ -114,3 +114,7 @@ vector<Connection> ConvNeuron::GetConnections(){
 void ConvNeuron::addConnection(Connection c){
 	m_connections.push_back(c);
 }
+
+void ConvNeuron::addConnection(ConvConnection c){
+	m_connections.push_back(c);
+}

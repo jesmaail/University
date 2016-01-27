@@ -45,7 +45,7 @@ void NeuralNetwork::populateInputLayer(vector<vector<int>> img){
 		for (int j=0; j<imgSize; j++){
 			ConvNeuron n;
 			n.SetValue(img[j][i]);
-			//n.SetWeights(filter);
+			//n.SetWeights(filter); //now done to layer
 			neuronRow.push_back(n);
 		}
 
@@ -85,14 +85,16 @@ void NeuralNetwork::populateSecondLayer(){
 
 			//Add Connections to neuron
 			for (int i = y - 1; i <= y + 2; i++){
-				for (int j = x - 1; j <= x + 2; j++){					
-					//ConvNeuron cn = m_inputLayer.GetNeurons[i][j];
-					//Connection conn(&m_inputLayer.GetNeurons[i][j], cn.GetWeights[i][j]);
+				for (int j = x - 1; j <= x + 2; j++){
+					ConvLayer* cl = &GetInputLayer();
+					vector<vector<ConvNeuron>> cns = cl->GetNeurons();
+					vector<vector<double>> ws = cl->GetWeights();
 
-					/*vector<vector<Neuron>> &ns = &prevLayer.GetNeurons;
-					vector <vector<double>> &ws = &prevLayer.GetWeights;
-					Connection conn(ns[i][j], ws[i][j]);
-					n.addConnection(conn);*/
+					ConvNeuron cn = cns[i][j];
+					double w = ws[i][j];
+
+					ConvConnection conn(cn, w);
+					n.addConnection(conn);
 				}
 			}
 			neuronRow.push_back(n);
@@ -126,11 +128,15 @@ void NeuralNetwork::populateThirdLayer(){
 			//Add Connections to neuron
 			for (int i = y - 1; i <= y + 2; i++){
 				for (int j = x - 1; j <= x + 2; j++){
-					/*vector<vector<Neuron>> ns = prevLayer.GetNeurons;
-					vector <vector<double>> ws = prevLayer.GetWeights;
-					Connection conn(&ns[i][j], ws[i][j]);
-					//Connection conn(prevLayer.GetNeurons[i][j], prevLayer.GetWeights[i][j]);
-					n.addConnection(conn);*/
+					ConvLayer* cl = &GetInputLayer();
+					vector<vector<ConvNeuron>> cns = cl->GetNeurons();
+					vector<vector<double>> ws = cl->GetWeights();
+
+					ConvNeuron cn = cns[i][j];
+					double w = ws[i][j];
+
+					ConvConnection conn(cn, w);
+					n.addConnection(conn);
 				}
 			}
 			neuronRow.push_back(n);
@@ -155,11 +161,15 @@ void NeuralNetwork::populateFourthLayer(){
 		Neuron n;
 		for (int i = 0; i < 9; i++){
 			for (int j = 0; j < 9; j++){
-				/*vector<vector<Neuron>> ns = prevLayer.GetNeurons;
-				vector <vector<double>> ws = prevLayer.GetWeights;
-				Connection conn(&ns[i][j], ws[i][j]);
-				//Connection conn(prevLayer.GetNeurons[i][j], weight);
-				n.addConnection(conn);*/
+				ConvLayer* cl = &GetInputLayer();
+					vector<vector<ConvNeuron>> cns = cl->GetNeurons();
+					vector<vector<double>> ws = cl->GetWeights();
+
+					ConvNeuron cn = cns[i][j];
+					double w = ws[i][j];
+
+					ConvConnection conn(cn, w);
+					n.addConnection(conn);
 			}
 		}
 		neurons.push_back(n);

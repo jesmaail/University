@@ -77,7 +77,7 @@ void ConvLayer::SetStride(int stride){
 
 
 
-vector<vector<double>> ConvLayer::GetWeights(){
+vector<vector<double>> &ConvLayer::GetWeights(){
 	return m_weights;
 }
 
