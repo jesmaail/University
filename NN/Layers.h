@@ -54,7 +54,7 @@ public:
 	int GetStride();
 	void SetStride(int stride);
 
-	vector<vector<double>> &GetWeights();
+	vector<vector<double>> GetWeights();
 	void SetWeights(vector<vector<double>> w);
 
 	vector<vector<ConvNeuron>> GetNeurons();

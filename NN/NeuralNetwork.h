@@ -1,7 +1,7 @@
 #pragma once
 #include "Preprocessor.h"
-#include "Layers.h"
 #include "Neuron.h"
+#include "Layers.h"
 #include "Connection.h"
 #include <vector>
 
