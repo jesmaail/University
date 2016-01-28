@@ -29,6 +29,28 @@ int main(){
 	output2 = ns[0].size();
 
 	std::cout << "Layer 2: " << output1 << ", " << output2 << std::endl;
+
+	nn.populateThirdLayer();
+	ns = nn.GetThirdLayer().GetNeurons();
+	output1 = ns.size();
+	output2 = ns[0].size();
+
+	std::cout << "Layer 3: " << output1 << ", " << output2 << std::endl;
+
+
+	
+	nn.populateFourthLayer();
+	vector<Neuron> n = nn.GetFourthLayer().GetNeurons();
+	output1 = n.size();
+
+	std::cout << "Layer 4: " << output1 << std::endl;
+
+	nn.SetActionSetSize(4);
+	nn.populateOutputLayer();
+	n = nn.GetOutputLayer().GetNeurons();	
+	output1 = n.size();
+
+	std::cout << "Layer 5: " << output1 << std::endl;
 	
 	//################################
 	// Just to keep debug window open!
@@ -111,6 +133,7 @@ void NeuralNetwork::populateSecondLayer(){
 	layer.SetWeights(filter);
 	layer.SetFilterNum(32);
 	layer.SetFilterSize(4);
+	layer.SetStride(2);
 	layer.SetBias(0);
 
 	vector<vector<ConvNeuron>> cns = prevLayer.GetNeurons();
@@ -141,14 +164,6 @@ void NeuralNetwork::populateSecondLayer(){
 							n.addConnection(ConvConnection(cns[j][i], ws[wx][wy]));
 						}
 					}
-					/*n.addConnection(ConvConnection(cns[j][i], ws[0][0]));
-					n.addConnection(ConvConnection(cns[j][i], ws[1][0]));
-					n.addConnection(ConvConnection(cns[j][i], ws[2][0]));
-					n.addConnection(ConvConnection(cns[j][i], ws[3][0]));
-					n.addConnection(ConvConnection(cns[j][i], ws[4][0]));
-					n.addConnection(ConvConnection(cns[j][i], ws[5][0]));
-					n.addConnection(ConvConnection(cns[j][i], ws[6][0]));
-					n.addConnection(ConvConnection(cns[j][i], ws[7][0]));*/
 				}
 			}
 			neuronRow.push_back(n);
@@ -165,31 +180,33 @@ void NeuralNetwork::populateSecondLayer(){
 //Convolutional
 void NeuralNetwork::populateThirdLayer(){
 	ConvLayer layer;
-	ConvLayer* prevLayer = &GetSecondLayer();
-	int stride = prevLayer->GetStride();
+	ConvLayer prevLayer = GetSecondLayer();
+	int stride = prevLayer.GetStride();
 
 	vector<ConvNeuron> neuronRow;
 	vector<vector<ConvNeuron>> neurons;
 
 	layer.SetBias(0);
 
+	vector<vector<ConvNeuron>> cns = prevLayer.GetNeurons();
+	vector<vector<double>> ws = prevLayer.GetWeights();
+
 	//needs new image size and for loop bounds for the smaller filter
-	int imgSize = 84 - 4;
-	for (int y = 3; y < imgSize; y += stride){
-		for (int x = 3; x < imgSize; x += stride){
+	int imgSize = 20 - 2;
+	for (int y = 1; y < imgSize; y += stride){
+		for (int x = 1; x < imgSize; x += stride){
 			ConvNeuron n;
 
 			//Add Connections to neuron
 			for (int i = y - 1; i <= y + 2; i++){
-				for (int j = x - 1; j <= x + 2; j++){
-					vector<vector<ConvNeuron>> cns = prevLayer->GetNeurons();
-					vector<vector<double>> ws = prevLayer->GetWeights();
+				for (int j = x - 1; j <= x + 2; j++){	
 
-					ConvNeuron cn = cns[i][j];
-					double w = ws[i][j];
-
-					//ConvConnection conn(cn, w);
-					//n.addConnection(conn);
+					//Loop through weights (is it too slow?)
+					for (int wy = 0; wy < 4; wy++){						
+						for (int wx = 0; wx < 4; wx++){
+							n.addConnection(ConvConnection(cns[j][i], ws[wx][wy]));
+						}
+					}
 				}
 			}
 			neuronRow.push_back(n);
@@ -205,16 +222,17 @@ void NeuralNetwork::populateThirdLayer(){
 //Fully Connected
 void NeuralNetwork::populateFourthLayer(){
 	FullConnLayer layer;
-	ConvLayer *prevLayer = &GetThirdLayer();
+	ConvLayer prevLayer = GetThirdLayer();
 	vector<Neuron> neurons;
 
 	double weight = 0;
+
+	vector<vector<ConvNeuron>> cns = prevLayer.GetNeurons();
 	
 	for (int k = 0; k < 256; k++){
 		Neuron n;
 		for (int i = 0; i < 9; i++){
 			for (int j = 0; j < 9; j++){
-				vector<vector<ConvNeuron>> cns = prevLayer->GetNeurons();
 				ConvNeuron cn = cns[i][j];
 
 				ConvConnection conn(cn, weight);
