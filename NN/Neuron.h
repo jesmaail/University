@@ -46,6 +46,7 @@ private:
 	double m_value;
 	Filter m_weights;
 	ConnectionSet m_connections;
+	vector<pair<Neuron*, double>> m_conn;
 
 public:
 	ConvNeuron();
