@@ -14,6 +14,7 @@ private:
 	double m_bias;
 	double m_value;
 	ConnectionSet m_connections;
+	vector<pair<Neuron*, double>> m_conn;
 
 public:
 	Neuron();
