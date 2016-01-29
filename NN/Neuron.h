@@ -6,11 +6,13 @@ using std::vector;
 
 class Connection;
 
+typedef vector<Connection> ConnectionSet;
+
 class Neuron{
 private:
 	double m_bias;
 	double m_value;
-	vector<Connection> m_connections;
+	ConnectionSet m_connections;
 
 public:
 	Neuron();
@@ -27,21 +29,21 @@ public:
 	double GetBias();
 	void SetBias(double bias);
 
-	vector<Connection> GetConnections();
-	void SetConnections(vector<Connection> conns);
+	ConnectionSet GetConnections();
+	void SetConnections(ConnectionSet c);
 
 	void addConnection(Connection c);
 };
 
 
-
+typedef vector<vector<double>> Filter;
 
 class ConvNeuron : public Neuron{
 private:
 	double m_bias;
 	double m_value;
-	vector<vector<double>> m_weights;
-	vector<Connection> m_connections;
+	Filter m_weights;
+	ConnectionSet m_connections;
 
 public:
 	ConvNeuron();
@@ -53,11 +55,11 @@ public:
 	double GetValue();
 	void SetValue(double v);
 
-	void SetWeights(vector<vector<double>> weights);
-	vector<vector<double>> GetWeights();
+	void SetWeights(Filter w);
+	Filter GetWeights();
 
-	void SetConnections(vector<Connection> c);
-	vector<Connection> GetConnections();
+	void SetConnections(ConnectionSet c);
+	ConnectionSet GetConnections();
 
 	void addConnection(Connection c);
 	void addConnection(ConvConnection c);

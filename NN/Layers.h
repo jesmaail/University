@@ -4,10 +4,17 @@
 
 using std::vector;
 
+typedef vector<Neuron> NeuronSet;
+typedef vector<ConvNeuron> ConvRow;
+typedef vector<vector<ConvNeuron>> ConvNeuronSet;
+typedef vector<vector<ConvNeuron>> FeatureMap;
+typedef vector<FeatureMap> FMS;
+typedef vector<Filter> Filters;
+
 class Layer{
 private:
 	double m_bias;
-	vector<Neuron> m_neurons;
+	NeuronSet m_neurons;
 
 public:
 	Layer();
@@ -18,9 +25,9 @@ public:
 	double GetBias();
 	void SetBias(double bias);
 
-	vector<Neuron> GetNeurons();
+	NeuronSet GetNeurons();
 	void AddNeuron(Neuron n);
-	void AddNeuronVector(vector<Neuron> ns);
+	void AddNeuronVector(NeuronSet ns);
 };
 
 
@@ -33,9 +40,10 @@ private:
 	int m_filterNum;
 	int m_filterSize;
 	int m_stride;
-	vector<vector<double>> m_weights;
-
-	vector<vector<ConvNeuron>> m_neurons;
+	Filter m_weights;
+	Filters m_filters;
+	ConvNeuronSet m_neurons;
+	FMS m_featureMaps;
 
 public:
 	ConvLayer();
@@ -54,11 +62,19 @@ public:
 	int GetStride();
 	void SetStride(int stride);
 
-	vector<vector<double>> GetWeights();
-	void SetWeights(vector<vector<double>> w);
+	Filter GetWeights();
+	void SetWeights(Filter w);
 
-	vector<vector<ConvNeuron>> GetNeurons();
-	void SetNeurons(vector<vector<ConvNeuron>> neurons);
+	ConvNeuronSet GetNeurons();
+	void SetNeurons(ConvNeuronSet neurons);
+
+	Filters GetFilters();
+	void SetFilters(Filters f);
+
+	FMS GetFeatureMaps();
+	FeatureMap GetFeatureMapAt(int i);
+	void SetFeatureMaps(FMS f);
+	void addFeatureMap(FeatureMap f);
 };
 
 
@@ -66,13 +82,13 @@ public:
 class FullConnLayer : public Layer{
 private:
 	double m_bias;
-	vector<Neuron> m_neurons;
+	NeuronSet m_neurons;
 
 public:
 	FullConnLayer();
 
 	~FullConnLayer(){};
 
-	vector<Neuron> GetNeurons();
-	void SetNeurons(vector<Neuron> n);
+	NeuronSet GetNeurons();
+	void SetNeurons(NeuronSet n);
 };

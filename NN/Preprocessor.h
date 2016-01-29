@@ -3,14 +3,16 @@
 
 using std::vector;
 
+typedef vector<vector<int>> Image;
+
 //ALE now outputs grayscale(?)
 class Preprocessor{
 private:
 
 public:
-	Preprocessor(vector<vector<int>>);
+	Preprocessor(Image i);
 
 	~Preprocessor(){};
 
-	vector<vector<int>> GetPPImg();
+	Image GetPPImg();
 };

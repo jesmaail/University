@@ -14,7 +14,7 @@ Neuron::Neuron(double bias)
 
 
 double Neuron::Activation(){
-	//sigmoid functionr
+	//sigmoid function
 	return 0; //ph
 }
 
@@ -48,12 +48,12 @@ void Neuron::SetBias(double bias){
 
 
 
-vector<Connection> Neuron::GetConnections(){
+ConnectionSet Neuron::GetConnections(){
 	return m_connections;
 }
 
-void Neuron::SetConnections(vector<Connection> conns){
-	m_connections = conns;
+void Neuron::SetConnections(ConnectionSet c){
+	m_connections = c;
 }
 
 void Neuron::addConnection(Connection c){
@@ -92,22 +92,22 @@ void ConvNeuron::SetValue(double v){
 
 
 
-void ConvNeuron::SetWeights(vector<vector<double>> weights){
-	m_weights = weights;
+void ConvNeuron::SetWeights(Filter w){
+	m_weights = w;
 }
 
-vector<vector<double>> ConvNeuron::GetWeights(){
+Filter ConvNeuron::GetWeights(){
 	return m_weights;
 }
 
 
 
 
-void ConvNeuron::SetConnections(vector<Connection> c){
+void ConvNeuron::SetConnections(ConnectionSet c){
 	m_connections = c;
 }
 
-vector<Connection> ConvNeuron::GetConnections(){
+ConnectionSet ConvNeuron::GetConnections(){
 	return m_connections;
 }
 
