@@ -15,6 +15,7 @@ int main(){
 	//std::cout << imagePH.size() << ", " <<imagePH[0].size()<< std::endl;
 	
 	int output1, output2, output3;
+	FMS fs;
 	NeuralNetwork nn;
 	nn.populateInputLayer(imagePH);
 	ConvNeuronSet ns = nn.GetInputLayer().GetNeurons();
@@ -26,7 +27,7 @@ int main(){
 	nn.populateSecondLayer();
 	//ns = nn.GetSecondLayer().GetNeurons();
 	ns = nn.GetSecondLayer().GetFeatureMapAt(0);
-	FMS fs = nn.GetSecondLayer().GetFeatureMaps();
+	fs = nn.GetSecondLayer().GetFeatureMaps();
 	output1 = fs.size();
 	output2 = fs[0].size();
 	output3 = fs[0][0].size();
@@ -35,16 +36,22 @@ int main(){
 	//output2 = ns[0].size();
 	std::cout << "Layer 2: " << output1 << ", " << output2  << ", " << output3 << std::endl;
 
-	/*nn.populateThirdLayer();
-	ns = nn.GetThirdLayer().GetNeurons();
+	nn.populateThirdLayer();
+	ns = nn.GetThirdLayer().GetFeatureMapAt(0);
+	fs = nn.GetThirdLayer().GetFeatureMaps();
+	output1 = fs.size();
+	output2 = fs[0].size();
+	output3 = fs[0][0].size();
+	std::cout << "Layer 3: " << output1 << ", " << output2 << ", " << output3 << std::endl;
+	/*ns = nn.GetThirdLayer().GetNeurons();
 	output1 = ns.size();
 	output2 = ns[0].size();
 
-	std::cout << "Layer 3: " << output1 << ", " << output2 << std::endl;
+	std::cout << "Layer 3: " << output1 << ", " << output2 << std::endl;*/
 
 
 	
-	nn.populateFourthLayer();
+	/*nn.populateFourthLayer();
 	NeuronSet n = nn.GetFourthLayer().GetNeurons();
 	output1 = n.size();
 
@@ -98,7 +105,7 @@ void NeuralNetwork::populateInputLayer(Image img){
 
 	Filters fs;
 	
-	for (int i = 0; i < 16; i++){ // should be < 16
+	for (int i = 0; i < 16; i++){ 
 		fs.push_back(filter);
 	}
 	layer.SetFilters(fs);
@@ -170,7 +177,7 @@ void NeuralNetwork::populateSecondLayer(){
 					for (int k = x - 3; k <= x + 4; k++){
 						for (int wy = 0; wy < 8; wy++){
 							for (int wx = 0; wx < 8; wx++){
-								n.addConnection(ConvConnection(cns[j][i], ws[wx][wy]));
+								n.addConnection(ConvConnection(cns[j][k], ws[wx][wy]));
 							}
 						}
 					}
@@ -225,11 +232,46 @@ void NeuralNetwork::populateThirdLayer(){
 
 	layer.SetBias(0);
 
-	ConvNeuronSet cns = prevLayer.GetNeurons();
-	Filter ws = prevLayer.GetWeights();
+	//ConvNeuronSet cns = prevLayer.GetNeurons();
+	//Filter ws = prevLayer.GetWeights();
+	Filters fils = prevLayer.GetFilters();
+	int imgSize = 20-2;
+
+	int FMSize = prevLayer.GetFeatureMaps().size();
+
+	for (int c = 0; c < FMSize; c++){
+		FeatureMap cns = prevLayer.GetFeatureMapAt(c);
+
+		for (int i = 0; i < fils.size(); i++){
+			Filter ws = fils[i];
+			for (int y = 1; y < imgSize; y += stride){
+				for (int x = 1; x < imgSize; x += stride){
+					ConvNeuron n;
+
+					for (int j = y - 1; j <= y + 2; j++){
+						for (int k = x - 1; k <= x + 2; k++){
+
+							for (int wy = 0; wy < 4; wy++){
+								for (int wx = 0; wx < 4; wx++){
+									n.addConnection(ConvConnection(cns[j][k], ws[wx][wy]));
+								}
+							}
+
+						}
+					}
+					neuronRow.push_back(n);
+				}
+				neurons.push_back(neuronRow);
+				neuronRow.clear();
+			}
+			layer.addFeatureMap(neurons);
+			neurons.clear();
+		}
+	}
+	SetThirdLayer(layer);
 
 	//needs new image size and for loop bounds for the smaller filter
-	int imgSize = 20 - 2;
+	/*int imgSize = 20 - 2;
 	for (int y = 1; y < imgSize; y += stride){
 		for (int x = 1; x < imgSize; x += stride){
 			ConvNeuron n;
@@ -253,7 +295,7 @@ void NeuralNetwork::populateThirdLayer(){
 	}
 
 	layer.SetNeurons(neurons);
-	SetThirdLayer(layer);
+	SetThirdLayer(layer);*/
 }
 
 //Fully Connected
