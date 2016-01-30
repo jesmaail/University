@@ -134,3 +134,7 @@ vector<Neuron> FullConnLayer::GetNeurons(){
 void FullConnLayer::SetNeurons(vector<Neuron> n){
 	m_neurons = n;
 }
+
+void FullConnLayer::AddNeuron(Neuron n){
+	m_neurons.push_back(n);
+}

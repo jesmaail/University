@@ -91,4 +91,5 @@ public:
 
 	NeuronSet GetNeurons();
 	void SetNeurons(NeuronSet n);
+	void AddNeuron(Neuron n);
 };

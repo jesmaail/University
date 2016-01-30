@@ -23,9 +23,9 @@ int main(){
 	
 	int output1, output2, output3;
 	FMS fs;
-	NeuralNetwork nn;
-	ConvNeuronSet ns;
-	nn.populateInputLayer(imgs);
+	NeuralNetwork nn(imgs);
+	/*ConvNeuronSet ns;
+	nn.populateInputLayer();
 	ns = nn.GetInputLayer().GetFeatureMapAt(0);
 	fs = nn.GetInputLayer().GetFeatureMaps();
 	output1 = fs.size();
@@ -37,7 +37,7 @@ int main(){
 	output1 = ns.size();
 	output2 = ns[0].size();	
 	std::cout << "Layer 1: " << output1 << ", " << output2 << std::endl;
-	*/
+	
 
 
 	nn.populateSecondLayer();
@@ -69,7 +69,7 @@ int main(){
 	n = nn.GetOutputLayer().GetNeurons();	
 	output1 = n.size();
 	std::cout << "Layer 5: " << output1 << std::endl;
-
+	*/
 	
 	//################################
 	// Just to keep debug window open!
@@ -80,41 +80,145 @@ int main(){
 	return 0;
 }
 
-NeuralNetwork::NeuralNetwork(){
-	//Image img;
-	//Preprocessor pp(img);
-	//populateInputLayer(pp.GetPPImg());
+NeuralNetwork::NeuralNetwork(Images imgs){
+	m_input = imgs;
+	//Set Layer filters 
+	Filter filter;
+	Filters fs;
+	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
+	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
+	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
+	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
+	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
+	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
+	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
+	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });	
+	for (uint i = 0; i < 4; i++){
+		fs.push_back(filter);
+	}
+	m_inputLayer.SetFilters(fs);
+
+	filter.clear();
+	fs.clear();
+	filter.push_back({ 1, 2, 3, 4 });
+	filter.push_back({ 1, 2, 3, 4 });
+	filter.push_back({ 1, 2, 3, 4 });
+	filter.push_back({ 1, 2, 3, 4 });
+	for (int i = 0; i < 2; i++){
+		fs.push_back(filter);
+	}
+	m_secondLayer.SetFilters(fs);
+	SetActionSetSize(4);
+
+	//Call Forward Prop
+	ForwardProp();
+
+	//Call backward Prop
+}
+
+void::NeuralNetwork::ForwardProp(){
+	int output1, output2, output3;
+	FMS fs;
+	ConvNeuronSet ns;
+
+
+	populateInputLayer();
+	//Test
+	ns = GetInputLayer().GetFeatureMapAt(0);
+	fs = GetInputLayer().GetFeatureMaps();
+	output1 = fs.size();
+	output2 = fs[0].size();
+	output3 = fs[0][0].size();
+	std::cout << "Layer 1: " << output1 << ", " << output2 << ", " << output3 << std::endl;
+	//----
+
+	populateSecondLayer();
+	//Test
+	ns = GetSecondLayer().GetFeatureMapAt(0);
+	fs = GetSecondLayer().GetFeatureMaps();
+	output1 = fs.size();
+	output2 = fs[0].size();
+	output3 = fs[0][0].size();
+	std::cout << "Layer 2: " << output1 << ", " << output2 << ", " << output3 << std::endl;
+	//----
+	for (ConvRow cr : m_secondLayer.GetNeurons()){
+		for (ConvNeuron n : cr){
+			n.SetValue(n.CalculateValue());
+			n.SetValue(n.Activation());
+		}
+	}
+	std::cout << "Neuron calcs done..." << std::endl;
+
+
+	populateThirdLayer();
+	//Test
+	ns = GetThirdLayer().GetFeatureMapAt(0);
+	fs = GetThirdLayer().GetFeatureMaps();
+	output1 = fs.size();
+	output2 = fs[0].size();
+	output3 = fs[0][0].size();
+	std::cout << "Layer 3: " << output1 << ", " << output2 << ", " << output3 << std::endl;
+	//----
+	for (ConvRow cr : m_thirdLayer.GetNeurons()){
+		for (ConvNeuron n : cr){
+			n.SetValue(n.CalculateValue());
+			n.SetValue(n.Activation());
+		}
+	}
+	std::cout << "Neuron calcs done..." << std::endl;
+
+
+	populateFourthLayer();
+	//Test
+	NeuronSet n = GetFourthLayer().GetNeurons();
+	output1 = n.size();
+	std::cout << "Layer 4: " << output1 << std::endl;
+	//----
+	for (Neuron n : m_fourthLayer.GetNeurons()){
+		n.SetValue(n.CalculateValue());
+		n.SetValue(n.Activation());
+	}
+	std::cout << "Neuron calcs done..." << std::endl;
+
+
+	populateOutputLayer();
+	//Test
+	n = GetOutputLayer().GetNeurons();
+	output1 = n.size();
+	std::cout << "Layer 5: " << output1 << std::endl;
+	//----
+	for (Neuron n : m_outputLayer.GetNeurons()){
+		n.SetValue(n.CalculateValue());
+		n.SetValue(n.Activation());
+		std::cout << n.GetValue() << std::endl;
+	}
 }
 
 
 
 //Convolutional
-void NeuralNetwork::populateInputLayer(vector<Image> imgs){
-	ConvLayer layer;
+void NeuralNetwork::populateInputLayer(){
+	//ConvLayer layer;
 	ConvRow neuronRow;
 	ConvNeuronSet neurons;
 
-	Filter filter;
-	filter.push_back({ 1, 2, 3, 4, 5, 6 ,7 ,8 });
-	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
-	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
-	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
-	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
-	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
-	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
-	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
-
-	Filters fs;
 	
-	for (uint i = 0; i < 4; i++){ // <16  or 4 (feature map confusion)
-		fs.push_back(filter);
-	}
+	//m_inputLayer.SetWeights(filter);
+	m_inputLayer.SetFilterSize(8);
+	m_inputLayer.SetFilterNum(16);
+	m_inputLayer.SetStride(4);
+	m_inputLayer.SetBias(1);
+
+	/*
 	layer.SetFilters(fs);
 	layer.SetWeights(filter);
 	layer.SetFilterNum(16);
 	layer.SetFilterSize(8);
 	layer.SetStride(4);
 	layer.SetBias(0);
+	*/
+	Images imgs = m_input;
+
 	for (Image img : imgs){
 		int imgSize = 84;
 		int iBound = img.size();
@@ -129,44 +233,40 @@ void NeuralNetwork::populateInputLayer(vector<Image> imgs){
 			neurons.push_back(neuronRow);
 			neuronRow.clear();
 		}
-		layer.addFeatureMap(neurons);
+		m_inputLayer.addFeatureMap(neurons);
+		//layer.addFeatureMap(neurons);
 	}
-	//layer.SetNeurons(neurons);
-	SetInputLayer(layer);
+	//SetInputLayer(layer);
 }
 
 //Convolutional
 void NeuralNetwork::populateSecondLayer(){
-	ConvLayer layer;
-	ConvLayer prevLayer = GetInputLayer();
-	int stride = prevLayer.GetStride();
+	//ConvLayer layer;
+	//ConvLayer prevLayer = GetInputLayer();
+	//int stride = prevLayer.GetStride();
+	int stride = m_inputLayer.GetStride();
 
 	ConvRow neuronRow;
 	ConvNeuronSet neurons;
 
-	Filter filter;
-	filter.push_back({ 1, 2, 3, 4});
-	filter.push_back({ 1, 2, 3, 4});
-	filter.push_back({ 1, 2, 3, 4});
-	filter.push_back({ 1, 2, 3, 4});
-
-	Filters fs;
-
-	for (int i = 0; i < 2; i++){// < 32  or 2 (feature map confusion)
-		fs.push_back(filter);
-	}
-	layer.SetFilters(fs);
-
+	
+	//m_secondLayer.SetWeights(filter);
+	m_secondLayer.SetFilterNum(32);
+	m_secondLayer.SetFilterSize(4);
+	m_secondLayer.SetStride(2);
+	m_secondLayer.SetBias(1);
+	
+	/*layer.SetFilters(fs);
 	layer.SetWeights(filter);
 	layer.SetFilterNum(32);
 	layer.SetFilterSize(4);
 	layer.SetStride(2);
-	layer.SetBias(0);
+	layer.SetBias(0);*/
 
-	ConvNeuronSet cns = prevLayer.GetNeurons();
+	ConvNeuronSet cns = m_inputLayer.GetNeurons();
 	int imgSize = 84 - 4;
-	for (FeatureMap cns : prevLayer.GetFeatureMaps()){
-		for (Filter f : prevLayer.GetFilters()){
+	for (FeatureMap cns : m_inputLayer.GetFeatureMaps()){
+		for (Filter f : m_inputLayer.GetFilters()){
 			for (uint y = 3; y < imgSize; y += stride){
 				for (uint x = 3; x < imgSize; x += stride){
 					ConvNeuron n;
@@ -184,27 +284,27 @@ void NeuralNetwork::populateSecondLayer(){
 				neurons.push_back(neuronRow);
 				neuronRow.clear();
 			}
-			layer.addFeatureMap(neurons);
+			m_secondLayer.addFeatureMap(neurons);
 			neurons.clear();
 		}
 	}
-	SetSecondLayer(layer);
+	//SetSecondLayer(layer);
 }
 
 //Convolutional
 void NeuralNetwork::populateThirdLayer(){
-	ConvLayer layer;
-	ConvLayer prevLayer = GetSecondLayer();
-	int stride = prevLayer.GetStride();
+	//ConvLayer layer;
+	//ConvLayer prevLayer = GetSecondLayer();
+	int stride = m_secondLayer.GetStride();
 
 	ConvRow neuronRow;
 	ConvNeuronSet neurons;
 
-	layer.SetBias(0);
+	m_thirdLayer.SetBias(1);
 	int imgSize = 20-2;
 
-	for (FeatureMap cns : prevLayer.GetFeatureMaps()){
-		for (Filter f : prevLayer.GetFilters()){
+	for (FeatureMap cns : m_secondLayer.GetFeatureMaps()){
+		for (Filter f : m_secondLayer.GetFilters()){
 			for (int y = 1; y < imgSize; y += stride){
 				for (int x = 1; x < imgSize; x += stride){
 					ConvNeuron n;
@@ -225,61 +325,58 @@ void NeuralNetwork::populateThirdLayer(){
 				neurons.push_back(neuronRow);
 				neuronRow.clear();
 			}
-			layer.addFeatureMap(neurons);
+			m_thirdLayer.addFeatureMap(neurons);
 			neurons.clear();
 		}
 	}
-	SetThirdLayer(layer);
+	//SetThirdLayer(layer);
 }
 
 //Fully Connected
 void NeuralNetwork::populateFourthLayer(){
-	FullConnLayer layer;
-	ConvLayer prevLayer = GetThirdLayer();
-	NeuronSet neurons;
+	//FullConnLayer layer;
+	//ConvLayer prevLayer = GetThirdLayer();
+	//NeuronSet neurons;
+	m_fourthLayer.SetBias(1);
 
 	double weight = 1;
 	for (uint i = 0; i < 256; i++){
 		//std::cout << i << std::endl;
 		Neuron n;
-		for (FeatureMap fm : prevLayer.GetFeatureMaps()){
+		for (FeatureMap fm : m_thirdLayer.GetFeatureMaps()){
 			for (vector<ConvNeuron> row : fm){
 				for (ConvNeuron conv : row){
 					n.addConnection(make_pair(conv.GetValue(), weight));
 				}
 			}
 		}
-		neurons.push_back(n);		
+		//neurons.push_back(n);	
+		m_fourthLayer.AddNeuron(n);
 	}
-	layer.SetNeurons(neurons);
-	SetFourthLayer(layer);
+	//m_fourthLayer.SetNeurons(neurons);
+	//SetFourthLayer(layer);
 }
 
 //Fully Connected
 void NeuralNetwork::populateOutputLayer(){
-	FullConnLayer layer;
-	FullConnLayer prevLayer = GetFourthLayer();
-	NeuronSet neurons;
-
 	int s = GetActionSetSize();
-	int t = prevLayer.GetNeurons().size();
+	int t = m_fourthLayer.GetNeurons().size();
 	double weight = 1;
-	NeuronSet ns = prevLayer.GetNeurons();
+	m_outputLayer.SetBias(1);
+	NeuronSet ns = m_fourthLayer.GetNeurons();
 
 	for (int i = 0; i < s; i++){
 		Neuron n;		
 		for (int j = 0; j < t; j++){			
-			//n.addConnection(make_pair(ns[j], weight));
+			n.addConnection(make_pair(ns[j].GetValue(), weight));
 			//n.AddToValue(ns[j].GetValue() * weight);
 		}
-		neurons.push_back(n);
+		//neurons.push_back(n);
+		m_outputLayer.AddNeuron(n);
 	}
-	layer.SetNeurons(neurons);
-	SetOutputLayer(layer);
+	//m_outputLayer.SetNeurons(neurons);
+	//SetOutputLayer(layer);
 }
-
-
-
 
 ConvLayer NeuralNetwork::GetInputLayer(){
 	return m_inputLayer;
@@ -301,9 +398,6 @@ FullConnLayer NeuralNetwork::GetOutputLayer(){
 	return m_outputLayer;
 }
 
-
-
-
 void NeuralNetwork::SetInputLayer(ConvLayer l){
 	m_inputLayer = l;
 }
@@ -324,30 +418,13 @@ void NeuralNetwork::SetOutputLayer(FullConnLayer l){
 	m_outputLayer = l;
 }
 
-
-
-
-vector<ConvLayer> NeuralNetwork::GetConvLayers(){
-	return m_convLayers;
+Images NeuralNetwork::GetInput(){
+	return m_input;
 }
 
-void NeuralNetwork::SetConvLayers(vector<ConvLayer> layers){
-	m_convLayers = layers;
+void NeuralNetwork::SetInput(Images i){
+	m_input = i;
 }
-
-
-
-
-vector<FullConnLayer> NeuralNetwork::GetFullConnLayers(){
-	return m_fcLayers;
-}
-
-void NeuralNetwork::SetFullConnLayers(vector<FullConnLayer> layers){
-	m_fcLayers = layers;
-}
-
-
-
 
 int NeuralNetwork::GetActionSetSize(){
 	return m_actionSetSize;

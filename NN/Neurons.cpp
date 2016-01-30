@@ -1,5 +1,6 @@
 #pragma once
 #include "NeuralNetwork.h"
+#include <minmax.h>
 
 Neuron::Neuron(){
 	SetValue(2);
@@ -11,13 +12,17 @@ Neuron::Neuron(double bias)
 }
 
 double Neuron::Activation(){
-	//sigmoid function
+	//activation function
 	return 0; //ph
 }
 
 double Neuron::CalculateValue(){
-	//foreach loop here with summation including bias and weights
-	return 0; //ph
+	double newVal = 0;
+	for (Conn c : m_connections){
+		newVal += c.first * c.second;
+	}
+	newVal *= m_bias;
+	return newVal; 
 }
 
 double Neuron::GetValue(){
@@ -44,7 +49,7 @@ void Neuron::SetConnections(Connections c){
 	m_connections = c;
 }
 
-void Neuron::addConnection(pair<double, double> c){
+void Neuron::addConnection(Conn c){
 	m_connections.push_back(c);
 }
 
@@ -61,4 +66,9 @@ void ConvNeuron::SetWeights(Filter w){
 
 Filter ConvNeuron::GetWeights(){
 	return m_weights;
+}
+
+double ConvNeuron::Activation(){
+	//rectifier nonlinearity
+	return max(m_value, 0); 
 }
