@@ -11,7 +11,7 @@ class NeuralNetwork{
 private:
 	vector<ConvLayer> m_convLayers;
 	vector<FullConnLayer> m_fcLayers;
-	ConvLayer m_inputLayer;		//Need getters/setters
+	ConvLayer m_inputLayer;		
 	ConvLayer m_secondLayer;
 	ConvLayer m_thirdLayer;
 	FullConnLayer m_fourthLayer;
@@ -23,7 +23,7 @@ public:
 
 	~NeuralNetwork(){};
 
-	void populateInputLayer(vector<vector<int>> img);
+	void populateInputLayer(vector<Image> imgs);
 	void populateSecondLayer();
 	void populateThirdLayer();
 	void populateFourthLayer();
