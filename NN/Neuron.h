@@ -8,7 +8,7 @@ using std::pair;
 //class Connection;
 class Neuron;
 //typedef vector<Connection> ConnectionSet;
-typedef vector<pair<Neuron& , double>> Connections;
+typedef vector<pair<double , double>> Connections;
 
 class Neuron{
 private:
@@ -26,7 +26,7 @@ public:
 	double CalculateValue();
 
 	double GetValue();
-	void SetValue(double value);
+	void SetValue(double v);
 
 	double GetBias();
 	void SetBias(double bias);
@@ -34,7 +34,7 @@ public:
 	Connections GetConnections();
 	void SetConnections(Connections c);
 
-	void addConnection(pair<Neuron&, double> c);
+	void addConnection(pair<double, double> c);
 };
 
 
@@ -51,18 +51,6 @@ public:
 	ConvNeuron();
 	~ConvNeuron(){};
 
-	//double GetBias();
-	//void SetBias(double b);
-
-	//double GetValue();
-	//void SetValue(double v);
-
 	void SetWeights(Filter w);
 	Filter GetWeights();
-
-	//void SetConnections(ConnectionSet c);
-	//ConnectionSet GetConnections();
-
-	//void addConnection(Connection c);
-	//void addConnection(ConvConnection c);
 };

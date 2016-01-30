@@ -28,17 +28,15 @@ int main(){
 	std::cout << "Layer 1: " << output1 << ", " << output2 << std::endl;
 
 
+
 	nn.populateSecondLayer();
-	//ns = nn.GetSecondLayer().GetNeurons();
 	ns = nn.GetSecondLayer().GetFeatureMapAt(0);
 	fs = nn.GetSecondLayer().GetFeatureMaps();
 	output1 = fs.size();
 	output2 = fs[0].size();
 	output3 = fs[0][0].size();
-
-	//output1 = ns.size();
-	//output2 = ns[0].size();
 	std::cout << "Layer 2: " << output1 << ", " << output2  << ", " << output3 << std::endl;
+
 
 	nn.populateThirdLayer();
 	ns = nn.GetThirdLayer().GetFeatureMapAt(0);
@@ -47,26 +45,20 @@ int main(){
 	output2 = fs[0].size();
 	output3 = fs[0][0].size();
 	std::cout << "Layer 3: " << output1 << ", " << output2 << ", " << output3 << std::endl;
-	/*ns = nn.GetThirdLayer().GetNeurons();
-	output1 = ns.size();
-	output2 = ns[0].size();
-
-	std::cout << "Layer 3: " << output1 << ", " << output2 << std::endl;*/
 
 
-	
 	nn.populateFourthLayer();
 	NeuronSet n = nn.GetFourthLayer().GetNeurons();
 	output1 = n.size();
-
 	std::cout << "Layer 4: " << output1 << std::endl;
+
 
 	nn.SetActionSetSize(4);
 	nn.populateOutputLayer();
 	n = nn.GetOutputLayer().GetNeurons();	
 	output1 = n.size();
-
 	std::cout << "Layer 5: " << output1 << std::endl;
+
 	
 	//################################
 	// Just to keep debug window open!
@@ -78,9 +70,9 @@ int main(){
 }
 
 NeuralNetwork::NeuralNetwork(){
-	Image img;
-	Preprocessor pp(img);
-	populateInputLayer(pp.GetPPImg());
+	//Image img;
+	//Preprocessor pp(img);
+	//populateInputLayer(pp.GetPPImg());
 }
 
 
@@ -103,11 +95,10 @@ void NeuralNetwork::populateInputLayer(Image img){
 
 	Filters fs;
 	
-	for (uint i = 0; i < 1; i++){ // <16
+	for (uint i = 0; i < 4; i++){ // <16  or 4 (feature map confusion)
 		fs.push_back(filter);
 	}
 	layer.SetFilters(fs);
-
 	layer.SetWeights(filter);
 	layer.SetFilterNum(16);
 	layer.SetFilterSize(8);
@@ -149,7 +140,7 @@ void NeuralNetwork::populateSecondLayer(){
 
 	Filters fs;
 
-	for (int i = 0; i < 1; i++){// < 32
+	for (int i = 0; i < 2; i++){// < 32  or 2 (feature map confusion)
 		fs.push_back(filter);
 	}
 	layer.SetFilters(fs);
@@ -170,8 +161,8 @@ void NeuralNetwork::populateSecondLayer(){
 				for (int j = y - 3; j <= y + 4; j++){
 					for (int k = x - 3; k <= x + 4; k++){
 						for (uint wy = 0; wy < 8; wy++){
-							for (uint wx = 0; wx < 8; wx++){								
-								n.addConnection(make_pair(cns[j][k], f[wx][wy]));
+							for (uint wx = 0; wx < 8; wx++){
+								n.addConnection(make_pair(cns[j][k].GetValue(), f[wx][wy]));
 							}
 						}
 					}
@@ -179,10 +170,10 @@ void NeuralNetwork::populateSecondLayer(){
 				neuronRow.push_back(n);
 			}
 			neurons.push_back(neuronRow);
-			neuronRow.clear();
+			neuronRow.clear();			
 		}
 		layer.addFeatureMap(neurons);
-		neurons.clear();
+		neurons.clear();	
 	}
 	SetSecondLayer(layer);
 }
@@ -210,7 +201,7 @@ void NeuralNetwork::populateThirdLayer(){
 
 							for (int wy = 0; wy < 4; wy++){
 								for (int wx = 0; wx < 4; wx++){
-									n.addConnection(make_pair(cns[j][k], f[wx][wy]));
+									n.addConnection(make_pair(cns[j][k].GetValue(), f[wx][wy]));
 								}
 							}
 
@@ -231,23 +222,20 @@ void NeuralNetwork::populateThirdLayer(){
 //Fully Connected
 void NeuralNetwork::populateFourthLayer(){
 	FullConnLayer layer;
-	ConvLayer& prevLayer = GetThirdLayer();
+	ConvLayer prevLayer = GetThirdLayer();
 	NeuronSet neurons;
 
-	double weight = 0;
-	for (FeatureMap fm : prevLayer.GetFeatureMaps()){
-		for (uint k = 0; k < 256; k++){
-			Neuron n;
+	double weight = 1;
+	for (uint i = 0; i < 256; i++){
+		Neuron n;
+		for (FeatureMap fm : prevLayer.GetFeatureMaps()){
 			for (vector<ConvNeuron> row : fm){
 				for (ConvNeuron conv : row){
-					ConvNeuron cn = conv;
-					n.addConnection(make_pair(cn, weight));
-
+					n.addConnection(make_pair(conv.GetValue(), weight));
 				}
 			}
-			neurons.push_back(n);
 		}
-		
+		neurons.push_back(n);		
 	}
 	layer.SetNeurons(neurons);
 	SetFourthLayer(layer);
@@ -261,13 +249,14 @@ void NeuralNetwork::populateOutputLayer(){
 
 	int s = GetActionSetSize();
 	int t = prevLayer.GetNeurons().size();
-	double weight = 0;
+	double weight = 1;
+	NeuronSet ns = prevLayer.GetNeurons();
 
 	for (int i = 0; i < s; i++){
-		Neuron n;
-		for (int j = 0; j < t; j++){
-			NeuronSet ns = prevLayer.GetNeurons();
-			n.addConnection(make_pair(ns[j], weight));
+		Neuron n;		
+		for (int j = 0; j < t; j++){			
+			//n.addConnection(make_pair(ns[j], weight));
+			//n.AddToValue(ns[j].GetValue() * weight);
 		}
 		neurons.push_back(n);
 	}

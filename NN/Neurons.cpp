@@ -24,8 +24,8 @@ double Neuron::GetValue(){
 	return m_value;
 }
 
-void Neuron::SetValue(double value){
-	m_value = value;
+void Neuron::SetValue(double v){
+	m_value = v;
 }
 
 double Neuron::GetBias(){
@@ -44,7 +44,7 @@ void Neuron::SetConnections(Connections c){
 	m_connections = c;
 }
 
-void Neuron::addConnection(pair<Neuron&, double> c){
+void Neuron::addConnection(pair<double, double> c){
 	m_connections.push_back(c);
 }
 
@@ -54,23 +54,7 @@ void Neuron::addConnection(pair<Neuron&, double> c){
 ConvNeuron:: ConvNeuron(){
 
 }
-/*
-double ConvNeuron::GetBias(){
-	return m_bias;
-}
 
-void ConvNeuron::SetBias(double b){
-	m_bias = b;
-}
-
-double ConvNeuron::GetValue(){
-	return m_value;
-}
-
-void ConvNeuron::SetValue(double v){
-	m_value = v;
-}
-*/
 void ConvNeuron::SetWeights(Filter w){
 	m_weights = w;
 }
@@ -78,19 +62,3 @@ void ConvNeuron::SetWeights(Filter w){
 Filter ConvNeuron::GetWeights(){
 	return m_weights;
 }
-/*
-void ConvNeuron::SetConnections(ConnectionSet c){
-	m_connections = c;
-}
-
-ConnectionSet ConvNeuron::GetConnections(){
-	return m_connections;
-}
-
-void ConvNeuron::addConnection(Connection c){
-	m_connections.push_back(c);
-}
-
-void ConvNeuron::addConnection(ConvConnection c){
-	m_connections.push_back(c);
-}*/
