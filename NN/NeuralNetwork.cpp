@@ -11,7 +11,7 @@ int main(){
 	vector<int> phRow;
 	for (uint i = 0; i < 84; i++){
 		for (uint j = 0; j < 84; j++){
-			phRow.push_back(i*j);
+			phRow.push_back(i*j*2);
 		}
 		imagePH.push_back(phRow);
 		phRow.clear();
@@ -34,17 +34,16 @@ int main(){
 
 NeuralNetwork::NeuralNetwork(Images imgs){
 	m_input = imgs;
-	//Set Layer filters 
 	Filter filter;
 	Filters fs;
-	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
-	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
-	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
-	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
-	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
-	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
-	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });
-	filter.push_back({ 1, 2, 3, 4, 5, 6, 7, 8 });	
+	filter.push_back({ 1, 2, 3, 4, 5, 2, 7, 8 });
+	filter.push_back({ 4, 8, 3, 4, 2, 6, 7, 2 });
+	filter.push_back({ 5, 2, 3, 4, 5, 6, 7, 1 });
+	filter.push_back({ 1, 2, 3, 5, 3, 1, 7, 8 });
+	filter.push_back({ 1, 1, 1, 4, 5, 3, 7, 8 });
+	filter.push_back({ 1, 2, 5, 3, 7, 6, 7, 2 });
+	filter.push_back({ 1, 3, 5, 1, 5, 6, 3, 8 });
+	filter.push_back({ 1, 2, 3, 6, 5, 2, 7, 4 });	
 	for (uint i = 0; i < 4; i++){
 		fs.push_back(filter);
 	}
@@ -52,15 +51,16 @@ NeuralNetwork::NeuralNetwork(Images imgs){
 
 	filter.clear();
 	fs.clear();
-	filter.push_back({ 1, 2, 3, 4 });
-	filter.push_back({ 1, 2, 3, 4 });
-	filter.push_back({ 1, 2, 3, 4 });
-	filter.push_back({ 1, 2, 3, 4 });
+	filter.push_back({ 1, 1, 1, 1 });
+	filter.push_back({ 1, 2, 2, 1 });
+	filter.push_back({ 1, 3, 3, 1 });
+	filter.push_back({ 1, 2, 2, 1 });
 	for (int i = 0; i < 2; i++){
 		fs.push_back(filter);
 	}
 	m_secondLayer.SetFilters(fs);
 	SetActionSetSize(4);
+	std::cout << "Filters set" << std::endl;
 
 	//Call Forward Prop
 	ForwardProp();
@@ -92,7 +92,11 @@ void::NeuralNetwork::ForwardProp(){
 	output2 = fs[0].size();
 	output3 = fs[0][0].size();
 	std::cout << "Layer 2: " << output1 << ", " << output2 << ", " << output3 << std::endl;
+
+	int output4 = fs[0][0][0].GetConnections().size();
+	std::cout << "ConnCount: " << output4 << std::endl;
 	//----
+
 	for (ConvRow cr : m_secondLayer.GetNeurons()){
 		for (ConvNeuron n : cr){
 			n.SetValue(n.CalculateValue());
@@ -110,6 +114,8 @@ void::NeuralNetwork::ForwardProp(){
 	output2 = fs[0].size();
 	output3 = fs[0][0].size();
 	std::cout << "Layer 3: " << output1 << ", " << output2 << ", " << output3 << std::endl;
+	output4 = fs[0][0][0].GetConnections().size();
+	std::cout << "ConnCount: " << output4 << std::endl;
 	//----
 	for (ConvRow cr : m_thirdLayer.GetNeurons()){
 		for (ConvNeuron n : cr){
@@ -196,13 +202,10 @@ void NeuralNetwork::populateSecondLayer(){
 			for (uint y = 3; y < imgSize; y += stride){
 				for (uint x = 3; x < imgSize; x += stride){
 					ConvNeuron n;
-					for (int j = y - 3; j <= y + 4; j++){
-						for (int k = x - 3; k <= x + 4; k++){
-							for (uint wy = 0; wy < 8; wy++){
-								for (uint wx = 0; wx < 8; wx++){
-									n.addConnection(make_pair(cns[j][k].GetValue(), f[wx][wy]));
-								}
-							}
+					for (int j = -3; j < 5; j++){
+						for (int k = -3; k < 5; k++){
+							n.addConnection(make_pair(cns[x + k][y + j].GetValue(), f[k + 3][j + 3]));
+
 						}
 					}
 					neuronRow.push_back(n);
@@ -231,16 +234,9 @@ void NeuralNetwork::populateThirdLayer(){
 			for (int y = 1; y < imgSize; y += stride){
 				for (int x = 1; x < imgSize; x += stride){
 					ConvNeuron n;
-
-					for (int j = y - 1; j <= y + 2; j++){
-						for (int k = x - 1; k <= x + 2; k++){
-
-							for (int wy = 0; wy < 4; wy++){
-								for (int wx = 0; wx < 4; wx++){
-									n.addConnection(make_pair(cns[j][k].GetValue(), f[wx][wy]));
-								}
-							}
-
+					for (int j = -1; j < 3; j++){
+						for (int k = -1; k < 3; k++){
+							n.addConnection(make_pair(cns[x + k][y + j].GetValue(), f[k + 1][j + 1]));
 						}
 					}
 					neuronRow.push_back(n);
@@ -260,7 +256,6 @@ void NeuralNetwork::populateFourthLayer(){
 
 	double weight = 1;
 	for (uint i = 0; i < 256; i++){
-		//std::cout << i << std::endl;
 		Neuron n;
 		for (FeatureMap fm : m_thirdLayer.GetFeatureMaps()){
 			for (vector<ConvNeuron> row : fm){

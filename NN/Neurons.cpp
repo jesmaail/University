@@ -12,7 +12,7 @@ Neuron::Neuron(double bias)
 }
 
 double Neuron::Activation(){
-	return max(m_value, 0); //ph
+	return max(m_value, 0);
 }
 
 double Neuron::CalculateValue(){
@@ -21,6 +21,7 @@ double Neuron::CalculateValue(){
 		newVal += c.first * c.second;
 	}
 	newVal *= m_bias;
+	m_connections.clear(); //maybe
 	return newVal; 
 }
 
