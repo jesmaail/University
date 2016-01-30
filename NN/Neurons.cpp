@@ -12,8 +12,7 @@ Neuron::Neuron(double bias)
 }
 
 double Neuron::Activation(){
-	//activation function
-	return 0; //ph
+	return max(m_value, 0); //ph
 }
 
 double Neuron::CalculateValue(){
