@@ -20,11 +20,11 @@ private:
 
 public:
 	Neuron();
-	Neuron(double bias);
 
 	~Neuron(){};
 
-	virtual double Activation();
+	//virtual double Activation();
+	void Activation();
 	double CalculateValue();
 
 	double GetValue();
@@ -41,7 +41,7 @@ public:
 
 class ConvNeuron : public Neuron{
 private:
-	double m_bias;
+	//double m_bias;
 	double m_value;
 	Filter m_weights;
 	Connections m_connections;
@@ -53,5 +53,6 @@ public:
 	void SetWeights(Filter w);
 	Filter GetWeights();
 
-	virtual double Activation();
+	//virtual double Activation();
+	//void Activation();
 };

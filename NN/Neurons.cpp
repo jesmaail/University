@@ -1,18 +1,23 @@
 #pragma once
 #include "NeuralNetwork.h"
-#include <minmax.h>
+#include <algorithm>
 
 Neuron::Neuron(){
-	SetValue(2);
-	SetBias(0);
+	//SetValue(0);
+	//SetBias(0);
 }
 
-Neuron::Neuron(double bias)
-	: m_bias(bias){
-}
+/*double Neuron::Activation(){
+	if (m_value > 0){
+		return m_value;
+	}else{
+		return 0;
+	}
+	//return std::max(m_value, 0.0);
+}*/
 
-double Neuron::Activation(){
-	return max(m_value, 0);
+void Neuron::Activation(){
+	m_value = std::max(0.0, m_value);
 }
 
 double Neuron::CalculateValue(){
@@ -21,7 +26,7 @@ double Neuron::CalculateValue(){
 		newVal += c.first * c.second;
 	}
 	newVal *= m_bias;
-	m_connections.clear(); //maybe
+	//m_connections.clear(); //maybe
 	return newVal; 
 }
 
@@ -68,7 +73,13 @@ Filter ConvNeuron::GetWeights(){
 	return m_weights;
 }
 
-double ConvNeuron::Activation(){
+/*double ConvNeuron::Activation(){
 	//rectifier nonlinearity
-	return max(m_value, 0); 
-}
+	if (m_value > 0){
+		return m_value;
+	}
+	else{
+		return 0;
+	}
+	//return std::max(m_value, 0.0);
+}*/
