@@ -100,11 +100,8 @@ void::NeuralNetwork::ForwardProp(){
 	for (FeatureMap fm : m_secondLayer.GetFeatureMaps()){
 		for (ConvRow cr : fm){
 			for (ConvNeuron* n : cr){
-				//std::cout << n->GetValue() << ", ";
 				n->SetValue(n->CalculateValue());
-				//std::cout << n->GetValue() << ", ";
 				n->Activation();
-				//std::cout << n->GetValue() << std::endl;
 			}
 		}
 	}
@@ -166,10 +163,7 @@ void::NeuralNetwork::ForwardProp(){
 	for (Neuron* n : m_outputLayer.GetNeurons()){
 		n->SetValue(n->CalculateValue());
 		n->Activation();
-		//std::cout << n->GetValue() << std::endl;
 	}
-
-	std::cout << "!!!! Finished !!!!" << std::endl;
 }
 
 
@@ -256,7 +250,6 @@ void NeuralNetwork::populateThirdLayer(){
 				for (int x = 1; x < imgSize; x += stride){
 					ConvNeuron* n = new ConvNeuron;
 					n->SetBias(m_thirdLayer.GetBias());
-					n->SetBias(1);
 					for (int j = -1; j < 3; j++){
 						for (int k = -1; k < 3; k++){
 							//std::cout << cns[x + k][y + j]->GetValue() << std::endl;
