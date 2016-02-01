@@ -4,10 +4,10 @@
 
 using std::vector;
 
-typedef vector<Neuron> NeuronSet;
-typedef vector<ConvNeuron> ConvRow;
-typedef vector<vector<ConvNeuron>> ConvNeuronSet;
-typedef vector<vector<ConvNeuron>> FeatureMap;
+typedef vector<Neuron*> NeuronSet;
+typedef vector<ConvNeuron*> ConvRow;
+typedef vector<vector<ConvNeuron*>> ConvNeuronSet;
+typedef vector<vector<ConvNeuron*>> FeatureMap;
 typedef vector<FeatureMap> FMS;
 typedef vector<Filter> Filters;
 
@@ -91,5 +91,5 @@ public:
 
 	NeuronSet GetNeurons();
 	void SetNeurons(NeuronSet n);
-	void AddNeuron(Neuron n);
+	void AddNeuron(Neuron* n);
 };

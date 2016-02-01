@@ -12,7 +12,7 @@ void Layer::SetBias(double bias){
 	m_bias = bias;
 }
 
-vector<Neuron> Layer::GetNeurons(){
+NeuronSet Layer::GetNeurons(){
 	return m_neurons;
 }
 
@@ -20,7 +20,7 @@ void Layer::AddNeuron(Neuron n){
 
 }
 
-void Layer::AddNeuronVector(vector<Neuron> ns){
+void Layer::AddNeuronVector(NeuronSet ns){
 	m_neurons = ns;
 }
 
@@ -127,14 +127,14 @@ void ConvLayer::addFeatureMap(FeatureMap f){
 FullConnLayer::FullConnLayer(){
 }
 
-vector<Neuron> FullConnLayer::GetNeurons(){
+NeuronSet FullConnLayer::GetNeurons(){
 	return m_neurons;
 }
 
-void FullConnLayer::SetNeurons(vector<Neuron> n){
+void FullConnLayer::SetNeurons(NeuronSet n){
 	m_neurons = n;
 }
 
-void FullConnLayer::AddNeuron(Neuron n){
+void FullConnLayer::AddNeuron(Neuron* n){
 	m_neurons.push_back(n);
 }
