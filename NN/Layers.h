@@ -83,6 +83,7 @@ class FullConnLayer : public Layer{
 private:
 	double m_bias;
 	NeuronSet m_neurons;
+	vector<double> m_weights;
 
 public:
 	FullConnLayer();
@@ -92,4 +93,9 @@ public:
 	NeuronSet GetNeurons();
 	void SetNeurons(NeuronSet n);
 	void AddNeuron(Neuron* n);
+
+	vector<double> GetWeights();
+	void SetWeights(vector<double> w);
+	void AddWeight(double d);
+	double GetWeightAt(int i);
 };

@@ -138,3 +138,19 @@ void FullConnLayer::SetNeurons(NeuronSet n){
 void FullConnLayer::AddNeuron(Neuron* n){
 	m_neurons.push_back(n);
 }
+
+vector<double> FullConnLayer::GetWeights(){
+	return m_weights;
+}
+
+void FullConnLayer::SetWeights(vector<double> w){
+	m_weights = w;
+}
+
+void FullConnLayer::AddWeight(double d){
+	m_weights.push_back(d);
+}
+
+double FullConnLayer::GetWeightAt(int i){
+	return m_weights[i];
+}
