@@ -1,6 +1,7 @@
 #pragma once
 #include "NeuralNetwork.h"
 #include <iostream>
+#include <math.h>
 
 typedef unsigned int uint;
 
@@ -173,6 +174,37 @@ void::NeuralNetwork::ForwardProp(){
 		n->Activation();
 		//std::cout << n->GetValue() << std::endl;
 	}
+}
+
+void NeuralNetwork::BackProp(){
+	NeuronSet out = m_outputLayer.GetNeurons();
+	NeuronSet fourth = m_fourthLayer.GetNeurons();
+	Connections cs;
+	double dedw; //derivate of weight wrt. error
+	double y; //yield
+	double x; //neuron value;
+	double delta; //change for weight
+	double w; //weight to change
+	double t = 5; //target value, from Q table?????
+	double eps = 0.00025; //learning rate
+	double mu = 0.01;	//smoothing value
+	double ms = 0; //mean square
+
+	for (Neuron *on : out){
+		cs = on->GetConnections();
+		for (Conn c : cs){
+			int index = c.first;
+			Neuron *n = fourth[index];
+			w = m_fourthLayer.GetWeightAt[c.second];
+			y = on->GetValue();
+			x = n->GetValue();
+			dedw = (t - y) * y*(1 - y) * x;
+			ms = 0.9 * ms + 0.1* pow(dedw, 2); 
+			delta = (eps * dedw) / sqrt(ms) + mu;
+			w += delta;
+		}
+	}
+
 }
 
 
