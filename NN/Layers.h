@@ -4,10 +4,10 @@
 
 using std::vector;
 
-typedef vector<Neuron> NeuronSet;
-typedef vector<ConvNeuron> ConvRow;
-typedef vector<vector<ConvNeuron>> ConvNeuronSet;
-typedef vector<vector<ConvNeuron>> FeatureMap;
+typedef vector<Neuron*> NeuronSet;
+typedef vector<ConvNeuron*> ConvRow;
+typedef vector<vector<ConvNeuron*>> ConvNeuronSet;
+typedef vector<vector<ConvNeuron*>> FeatureMap;
 typedef vector<FeatureMap> FMS;
 typedef vector<Filter> Filters;
 
@@ -83,6 +83,7 @@ class FullConnLayer : public Layer{
 private:
 	double m_bias;
 	NeuronSet m_neurons;
+	vector<double> m_weights;
 
 public:
 	FullConnLayer();
@@ -91,4 +92,10 @@ public:
 
 	NeuronSet GetNeurons();
 	void SetNeurons(NeuronSet n);
+	void AddNeuron(Neuron* n);
+
+	vector<double> GetWeights();
+	void SetWeights(vector<double> w);
+	void AddWeight(double d);
+	double GetWeightAt(int i);
 };

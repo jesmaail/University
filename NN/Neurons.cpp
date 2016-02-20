@@ -1,41 +1,42 @@
 #pragma once
 #include "NeuralNetwork.h"
+#include <algorithm>
 
 Neuron::Neuron(){
-	SetValue(2);
-	SetBias(0);
+	//SetValue(0);
+	//SetBias(0);
 }
 
-Neuron::Neuron(double bias)
-	: m_bias(bias){
-}
+/*double Neuron::Activation(){
+	if (m_value > 0){
+		return m_value;
+	}else{
+		return 0;
+	}
+	//return std::max(m_value, 0.0);
+}*/
 
-
-
-
-double Neuron::Activation(){
-	//sigmoid function
-	return 0; //ph
+void Neuron::Activation(){
+	m_value = std::max(0.0, m_value);
 }
 
 double Neuron::CalculateValue(){
-	//foreach loop here with summation including bias and weights
-	return 0; //ph
+	double newVal = 0;
+	for (Conn c : m_connections){
+		newVal += c.first * c.second;
+	}
+	newVal *= m_bias;
+	//m_connections.clear(); //maybe
+	return newVal; 
 }
-
-
-
 
 double Neuron::GetValue(){
 	return m_value;
 }
 
-void Neuron::SetValue(double value){
-	m_value = value;
+void Neuron::SetValue(double v){
+	m_value = v;
 }
-
-
-
 
 double Neuron::GetBias(){
 	return m_bias;
@@ -45,18 +46,15 @@ void Neuron::SetBias(double bias){
 	m_bias = bias;
 }
 
-
-
-
-ConnectionSet Neuron::GetConnections(){
+Connections Neuron::GetConnections(){
 	return m_connections;
 }
 
-void Neuron::SetConnections(ConnectionSet c){
+void Neuron::SetConnections(Connections c){
 	m_connections = c;
 }
 
-void Neuron::addConnection(Connection c){
+void Neuron::addConnection(Conn c){
 	m_connections.push_back(c);
 }
 
@@ -67,31 +65,6 @@ ConvNeuron:: ConvNeuron(){
 
 }
 
-
-
-
-double ConvNeuron::GetBias(){
-	return m_bias;
-}
-
-void ConvNeuron::SetBias(double b){
-	m_bias = b;
-}
-
-
-
-
-double ConvNeuron::GetValue(){
-	return m_value;
-}
-
-void ConvNeuron::SetValue(double v){
-	m_value = v;
-}
-
-
-
-
 void ConvNeuron::SetWeights(Filter w){
 	m_weights = w;
 }
@@ -100,21 +73,13 @@ Filter ConvNeuron::GetWeights(){
 	return m_weights;
 }
 
-
-
-
-void ConvNeuron::SetConnections(ConnectionSet c){
-	m_connections = c;
-}
-
-ConnectionSet ConvNeuron::GetConnections(){
-	return m_connections;
-}
-
-void ConvNeuron::addConnection(Connection c){
-	m_connections.push_back(c);
-}
-
-void ConvNeuron::addConnection(ConvConnection c){
-	m_connections.push_back(c);
-}
+/*double ConvNeuron::Activation(){
+	//rectifier nonlinearity
+	if (m_value > 0){
+		return m_value;
+	}
+	else{
+		return 0;
+	}
+	//return std::max(m_value, 0.0);
+}*/

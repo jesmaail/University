@@ -7,23 +7,31 @@
 
 using std::vector;
 
+typedef vector<Image> Images;
+
 class NeuralNetwork{
 private:
-	vector<ConvLayer> m_convLayers;
-	vector<FullConnLayer> m_fcLayers;
-	ConvLayer m_inputLayer;		//Need getters/setters
+	Images m_input;	//getter/setter
+	int m_actionSetSize;
+	ConvLayer m_inputLayer;
 	ConvLayer m_secondLayer;
 	ConvLayer m_thirdLayer;
 	FullConnLayer m_fourthLayer;
 	FullConnLayer m_outputLayer;
-	int m_actionSetSize;
+
+protected:
+	/*ConvLayer m_inputLayer;
+	ConvLayer m_secondLayer;
+	ConvLayer m_thirdLayer;
+	FullConnLayer m_fourthLayer;
+	FullConnLayer m_outputLayer;*/
 
 public:
-	NeuralNetwork();
+	NeuralNetwork(Images imgs);
 
 	~NeuralNetwork(){};
 
-	void populateInputLayer(vector<vector<int>> img);
+	void populateInputLayer();
 	void populateSecondLayer();
 	void populateThirdLayer();
 	void populateFourthLayer();
@@ -41,14 +49,14 @@ public:
 	void SetFourthLayer(FullConnLayer l);
 	void SetOutputLayer(FullConnLayer l);
 
-	vector<ConvLayer> GetConvLayers();
-	void SetConvLayers(vector<ConvLayer> layers);
-
-	vector<FullConnLayer> GetFullConnLayers();
-	void SetFullConnLayers(vector<FullConnLayer> layers);
+	Images GetInput();
+	void SetInput(Images i);
 
 	int GetActionSetSize();
 	void SetActionSetSize(int s);
+
+	void ForwardProp();
+	void BackProp();
 };
 
 
