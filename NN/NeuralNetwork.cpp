@@ -207,66 +207,6 @@ void NeuralNetwork::BackProp(){
 
 }
 
-
-
-ConvLayer NeuralNetwork::createConvLayer(int inpX, int inpY, int inpZ, int filterSize, int filterNum, int stride){
-	ConvLayer layer;
-	ConvRow neuronRow;
-	ConvNeuronSet neurons;
-
-	layer.SetFilterSize(filterSize);
-	layer.SetFilterNum(filterNum);
-	layer.SetStride(stride);
-	//layer.SetBias(1);
-
-	//need to set a variable for image size (useful for proceeding layer loops!)
-
-	for (uint z = 0; z < inpZ; z++){
-		for (uint y = 0; y < inpY; y++){
-			for (uint x = 0; x < inpX; x++){
-				neuronRow.push_back(new ConvNeuron);
-			}
-			neurons.push_back(neuronRow);
-			neuronRow.clear();
-		}
-		layer.addFeatureMap(neurons);
-		neurons.clear();
-	}
-	return layer;
-}
-
-ConvLayer NeuralNetwork::createConvLayer(ConvLayer prevLayer, int filterSize, int filterNum, int stride){
-	ConvLayer layer;
-	ConvLayer previous = prevLayer;
-	ConvRow neuronRow;
-	ConvNeuronSet neurons;
-
-	layer.SetFilterSize(filterSize);
-	layer.SetFilterNum(filterNum);
-	layer.SetStride(stride);
-
-	for (FeatureMap fm : previous.GetFeatureMaps()){
-		for (Filter f : previous.GetFilters()){
-			for (uint y = 3; y < imgSize; y += stride){
-				for (uint x = 3; x < imgSize; x += stride){
-					ConvNeuron* n = new ConvNeuron;
-					n->SetBias(m_secondLayer.GetBias());
-					for (int j = -3; j < 5; j++){
-						for (int k = -3; k < 5; k++){
-							n->addConnection(make_pair(cns[x + k][y + j]->GetValue(), f[k + 3][j + 3]));
-						}
-					}
-					neuronRow.push_back(n);
-				}
-				neurons.push_back(neuronRow);
-				neuronRow.clear();
-			}
-			m_secondLayer.addFeatureMap(neurons);
-			neurons.clear();
-		}
-	}
-}
-
 //Convolutional
 void NeuralNetwork::populateInputLayer(){
 	ConvRow neuronRow;

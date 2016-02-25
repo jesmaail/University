@@ -40,6 +40,8 @@ private:
 	int m_filterNum;
 	int m_filterSize;
 	int m_stride;
+	int m_inputXY;
+	int m_inputZ;
 	Filter m_weights;
 	Filters m_filters;
 	ConvNeuronSet m_neurons;
@@ -47,6 +49,8 @@ private:
 
 public:
 	ConvLayer();
+	ConvLayer(int inpXY, int inpZ, int filtSize, int filtNum, int stride);
+	ConvLayer(ConvLayer prev, int filtSize, int filtNum, int stride);
 
 	~ConvLayer(){};
 
@@ -61,6 +65,12 @@ public:
 
 	int GetStride();
 	void SetStride(int stride);
+
+	int GetInputXY();
+	void SetInputXY(int xy);
+
+	int GetInputZ();
+	void SetInputZ(int z);
 
 	Filter GetWeights();
 	void SetWeights(Filter w);
@@ -87,6 +97,8 @@ private:
 
 public:
 	FullConnLayer();
+	FullConnLayer(ConvLayer prev, int size);
+	FullConnLayer(FullConnLayer prev, int size);
 
 	~FullConnLayer(){};
 
