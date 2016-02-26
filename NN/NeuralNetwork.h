@@ -19,23 +19,18 @@ private:
 	FullConnLayer m_fourthLayer;
 	FullConnLayer m_outputLayer;
 
-protected:
-	/*ConvLayer m_inputLayer;
-	ConvLayer m_secondLayer;
-	ConvLayer m_thirdLayer;
-	FullConnLayer m_fourthLayer;
-	FullConnLayer m_outputLayer;*/
+	Filters m_firstWeights;
+	Filters m_secondWeights;
+	Weights m_thirdWeights;
+	Weights m_fourthWeights;
 
 public:
 	NeuralNetwork(Images imgs);
 
 	~NeuralNetwork(){};
 
-	void populateInputLayer();
-	void populateSecondLayer();
-	void populateThirdLayer();
-	void populateFourthLayer();
-	void populateOutputLayer();
+	void testConvLayer(ConvLayer l, int n);
+	void testFCLayer(FullConnLayer l, int n);
 
 	ConvLayer GetInputLayer();
 	ConvLayer GetSecondLayer();

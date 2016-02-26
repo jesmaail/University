@@ -10,6 +10,7 @@ typedef vector<vector<ConvNeuron*>> ConvNeuronSet;
 typedef vector<vector<ConvNeuron*>> FeatureMap;
 typedef vector<FeatureMap> FMS;
 typedef vector<Filter> Filters;
+typedef vector<double> Weights;
 
 class Layer{
 private:

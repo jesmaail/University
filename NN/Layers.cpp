@@ -1,5 +1,6 @@
 #pragma once
 #include "NeuralNetwork.h"
+#include <iostream>
 
 typedef unsigned int uint;
 using std::make_pair;
@@ -63,21 +64,20 @@ ConvLayer::ConvLayer(ConvLayer prevLayer, int filterSize, int filterNum, int str
 	SetFilterSize(filterSize);
 	SetFilterNum(filterNum);
 	SetStride(stride);
-	SetInputXY(prevFMS[0][0].size());
-	SetInputZ(prevFMS.size());
 
-	int fmPad = (prevLayer.GetFilterSize / 2) - 1;		//make these layer variables??
-	int filtPad = (prevLayer.GetFilterSize / 2) + 1;
-	int imgBound = prevLayer.GetInputXY - (prevLayer.GetFilterSize / 2);
+	int fmPad = (prevLayer.GetFilterSize() / 2) - 1;		//make these layer variables??
+	int filtPad = (prevLayer.GetFilterSize() / 2) + 1;
+	int imgBound = prevLayer.GetInputXY() - (prevLayer.GetFilterSize() / 2);
+	int str = prevLayer.GetStride();
 
-	for (FeatureMap fm : previous.GetFeatureMaps()){
+	for (FeatureMap fm : previous.GetFeatureMaps()){	
 		for (Filter f : previous.GetFilters()){
-			for (uint y = fmPad; y < imgBound; y += stride){
-				for (uint x = fmPad; x < imgBound; x += stride){
+			for (uint y = fmPad; y < imgBound; y += str){
+				for (uint x = fmPad; x < imgBound; x += str){
 					ConvNeuron* n = new ConvNeuron;
 					for (int j = -fmPad; j < filtPad; j++){
 						for (int k = -fmPad; k < filtPad; k++){
-							n->addConnection(make_pair(fm[x + k][y + j]->GetValue(), f[k + 3][j + 3]));
+							//n->addConnection(make_pair(fm[x + k][y + j]->GetValue(), f[k + 3][j + 3]));
 						}
 					}
 					neuronRow.push_back(n);
@@ -89,6 +89,9 @@ ConvLayer::ConvLayer(ConvLayer prevLayer, int filterSize, int filterNum, int str
 			neurons.clear();
 		}
 	}
+	FMS fms = GetFeatureMaps();
+	SetInputXY(fms[0][0].size());
+	SetInputZ(fms.size());
 }
 
 double ConvLayer::GetBias(){
@@ -122,6 +125,22 @@ int ConvLayer::GetStride(){
 
 void ConvLayer::SetStride(int stride){
 	m_stride = stride; 
+}
+
+int ConvLayer::GetInputXY(){
+	return m_inputXY;
+}
+
+void ConvLayer::SetInputXY(int xy){
+	m_inputXY = xy;
+}
+
+int ConvLayer::GetInputZ(){
+	return m_inputZ;
+}
+
+void ConvLayer::SetInputZ(int z){
+	m_inputZ = z;
 }
 
 Filter ConvLayer::GetWeights(){
@@ -176,7 +195,7 @@ FullConnLayer::FullConnLayer(ConvLayer prev, int size){
 		for (FeatureMap fm : prev.GetFeatureMaps()){
 			for (vector<ConvNeuron*> row : fm){
 				for (ConvNeuron* conv : row){
-					n->addConnection(make_pair(conv->GetValue(), GetWeightAt(i)));
+					//n->addConnection(make_pair(conv->GetValue(), GetWeightAt(i)));
 				}
 			}
 		}
@@ -192,7 +211,7 @@ FullConnLayer::FullConnLayer(FullConnLayer prev, int size){
 	for (int i = 0; i < s; i++){
 		Neuron* n = new Neuron;
 		for (int j = 0; j < t; j++){
-			n->addConnection(make_pair(ns[j]->GetValue(), GetWeightAt(i)));
+			//n->addConnection(make_pair(ns[j]->GetValue(), GetWeightAt(i)));
 		}
 		AddNeuron(n);
 	}
