@@ -4,6 +4,7 @@
 
 using std::vector;
 
+typedef vector<Image> Images;
 typedef vector<Neuron*> NeuronSet;
 typedef vector<ConvNeuron*> ConvRow;
 typedef vector<vector<ConvNeuron*>> ConvNeuronSet;
@@ -22,7 +23,6 @@ public:
 
 	~Layer(){};
 
-
 	double GetBias();
 	void SetBias(double bias);
 
@@ -37,7 +37,6 @@ public:
 class ConvLayer : public Layer{
 private:
 	double m_bias;
-
 	int m_filterNum;
 	int m_filterSize;
 	int m_stride;
@@ -50,7 +49,7 @@ private:
 
 public:
 	ConvLayer();
-	ConvLayer(int inpXY, int inpZ, int filtSize, int filtNum, int stride);
+	ConvLayer(Images img, int filtSize, int filtNum, int stride);
 	ConvLayer(ConvLayer prev, int filtSize, int filtNum, int stride);
 
 	~ConvLayer(){};

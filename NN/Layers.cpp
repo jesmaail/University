@@ -32,20 +32,25 @@ void Layer::AddNeuronVector(NeuronSet ns){
 ConvLayer::ConvLayer(){
 }
 
-ConvLayer::ConvLayer(int inpXY, int inpZ, int filtSize, int filtNum, int stride){
+ConvLayer::ConvLayer(Images imgs, int filtSize, int filtNum, int stride){
 	ConvRow neuronRow;
 	ConvNeuronSet neurons;
 
 	SetFilterSize(filtSize);
 	SetFilterNum(filtNum);
 	SetStride(stride);
-	SetInputXY(inpXY);
-	SetInputZ(inpZ);
+	SetInputXY(imgs[0].size());
+	SetInputZ(imgs.size());
+	int iBound, jBound;
 
-	for (uint z = 0; z < inpZ; z++){
-		for (uint y = 0; y < inpXY; y++){
-			for (uint x = 0; x < inpXY; x++){
-				neuronRow.push_back(new ConvNeuron);
+	for (Image img : imgs){
+		iBound = img.size();
+		jBound = img[0].size();
+		for (uint i = 0; i < iBound; i++){
+			for (uint j = 0; j < jBound; j++){
+				ConvNeuron* n = new ConvNeuron;
+				n->SetValue(img[j][i]);
+				neuronRow.push_back(n);
 			}
 			neurons.push_back(neuronRow);
 			neuronRow.clear();

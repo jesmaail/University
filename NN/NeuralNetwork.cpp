@@ -33,9 +33,11 @@ int main(){
 	return 0;
 }
 
+//Should pass in a struct of weights!!!!!!!!!
 NeuralNetwork::NeuralNetwork(Images imgs){
 	SetActionSetSize(4);
 	m_input = imgs;
+	// Filter creation here should be done outside the network and passed in.
 	Filter filter;
 	Filters fs;
 	filter.push_back({ 1, 1, 1, 1, 1, 1, 1, 1 });
@@ -75,10 +77,10 @@ NeuralNetwork::NeuralNetwork(Images imgs){
 	m_fourthWeights = w;
 
 	std::cout << "Filters set" << std::endl;
-	//Call Forward Prop
+
 	ForwardProp();
 
-	//Call backward Prop
+	//BackProp();
 }
 
 void::NeuralNetwork::ForwardProp(){
@@ -86,7 +88,7 @@ void::NeuralNetwork::ForwardProp(){
 	FMS fs;
 	ConvNeuronSet ns;
 
-	SetInputLayer(ConvLayer(84, 4, 8, 4, 4));
+	SetInputLayer(ConvLayer(m_input, 8, 4, 4));
 	m_inputLayer.SetFilters(m_firstWeights);
 	testConvLayer(m_inputLayer, 1); //Test
 
