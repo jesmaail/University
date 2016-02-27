@@ -6,9 +6,19 @@
 typedef unsigned int uint;
 
 using std::make_pair;
+const int FIRST_FILT_SIZE = 8;
+const int FIRST_FILT_COUNT = 4;
+const int FIRST_FILT_STRIDE = 4;
+
+const int SECOND_FILT_SIZE = 4;
+const int SECOND_FILT_COUNT = 2;
+const int SECOND_FILT_STRIDE = 2;
+
+const int FOURTH_LAYER_SIZE = 256;
+const int OUTPUT_LAYER_SIZE = 4; //WILL BE ACTION SET SIZE
 
 int main(){
-	Image imagePH;		//Create placeholder images
+	Image imagePH;		//Create placeholder images //TESTING PURPOSES ONLY
 	vector<int> phRow;
 	for (uint i = 0; i < 84; i++){
 		for (uint j = 0; j < 84; j++){
@@ -35,7 +45,7 @@ int main(){
 
 //Should pass in a struct of weights!!!!!!!!!
 NeuralNetwork::NeuralNetwork(Images imgs){
-	SetActionSetSize(4);
+	SetActionSetSize(OUTPUT_LAYER_SIZE); 
 	m_input = imgs;
 	// Filter creation here should be done outside the network and passed in.
 	Filter filter;
@@ -48,7 +58,7 @@ NeuralNetwork::NeuralNetwork(Images imgs){
 	filter.push_back({ 1, 2, 1, 2, 1, 2, 2, 1 });
 	filter.push_back({ 1, 2, 2, 2, 2, 2, 2, 1 });
 	filter.push_back({ 1, 1, 1, 1, 1, 1, 1, 1 });	
-	for (uint i = 0; i < 4; i++){
+	for (uint i = 0; i < FIRST_FILT_COUNT; i++){
 		fs.push_back(filter);
 	}
 	m_firstWeights = fs;
@@ -59,13 +69,13 @@ NeuralNetwork::NeuralNetwork(Images imgs){
 	filter.push_back({ 1, 2, 2, 1 });
 	filter.push_back({ 1, 3, 3, 1 });
 	filter.push_back({ 1, 2, 2, 1 });
-	for (int i = 0; i < 2; i++){
+	for (int i = 0; i < SECOND_FILT_COUNT; i++){
 		fs.push_back(filter);
 	}
 	m_secondWeights = fs;
 	Weights w;
 
-	for (uint i = 0; i < 256; i++){
+	for (uint i = 0; i < FOURTH_LAYER_SIZE; i++){
 		w.push_back(i);
 	}
 	m_thirdWeights = w;
@@ -84,79 +94,29 @@ NeuralNetwork::NeuralNetwork(Images imgs){
 }
 
 void::NeuralNetwork::ForwardProp(){
-	int output1, output2, output3;
-	FMS fs;
-	ConvNeuronSet ns;
 
-	SetInputLayer(ConvLayer(m_input, 8, 4, 4));
+	SetInputLayer(ConvLayer(m_input, FIRST_FILT_SIZE, FIRST_FILT_COUNT, FIRST_FILT_STRIDE));
 	m_inputLayer.SetFilters(m_firstWeights);
 	testConvLayer(m_inputLayer, 1); //Test
 
-	SetSecondLayer(ConvLayer(m_inputLayer, 4, 2, 2));
+	SetSecondLayer(ConvLayer(m_inputLayer, SECOND_FILT_SIZE, SECOND_FILT_COUNT, SECOND_FILT_STRIDE));
 	m_secondLayer.SetFilters(m_secondWeights);
 	testConvLayer(m_secondLayer, 2); //Test
-
-	//int output4 = fs[0][0][0].GetConnections().size();
-	//std::cout << "ConnCount: " << output4 << std::endl;
-	//----
-	for (FeatureMap fm : m_secondLayer.GetFeatureMaps()){ //move to layer function
-		for (ConvRow cr : fm){
-			for (ConvNeuron* n : cr){
-				n->SetValue(n->CalculateValue());
-				n->Activation();
-			}
-		}
-	}
-	//std::cout << "Neuron calcs done..." << std::endl;
-
-	//Test for output
-	/*for (FeatureMap cns : m_secondLayer.GetFeatureMaps()){
-		for (ConvRow cr : cns){
-			for (ConvNeuron* n : cr){
-				std::cout << n->GetValue() << "!";
-			}
-			std::cout << std::endl;
-		}
-		std::cout << std::endl;
-	}*/
-
+	m_secondLayer.activateNeurons();
 
 	SetThirdLayer(ConvLayer(m_secondLayer, 0, 0, 0));
 	testConvLayer(m_thirdLayer, 3); //Test
+	m_thirdLayer.activateNeurons();
 
-	//output4 = fs[0][0][0].GetConnections().size();
-	//std::cout << "ConnCount: " << output4 << std::endl;
-	//----
-	for (FeatureMap fm : m_thirdLayer.GetFeatureMaps()){
-		for (ConvRow cr : fm){
-			for (ConvNeuron* n : cr){
-				n->SetValue(n->CalculateValue());
-				n->Activation();
-			}
-		}
-	}
-	//std::cout << "Neuron calcs done..." << std::endl;
-
-	SetFourthLayer(FullConnLayer(m_thirdLayer, 256));
+	SetFourthLayer(FullConnLayer(m_thirdLayer, FOURTH_LAYER_SIZE));
 	m_fourthLayer.SetWeights(m_thirdWeights);
 	testFCLayer(m_fourthLayer, 4); // Test
-
-	for (Neuron* n : m_fourthLayer.GetNeurons()){
-		n->SetValue(n->CalculateValue());
-		n->Activation();
-	}
-	//std::cout << "Neuron calcs done..." << std::endl;
-
+	m_fourthLayer.activateNeurons();
 
 	SetOutputLayer(FullConnLayer(m_fourthLayer, GetActionSetSize()));
 	m_outputLayer.SetWeights(m_fourthWeights);
 	testFCLayer(m_outputLayer, 5); // Test
-
-	for (Neuron* n : m_outputLayer.GetNeurons()){
-		n->SetValue(n->CalculateValue());
-		n->Activation();
-		//std::cout << n->GetValue() << std::endl;
-	}
+	m_outputLayer.activateNeurons();
 }
 
 void NeuralNetwork::BackProp(){

@@ -29,6 +29,8 @@ public:
 	NeuronSet GetNeurons();
 	void AddNeuron(Neuron n);
 	void AddNeuronVector(NeuronSet ns);
+
+	virtual void activateNeurons() = 0;
 };
 
 
@@ -85,6 +87,8 @@ public:
 	FeatureMap GetFeatureMapAt(int i);
 	void SetFeatureMaps(FMS f);
 	void addFeatureMap(FeatureMap f);
+
+	virtual void activateNeurons();
 };
 
 
@@ -110,4 +114,6 @@ public:
 	void SetWeights(vector<double> w);
 	void AddWeight(double d);
 	double GetWeightAt(int i);
+
+	virtual void activateNeurons();
 };

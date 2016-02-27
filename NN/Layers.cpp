@@ -70,7 +70,7 @@ ConvLayer::ConvLayer(ConvLayer prevLayer, int filterSize, int filterNum, int str
 	SetFilterNum(filterNum);
 	SetStride(stride);
 
-	int fmPad = (prevLayer.GetFilterSize() / 2) - 1;		//make these layer variables??
+	int fmPad = (prevLayer.GetFilterSize() / 2) - 1;
 	int filtPad = (prevLayer.GetFilterSize() / 2) + 1;
 	int imgBound = prevLayer.GetInputXY() - (prevLayer.GetFilterSize() / 2);
 	int str = prevLayer.GetStride();
@@ -188,6 +188,16 @@ void ConvLayer::addFeatureMap(FeatureMap f){
 	m_featureMaps.push_back(f);
 }
 
+void ConvLayer::activateNeurons(){
+	for (FeatureMap fm : GetFeatureMaps()){
+		for (ConvRow cr : fm){
+			for (ConvNeuron* n : cr){
+				n->SetValue(n->CalculateValue());
+				n->Activation();
+			}
+		}
+	}
+}
 
 
 FullConnLayer::FullConnLayer(){
@@ -195,7 +205,7 @@ FullConnLayer::FullConnLayer(){
 
 FullConnLayer::FullConnLayer(ConvLayer prev, int size){
 
-	for (uint i = 0; i < 256; i++){
+	for (uint i = 0; i < size; i++){
 		Neuron* n = new Neuron;
 		for (FeatureMap fm : prev.GetFeatureMaps()){
 			for (vector<ConvNeuron*> row : fm){
@@ -248,4 +258,11 @@ void FullConnLayer::AddWeight(double d){
 
 double FullConnLayer::GetWeightAt(int i){
 	return m_weights[i];
+}
+
+void FullConnLayer::activateNeurons(){
+	for (Neuron* n : GetNeurons()){
+		n->SetValue(n->CalculateValue());
+		n->Activation();
+	}
 }

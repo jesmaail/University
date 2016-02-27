@@ -20,7 +20,7 @@ void Neuron::Activation(){
 	m_value = std::max(0.0, m_value);
 }
 
-double Neuron::CalculateValue(){
+double Neuron::CalculateValue(){ //pass in previous layer as param? to access the index val/weights?
 	double newVal = 0;
 	for (Conn c : m_connections){
 		newVal += c.first * c.second;
