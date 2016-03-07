@@ -1,16 +1,22 @@
 #pragma once
 //#include "Connection.h"
 #include <vector>
+#include <tuple>
 
 using std::vector;
 using std::pair;
+using std::tuple;
 
-//class Connection;
 class Neuron;
-//typedef vector<Connection> ConnectionSet;
-typedef vector<pair<double , double>> Connections;
-typedef pair<double, double> Conn;
+
+typedef tuple<int, int, int> ThrIndex;
+//typedef pair<ThrIndex, ThrIndex> Conn;
+typedef pair<double, ThrIndex> Conn;
+typedef vector<Conn> Connections;
+
 typedef vector<vector<double>> Filter;
+
+class Layer;
 
 class Neuron{
 private:
@@ -25,7 +31,7 @@ public:
 
 	//virtual double Activation();
 	void Activation();
-	double CalculateValue();
+	double CalculateValue(Layer* prev);
 
 	double GetValue();
 	void SetValue(double v);

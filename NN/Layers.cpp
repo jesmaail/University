@@ -4,6 +4,7 @@
 
 typedef unsigned int uint;
 using std::make_pair;
+using std::make_tuple;
 
 Layer::Layer(){
 }
@@ -35,6 +36,7 @@ ConvLayer::ConvLayer(){
 ConvLayer::ConvLayer(Images imgs, int filtSize, int filtNum, int stride){
 	ConvRow neuronRow;
 	ConvNeuronSet neurons;
+	m_previous = 0;
 
 	SetFilterSize(filtSize);
 	SetFilterNum(filtNum);
@@ -64,7 +66,9 @@ ConvLayer::ConvLayer(ConvLayer prevLayer, int filterSize, int filterNum, int str
 	ConvLayer previous = prevLayer;
 	ConvRow neuronRow;
 	ConvNeuronSet neurons;
+
 	FMS prevFMS = previous.GetFeatureMaps();
+	m_previous = &prevLayer;
 
 	SetFilterSize(filterSize);
 	SetFilterNum(filterNum);
@@ -75,14 +79,17 @@ ConvLayer::ConvLayer(ConvLayer prevLayer, int filterSize, int filterNum, int str
 	int imgBound = prevLayer.GetInputXY() - (prevLayer.GetFilterSize() / 2);
 	int str = prevLayer.GetStride();
 
-	for (FeatureMap fm : previous.GetFeatureMaps()){	
-		for (Filter f : previous.GetFilters()){
+	ThrIndex nIndex, wIndex;
+
+	for (FeatureMap fm : previous.GetFeatureMaps()){
+		for (uint d = 0; d < previous.GetFilters().size(); d++){
 			for (uint y = fmPad; y < imgBound; y += str){
 				for (uint x = fmPad; x < imgBound; x += str){
 					ConvNeuron* n = new ConvNeuron;
 					for (int j = -fmPad; j < filtPad; j++){
 						for (int k = -fmPad; k < filtPad; k++){
-							//n->addConnection(make_pair(fm[x + k][y + j]->GetValue(), f[k + 3][j + 3]));
+							wIndex = make_tuple(d, k + fmPad, j + fmPad);
+							n->addConnection(make_pair(fm[x + k][y + j]->GetValue(), wIndex));
 						}
 					}
 					neuronRow.push_back(n);
@@ -94,6 +101,28 @@ ConvLayer::ConvLayer(ConvLayer prevLayer, int filterSize, int filterNum, int str
 			neurons.clear();
 		}
 	}
+
+	/*for (uint c = 0; c < previous.GetFeatureMaps().size(); c++){
+		for (uint d = 0; d < previous.GetFilters().size(); d++){
+			for (uint y = fmPad; y < imgBound; y += str){
+				for (uint x = fmPad; x < imgBound; x += str){
+					ConvNeuron* n = new ConvNeuron;
+					for (int j = -fmPad; j < filtPad; j++){
+						for (int k = -fmPad; k < filtPad; k++){
+							wIndex = make_tuple(d, k + fmPad, j + fmPad);
+							n->addConnection(make_pair(prevNeuron, wIndex));
+						}
+					}
+					neuronRow.push_back(n);
+				}
+
+				neurons.push_back(neuronRow);
+				neuronRow.clear();
+			}
+			addFeatureMap(neurons);
+			neurons.clear();
+		}
+	}*/
 	FMS fms = GetFeatureMaps();
 	SetInputXY(fms[0][0].size());
 	SetInputZ(fms.size());
@@ -192,7 +221,7 @@ void ConvLayer::activateNeurons(){
 	for (FeatureMap fm : GetFeatureMaps()){
 		for (ConvRow cr : fm){
 			for (ConvNeuron* n : cr){
-				n->SetValue(n->CalculateValue());
+				n->SetValue(n->CalculateValue(m_previous));
 				n->Activation();
 			}
 		}
@@ -204,29 +233,57 @@ FullConnLayer::FullConnLayer(){
 }
 
 FullConnLayer::FullConnLayer(ConvLayer prev, int size){
-
+	ThrIndex nIndex, wIndex;
+	int cr;
+	FeatureMap fm;
+	m_previous = &prev;
+	Neuron prevNeuron;
 	for (uint i = 0; i < size; i++){
 		Neuron* n = new Neuron;
 		for (FeatureMap fm : prev.GetFeatureMaps()){
 			for (vector<ConvNeuron*> row : fm){
 				for (ConvNeuron* conv : row){
-					//n->addConnection(make_pair(conv->GetValue(), GetWeightAt(i)));
+					wIndex = make_tuple(0, 0, i);
+					n->addConnection(make_pair(conv->GetValue(), wIndex));
 				}
 			}
 		}
 		AddNeuron(n);
 	}
+	/*for (uint i = 0; i < size; i++){
+		Neuron* n = new Neuron;
+		for (uint c = 0; c < prev.GetFeatureMaps().size(); c++){
+			fm = prev.GetFeatureMapAt(c);
+			for (uint y = 0; y < fm.size(); y++){
+				cr = fm[y].size();
+				for (uint x = 0; x < cr; x++){				
+					//nIndex = make_tuple(c, x, y);
+					prevNeuron = *prev.GetFeatureMapAt(c)[x][y];
+					wIndex = make_tuple(0, 0, i);
+					n->addConnection(make_pair(prevNeuron, wIndex));
+				}
+			}
+		}
+		AddNeuron(n);
+	}*/
 }
 
 FullConnLayer::FullConnLayer(FullConnLayer prev, int size){
+	ThrIndex nIndex, wIndex;
 	int s = size;
 	int t = prev.GetNeurons().size();
 	NeuronSet ns = prev.GetNeurons();
+	m_previous = &prev;
+	Neuron prevNeuron;
 
 	for (int i = 0; i < s; i++){
 		Neuron* n = new Neuron;
 		for (int j = 0; j < t; j++){
-			//n->addConnection(make_pair(ns[j]->GetValue(), GetWeightAt(i)));
+			//nIndex = make_tuple(0, 0, j);
+			prevNeuron = *ns[j];
+			wIndex = make_tuple(0, 0, i);
+			//n->addConnection(make_pair(prevNeuron, wIndex));
+			n->addConnection(make_pair(ns[j]->GetValue(), wIndex));
 		}
 		AddNeuron(n);
 	}
@@ -262,7 +319,7 @@ double FullConnLayer::GetWeightAt(int i){
 
 void FullConnLayer::activateNeurons(){
 	for (Neuron* n : GetNeurons()){
-		n->SetValue(n->CalculateValue());
+		n->SetValue(n->CalculateValue(m_previous));
 		n->Activation();
 	}
 }

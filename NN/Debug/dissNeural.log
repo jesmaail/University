@@ -1,18 +1,25 @@
-﻿Build started 27/02/2016 14:30:37.
+﻿Build started 27/02/2016 18:20:23.
      1>Project "C:\diss\dissertation\NN\dissNeural.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Layers.cpp NeuralNetwork.cpp
-     1>cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Connection.cpp Layers.cpp NeuralNetwork.cpp Neurons.cpp Preprocess.cpp
          Layers.cpp
-     1>Layers.cpp(49): warning C4018: '<' : signed/unsigned mismatch
-     1>Layers.cpp(50): warning C4018: '<' : signed/unsigned mismatch
-     1>Layers.cpp(80): warning C4018: '<' : signed/unsigned mismatch
-     1>Layers.cpp(81): warning C4018: '<' : signed/unsigned mismatch
-     1>Layers.cpp(208): warning C4018: '<' : signed/unsigned mismatch
+     1>Layers.cpp(51): warning C4018: '<' : signed/unsigned mismatch
+     1>Layers.cpp(52): warning C4018: '<' : signed/unsigned mismatch
+     1>Layers.cpp(86): warning C4018: '<' : signed/unsigned mismatch
+     1>Layers.cpp(87): warning C4018: '<' : signed/unsigned mismatch
+     1>Layers.cpp(241): warning C4018: '<' : signed/unsigned mismatch
+     1>Layers.cpp(237): warning C4101: 'cr' : unreferenced local variable
+         Generating Code...
+         Compiling...
+         Preprocess.cpp
+         Neurons.cpp
+     1>Neurons.cpp(25): warning C4101: 'wVal' : unreferenced local variable
+     1>Neurons.cpp(25): warning C4101: 'nVal' : unreferenced local variable
          NeuralNetwork.cpp
      1>NeuralNetwork.cpp(84): warning C4018: '<' : signed/unsigned mismatch
-     1>NeuralNetwork.cpp(139): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+         Connection.cpp
          Generating Code...
+     1>c:\diss\dissertation\nn\neuralnetwork.cpp(144): warning C4700: uninitialized local variable 'x' used
      1>c:\diss\dissertation\nn\neuralnetwork.cpp(147): warning C4700: uninitialized local variable 'w' used
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\diss\dissertation\NN\Debug\dissNeural.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\diss\dissertation\NN\Debug\dissNeural.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\diss\dissertation\NN\Debug\dissNeural.lib" /MACHINE:X86 Debug\Connection.obj
@@ -25,4 +32,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.15
+Time Elapsed 00:00:01.84

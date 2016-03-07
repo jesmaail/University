@@ -17,6 +17,7 @@ class Layer{
 private:
 	double m_bias;
 	NeuronSet m_neurons;
+	Layer* m_previous;
 
 public:
 	Layer();
@@ -48,6 +49,7 @@ private:
 	Filters m_filters;
 	ConvNeuronSet m_neurons;
 	FMS m_featureMaps;
+	Layer* m_previous;
 
 public:
 	ConvLayer();
@@ -98,6 +100,7 @@ private:
 	double m_bias;
 	NeuronSet m_neurons;
 	vector<double> m_weights;
+	Layer* m_previous;
 
 public:
 	FullConnLayer();

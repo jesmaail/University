@@ -136,11 +136,11 @@ void NeuralNetwork::BackProp(){
 	for (Neuron *on : out){
 		cs = on->GetConnections();
 		for (Conn c : cs){
-			int index = c.first;
-			Neuron *n = fourth[index];
+			//ThrIndex index = c.first;
+			//Neuron *n = fourth[index];
 			//w = m_fourthLayer.GetWeightAt[c.second];
 			y = on->GetValue();
-			x = n->GetValue();
+			//x = n->GetValue();
 			dedw = (t - y) * y*(1 - y) * x;
 			ms = 0.9 * ms + 0.1* pow(dedw, 2); 
 			delta = (eps * dedw) / sqrt(ms) + mu;
