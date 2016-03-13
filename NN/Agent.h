@@ -8,13 +8,23 @@ private:
 	const int REPLAY_MEM_SIZE = 10000;
 	const double LEARNING_RATE = 0.99;
 	const int EPOCH_COUNT = 5;
-	const int MINIBATCH_SIZE = 16;
 	//ALE ale;
+
+	int m_numActions;
+	int m_epsilon;
+	Images m_current;
+	int m_reward;
+	int m_action;
 
 
 public:
+	Agent();
 
-	void PerformRandomActions();
+	void play();
+
+	Images Preprocess(Images in);
+
+	void PerformRandomAction();
 
 	void UseNeuralNetwork(/*weights?*/);
 

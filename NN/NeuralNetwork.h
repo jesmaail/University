@@ -8,6 +8,7 @@
 using std::vector;
 
 typedef vector<Image> Images;
+typedef unsigned int uint;
 
 class NeuralNetwork{
 private:

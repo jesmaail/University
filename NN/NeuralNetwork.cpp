@@ -3,8 +3,6 @@
 #include <iostream>
 #include <math.h>
 
-typedef unsigned int uint;
-
 using std::make_pair;
 const int FIRST_FILT_SIZE = 8;
 const int FIRST_FILT_COUNT = 4;

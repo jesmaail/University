@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <array>
 #include "NeuralNetwork.h"
 
 using namespace std;
@@ -13,12 +14,19 @@ struct transition{
 
 class ReplayMem{
 private:
-	vector<transition> m_transitions;
+	const static int SIZE = 10000;
+	const static int MINIBATCH_SIZE = 16;
+	bool m_buffer = false;
+	int m_bufferCount = 0;
+	std::array<transition, SIZE> m_transitions;
 
 public:
 	ReplayMem();
 
-	void AddTransition(Images s, int a, int r, Images n);
+	void AddTransition(Images s, int a, int r);
 
-	vector<transition> GetMiniBatch();
+	transition* GetMiniBatch();
+
+	const int GetSize();
+	const int GetMinibatchSize();
 };
