@@ -4,18 +4,27 @@ clc
 
 load Feature.mat
 
-%Supervised Learning problem 
-%Plan:
+%%Supervised Learning problem 
+%%Plan:
 %%Perform LDA to reduce Dimensionality
 %%Perform K-means to cluster the data
+
+%%Idea to correct PCA:
+%%Combine train and test dataset, perform PCA, then seperate again.
+%%That way, the extracted components will be the same across both
+%%training and testing values
 
 %Initialise normalised structures
 trnFeat1 = cell(10,15);
 tstFeat1 = cell(10,15);
 
+
 %trnFeat2 = cell(10,15);
 %tstFeat2 = cell(10,15);
 
+%%not performed on Feature sets 2, as they are data type single and get
+%%converted to doubles in the process which results in values of 
+%%either 0 or 1
 for x = 1 : 10
     for y = 1 : 15
         trnHist1 = hist(double(trnFeature_Set1{x,y})', 0:5:255)'./length(trnFeature_Set1{x,y});
@@ -33,9 +42,8 @@ for x = 1 : 10
     end
 end
 
-%Features = {'tick'; 'trilobite'; 'umbrella'; 'watch'; 'water lily'; 'wheelchair'; 'wild cat'; 'windsor chair'; 'wrench'; 'yin yang'};
-
-%Create Labels
+%%Create Labels
+%%15 of each number 1 through 10.
 Y = zeros(150,1);
 for x = 0 : 9
     for y = 1 : 15
@@ -43,7 +51,8 @@ for x = 0 : 9
     end
 end
 
-
+%%Collapse 2d array into 1d
+%%Y(150) = feature sets for each image
 X_trn = cell(150,1);
 X_tst = cell(150,1);
 for x = 0 : 9
@@ -53,7 +62,9 @@ for x = 0 : 9
     end
 end
 
-% 1=6656  2=468
+%%Turn 1d array of feature vectors into 2d array of samples/featurevectors
+%%Y(150) = images/samples
+%%X(6656) = feature vector
 X_train = zeros(150, 6656);
 X_test = zeros(150, 6656);
 for x = 1 : 150
@@ -63,20 +74,113 @@ for x = 1 : 150
     end
 end
 
-X_train = X_train(:, 1:4000);
-X_test = X_test(:, 1:4000);
+%% Option 1: Join the training and testing set, perform PCA
+%%no components specified(299) = 37.33%
+%%50 components = 46%
+X = cat(1, X_train, X_test);
+[coeff, score, latent] = pca(X, 'NumComponents',100);
 
-[coeff,score,latent] = pca(X_train);
+X_trainPCA = score(1:150, :);
+X_testPCA = score(151:300, :);
 
-LDAModel = fitcdiscr(X_train, Y); 
-%idx = predict(LDAModel, X_test);
 
-% Testing Procedure
-Y_tst_Predict = predict(LDAModel, X_test);
-% Check accuracy
+%% Option 2: Slice the feature vector into more manageable size(s)
+X_trainSlice1 = X_train(:, 1:3328);
+X_testSlice1 = X_test(:, 1:3328);
+X_trainSlice2 = X_train(:, 3329:6656);
+X_testSlice2 = X_test(:, 3329:6656);
+
+
+%% Option 1-LDA Accuracy
+LDAModel = fitcdiscr(X_trainPCA, Y); 
+%%Testing Procedure
+Y_tst_Predict = predict(LDAModel, X_testPCA);
+%%Check accuracy
 Diff = Y-Y_tst_Predict;
 ind = find(Diff==0);
 Right = numel(ind);
 Wrong = numel(Y) - Right;
 Accuracy = Right/(Right+Wrong);
+disp('Joining test and train data, performing PCA, then splitting and performing LDA.');
 disp(['Accuracy on testing set is: ' num2str(Accuracy*100) '%']);
+disp(' ');
+
+%% Option 1-NN Accuracy
+%%structure[7] = ~7%
+%%structure[7,7,4] = ~10%
+net = feedforwardnet([7,7,4]);
+% Train NNs on the training dataset
+net = train(net, X_trainPCA', Y');
+
+% Testing Procedure
+Y_tst_Predict = net(X_testPCA');
+Y_tst_Predict = round(Y_tst_Predict);
+% Check accuracy
+Diff = Y-Y_tst_Predict';
+ind = find(Diff==0);
+Right = numel(ind);
+Wrong = numel(Y) - Right;
+Accuracy = Right/(Right+Wrong);
+disp('Joining test and train data, performing PCA, then splitting and performing NN.');
+disp(['Accuracy on testing set is: ' num2str(Accuracy*100) '%']);
+disp(' ');
+
+%% Option 2.A-LDA Accuracy
+LDAModel = fitcdiscr(X_trainSlice1, Y); 
+%%Testing Procedure
+Y_tst_Predict = predict(LDAModel, X_testSlice1);
+%%Check accuracy
+Diff = Y-Y_tst_Predict;
+ind = find(Diff==0);
+Right = numel(ind);
+Wrong = numel(Y) - Right;
+Accuracy = Right/(Right+Wrong);
+disp('Slicing test and training data in half (first half) and then performing LDA.');
+disp(['Accuracy on testing set is: ' num2str(Accuracy*100) '%']);
+disp(' ');
+
+%% Option 2.A-NN Accuracy
+%%structure[7] = ~7%
+%%structure[7,7,4] = ~10%
+net2 = feedforwardnet([7,7,4]);
+% Train NNs on the training dataset
+net2 = train(net2, X_trainSlice1', Y');
+
+% Testing Procedure
+Y_tst_Predict = net2(X_testSlice1');
+Y_tst_Predict = round(Y_tst_Predict);
+% Check accuracy
+Diff = Y-Y_tst_Predict';
+ind = find(Diff==0);
+Right = numel(ind);
+Wrong = numel(Y) - Right;
+Accuracy = Right/(Right+Wrong);
+disp('Slicing test and training data in half (first half) and then performing NN.');
+disp(['Accuracy on testing set is: ' num2str(Accuracy*100) '%']);
+disp(' ');
+
+
+%% Option 2.B-LDA Accuracy -- note: contains a zero within-class variance, so
+%%need to chance the discrim type
+
+%%psudeoLinear = 52.6667%  (All classes have the same covariance matrix.
+%%The software inverts the covariance matrix using the pseudo
+%%inverse)[ref:http://uk.mathworks.com/help/stats/fitcdiscr.html]
+
+%%diagLinear = 56% (all classes have the same diagonal covariance matrix)
+%%[ref:http://uk.mathworks.com/help/stats/fitcdiscr.html]
+
+LDAModel = fitcdiscr(X_trainSlice2, Y, 'discrimType', 'diagLinear'); 
+%%Testing Procedure
+Y_tst_Predict = predict(LDAModel, X_testSlice2);
+%%Check accuracy
+Diff = Y-Y_tst_Predict;
+ind = find(Diff==0);
+Right = numel(ind);
+Wrong = numel(Y) - Right;
+Accuracy = Right/(Right+Wrong);
+disp('Slicing test and training data in half (second half) and then performing LDA.');
+disp(['Accuracy on testing set is: ' num2str(Accuracy*100) '%']);
+
+
+clear x y Wrong LDAModel Diff ind Accuracy Right
