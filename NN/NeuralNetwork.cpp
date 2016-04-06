@@ -15,79 +15,17 @@ const int SECOND_FILT_STRIDE = 2;
 const int FOURTH_LAYER_SIZE = 256;
 const int OUTPUT_LAYER_SIZE = 4; //WILL BE ACTION SET SIZE
 
-int main(){
-	Image imagePH;		//Create placeholder images //TESTING PURPOSES ONLY
-	vector<int> phRow;
-	for (uint i = 0; i < 84; i++){
-		for (uint j = 0; j < 84; j++){
-			phRow.push_back(i+j);
-		}
-		imagePH.push_back(phRow);
-		phRow.clear();
-	}
-	vector<Image> imgs;
-	for (uint i = 0; i < 4; i++){
-		imgs.push_back(imagePH);
-	}
-	
-	NeuralNetwork nn(imgs);
-	
-	//################################
-	// Just to keep debug window open!
-	int ph;
-	std::cin >> ph;
-	//################################
-
-	return 0;
-}
-
-//Should pass in a struct of weights!!!!!!!!!
-NeuralNetwork::NeuralNetwork(Images imgs){
+NeuralNetwork::NeuralNetwork(Images imgs, weightStruct weights){
 	SetActionSetSize(OUTPUT_LAYER_SIZE); //change to ALE command get action size
 	m_input = imgs;
-	// Filter creation here should be done outside the network and passed in.
-	Filter filter;
-	Filters fs;
-	filter.push_back({ 1, 1, 1, 1, 1, 1, 1, 1 });
-	filter.push_back({ 1, 2, 2, 2, 2, 2, 2, 1 });
-	filter.push_back({ 1, 2, 2, 1, 2, 1, 2, 1 });
-	filter.push_back({ 1, 2, 1, 3, 3, 2, 2, 1 });
-	filter.push_back({ 1, 2, 2, 3, 3, 1, 2, 1 });
-	filter.push_back({ 1, 2, 1, 2, 1, 2, 2, 1 });
-	filter.push_back({ 1, 2, 2, 2, 2, 2, 2, 1 });
-	filter.push_back({ 1, 1, 1, 1, 1, 1, 1, 1 });	
-	for (uint i = 0; i < FIRST_FILT_COUNT; i++){
-		fs.push_back(filter);
-	}
-	m_firstWeights = fs;
 
-	filter.clear();
-	fs.clear();
-	filter.push_back({ 1, 1, 1, 1 });
-	filter.push_back({ 1, 2, 2, 1 });
-	filter.push_back({ 1, 3, 3, 1 });
-	filter.push_back({ 1, 2, 2, 1 });
-	for (int i = 0; i < SECOND_FILT_COUNT; i++){
-		fs.push_back(filter);
-	}
-	m_secondWeights = fs;
-	Weights w;
-
-	for (uint i = 0; i < FOURTH_LAYER_SIZE; i++){
-		w.push_back(i);
-	}
-	m_thirdWeights = w;
-	
-	w.clear();
-	for (uint i = 0; i < GetActionSetSize(); i++){
-		w.push_back(i);
-	}
-	m_fourthWeights = w;
-
+	m_firstWeights = weights.weightLayer1;
+	m_secondWeights = weights.weightLayer2;
+	m_thirdWeights = weights.weightLayer3;
+	m_fourthWeights = weights.weightLayer4;
 	std::cout << "Filters set" << std::endl;
 
 	ForwardProp();
-
 	//BackProp();
 }
 

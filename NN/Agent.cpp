@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include "NeuralNetwork.h"
 #include "Agent.h"
 #include "ReplayMem.h"
@@ -13,21 +14,39 @@ const int SECOND_FILT_COUNT = 2;
 const int FOURTH_LAYER_SIZE = 256;
 const int OUTPUT_LAYER_SIZE = 4; //WILL BE ACTION SET SIZE
 
-struct weightStruct{
-	Filters weightLayer1;
-	Filters weightLayer2;
-	Weights weightLayer3;
-	Weights weightLayer4;
-};
+const int MINIBATCH_SIZE = 16;
 
 int main(){
+	Agent a;
 	
+	//################################
+	// Just to keep debug window open!
+	int ph;
+	std::cin >> ph;
+	//################################
 
 	return 0;
 }
 
 Agent::Agent(){
 	m_weights[0] = InitRandWeights();
+
+	Image imagePH;		//Create placeholder images //TESTING PURPOSES ONLY
+	vector<int> phRow;
+	for (uint i = 0; i < 84; i++){
+		for (uint j = 0; j < 84; j++){
+			phRow.push_back(i + j);
+		}
+		imagePH.push_back(phRow);
+		phRow.clear();
+	}
+	vector<Image> imgs;	
+	for (uint i = 0; i < 4; i++){
+		imgs.push_back(imagePH);
+	}
+
+	m_current = imgs;
+	NeuralNetwork nn(imgs, m_weights[0]);
 	//ALE ale;
 	//get actionsetsize (minimal may be best)
 
@@ -35,7 +54,7 @@ Agent::Agent(){
 
 void Agent::play(){
 	ReplayMem rm;
-	transition minibatch[rm.GetMinibatchSize];
+	transition minibatch[MINIBATCH_SIZE];
 	bool gameover; //temporary;
 
 	for (uint ep = 0; ep < EPOCH_COUNT; ep++){
@@ -48,7 +67,7 @@ void Agent::play(){
 			}
 			//m_reward = ale.act(m_action);
 			rm.AddTransition(m_current, m_action, m_reward);
-			minibatch = rm.GetMiniBatch();
+			//minibatch = rm.GetMiniBatch();
 
 			//perform gradient descent
 		}
@@ -65,7 +84,7 @@ void Agent::PerformRandomAction(){
 }
 
 void Agent::UseNeuralNetwork(){
-	NeuralNetwork nn(m_current);
+	//NeuralNetwork nn(m_current]);
 	//m_action = nn.GetDecision; GetDecision method does not currently exist.
 }
 
@@ -152,7 +171,7 @@ void ReplayMem::AddTransition(Images s, int a, int r){
 }
 
 transition* ReplayMem::GetMiniBatch(){
-	transition *batch = new transition[MINIBATCH_SIZE];
+	transition batch[MINIBATCH_SIZE];
 	for (uint i = 0; i < MINIBATCH_SIZE; i++){
 		int rand = 0; //should be random number
 		batch[i] = m_transitions[0];

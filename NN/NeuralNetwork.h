@@ -10,6 +10,13 @@ using std::vector;
 typedef vector<Image> Images;
 typedef unsigned int uint;
 
+struct weightStruct{
+	Filters weightLayer1;
+	Filters weightLayer2;
+	Weights weightLayer3;
+	Weights weightLayer4;
+};
+
 class NeuralNetwork{
 private:
 	Images m_input;	//getter/setter
@@ -26,7 +33,7 @@ private:
 	Weights m_fourthWeights;
 
 public:
-	NeuralNetwork(Images imgs);
+	NeuralNetwork(Images imgs, weightStruct weights);
 
 	~NeuralNetwork(){};
 
