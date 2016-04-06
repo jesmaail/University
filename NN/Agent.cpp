@@ -4,6 +4,22 @@
 #include "ReplayMem.h"
 #include <stdlib.h>
 
+const int FIRST_FILT_SIZE = 8;
+const int FIRST_FILT_COUNT = 4;
+
+const int SECOND_FILT_SIZE = 4;
+const int SECOND_FILT_COUNT = 2;
+
+const int FOURTH_LAYER_SIZE = 256;
+const int OUTPUT_LAYER_SIZE = 4; //WILL BE ACTION SET SIZE
+
+struct weightStruct{
+	Filters weightLayer1;
+	Filters weightLayer2;
+	Weights weightLayer3;
+	Weights weightLayer4;
+};
+
 int main(){
 	
 
@@ -11,6 +27,7 @@ int main(){
 }
 
 Agent::Agent(){
+	m_weights[0] = InitRandWeights();
 	//ALE ale;
 	//get actionsetsize (minimal may be best)
 
@@ -54,6 +71,59 @@ void Agent::UseNeuralNetwork(){
 
 void Agent::Backprop(){//change to gradDescent?
 
+}
+
+weightStruct Agent::InitRandWeights(){
+	weightStruct temp;
+	Filter f;
+	Filters fs;
+	Weights ws;
+	
+	//Layer 1
+	for (uint c = 0; c < FIRST_FILT_COUNT; c++){
+		for (uint x = 0; x < FIRST_FILT_SIZE; x++){
+			for (uint y = 0; y < FIRST_FILT_SIZE; y++){
+				ws.push_back(rand() % 100 + 1);
+			}
+			f.push_back(ws);
+			ws.clear();
+		}
+		fs.push_back(f);
+		f.clear();
+	}
+	temp.weightLayer1 = fs;
+	fs.clear();
+
+	//Layer 2
+	for (uint c = 0; c < SECOND_FILT_COUNT; c++){
+		for (uint x = 0; x < SECOND_FILT_SIZE; x++){
+			for (uint y = 0; y < SECOND_FILT_SIZE; y++){
+				ws.push_back(rand() % 100 + 1);
+			}
+			f.push_back(ws);
+			ws.clear();
+		}
+		fs.push_back(f);
+		f.clear();
+	}
+	temp.weightLayer2 = fs;
+	fs.clear();
+
+	//Layer 3
+	for (uint c = 0; c < FOURTH_LAYER_SIZE; c++){
+		ws.push_back(rand() % 100 + 1);
+	}
+	temp.weightLayer3 = ws;
+	ws.clear();
+
+	//Layer 4
+	for (uint c = 0; c < OUTPUT_LAYER_SIZE; c++){
+		ws.push_back(rand() % 100 + 1);
+	}
+	temp.weightLayer4 = ws;
+	ws.clear();
+
+	return temp;
 }
 
 

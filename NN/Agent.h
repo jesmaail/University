@@ -16,6 +16,8 @@ private:
 	int m_reward;
 	int m_action;
 
+	weightStruct m_weights[2];
+
 
 public:
 	Agent();
@@ -30,4 +32,5 @@ public:
 
 	void Backprop(); //should this be here or in NN?
 
+	weightStruct InitRandWeights();
 };

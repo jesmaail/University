@@ -43,7 +43,7 @@ int main(){
 
 //Should pass in a struct of weights!!!!!!!!!
 NeuralNetwork::NeuralNetwork(Images imgs){
-	SetActionSetSize(OUTPUT_LAYER_SIZE); 
+	SetActionSetSize(OUTPUT_LAYER_SIZE); //change to ALE command get action size
 	m_input = imgs;
 	// Filter creation here should be done outside the network and passed in.
 	Filter filter;
