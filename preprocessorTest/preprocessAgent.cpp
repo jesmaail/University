@@ -4,6 +4,7 @@
 #include <iostream>
 #include <ale_interface.hpp>
 #include <vector>
+#include <math.h>
 #ifdef __USE_SDL
   #include <SDL.h>
 #endif
@@ -20,6 +21,10 @@ const int grayscaleValue[256] =
  76, 76, 107, 107, 136, 136, 160, 160, 187, 187, 207, 207, 229, 229, 43, 43, 74, 74, 106, 106, 137, 137, 161, 161, 187, 187, 209, 209,
  231, 231, 44, 44, 77, 77, 108, 108, 136, 136, 163, 163, 186, 186, 211, 211, 234, 234, 43, 43, 73, 73, 104, 104, 132, 132, 159, 159,
  183, 183, 203, 203, 226, 226, 42, 42, 73, 73, 104, 104, 132, 132, 156, 156, 179, 179, 202, 202, 222, 222};
+
+const int INPUT_IMAGE_X = 120;
+const int INPUT_IMAGE_Y = 180;
+const int DESIRED_IMAGE_XY = 84;
 
 int main(int argc, char** argv){
 	int epCount = 3;	//how many episodes to perform
@@ -53,13 +58,51 @@ int main(int argc, char** argv){
 			}else if (count < 201){
 				a = legalActions[4];
 				if(!screenshot){
-					ALEScreen screen = ale.getScreen();
+					ALEScreen screen = ale.getScreen(); //Gets Screen.
 					width = screen.width();
 					height = screen.height();
-					int img[height][width];
-					int x = 0;
+					int img[width][width];
 
+					//Scaling 
+					int newImg[DESIRED_IMAGE_XY][DESIRED_IMAGE_XY];
+					int newX, newY;
+
+					double xRatio = INPUT_IMAGE_X / (double)DESIRED_IMAGE_XY;
+					double yRatio = INPUT_IMAGE_Y / (double)DESIRED_IMAGE_XY;
+					int xCount, yCount = 0;
+
+					int jt = 0;							//Gets ROI
 					for(int j=32; j<height-18; j++){
+						for (int i=0; i<width; i++){
+							int intPix = screen.get(j, i);
+							img[jt][i] = grayscaleValue[intPix];
+						}
+						jt++;
+					}
+
+					for (int y = 0; y < DESIRED_IMAGE_XY; y++){  //Scales!
+						for (int x = 0; x < DESIRED_IMAGE_XY; x++){
+							newY = floor(y*yRatio);
+							newX = floor(x*xRatio);
+							newImg[y][x] = img[newY][newX];
+						}
+					}
+					cout << sizeof(img)/sizeof(img[0]) << endl;
+					cout << sizeof(newImg)/sizeof(newImg[0]) << endl;
+					/*for(int j=0; j<height; j++){
+						for (int i=0; i<width; i++){
+							//fout << newImg[i][j];
+							//fout << " ";
+							xCount++;
+						}
+						//fout << endl;
+						yCount++;
+					}
+					xCount = xCount / yCount;
+					fout << xCount << endl;
+					fout << yCount << endl;*/
+					//################
+					/*for(int j=32; j<height-18; j++){
 						for (int i=0; i<width; i++){
 							int intPix = screen.get(j, i);
 							img[x][i] = grayscaleValue[intPix];
@@ -68,7 +111,7 @@ int main(int argc, char** argv){
 						}
 						x++;
 						fout << endl;
-					}
+					}*/
 
 					screenshot = true;
 					fout.close();
