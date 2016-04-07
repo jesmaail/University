@@ -60,6 +60,8 @@ public:
 
 	void ForwardProp();
 	void BackProp();
+
+	int getDecision();
 };
 
 

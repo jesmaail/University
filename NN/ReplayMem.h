@@ -25,7 +25,7 @@ public:
 
 	void AddTransition(Images s, int a, int r);
 
-	transition* GetMiniBatch();
+	vector<transition> GetMiniBatch();
 
 	const int GetSize();
 	const int GetMinibatchSize();

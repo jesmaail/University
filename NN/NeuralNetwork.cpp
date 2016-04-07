@@ -162,3 +162,18 @@ int NeuralNetwork::GetActionSetSize(){
 void NeuralNetwork::SetActionSetSize(int s){
 	m_actionSetSize = s;
 }
+
+int NeuralNetwork::getDecision(){
+	int count = 0;
+	int max = -9999;
+	int maxNum = 0;
+	for (Neuron n : m_outputLayer.GetNeurons){
+		if (n.GetValue > max){
+			max = n.GetValue();
+			maxNum = count;
+		}
+		count++;
+	}
+
+	return maxNum;
+}

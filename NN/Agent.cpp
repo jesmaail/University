@@ -7,14 +7,19 @@
 
 const int FIRST_FILT_SIZE = 8;
 const int FIRST_FILT_COUNT = 4;
-
 const int SECOND_FILT_SIZE = 4;
 const int SECOND_FILT_COUNT = 2;
-
 const int FOURTH_LAYER_SIZE = 256;
 const int OUTPUT_LAYER_SIZE = 4; //WILL BE ACTION SET SIZE
 
 const int MINIBATCH_SIZE = 16;
+
+const int IMAGE_COUNT = 2;
+const int INPUT_IMAGE_X = 120;
+const int INPUT_IMAGE_Y = 180;
+const int DESIRED_IMAGE_XY = 84;
+
+
 
 int main(){
 	Agent a;
@@ -54,8 +59,8 @@ Agent::Agent(){
 
 void Agent::play(){
 	ReplayMem rm;
-	transition minibatch[MINIBATCH_SIZE];
-	bool gameover; //temporary;
+	vector<transition> minibatch;
+	bool gameover; //temporary, replace with ale.gameover()
 
 	for (uint ep = 0; ep < EPOCH_COUNT; ep++){
 		//Set m_current  to a screenshot from game(preprocessed)
@@ -63,11 +68,13 @@ void Agent::play(){
 			if (rand() % 100 + 1 <= m_epsilon){
 				PerformRandomAction();
 			}else{
-				UseNeuralNetwork();
+				//UseNeuralNetwork();
+				NeuralNetwork nn(m_current, m_weights[0]);
+				m_action = nn.getDecision();
 			}
 			//m_reward = ale.act(m_action);
 			rm.AddTransition(m_current, m_action, m_reward);
-			//minibatch = rm.GetMiniBatch();
+			minibatch = rm.GetMiniBatch();
 
 			//perform gradient descent
 		}
@@ -76,7 +83,25 @@ void Agent::play(){
 
 Images Agent::Preprocess(Images in){
 	//perform preprocess (should just be downscaling and ROI)
-	return in;
+	//!!!!NEEDS ROI ADDED!!!!
+	int newX, newY;
+	int xRatio = (int)(INPUT_IMAGE_X << 16 / DESIRED_IMAGE_XY) + 1;
+	int yRatio = (int)(INPUT_IMAGE_Y << 16 / DESIRED_IMAGE_XY) + 1;
+	Image newImg;
+	Images out;
+
+	for (Image img : in){
+		for (int y = 0; y < DESIRED_IMAGE_XY; y++){
+			for (int x = 0; x < DESIRED_IMAGE_XY; x++){
+				newY = ((y*yRatio) >> 16);
+				newX = ((x*xRatio) >> 16);
+				newImg[x][y] = img[newX][newY];
+			}
+		}
+		out.push_back(newImg);
+		newImg.clear();
+	}
+	return out;
 }
 
 void Agent::PerformRandomAction(){
@@ -158,10 +183,14 @@ void ReplayMem::AddTransition(Images s, int a, int r){
 	tran.reward = r;
 	int size = m_transitions.size();
 
-	if (m_buffer){
-		m_transitions[m_bufferCount];
+	if(m_buffer && m_bufferCount >= SIZE){
+		m_bufferCount = 0;
+		m_transitions[m_bufferCount] = tran;
 		m_bufferCount++;
-	}else if (size <= SIZE){	
+	}else if (m_buffer){
+		m_transitions[m_bufferCount] = tran;
+		m_bufferCount++;
+	}else if (size <= SIZE){
 		m_transitions[size] = tran;
 	}else{
 		m_buffer = true;
@@ -170,8 +199,8 @@ void ReplayMem::AddTransition(Images s, int a, int r){
 	
 }
 
-transition* ReplayMem::GetMiniBatch(){
-	transition batch[MINIBATCH_SIZE];
+vector<transition> ReplayMem::GetMiniBatch(){
+	vector<transition> batch;
 	for (uint i = 0; i < MINIBATCH_SIZE; i++){
 		int rand = 0; //should be random number
 		batch[i] = m_transitions[0];
