@@ -87,8 +87,21 @@ int main(int argc, char** argv){
 							newImg[y][x] = img[newY][newX];
 						}
 					}
-					cout << sizeof(img)/sizeof(img[0]) << endl;
-					cout << sizeof(newImg)/sizeof(newImg[0]) << endl;
+
+					for (int y = 0; y < DESIRED_IMAGE_XY; y++){  //print
+						for (int x = 0; x < DESIRED_IMAGE_XY; x++){
+							char px;
+							if(newImg[y][x] < 5){
+								px = '#';
+							}else{
+								px = ' ';
+							}
+							cout << px;
+						}
+						cout << "" << endl;
+					}
+					//cout << sizeof(img)/sizeof(img[0]) << endl;
+					//cout << sizeof(newImg)/sizeof(newImg[0]) << endl;
 					/*for(int j=0; j<height; j++){
 						for (int i=0; i<width; i++){
 							//fout << newImg[i][j];

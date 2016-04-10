@@ -13,8 +13,11 @@ private:
 	int m_numActions;
 	int m_epsilon;
 	Images m_current;
+	Images m_next;
 	int m_reward;
 	int m_action;
+	bool m_terminal;
+	ReplayMem m_replay;
 
 	weightStruct m_weights[2];
 

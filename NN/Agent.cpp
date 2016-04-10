@@ -4,6 +4,12 @@
 #include "Agent.h"
 #include "ReplayMem.h"
 #include <stdlib.h>
+#include <ale_interface.hpp>
+#ifdef __USE_SDL
+	#include <SDL.h>
+#endif
+
+const int EPISODE_COUNT;
 
 const int FIRST_FILT_SIZE = 8;
 const int FIRST_FILT_COUNT = 4;
@@ -18,7 +24,20 @@ const int IMAGE_COUNT = 2;
 const int INPUT_IMAGE_X = 120;
 const int INPUT_IMAGE_Y = 180;
 const int DESIRED_IMAGE_XY = 84;
+const int Y_BOUND_TOP = 32;
+const int Y_BOUND_BOT = 18;
 
+
+const int grayscaleValue[256] = 
+{0, 0, 63, 63, 106, 106, 143, 143, 174, 174, 200, 200, 219, 219, 234, 234, 62, 62, 94, 94, 124, 124, 151, 151, 174, 174, 197, 197, 221, 221,
+ 240, 240, 51, 51, 76, 76, 99, 99, 126, 126, 144, 144, 163, 163, 182, 182, 201, 201, 44, 44, 69, 69, 96, 96, 119, 119, 141, 141, 160, 160,
+ 177, 177, 197, 197, 28, 28, 57, 57, 83, 83, 109, 109, 130, 130, 153, 153, 175, 175, 193, 193, 31, 31, 60, 60, 85, 85, 109, 109, 132, 132,
+ 151, 151, 172, 172, 190, 190, 23, 23, 53, 53, 79, 79, 104, 104, 127, 127, 147, 147, 169, 169, 187, 187, 13, 13, 43, 43, 70, 70, 97, 97,
+ 120, 120, 143, 143, 166, 166, 185, 185, 9, 9, 38, 38, 69, 69, 95, 95, 118, 118, 141, 141, 164, 164, 183, 183, 25, 25, 55, 55, 82, 82,
+ 109, 109, 132, 132, 153, 153, 175, 175, 195, 195, 37, 37, 67, 67, 95, 95, 123, 123, 146, 146, 169, 169, 192, 192, 212, 212, 46, 46,
+ 76, 76, 107, 107, 136, 136, 160, 160, 187, 187, 207, 207, 229, 229, 43, 43, 74, 74, 106, 106, 137, 137, 161, 161, 187, 187, 209, 209,
+ 231, 231, 44, 44, 77, 77, 108, 108, 136, 136, 163, 163, 186, 186, 211, 211, 234, 234, 43, 43, 73, 73, 104, 104, 132, 132, 159, 159,
+ 183, 183, 203, 203, 226, 226, 42, 42, 73, 73, 104, 104, 132, 132, 156, 156, 179, 179, 202, 202, 222, 222};
 
 
 int main(){
@@ -34,7 +53,7 @@ int main(){
 }
 
 Agent::Agent(){
-	m_weights[0] = InitRandWeights();
+	/*m_weights[0] = InitRandWeights();
 
 	Image imagePH;		//Create placeholder images //TESTING PURPOSES ONLY
 	vector<int> phRow;
@@ -51,16 +70,32 @@ Agent::Agent(){
 	}
 
 	m_current = imgs;
-	NeuralNetwork nn(imgs, m_weights[0]);
-	//ALE ale;
-	//get actionsetsize (minimal may be best)
+	NeuralNetwork nn(imgs, m_weights[0]);*/
 
+
+	ALEInterface ale;
+
+	#ifdef __USE_SDL	//Simple Direct Media Layer, for observing game as it is played
+		ale.setBool("display_screen", false);
+		ale.setBool("sound", false);
+	#endif
+
+	ale.loadRom("../breakout.bin");
+	ActionVect legalActions = ale.getLegalActionSet();
+	int actionSize = legalActions.size();
+
+	for(uint ep = 0; ep < EPISODE_COUNT; ep++){
+		play();
+	}
 }
 
 void Agent::play(){
-	ReplayMem rm;
+	//ReplayMem rm;
 	vector<transition> minibatch;
-	bool gameover; //temporary, replace with ale.gameover()
+	//bool gameover; //temporary, replace with ale.gameover()
+	bool gameover = ale.game_over();
+	float reward;
+	ALEScreen screen;
 
 	for (uint ep = 0; ep < EPOCH_COUNT; ep++){
 		//Set m_current  to a screenshot from game(preprocessed)
@@ -68,15 +103,15 @@ void Agent::play(){
 			if (rand() % 100 + 1 <= m_epsilon){
 				PerformRandomAction();
 			}else{
-				//UseNeuralNetwork();
+				
 				NeuralNetwork nn(m_current, m_weights[0]);
 				m_action = nn.getDecision();
 			}
-			//m_reward = ale.act(m_action);
-			rm.AddTransition(m_current, m_action, m_reward);
-			minibatch = rm.GetMiniBatch();
+			m_reward = ale.act(legalActions[m_action]);
+			m_replay.AddTransition(m_current, m_action, m_reward);
+			minibatch = m_replay.GetMiniBatch();
 
-			//perform gradient descent
+			//perform gradient descent (try with stochastic GD of 1)
 		}
 	}
 }
@@ -109,6 +144,9 @@ void Agent::PerformRandomAction(){
 }
 
 void Agent::UseNeuralNetwork(){
+	ALEScreen screen = ale.getScreen();
+	
+
 	//NeuralNetwork nn(m_current]);
 	//m_action = nn.GetDecision; GetDecision method does not currently exist.
 }
