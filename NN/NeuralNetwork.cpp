@@ -56,35 +56,12 @@ void::NeuralNetwork::ForwardProp(){
 }
 
 void NeuralNetwork::BackProp(){
-	NeuronSet out = m_outputLayer.GetNeurons();
-	NeuronSet fourth = m_fourthLayer.GetNeurons();
-	Connections cs;
-	double dedw; //derivate of weight wrt. error
-	double y; //yield
-	double x; //neuron value;
-	double delta; //change for weight
-	double w; //weight to change
-	double t = 5; //target value, from Q table?????
-	double eps = 0.00025; //learning rate
-	double mu = 0.01;	//smoothing value
-	double ms = 0; //mean square
-
-	for (Neuron *on : out){
-		cs = on->GetConnections();
-		for (Conn c : cs){
-			//ThrIndex index = c.first;
-			//Neuron *n = fourth[index];
-			//w = m_fourthLayer.GetWeightAt[c.second];
-			y = on->GetValue();
-			//x = n->GetValue();
-			dedw = (t - y) * y*(1 - y) * x;
-			ms = 0.9 * ms + 0.1* pow(dedw, 2); 
-			delta = (eps * dedw) / sqrt(ms) + mu;
-			w += delta;
-		}
-	}
-
+	//Want to feed in the target value to this function, when called from the agent.
+	//Calculate the loss function
+	//...
+	//profit
 }
+
 
 void NeuralNetwork::testConvLayer(ConvLayer l, int n){
 	int num = n;
@@ -165,11 +142,11 @@ void NeuralNetwork::SetActionSetSize(int s){
 
 int NeuralNetwork::getDecision(){
 	int count = 0;
-	int max = -9999;
+	double max = -9999;
 	int maxNum = 0;
-	for (Neuron n : m_outputLayer.GetNeurons){
-		if (n.GetValue > max){
-			max = n.GetValue();
+	for (Neuron* n : m_outputLayer.GetNeurons()){
+		if (n->GetValue() > max){
+			max = n->GetValue();
 			maxNum = count;
 		}
 		count++;

@@ -4,12 +4,12 @@
 #include "Agent.h"
 #include "ReplayMem.h"
 #include <stdlib.h>
-#include <ale_interface.hpp>
+/*#include <ale_interface.hpp>
 #ifdef __USE_SDL
 	#include <SDL.h>
-#endif
+#endif*/
 
-const int EPISODE_COUNT;
+const int EPISODE_COUNT = 5;
 
 const int FIRST_FILT_SIZE = 8;
 const int FIRST_FILT_COUNT = 4;
@@ -53,8 +53,8 @@ int main(){
 }
 
 Agent::Agent(){
-	/*m_weights[0] = InitRandWeights();
-
+	m_weights[0] = InitRandWeights();
+	/*
 	Image imagePH;		//Create placeholder images //TESTING PURPOSES ONLY
 	vector<int> phRow;
 	for (uint i = 0; i < 84; i++){
@@ -70,44 +70,54 @@ Agent::Agent(){
 	}
 
 	m_current = imgs;
-	NeuralNetwork nn(imgs, m_weights[0]);*/
+	*/
+	//NeuralNetwork nn(imgs, m_weights[0]);
 
 
-	ALEInterface ale;
+	//ALEInterface ale;
 
-	#ifdef __USE_SDL	//Simple Direct Media Layer, for observing game as it is played
+	/*#ifdef __USE_SDL	//Simple Direct Media Layer, for observing game as it is played
 		ale.setBool("display_screen", false);
 		ale.setBool("sound", false);
 	#endif
 
 	ale.loadRom("../breakout.bin");
 	ActionVect legalActions = ale.getLegalActionSet();
-	int actionSize = legalActions.size();
+	int actionSize = legalActions.size();*/
+
+
+	//placeholder
+	m_numActions = 4;
 
 	for(uint ep = 0; ep < EPISODE_COUNT; ep++){
 		play();
 	}
 }
 
+
+//Need to commit to replay memory from the random actions.
+//This means getting the current state before making decision on random or NN
+//and storing the chosen action and reward.
+//also need to have a flag in transition on whether a state is terminal.
 void Agent::play(){
 	//ReplayMem rm;
 	vector<transition> minibatch;
-	//bool gameover; //temporary, replace with ale.gameover()
-	bool gameover = ale.game_over();
+	bool gameover = false; //temporary, replace with ale.gameover()
 	float reward;
-	ALEScreen screen;
+	//ALEScreen screen;
 
 	for (uint ep = 0; ep < EPOCH_COUNT; ep++){
 		//Set m_current  to a screenshot from game(preprocessed)
 		while (!gameover){
 			if (rand() % 100 + 1 <= m_epsilon){
+				cout << "R: ";
 				PerformRandomAction();
 			}else{
-				
-				NeuralNetwork nn(m_current, m_weights[0]);
-				m_action = nn.getDecision();
+				cout << "NN: ";
+				UseNeuralNetwork();
 			}
-			m_reward = ale.act(legalActions[m_action]);
+			cout << m_action << endl;
+			//m_reward = ale.act(legalActions[m_action]);
 			m_replay.AddTransition(m_current, m_action, m_reward);
 			minibatch = m_replay.GetMiniBatch();
 
@@ -144,11 +154,25 @@ void Agent::PerformRandomAction(){
 }
 
 void Agent::UseNeuralNetwork(){
-	ALEScreen screen = ale.getScreen();
-	
+	//ALEScreen screen = ale.getScreen();
+	Image imagePH;		//Create placeholder images //TESTING PURPOSES ONLY
+	vector<int> phRow;
+	for (uint i = 0; i < 84; i++){
+		for (uint j = 0; j < 84; j++){
+			phRow.push_back(i + j);
+		}
+		imagePH.push_back(phRow);
+		phRow.clear();
+	}
+	vector<Image> imgs;
+	for (uint i = 0; i < 4; i++){
+		imgs.push_back(imagePH);
+	}
 
-	//NeuralNetwork nn(m_current]);
-	//m_action = nn.GetDecision; GetDecision method does not currently exist.
+	m_current = imgs;
+
+	NeuralNetwork nn(m_current, m_weights[0]);
+	m_action = nn.getDecision();
 }
 
 void Agent::Backprop(){//change to gradDescent?
@@ -229,9 +253,12 @@ void ReplayMem::AddTransition(Images s, int a, int r){
 		m_transitions[m_bufferCount] = tran;
 		m_bufferCount++;
 	}else if (size <= SIZE){
-		m_transitions[size] = tran;
+		m_transitions[m_bufferCount] = tran;
+		m_bufferCount++;
 	}else{
 		m_buffer = true;
+		m_bufferCount = 0;
+		m_transitions[m_bufferCount] = tran;
 		m_bufferCount++;
 	}
 	
@@ -240,8 +267,8 @@ void ReplayMem::AddTransition(Images s, int a, int r){
 vector<transition> ReplayMem::GetMiniBatch(){
 	vector<transition> batch;
 	for (uint i = 0; i < MINIBATCH_SIZE; i++){
-		int rand = 0; //should be random number
-		batch[i] = m_transitions[0];
+		int r = rand() % m_transitions.size() + 1;
+		batch.push_back(m_transitions[r]);
 	}
 	return batch;
 }

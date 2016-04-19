@@ -11,7 +11,7 @@ private:
 	//ALE ale;
 
 	int m_numActions;
-	int m_epsilon;
+	int m_epsilon = 99;
 	Images m_current;
 	Images m_next;
 	int m_reward;
