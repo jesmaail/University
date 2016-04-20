@@ -12,11 +12,12 @@ private:
 
 	int m_numActions;
 	int m_epsilon = 99;
+	double discount = 0.99;
 	Images m_current;
 	Images m_next;
 	int m_reward;
 	int m_action;
-	bool m_terminal;
+	bool m_terminal = false;
 	ReplayMem m_replay;
 
 	weightStruct m_weights[2];
@@ -36,4 +37,8 @@ public:
 	void Backprop(); //should this be here or in NN?
 
 	weightStruct InitRandWeights();
+
+	Images GetPlaceholderScreen();
+
+	int GetTargetValue();
 };

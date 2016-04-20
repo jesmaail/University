@@ -10,6 +10,7 @@ struct transition{
 	int action;
 	int reward;
 	Images nextState;
+	bool terminal;
 };
 
 class ReplayMem{
@@ -23,7 +24,7 @@ private:
 public:
 	ReplayMem();
 
-	void AddTransition(Images s, int a, int r);
+	void AddTransition(Images s, int a, int r, Images n, bool t);
 
 	vector<transition> GetMiniBatch();
 

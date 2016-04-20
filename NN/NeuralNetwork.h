@@ -33,7 +33,7 @@ private:
 	Weights m_fourthWeights;
 
 public:
-	NeuralNetwork(Images imgs, weightStruct weights);
+	NeuralNetwork(Images imgs, weightStruct weights, int actionSize);
 
 	~NeuralNetwork(){};
 
@@ -59,7 +59,7 @@ public:
 	void SetActionSetSize(int s);
 
 	void ForwardProp();
-	void BackProp();
+	void BackProp(int target);
 
 	int getDecision();
 };

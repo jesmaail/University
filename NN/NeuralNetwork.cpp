@@ -13,10 +13,10 @@ const int SECOND_FILT_COUNT = 2;
 const int SECOND_FILT_STRIDE = 2;
 
 const int FOURTH_LAYER_SIZE = 256;
-const int OUTPUT_LAYER_SIZE = 4; //WILL BE ACTION SET SIZE
+//const int OUTPUT_LAYER_SIZE = 4; //WILL BE ACTION SET SIZE
 
-NeuralNetwork::NeuralNetwork(Images imgs, weightStruct weights){
-	SetActionSetSize(OUTPUT_LAYER_SIZE); //change to ALE command get action size
+NeuralNetwork::NeuralNetwork(Images imgs, weightStruct weights, int actionSize){
+	SetActionSetSize(actionSize); //change to ALE command get action size
 	m_input = imgs;
 
 	m_firstWeights = weights.weightLayer1;
@@ -55,7 +55,7 @@ void::NeuralNetwork::ForwardProp(){
 	m_outputLayer.activateNeurons();
 }
 
-void NeuralNetwork::BackProp(){
+void NeuralNetwork::BackProp(int target){
 	//Want to feed in the target value to this function, when called from the agent.
 	//Calculate the loss function
 	//...

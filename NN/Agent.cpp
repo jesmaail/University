@@ -100,11 +100,12 @@ Agent::Agent(){
 //and storing the chosen action and reward.
 //also need to have a flag in transition on whether a state is terminal.
 void Agent::play(){
-	//ReplayMem rm;
 	vector<transition> minibatch;
 	bool gameover = false; //temporary, replace with ale.gameover()
 	float reward;
-	//ALEScreen screen;
+
+	//ALEScreen screen = ale.getScreen();
+	m_current = GetPlaceholderScreen();
 
 	for (uint ep = 0; ep < EPOCH_COUNT; ep++){
 		//Set m_current  to a screenshot from game(preprocessed)
@@ -118,8 +119,14 @@ void Agent::play(){
 			}
 			cout << m_action << endl;
 			//m_reward = ale.act(legalActions[m_action]);
-			m_replay.AddTransition(m_current, m_action, m_reward);
-			minibatch = m_replay.GetMiniBatch();
+			m_next = GetPlaceholderScreen();
+
+			if (gameover){
+				m_terminal = true;
+			}
+			m_replay.AddTransition(m_current, m_action, m_reward, m_next, m_terminal);
+
+			GetTargetValue();
 
 			//perform gradient descent (try with stochastic GD of 1)
 		}
@@ -154,24 +161,7 @@ void Agent::PerformRandomAction(){
 }
 
 void Agent::UseNeuralNetwork(){
-	//ALEScreen screen = ale.getScreen();
-	Image imagePH;		//Create placeholder images //TESTING PURPOSES ONLY
-	vector<int> phRow;
-	for (uint i = 0; i < 84; i++){
-		for (uint j = 0; j < 84; j++){
-			phRow.push_back(i + j);
-		}
-		imagePH.push_back(phRow);
-		phRow.clear();
-	}
-	vector<Image> imgs;
-	for (uint i = 0; i < 4; i++){
-		imgs.push_back(imagePH);
-	}
-
-	m_current = imgs;
-
-	NeuralNetwork nn(m_current, m_weights[0]);
+	NeuralNetwork nn(m_current, m_weights[0], m_numActions);
 	m_action = nn.getDecision();
 }
 
@@ -232,17 +222,56 @@ weightStruct Agent::InitRandWeights(){
 	return temp;
 }
 
+Images Agent::GetPlaceholderScreen(){//TESTING PURPOSES ONLY
+	Image imagePH;	
+	vector<int> phRow;
+	for (uint i = 0; i < 84; i++){
+		for (uint j = 0; j < 84; j++){
+			phRow.push_back(i + j);
+		}
+		imagePH.push_back(phRow);
+		phRow.clear();
+	}
+	vector<Image> imgs;
+	for (uint i = 0; i < 4; i++){
+		imgs.push_back(imagePH);
+	}
+
+	return imgs;
+}
+
+int Agent::GetTargetValue(){
+	int target = 0;
+	int action;
+	vector<transition> minibatch = m_replay.GetMiniBatch();
+	int mbMax = minibatch.size();
+	int stochastic = rand() % mbMax;
+
+	transition randTran = minibatch[stochastic];
+
+	if (randTran.terminal){
+		target = randTran.reward;
+	}else{
+		NeuralNetwork nn(randTran.state, m_weights[0], m_numActions);
+		action = nn.getDecision();
+		target = randTran.reward + (discount * action);
+	}
+
+	return target;
+}
 
 
 ReplayMem::ReplayMem(){
 
 }
 
-void ReplayMem::AddTransition(Images s, int a, int r){
+void ReplayMem::AddTransition(Images s, int a, int r, Images n, bool t){
 	transition tran;
 	tran.state = s;
 	tran.action = a;
 	tran.reward = r;
+	tran.nextState = n;
+	tran.terminal = t;
 	int size = m_transitions.size();
 
 	if(m_buffer && m_bufferCount >= SIZE){
