@@ -8,6 +8,14 @@
 using std::vector;
 
 typedef vector<Image> Images;
+typedef unsigned int uint;
+
+struct weightStruct{
+	Filters weightLayer1;
+	Filters weightLayer2;
+	Weights weightLayer3;
+	Weights weightLayer4;
+};
 
 class NeuralNetwork{
 private:
@@ -19,23 +27,18 @@ private:
 	FullConnLayer m_fourthLayer;
 	FullConnLayer m_outputLayer;
 
-protected:
-	/*ConvLayer m_inputLayer;
-	ConvLayer m_secondLayer;
-	ConvLayer m_thirdLayer;
-	FullConnLayer m_fourthLayer;
-	FullConnLayer m_outputLayer;*/
+	Filters m_firstWeights;
+	Filters m_secondWeights;
+	Weights m_thirdWeights;
+	Weights m_fourthWeights;
 
 public:
-	NeuralNetwork(Images imgs);
+	NeuralNetwork(Images imgs, weightStruct weights, int actionSize);
 
 	~NeuralNetwork(){};
 
-	void populateInputLayer();
-	void populateSecondLayer();
-	void populateThirdLayer();
-	void populateFourthLayer();
-	void populateOutputLayer();
+	void testConvLayer(ConvLayer l, int n);
+	void testFCLayer(FullConnLayer l, int n);
 
 	ConvLayer GetInputLayer();
 	ConvLayer GetSecondLayer();
@@ -56,7 +59,9 @@ public:
 	void SetActionSetSize(int s);
 
 	void ForwardProp();
-	void BackProp();
+	void BackProp(int target);
+
+	int getDecision();
 };
 
 

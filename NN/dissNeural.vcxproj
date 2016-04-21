@@ -71,6 +71,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Agent.cpp" />
     <ClCompile Include="Connection.cpp" />
     <ClCompile Include="Layers.cpp" />
     <ClCompile Include="NeuralNetwork.cpp" />
@@ -78,7 +79,9 @@
     <ClCompile Include="Preprocess.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Agent.h" />
     <ClInclude Include="Connection.h" />
+    <ClInclude Include="ReplayMem.h" />
     <ClInclude Include="Layers.h" />
     <ClInclude Include="NeuralNetwork.h" />
     <ClInclude Include="Neuron.h" />
