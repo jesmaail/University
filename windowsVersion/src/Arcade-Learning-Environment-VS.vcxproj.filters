@@ -255,187 +255,13 @@
     <ClCompile Include="games\RomUtils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="games\supported\AirRaid.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Amidar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Assault.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Asterix.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="games\supported\Asteroids.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Atlantis.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\BankHeist.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\BattleZone.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\BeamRider.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Berzerk.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Bowling.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Boxing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="games\supported\Breakout.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="games\supported\Carnival.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Centipede.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\ChopperCommand.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\CrazyClimber.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Defender.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\DemonAttack.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\DoubleDunk.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\ElevatorAction.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Enduro.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\FishingDerby.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Freeway.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Frostbite.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Gopher.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Gravitar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Hero.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\IceHockey.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\JamesBond.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\JourneyEscape.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Kangaroo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Krull.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\KungFuMaster.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\MontezumaRevenge.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\MsPacman.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\NameThisGame.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Phoenix.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Pitfall.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Pong.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Pooyan.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\PrivateEye.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\QBert.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\RiverRaid.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\RoadRunner.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\RoboTank.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Seaquest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Skiing.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Solaris.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="games\supported\SpaceInvaders.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\StarGunner.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Tennis.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Tetris.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\TimePilot.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Tutankham.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\UpNDown.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Venture.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\VideoPinball.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\WizardOfWor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\YarsRevenge.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Zaxxon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="os_dependent\FSNodeWin32.cxx">
@@ -447,46 +273,25 @@
     <ClCompile Include="os_dependent\SettingsWin32.cxx">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="games\supported\DonkeyKong.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Frogger.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Galaxian.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\KeystoneKapers.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Kingkong.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Koolaid.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\LaserGates.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\LostLuggage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\MrDo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="games\supported\SirLancelot.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Trondead.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="games\supported\Turmoil.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Agent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="games\supported\Alien.cpp">
+    <ClCompile Include="network\NeuralNetwork.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="network\Neurons.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="network\Preprocess.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="network\Connection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="network\Layers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1176,6 +981,24 @@
     </ClInclude>
     <ClInclude Include="games\supported\Turmoil.hpp">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="network\Layers.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="network\NeuralNetwork.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="network\Neuron.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="network\Preprocessor.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="network\ReplayMem.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="network\Connection.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
