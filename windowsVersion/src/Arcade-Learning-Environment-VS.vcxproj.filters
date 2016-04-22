@@ -276,9 +276,6 @@
     <ClCompile Include="games\supported\SirLancelot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Agent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="network\NeuralNetwork.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -292,6 +289,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="network\Layers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dumbAgent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Agent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -999,6 +1002,9 @@
     </ClInclude>
     <ClInclude Include="network\Connection.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Agent.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

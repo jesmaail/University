@@ -157,10 +157,12 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>zdll.lib;zlib.lib;SDL.lib;SDLmain.lib;SDL_gfx.lib;SDL_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
+    <ClCompile Include="dumbAgent.cpp" />
     <ClCompile Include="ale_interface.cpp" />
     <ClCompile Include="common\ColourPalette.cpp" />
     <ClCompile Include="common\Constants.cpp" />
@@ -260,6 +262,7 @@
     <None Include="emucore\rsynth\phtoelm.def" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Agent.h" />
     <ClInclude Include="ale_interface.hpp" />
     <ClInclude Include="common\Array.hxx" />
     <ClInclude Include="common\ColourPalette.hpp" />
