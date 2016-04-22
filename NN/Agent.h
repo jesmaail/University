@@ -40,5 +40,5 @@ public:
 
 	Images GetPlaceholderScreen();
 
-	int GetTargetValue();
+	void Learning();
 };

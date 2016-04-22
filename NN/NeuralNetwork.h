@@ -59,14 +59,14 @@ public:
 	void SetActionSetSize(int s);
 
 	void ForwardProp();
-	void BackProp(int target);
+	void BackProp(int c);
 
 	int getDecision();
 };
 
 
 //This is where the Neural Network will be run from, containing the Network, ALE and Q-Table
-class Main{
+/*class Main{
 private:
 	//ALE m_ale;
 	NeuralNetwork m_nn;
@@ -74,4 +74,4 @@ private:
 public:
 
 
-};
+};*/

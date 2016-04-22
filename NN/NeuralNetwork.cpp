@@ -55,7 +55,7 @@ void::NeuralNetwork::ForwardProp(){
 	m_outputLayer.activateNeurons();
 }
 
-void NeuralNetwork::BackProp(int target){
+void NeuralNetwork::BackProp(int cost){
 	//Want to feed in the target value to this function, when called from the agent.
 	//Calculate the loss function
 	//...

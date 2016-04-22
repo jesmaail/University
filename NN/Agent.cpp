@@ -95,14 +95,11 @@ Agent::Agent(){
 }
 
 
-//Need to commit to replay memory from the random actions.
-//This means getting the current state before making decision on random or NN
-//and storing the chosen action and reward.
-//also need to have a flag in transition on whether a state is terminal.
 void Agent::play(){
 	vector<transition> minibatch;
 	bool gameover = false; //temporary, replace with ale.gameover()
-	float reward;
+	double reward, cost;
+	int target;
 
 	//ALEScreen screen = ale.getScreen();
 	m_current = GetPlaceholderScreen();
@@ -126,9 +123,7 @@ void Agent::play(){
 			}
 			m_replay.AddTransition(m_current, m_action, m_reward, m_next, m_terminal);
 
-			GetTargetValue();
-
-			//perform gradient descent (try with stochastic GD of 1)
+			Learning();
 		}
 	}
 }
@@ -240,9 +235,8 @@ Images Agent::GetPlaceholderScreen(){//TESTING PURPOSES ONLY
 	return imgs;
 }
 
-int Agent::GetTargetValue(){
-	int target = 0;
-	int action;
+void Agent::Learning(){
+	int target, action, yield, cost;
 	vector<transition> minibatch = m_replay.GetMiniBatch();
 	int mbMax = minibatch.size();
 	int stochastic = rand() % mbMax;
@@ -252,12 +246,17 @@ int Agent::GetTargetValue(){
 	if (randTran.terminal){
 		target = randTran.reward;
 	}else{
-		NeuralNetwork nn(randTran.state, m_weights[0], m_numActions);
+		NeuralNetwork nn(randTran.nextState, m_weights[0], m_numActions);
 		action = nn.getDecision();
 		target = randTran.reward + (discount * action);
 	}
 
-	return target;
+	NeuralNetwork learnn(randTran.state, m_weights[0], m_numActions);
+	yield = learnn.getDecision();
+	
+	cost = (target - yield) * (target - yield);
+
+	learnn.BackProp(cost);
 }
 
 
