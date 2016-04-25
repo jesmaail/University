@@ -82,12 +82,13 @@ disp('Performing PCA and then LDA.');
 disp(['Accuracy on testing set is: ' num2str(Accuracy*100) '%']);
 disp(' ');
 
-confusionMatrix = confusionmat(Y, Y_tst_Predict);
+confusionMatrixPCALDA = confusionmat(Y, Y_tst_Predict);
 
 %% Option 1-NN Accuracy
 net = feedforwardnet([7,7,4]);
 % Train NNs on the training dataset
 net = train(net, X_trainPCA', Y');
+view(net);
 
 % Testing Procedure
 Y_tst_Predict = net(X_testPCA');
@@ -101,6 +102,8 @@ Accuracy = Right/(Right+Wrong);
 disp('Performing PCA and then NN.');
 disp(['Accuracy on testing set is: ' num2str(Accuracy*100) '%']);
 disp(' ');
+
+confusionMatrixNN = confusionmat(Y, Y_tst_Predict);
 
 
 %% Option 2.A-LDA Accuracy
@@ -116,6 +119,9 @@ Accuracy = Right/(Right+Wrong);
 disp('Slicing test and training data in half (first half) and then performing LDA.');
 disp(['Accuracy on testing set is: ' num2str(Accuracy*100) '%']);
 disp(' ');
+
+confusionMatrixLDA1 = confusionmat(Y, Y_tst_Predict);
+
 
 
 %% Option 2.B-LDA Accuracy -- note: contains a zero within-class variance, so need to change the discrim type
@@ -135,6 +141,8 @@ Wrong = numel(Y) - Right;
 Accuracy = Right/(Right+Wrong);
 disp('Slicing test and training data in half (second half) and then performing LDA.');
 disp(['Accuracy on testing set is: ' num2str(Accuracy*100) '%']);
+
+confusionMatrixLDA2 = confusionmat(Y, Y_tst_Predict);
 
 
 clear x y Wrong LDAModel Diff ind Accuracy Right
