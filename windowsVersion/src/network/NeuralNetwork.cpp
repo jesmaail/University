@@ -13,17 +13,16 @@ const int SECOND_FILT_COUNT = 2;
 const int SECOND_FILT_STRIDE = 2;
 
 const int FOURTH_LAYER_SIZE = 256;
-//const int OUTPUT_LAYER_SIZE = 4; //WILL BE ACTION SET SIZE
 
 NeuralNetwork::NeuralNetwork(Images imgs, weightStruct weights, int actionSize){
-	SetActionSetSize(actionSize); //change to ALE command get action size
+	SetActionSetSize(actionSize);
 	m_input = imgs;
 
 	m_firstWeights = weights.weightLayer1;
 	m_secondWeights = weights.weightLayer2;
 	m_thirdWeights = weights.weightLayer3;
 	m_fourthWeights = weights.weightLayer4;
-	std::cout << "Filters set" << std::endl;
+	//std::cout << "Filters set" << std::endl;
 
 	ForwardProp();
 	//BackProp();
@@ -34,6 +33,7 @@ void::NeuralNetwork::ForwardProp(){
 	SetInputLayer(ConvLayer(m_input, FIRST_FILT_SIZE, FIRST_FILT_COUNT, FIRST_FILT_STRIDE));
 	m_inputLayer.SetFilters(m_firstWeights);
 	testConvLayer(m_inputLayer, 1); //Test
+
 
 	SetSecondLayer(ConvLayer(m_inputLayer, SECOND_FILT_SIZE, SECOND_FILT_COUNT, SECOND_FILT_STRIDE));
 	m_secondLayer.SetFilters(m_secondWeights);

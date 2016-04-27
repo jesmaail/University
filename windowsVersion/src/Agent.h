@@ -10,8 +10,10 @@ private:
 	const double LEARNING_RATE = 0.99;
 	const int EPOCH_COUNT = 5;
 	ALEInterface m_ale;
+	bool m_gameover;
 
 	int m_numActions;
+	ActionVect m_legalActs;
 	int m_epsilon = 99;
 	double discount = 0.99;
 	Images m_current;
@@ -40,6 +42,8 @@ public:
 	weightStruct InitRandWeights();
 
 	Images GetPlaceholderScreen();
+	
+	Image GetScreen();
 
 	void Learning();
 };

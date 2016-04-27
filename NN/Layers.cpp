@@ -41,7 +41,7 @@ ConvLayer::ConvLayer(Images imgs, int filtSize, int filtNum, int stride){
 	SetFilterSize(filtSize);
 	SetFilterNum(filtNum);
 	SetStride(stride);
-	SetInputXY(imgs[0].size());
+	SetInputXY(84);
 	SetInputZ(imgs.size());
 	int iBound, jBound;
 

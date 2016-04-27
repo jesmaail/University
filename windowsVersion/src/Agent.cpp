@@ -59,14 +59,14 @@ Agent::Agent(string game){
 	m_weights[0] = InitRandWeights();
 
 	#ifdef __USE_SDL	//Simple Direct Media Layer, for observing game as it is played
-		m_ale.setBool("display_screen", false);
+		m_ale.setBool("display_screen", true);
 		m_ale.setBool("sound", false);
 	#endif
 
-	m_ale.loadROM("../breakout.bin");
-	ActionVect legalActions = m_ale.getLegalActionSet();
-	int actionSize = legalActions.size();
-	m_numActions = legalActions.size();
+	m_ale.loadROM(game);
+	m_legalActs = m_ale.getLegalActionSet();
+	//int actionSize = legalActions.size();
+	m_numActions = m_legalActs.size();
 
 
 	//placeholder
@@ -80,28 +80,33 @@ Agent::Agent(string game){
 
 void Agent::play(){
 	vector<transition> minibatch;
-	bool gameover = false; //temporary, replace with ale.gameover()
-	double reward, cost;
-	int target;
+	m_gameover = m_ale.game_over();
+	//double reward, cost;
+	//int target;
 
 	ALEScreen screen = m_ale.getScreen();
-	m_current = GetPlaceholderScreen();
+	//m_current = GetPlaceholderScreen();
 
 	for (uint ep = 0; ep < EPOCH_COUNT; ep++){
 		//Set m_current  to a screenshot from game(preprocessed)
-		while (!gameover){
+
+		m_current.push_back(GetScreen());
+		m_ale.act(m_legalActs[0]);
+		m_current.push_back(GetScreen());
+
+		while (!m_gameover){
 			if (rand() % 100 + 1 <= m_epsilon){
-				cout << "R: ";
+				//cout << "R: ";
 				PerformRandomAction();
 			}else{
-				cout << "NN: ";
+				//cout << "NN: ";
 				UseNeuralNetwork();
 			}
-			cout << m_action << endl;
-			//m_reward = ale.act(legalActions[m_action]);
+			//cout << m_action << endl;
+			m_reward = m_ale.act(m_legalActs[m_action]);
 			m_next = GetPlaceholderScreen();
 
-			if (gameover){
+			if (m_gameover){
 				m_terminal = true;
 			}
 			m_replay.AddTransition(m_current, m_action, m_reward, m_next, m_terminal);
@@ -210,12 +215,48 @@ Images Agent::GetPlaceholderScreen(){//TESTING PURPOSES ONLY
 		imagePH.push_back(phRow);
 		phRow.clear();
 	}
-	vector<Image> imgs;
+	Images imgs;
 	for (uint i = 0; i < 4; i++){
 		imgs.push_back(imagePH);
 	}
 
 	return imgs;
+}
+
+Image Agent::GetScreen(){
+	ALEScreen screen = m_ale.getScreen(); //Gets Screen.
+	int width = INPUT_IMAGE_X;
+	int height = screen.height();
+	//int img[INPUT_IMAGE_X][INPUT_IMAGE_X];
+	Image img;
+
+	//int newImg[DESIRED_IMAGE_XY][DESIRED_IMAGE_XY];
+	Image newImg;
+	int newX, newY;
+
+	double xRatio = INPUT_IMAGE_X / (double)DESIRED_IMAGE_XY;
+	double yRatio = INPUT_IMAGE_Y / (double)DESIRED_IMAGE_XY;
+	int xCount, yCount = 0;
+
+	int jt = 0;							//Gets ROI
+	for (int j = 32; j<height - 18; j++){
+		for (int i = 0; i<width; i++){
+			int intPix = screen.get(j, i);
+			img[jt][i] = grayscaleValue[intPix];
+		}
+		jt++;
+	}
+
+	for (int y = 0; y < DESIRED_IMAGE_XY; y++){  //Scales!
+		for (int x = 0; x < DESIRED_IMAGE_XY; x++){
+			newY = floor(y*yRatio);
+			newX = floor(x*xRatio);
+			newImg[y][x] = img[newY][newX];
+		}
+	}
+
+	return newImg;
+
 }
 
 void Agent::Learning(){

@@ -1,0 +1,510 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[
+backend=biber
+]{biblatex}
+\addbibresource{references.bib}
+\setlength{\oddsidemargin}{1.8cm}
+
+\begin{document}
+
+${ \ } $ \vspace{4cm}
+%
+%% Titlepage 1 
+%
+
+\begin{center}
+{\huge \bf Playing video games using neural networks and reinforcement learning}
+\end{center}
+
+\begin{center}
+{\large \bf Joseph Shihab Esmaail}
+\end{center}
+
+\begin{center}
+May 2016
+\end{center}
+
+\vspace{2.5cm}
+
+\begin{abstract}
+This is a Technical Computer Science project, with the aim to develop a neural network that is able to learn to play video games. This document explains the projects motivations and aims, what related work exists, my current understanding of the theory and tools involved, and how the development of the project will be handled. (edit and not exceed 10 lines)
+\end{abstract}
+
+
+\vfill
+
+\begin{center}
+Project Dissertation submitted to Swansea University\\
+in Partial Fulfilment for the Degree of Bachelor of Science
+\end{center}
+
+\begin{center}
+\includegraphics[scale=0.2]{img/logo.png}
+\end{center}
+
+\begin{center}
+Department of Computer Science\\
+Swansea University
+\end{center}
+
+\thispagestyle{empty}
+
+\newpage
+
+\thispagestyle{empty}
+
+\section*{Declaration}
+
+This work has not previously been accepted in substance for any degree
+and is not being currently submitted for any degree.
+
+\vspace{0.5cm}
+\begin{tabular}{l}
+\today\\
+\\
+Signed:
+\end{tabular}
+
+\section*{Statement 1}
+This dissertation is being submitted in partial fulfilment of the
+requirements for the degree of a BSc in Computer Science.
+
+\vspace{0.5cm}
+\begin{tabular}{l}
+\today\\
+\\
+Signed:
+\end{tabular}
+
+\section*{Statement 2}
+
+This dissertation is the result of my own independent
+work/investigation, except where otherwise stated. Other sources are
+specifically acknowledged by clear cross referencing to author, work,
+and pages using the bibliography/references. I understand that failure
+to do this amounts to plagiarism and will be considered grounds for
+failure of this dissertation and the degree examination as a whole.
+
+\vspace{0.5cm}
+\begin{tabular}{l}
+\today\\
+\\
+Signed:
+\end{tabular}
+
+\section*{Statement 3}
+
+I hereby give consent for my dissertation to be available for
+photocopying and for inter-library loan, and for the title and summary
+to be made available to outside organisations.
+
+\vspace{0.5cm}
+\begin{tabular}{l}
+\today\\
+\\
+Signed:
+\end{tabular}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction}
+	Neural Networks are a model within the field of Machine learning which is currently a major buzzword in the Computer Science Discipline, owing a lot to the recent growth of big data. It has also gained increasing public presence through efforts such as IBM's Watson, which won against two former champions in Jeopardy in 2011, and Google's DeepDream program which displayed how convolutional neural networks interpret images.\\
+	Machine learning is also a major player in our day to day lives with Apple, Microsoft, and Google all using it for their smartphone digital assistants, Google using it for their search engine, and social media such as Facebook using it to cater it's service to each individual user. This will also extend in the coming future with autonomous vehicles such as Google's self-driving car project and motor companies such as Tesla starting to incorporate self-driving systems into their cars.\\
+	
+	This project aims to apply machine learning, in particular neural networks, to the task of learning to play video games. Video games have been an almost constantly growing phenomenon since their inception in the 1970's with Pong, recently entering the mainstream with the growth of the eSports industry which hosts tournaments with prize pools in the region of a million US dollars. The application of machine learning to video games has the potential to enable a greater interest in machine learning, as it's current implementations is very pervasive.\\
+	
+	 This dissertation will provide the reader with a background to neural networks, reinforcement learning and relating work to these and their application to video games, as well as how this project has been organised, what technologies are utilised, how the task has been approached and implemented, as well as what results are produced.
+	
+	%In one or two paragraphs, introduce the topic. Followed immediately with why it is a useful project, possible applications of the work. Question == "What is this dissertation topic good for?"\\
+	
+	%Present the benefits, advantages and novelty of the diss.\\
+	%Who will potentially benefit from the work?\\
+	%what does the reader gain from reading the diss?\\
+	
+	%Inherited advantages from previous systems/algorithms may be listed\\
+	
+	%specific challenges to overcome (conceptual and technical) mentioned\\
+	
+	%concludes with how the rest of the dissertation is organised.	
+\bigskip
+
+\section{Aims and objectives}
+	%restate the aims and objectives from the intial and interim docs
+	To be able to successfully produce a neural network that can play video games, the network will need a way to interact with the video games, both to receive information about the current game state and to send actions into the video game to play. So we will need methods to obtain the outputted game screen data and current score, as well as methods to input actions as a human player would via a game controller. The neural network needs to be able to interpret the input game state, and output a decision on what action to perform, this action hopefully being one that results in the best performance or score in the video game. The neural network will determine what action is the optimal one after performing a learning process using reinforcement learning, on the particular video game in question. After the network is capable of performing optimal actions to the best of its ability, the performance will be evaluated against human players to make a decision on how successful it was at learning to play the video game.\\
+	
+	To summarise, the aim of this project is to develop an artificial intelligence agent, namely a neural network that will use reinforcement learning to learn to play a large set of video games. This can be achieved by splitting the overall task into the following steps:
+	
+	\begin{itemize}
+		\item Find methods to manipulate video game inputs and outputs.
+		\item Develop the neural network.
+		\item Develop reinforcement learning methods for the intelligence agent.
+		\item Train and evaluate the neural network with video games.
+		\item GPU-Accelerate the network to improve performance.
+	\end{itemize}
+	
+	\bigskip
+
+\section{Background}
+	%research done in order to prepare for the project
+	
+	\subsection{Related work}
+		%choose proper scope, choose which books/papers to refer to and which to ignore. Each previous publication gets a one paragraph description.
+		
+		An early use of a neural network to play a game can be seen in the paper `Temporal difference learning and TD-Gammon' by Gerald Tesauro. In this Tesauro applies the neural network (known as TD-Gammon) to the game backgammon, and trained itself using reinforcement learning, in particular \textit{temporal-difference learning}. The neural network would train itself ``by playing against itself and learning from the outcome" \cite{tdgammon}. Tesauro concludes that the temporal difference learning proved to be ``a promising general-purpose technique" \cite{tdgammon}. TD-Gammon successfully learnt to play backgammon, successfully enough that ``by version 2.1 TD-Gammon was regarded as playing at a level extremely close to equalling that of the best human player, and had even started to influence the way expert backgammon players played" \cite{tdgammon}. This particular implementation of reinforcement learning to neural networks however would not be possible to implement across a broad selection of games as it requires a game with two players.\\
+		
+		Neural networks and reinforcement learning have also been applied to obstacle avoidance in robots, which is a similar environment to that of video games. In the paper `Reinforcement learning neural network to the problem of autonomous mobile robot obstacle avoidance' by Huang et al.  reinforcement learning was chosen because ``a complete knowledge of the environment is not necessary" \cite{rlrobot}. When a human player starts to learn to play a video game, they also do a complete knowledge of all the elements of the game. In this case the neural network needs to be learning the video game in a similar fashion to how a human player would, so reinforcement learning is applicable here. The results of the paper show that using neural networks and reinforcement learning can enhance learnability and allow task completion in a complex environment, which can also be translated across to the application to video games.\\
+
+		In 2007 the paper `Reinforcement learning and neural networks for Tetris' by Nicholas Lundgaard and Brian McKee saw the application of neural networks and reinforcement learning to the popular 1984 video game Tetris. They observe that video games are well suited for the application of reinforcement learning as more often than not there is a built in system to track how well a player is doing, often known as the score or points of the player. They also make the observation that in the case of Tetris ``it is nearly impossible to definitively say what was a right or wrong move" \cite{rlnntetris}, which can be applied also to most video games and means that the task of learning for neural networks applied to them cannot be done through supervised learning. In practice they found that ``while the learning agents fail to accumulate as many points as the most advanced AI agents, they do learn to play more efficiently"\cite{rlnntetris}. Lundgaard and McKee conclude that ``compared to human performance, the learning agents appear to perform well: while they can't survive forever, they perform better during game-play"\cite{rlnntetris}. This suggests that an AI player doesn't necessarily gain an unfair advantage over a human player by being capable of surviving indefinitely, they instead play at a similar pace.\\
+		
+		The most recent and relevant work in developing neural networks to play video games comes from DeepMind, who were recently acquired by Google. Initially in their paper `Playing Atari with deep reinforcement learning' in 2013 and then expanded upon in 2015 in `Human-level control through deep reinforcement learning', a paper which made the front page of Nature. In these papers they refer to their neural network as a Deep Q network (DQN), which is a deep convolutional neural network trained using a variant of Q-learning. This network is then applied to Atari 2600 games via the \textit{Arcade learning environment}, which was also developed by DeepMind. A convolutional neural network was chosen here because it ``mimics the effects of receptive fields"\cite{humanlevel}, so it is more equipped for the task of pattern recognition within images. A deep network was chosen because ``several layers of nodes are used to build up progressively more abstract representations of the data"\cite{humanlevel}, allowing the network to ``learn concepts such as object categories directly from the raw sensory data"\cite{humanlevel}. The results of this paper show \textbf{COMPLETE THIS PART}.\\
+		
+		This related work confirmed that a neural network is a suitable model of machine learning to apply to the task of learning to play video games. In particular a deep convolutional neural network trained with a Q-learning variant has been proven as capable of learning to play multiple video games as opposed to just one, with no changes to the structure of the neural network.\\
+		
+	\bigskip
+	
+	\subsection{Neural networks}
+	%From the ground up, how nns work. Talk about various different types of neural networks and training methods.
+		Neural networks (also known as artificial neural networks) are machine learning models based on the structure of the brain in animals such as humans.\\
+		
+		\begin{figure}[h]			
+			\includegraphics[scale=0.5]{img/network}
+			\centering
+			\caption{An example neural network.}
+			\label{nnetwork}
+		\end{figure}	
+		
+		These neural networks are, naively, a collections of connected nodes, where the nodes are referred to as neurons, and the connections between them as weights. The neurons of the network exist in layers, an input layer for inputs to the network, and output layer to give the results of the network, and potentially some hidden layers in between. If a neural network has more than one hidden layer that network is then considered a Deep neural network. A neural network is a feed-forward network if all of it's connections point towards the output layer, or a recurrent network if there exist feedback connections which point backwards in the network towards the input layer. For the purpose of this explanation I will be using a feed-forward network,\\
+		
+		The input layer of the neural network receives its data from the input to the network, this data is then passed along weighted connection(s) to neurons in the next layer of the network. All layers of a network, with the exception of the input layer, have a bias unit as well as having a summation and an activation function performed on them before the neuron data is propagated forward through to the next layer. The summation process for a neural is performed as follows:
+		\begin{equation}
+			x_i = \sum_{j} w_{ij} x_j + b 
+		\end{equation}
+		Where:
+		\begin{list}{•}{•}
+			\item $w_{ij}$ represents the weight for the connection from neuron $j$ to neuron $i$.
+			\item $x_j$ is the value of neuron $j$.
+			\item $b$ is the value of the bias unit.
+		\end{list}
+		
+		After this summation process is applied to a neuron an activation function is usually applied. The most commonly applied activation function, and the one i will use for this explanation, is a Sigmoid function which is visualised in Figure \ref{sigmoid}. A Sigmoid activation would be performed as follows:\\
+		\begin{equation}
+			\sigma(z) \equiv \frac{1}{1+e^{-z}}
+		\end{equation}
+		
+		\begin{figure}[h]			
+			\includegraphics[scale=0.75]{img/sigmoid}
+			\centering
+			\caption{Graph of the Sigmoid function \cite{sigGraph}}
+			\label{sigmoid}
+		\end{figure}
+		
+		The summation and activation function for a neuron can be combined into one calculation for the final output value of a neuron as:\\
+		\begin{equation}
+			output(x_i) = \sigma (\sum_j w_{ij} x_{j} + b)
+		\end{equation}	
+		\begin{equation}
+			\sigma(z) \equiv \frac{1}{1+e^{-\sum_j w_{ij} x_{j} + b}}
+		\end{equation}
+		
+		Once the values have been propagated to the output layer and the neurons in the output layer have had summation and activation performed on them, we have the output of the neural network.\\
+		
+		\medskip
+		
+		 There are many different types of neural networks as well as just feed-forward and recurrent, for the purposes of this dissertation, I am using a convolutional neural network. Convolutional neural networks are design to ``recognise two-dimensional shapes with a high degree of invariance to translation, scaling, skewing, and other forms of distortion" \cite{nncomp}. These convolutional neural networks use the main concepts of shared weights and biases, local receptive field, and very often, max pooling. The input for this kind of network would be the pixels of an image, for example, a 25x25 greyscale image would have an input layer size of 25x25, a sequence of 3 25x25 greyscale images would have an input layer size of 25x25x3.\\
+		 
+		 Unlike a normal neural network, convolutional neural networks have layers known as convolutional layers, which are either a 2 or 3 dimensional structure. These convolutional layers use local receptive fields which connect ``the input pixels to a layer of hidden neurons. However we won't connect every input pixel to every hidden neuron. Instead we only make connections in small, localised regions of the input image"\cite{nndl}.\\
+		 
+		\begin{figure}[h]				
+			\includegraphics[scale=0.55]{img/convNet1}
+			\includegraphics[scale=0.55]{img/convNet2}
+			\centering
+			\caption{How local receptive fields work \cite{nndl}}
+			\label{fig:lrf}
+		\end{figure}
+		Figure \ref{fig:lrf} visualises how a local receptive field of size 5x5 with a stride length of 1 works. The stride length is the amount of pixels we shift the local receptive field when applying pixels to the next hidden layer neuron. The size of the local receptive field is also then the size of the shared weights for the convolutional layer. These shared weights are used for every local receptive field in the current layer as well as a shared bias. The process for summation and activation of the result of a convolutional layer can expressed as \cite{nndl}:
+		\begin{equation}
+			\sigma (b + \sum^4_{l=0} \sum^4_{m=0} w_{l, m} x_{j+l, k+m})
+		\end{equation}
+		Where a 5x5 local receptive field is being applied for the $j^{th}, k^{th}$ hidden neuron with $\sigma$ as the activation function, $w_{l, m}$ as the shared weights, and $x$ represents the value of the input neuron \cite{nndl}.\\
+		
+		Convolutional neural networks can also have pooling layers, which can be ``used immediately after convolutional layers" \cite{nndl}. While these layers do no actual learning, they can perform a process known as max pooling. A max pooling layer will take the output of the convolutional layer (size $N*N$), extract the maximum of a $k8k$ region, and output a $\frac{N}{k} * \frac{N}{k}$ layer \cite{convNN}.\\
+		
+		A Convolutional network can be made up of a sequence of convolutional layer followed by pooling layers and then normal feed-forward neural network layers such as fully connected layers, where every neuron in the current layer is connected to every neuron on the previous layer. You can also omit the pooling layer, particularly in the case of applying to low resolution images, and just use a sequence of convolutional layers followed by normal feed-forward layers.\\
+		
+		The details covered so far only cover the forward propagation of a neural network, the network needs to also propagate backwards and tune parameters such as weights and biases to present a more meaningful output to given input, also known as learning. There are, generally speaking, three kinds of learning that can be applied in machine learning, supervised learning, unsupervised learning, and reinforcement learning.\\
+		 Supervised learning requires ``the availability of a teacher or supervisor who classifies the training examples into classes" \cite{nnintell}. For unsupervised learning the network ``must identify the pattern-class information as a part of the learning process" \cite{nnintell}. Reinforcement learning uses the idea of states, actions and rewards, and encourages the network to perform actions in states that produce the greatest reward.\\
+		 
+		 To actually be able to utilise any of these learning methods, the neural network needs to apply an algorithm to actually perform the learning process, the most popular of which is backpropagation. The output of the neural network is highly unlikely to be correct on the first run of the network, due to the weights and biases of the network being assigned randomly at the start. We require a method to bring the actual output of the network closer to the desired output. This is backpropagation and is done using gradient descent.\\
+		 Once the neural network has been run on several pieces of input data, we want to see how different the actual output is from the desired output. This error is calculated as \cite{bpexample}:
+		\begin{equation}\label{eq:total}
+			E_{total} = \sum \frac{1}{2}(target-output)^2
+		\end{equation}
+		\begin{equation}\label{eq:indiv}
+			E_{O_i} = \frac{1}{2}(target_{O_i} - output_{O_i})
+		\end{equation}
+		Equation \ref{eq:total} is for the total error of all output neurons, and equation \ref{eq:indiv} is for the error for one output neuron $i$.\\
+				
+		The idea behind backpropagation is to find how much to change the weights and biases so that the actual output can be brought closer to the desired output. The process for this differs depending on if it is applied to an output layer, or to a hidden layer of the network.\\
+				
+		When applying it to an output layer we want to find how much to change the weight $w_{ij}$, that connects a hidden neuron $j$ to an output neuron $i$, to correct our output. So we need to calculate the change in $E_{total}$ with regard to $w_{ij}$, this can be done with derivatives.
+		\begin{equation}\label{eq:deriv}
+			\frac{\partial E_{total}}{\partial w_{ij}}
+		\end{equation}
+		\begin{equation}\label{eq:chain}
+			\frac{\partial E_{total}}{\partial w_{ij}} = \frac{\partial E_{total}}{\partial out_{O_i}} * \frac{\partial out_{O_i}}{\partial net_{O_i}} * \frac{\partial net_{O_i}}{\partial w_{ij}}
+		\end{equation}
+		Here we apply the chain rule to (\ref{eq:deriv}) to get (\ref{eq:chain}) \cite{bpexample}. $net_{O_i}$ is the net output of the output neuron $i$ before the activation function has been applied.\\
+		
+		Next we calculate the change in the $E_{total}$ with regard to $out_{O_i}$, the change in $out_{O_i}$ in regard to $net_{O_i}$, and the change in $net_{O_i}$ with regard to $w_{ij}$ \cite{bpexample}.
+		\begin{equation}
+			\frac{\partial E_{total}}{\partial out_{O_i}} = -(target_{O_i} - out_{O_i})
+		\end{equation}
+		\begin{equation}\label{eq:derAct}
+			\frac{\partial out_{O_i}}{\partial net_{O_i}} = out_{O_i}(1 - out_{O_i})
+		\end{equation}
+		\begin{equation}
+			\frac{\partial net_{O_i}}{\partial w_{ij}} = out_{H_j}
+		\end{equation}\\
+		\begin{equation}\label{eq:OutFinal}
+			\frac{\partial E_{total}}{\partial w_{ij}} = -(target_{O_i} - out_{O_i}) * out_{O_i}(1 - out_{O_i}) * out_{H_j}
+		\end{equation}
+				 
+		In (\ref{eq:derAct}), the derivative of the activation function(sigmoid) has been calculated which is "the output multiplied by 1 minus the output" \cite{bpexample}.\\
+				 
+		(\ref{eq:OutFinal}) can then also be written with the \textit{delta rule} \cite{bpexample}.			 
+		\begin{equation}
+			\delta_{O_i} = \frac{\partial E_{total}}{\partial out_{O_i}} * \frac{\partial out_{O_i}}{\partial net_{O_i}} = \frac{\partial E_{total}}{\partial net_{O_i}}
+		\end{equation}
+		\begin{equation}
+			\frac{\partial E_{total}}{\partial w_{ij}} = \delta_{O_i}out_{H_j}
+		\end{equation}\\
+		
+		\medskip
+		
+		When applying backpropagation with gradient descent to a hidden layer, the process can be sped up by making use of the delta rule. We want to find the change in $E_{total}$ with regard to $w_{ij}$, a weight connecting neuron $j$ (can be in either input or hidden layer, depending on position in network) to neuron $i$ in a hidden layer. \cite{bpexample}
+				
+		\begin{equation}
+			\frac{\partial E_{total}}{\partial w_{ij}} = \delta_{H_i} * \frac{\partial net_{H_i}}{\partial w_{ij}}
+		\end{equation}
+		\begin{equation}
+			\frac{\partial net_{H_i}}{\partial w_{ij}} = out_j
+		\end{equation}
+		\begin{equation}
+			\frac{\partial E_{total}}{\partial w_{ij}} = \delta_{H_i} * out_j
+		\end{equation}\\
+				
+		Now to get our new value of $w_{ij}$, $w^+_{ij}$ we perform the following \cite{bpexample}:
+		\begin{equation}
+			w^+_{ij} = w_{ij} - \eta * \frac{\partial E_{total}}{\partial w_{ij}}
+		\end{equation}
+		With $\eta$ being a learning rate for the neural network.\\
+		
+		\medskip
+
+		The learning method that will be used for this dissertation is backpropagation but implemented using a method known as RMSProp \cite{rms}\ a variant of Stochastic gradient descent. Stochastic gradient descent differs from normal gradient descent by applying to a random subset of training data as opposed to all of it. This approach is advantageous when you have a very large training set and/or a large amount of weights to update. RMSProp then builds upon this, it will ``divide the learning rate for a weight by a running average of the magnitudes of recent gradients for that weight" \cite{rms}. This particular method has been chosen as it has been proven to work in the application of neural networks to video games in the paper `Human-level control through deep reinforcement learning' \cite{humanlevel}.\\
+	
+	\bigskip
+	\subsection{Reinforcement learning}
+	%Discuss the general idea of reinforcement learning, then Q-learning and then DQNs
+		The learning method that will be utilised for the neural network in this project is Reinforcement learning. Reinforcement learning, as mentioned above, uses the idea of states, actions, and rewards to encourage the network to perform actions that produce the best possible reward for their current state. It is a learning model reminiscent of how animals learn, ``learning what to do - how to map situations to actions - so as to maximise a numerical reward signal" \cite{rlintro}. A machine learning model using reinforcement learning is able to enter an unknown situation and ``learn from it's own experience" \cite{rlintro}.\\
+		
+		The particular method of reinforcement learning that is implemented here is Q-learning. In Q-learning we attempt to find the optimal action for each state to maximise the reward gained. This kind of learning very closely matches the basic idea of how to learn to play a video game. The way that Q-learning works is that ``for every possible state, every possible action is assigned a value which is a function of both the immediate reward for taking the action and the expected reward in the future based on the new sate that is the result of taking that action" \cite{qlearning}. The value update function for this, as found in \cite{qlearning}, is as follows:
+		\begin{equation}\label{eq:qlearn}
+			Q(x,u) := (1 - \alpha)Q(x,u) + \alpha(R + \gamma maxQ(x_{t+1},u_{t+1}))
+		\end{equation}				
+		Where, 
+		\begin{list}{•}{•}
+			\item $Q$ is the expected value of performing action $u$ in state $x$,
+			\item $R$ is the reward,
+			\item $\alpha$ is the learning rate,
+			\item $\gamma$ is the discount factor.
+		\end{list}
+		This dissertation will use the neural network as a function approximator for Q-learning. This means that each input to the network (game screen data) will be treated as a state, and the output of the network (the action to perform in game) will be treated as an action, with an associated reward. The value update as seen in equation \ref{eq:qlearn} will then be applied. The neural network used is therefore referred to as a Deep Q network.
+		
+		\bigskip
+	
+\section{Project Management}
+	\subsection{Software life-cycle}
+		The software life-cycle used for this project is the agile development model, in particular the scrum model. The choice of agile for this project is advantageous compared to a more traditional model such as waterfall. This is because in the Waterfall model ``as the requirements change or as requirements problems are discovered, the system design or implementation has to be reworked and retested" \cite{swengi}. This would be particularly problematic and result in a prolonged development process if and when errors occur, especially in earlier stages as it may in a undergraduate project such as this.\\
+		
+		\begin{figure}[h]			
+			\includegraphics[scale=1]{img/scrum}
+			\centering
+			\caption{The Scrum development process \cite{swengi}}
+			\label{scrum}
+		\end{figure}
+		
+		The Scrum method is designed for small development teams, as a result many elements of scrum have been scaled down or omitted completely for application to this project. For example, there are several different roles for development team members such as a Scrum master, in this case the roles have been removed altogether.\\
+		
+		Development in the scrum method is performed as displayed in figure \ref{scrum}, beginning with the outline planning stage. Here we establish the project's general objectives and design the software architecture. In this case, this stage was undertaken during the initial document. Next follows the main area of scrum, the sprint cycle. It is within this sprint cycle that the actual development is performed, and is done so in a series of fixed-length sprints. These sprints are then divided into four phases:
+		
+		\begin{enumerate}
+			\item \textbf{Assessment phase}: A list of tasks to be performed on the project is reviewed, priorities and risks are assigned to them. In the review of tasks, more may be added.
+			\item \textbf{Selection phase}: The task or tasks to be performed this sprint cycle are chosen.
+			\item \textbf{Development phase}: Progress is reviewed at regular intervals, and task priorities can be potentially re-assigned.
+			\item \textbf{Review phase}: Tasks performed this cycle are now reviewed.\\
+		\end{enumerate}
+		
+		The final stage of scrum is then project closure, this wraps up the project with required documentation being produced and lessons learnt from the project are assessed. The project closure process is this final dissertation document for the project.\\
+		
+		I feel that scrum has been beneficial to the development of this project as it broke it down into smaller digestible sprints. Each sprint had clear goals set out, prioritised and then reviewed. It has also meant that there is less chance for any delay in development as there have been regular stops to review and reassess the tasks being performed.
+	
+	\bigskip
+	
+	\subsection{Development}
+	%Rename to development and discuss windows dev and linux run?
+	%BCCC
+	
+	This project is developed in the C++ language. The development will be performed within the Windows Operating System and the project will be compiled and run within Linux. Windows is being used for development because it allows for usage of the Visual studio 2013 integrated development environment. This is preferable as it offers a built-in compiler and debugger for C++ as well as Intellisense code completion. Linux is then used for the final compilation and running of the project as tool to access video games and their data, the Arcade learning environment, is not compatible with Windows.\\
+	
+	All code produced for this project will conform to `Bob's concide coding conventions' \cite{bc3} as outlined by Dr. Robert S Laramee of Swansea University.\\
+	
+	\bigskip
+	
+	\subsection{Project timeline}
+	%Discuss risks and how they have come in, and use the gantt chart!
+	
+		\begin{figure}[h]				
+			\includegraphics[scale=0.6]{img/newSchedule}
+			\centering
+			\caption{Proposed (and revised) project schedule.}
+			\label{fig:newSchedule}
+		\end{figure}
+		
+		\begin{center}
+			\begin{tabular}{ c | p{3.5cm} | c }
+				\textbf{Label} & \textbf{Milestone} & \textbf{Reason} \\ \hline
+				MS1 & End of initial phase, start of sprint cycle. & Scrum development model.\\ \hline
+				MS2 & Start of Christmas break. & Allows more time dedication to project.\\ \hline
+				MS3 & Start of Easter break. & Allows more time dedication to project.\\ \hline
+				MS4 & End of project closure phase. & Scrum development model.					 
+			\end{tabular}
+		\end{center}		
+		The project schedule, as seen in figure \ref{fig:newSchedule}, has 2 kinds of tasks. Tasks set by the Computer Science department are those with blue bars, and tasks as set out by myself are those with orange bars. There are also 2 kinds of milestones, green milestones which represent the end of the intial and closure phases of scrum, and red milestones which represent the two holiday breaks in University term time. This breaks have allowed me to allocate more time to the development of the project and/or completion of documentation for the project.\\
+		The bulk of my time in this project has been dedicated to the development of the neural network in C++. This is both because it is the most integral component of this project, and because I required to learn the C++ language as I had no prior usage of it until this project.
+		
+	\bigskip
+		
+	\subsection{Risks}
+	%Risk tables and perhaps discussion on risks that actually happened, if they were expected or not before outlined!
+	\begin{figure}[h]
+		\begin{tabular}{ p{2.5cm} | c | c | c | p{3cm} }
+			\textbf{Risk} & \textbf{Probability} & \textbf{Impact} & \textbf{Risk score} & \textbf{Mitigation}\\ \hline
+						
+			Illness of close family member that will require my care. & 5 & 6 & 30 & Have good time management to afford missed days and/or catching up.\\ \hline
+			GitHub has a service failure. & 3 & 7 & 21 & Keep sufficient offline backups of project development\\ \hline			 
+			Development slowed due to Migraines. & 6 & 3 & 18 & Have good time management to afford missed days and/or catching up.\\ \hline 
+			General illness. & 5 & 3 & 15 & Have good time management to afford missed days and/or catching up.\\ \hline
+			Hardware failure. & 2 & 5 & 10 & Keep sufficient backups of files, and spares for components.					 
+		\end{tabular}		
+		\caption{Risk table}
+		\label{fig:newRisks}
+	\end{figure}
+	
+	The risks of this project are all relating to some kind of down time. In the case of myself getting ill, be it in general or from migraines, or a close family member becoming ill, it results in slowed progress and can be mitigated by keeping up-to date with sprint tasks. The other kind of downtime comes from hardware downtime, either my own or on the end of a service such as GitHub, on which I host my version control and backups. These issues could result in loss of project data, potentially crucial, and can be mitigated by keeping sufficient backups of files, in several places, and having backup hardware.\\
+	
+	These risks can be seen in the risk table in figure \ref{fig:newRisks}, showing the probability and impact of a risk scaled from 1 to 10, with 1 being low and 10 being high. A risk score is calculated for each risk then, as the product of the probability and impact of the risk, and the risks are ordered by this risk score. 
+	
+	Of these risks, some did come in to play during the development of the project. \textbf{COMPLETE THIS SECTION}\textit{COVER MIGRAINES COMING ON MORE FREQUENTLY}
+	
+	\bigskip
+\section{Technologies}
+	\subsection{C++}
+	%why this language is chosen, and issues getting to grips with it after coming from Java.
+		This project has been developed using the C++ language. This choice was made as C++ is both object-oriented, and low level. As well as this C++ is compatible with CUDA, so it would be possible to be able to GPU-accelerate the neural network.\\
+	
+		As this was my first time using the C++ language, there were a few hiccups along the way. For example object scope, new neurons are created within loops, as many are potentially being made for each layer. These neurons are then stored in vectors for their layer, however when trying to reference these neurons later, they no longer existed. This is because when C++ left the loop, garbage collection was performed to remove the neuron objects as they went out of scope. \textbf{As I am more experienced in Java, I did not expect this issue, so after realising what was causing the issue, the object scope, I fixed it by using the New keyword. This new keyword means that all garbage collection is performed manually, and scope is no longer an issue.}
+	
+	\bigskip
+	
+	\subsection{Git}
+	%Use for backups and version control
+		In this project, Git has been used for both version control and backups with the service GitHub being used for the repository. To perform the version control, local repositories will be created on development devices. There are also two main branches, master for working code, and dev for code that is being implemented and not yet confirmed to works. Whenever an existing file has been edited or a new file has been created, the following steps will be carried out in the operating system command line (when located in repository directory):
+		\begin{lstlisting}
+  git add FILE
+  git commit -m ``description of changes to file(s)"
+  git push
+		\end{lstlisting}
+		This means I can track what changes have been made for each update in the commit message, and have the ability to safely roll back if the implemented changes are no good.
+	
+	\bigskip
+	
+	\subsection{The Arcade learning environment}
+	%Developed by deepmind, discuss how to interact with it.
+	
+		The neural network needs a way of interfacing with video games, and this can be done using a tool know as the Arcade learning environment. The arcade learning environment is built an Atari 2600 games console emulator known as Stella, so it is limited to only allowing interface to games for that games console. This environment was created alongside the paper `The Arcade learning environment: An evaluation platform for general agents' \cite{ale} by DeepMind, and was used in both aforementioned DeepMind papers. It has been made freely available online for use by ``researchers and hobbyists to develop AI agents for the Atari 2500" \cite{ale}.\\
+		
+		The arcade learning environment is compatible with a languages such as C++, Java, and Python and presents several interfaces for these languages to communicate with it and therefore with the video games. \textbf{CHECK THE MANUAL, THE FIFO PIPS ARE DIFFERENT TO WHAT IS BEING USED NOW?!?}
+	\bigskip
+
+\section{Analysis of problem}
+	
+	\subsection{Video games}
+	Choice between PC games, emulators, arcade learning environment, explain why ALE is the BEST choice.
+	
+	\bigskip	
+	
+	\subsection{Intelligence agent}
+	How it will use ALE, the nn, the main algorithm, Q learning, and exploration-exploitation.
+	
+	\bigskip
+	
+	\subsection{Preprocessor}
+	Steps taken on input image to get it ready for use.
+	Discuss how it later got implemented to newer version of ALE (prerelease version on Git).
+	
+	\bigskip
+	
+	\subsection{Exploration-Exploitation}
+	How the nn will be able to have initial observations from random actions and then able to backprop from this.
+	
+	\bigskip
+	
+	\subsection{Network structure}
+	Network topology, why it is is, and a graphic of the structure
+	
+	\bigskip
+	
+	\subsection{Learning}
+	Replay memory, rmsprop/backprop, q learning.
+	
+	\bigskip
+
+\section{Implementation sprints}
+	Use algorithm figures here to show how things have been implemented!
+	\subsection{Methods to manipulate I/O}
+	
+	\subsection{Preprocessor}
+	
+	\subsection{Network generation}
+	
+	\subsection{Network feedforward}
+	
+	\subsection{Backpropagation}
+	
+	\subsection{Replay Memory}
+	
+	\subsection{Artificial Intelligence Agent}
+
+\section{Reflection of results}
+
+\section{Suggestions for further work}
+
+\newpage
+\printbibliography[
+	    heading=bibintoc,
+        title={References}
+    ]
+\newpage
+\appendix
+
+\section{Appendix: Class diagrams}
+
+
+\end{document}
+
