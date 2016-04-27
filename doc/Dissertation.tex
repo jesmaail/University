@@ -410,7 +410,7 @@ Signed:
 	
 	These risks can be seen in the risk table in figure \ref{fig:newRisks}, showing the probability and impact of a risk scaled from 1 to 10, with 1 being low and 10 being high. A risk score is calculated for each risk then, as the product of the probability and impact of the risk, and the risks are ordered by this risk score. 
 	
-	Of these risks, some did come in to play during the development of the project. \textbf{COMPLETE THIS SECTION}\textit{COVER MIGRAINES COMING ON MORE FREQUENTLY}
+	Of these risks, some did come in to play during the development of the project. \textbf{COMPLETE THIS SECTION}\textit{COVER MIGRAINES COMING ON MORE FREQUENTLY !!!!!! AS WELL AS REMOVING TOO AMBITIOUS RISK IN THE INTERIM AND THEN THE PROBLEMS FACED}.
 	
 	\bigskip
 \section{Technologies}
@@ -445,23 +445,29 @@ Signed:
 \section{Analysis of problem}
 	
 	\subsection{Video games}
-	Choice between PC games, emulators, arcade learning environment, explain why ALE is the BEST choice.
+	%Choice between PC games, emulators, arcade learning environment, explain why ALE is the BEST choice.
+		To be able to apply the neural network to a video game, we will need access to control the video game, as well as the game screen data. The first option for this was the use open-source video games that specifically targeted the PC platform. These would allow access to control the video games with some modification however they may not have necessarily given us a straight forward way to access information on the game screen. The programming language to be able to interface with these games would depend entirely on the source code for the video game being chosen.\\
+		
+		Another option I had was to use video game console emulation software, such as the `BizHawk emulator'\textbf{[INITIAL BIZHAWK REFERENCE]} which can emulate several consoles. Communication to video games being played within this emulator would be through the it's memory addresses. This can be done via scripting in \textit{Lua}, however it would be very cumbersome, as the memory addresses are different on a game-by-game basis, and they aren't very well documented.\\
+		
+		Building on top of the idea of using video game console emulation software, the Arcade learning environment was considered and then later chosen as the way to access video games. This is due to it's use in existing work by DeepMind, and that it allows a unified interface for many different video game, albeit limited to the Atari 2600 console.\\	
 	
 	\bigskip	
 	
 	\subsection{Intelligence agent}
-	How it will use ALE, the nn, the main algorithm, Q learning, and exploration-exploitation.
+	%How it will use ALE, the nn, the main algorithm, Q learning, and exploration-exploitation.
+	%How the nn will be able to have initial observations from random actions and then able to backprop from this.
+	
+		The intelligence agent in this case will be where the neural network and the interface for arcade learning environment interface will be instantiated. In this agent they will then communicate with each other, while going through the algorithm for performing Q-learning. This intelligence agent is what will be called from the final programs \textit{main} method, and it will handle the rest.\\
+		
+		As outlined in the work from DeepMind in regard to a Deep-Q learner, the intelligence agent will use something known as \textit{exploration-exploitation}. \textbf{DISCUSS HOW THIS WORKS, AS WELL AS THE EPOCHS AND HYPERPARAMETERS.... LIFT FROM PAPER AND REFERENCE}
 	
 	\bigskip
 	
 	\subsection{Preprocessor}
-	Steps taken on input image to get it ready for use.
-	Discuss how it later got implemented to newer version of ALE (prerelease version on Git).
-	
-	\bigskip
-	
-	\subsection{Exploration-Exploitation}
-	How the nn will be able to have initial observations from random actions and then able to backprop from this.
+	%Steps taken on input image to get it ready for use.
+	%Could use an image from online, as well as reference where I got the lookup table
+		Game screens are output from the Arcade learning environment as size 210x160 with 8-bit hexadecimal values for a 128-color palette specific to the NTSC version of the Atari 2600. The neural network will take greyscale images of size 84x84 (as explained in section \textit{Network structure}) as input, therefore the image we receive from the environment needs to be preprocessed. First we need to select a region of interest within the image, to reduce the height of the image from 210 to 160. The image will then be downscaled by a factor of 0.525 to get the correct size of 84x84. Finally the 8-bit hexadecimal values will be converted into greyscale integer values using a look-up table.
 	
 	\bigskip
 	
@@ -478,10 +484,13 @@ Signed:
 \section{Implementation sprints}
 	Use algorithm figures here to show how things have been implemented!
 	\subsection{Methods to manipulate I/O}
+	%See Gregynog presentation and beyond
 	
 	\subsection{Preprocessor}
+	%Discuss how it later got implemented to newer version of ALE (prerelease version on Git).
 	
 	\subsection{Network generation}
+	%Algorithms, standardised functions, library?
 	
 	\subsection{Network feedforward}
 	
