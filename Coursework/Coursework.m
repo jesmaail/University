@@ -59,7 +59,14 @@ end
 [coeff2, score2, latent2] = pca(X_test, 'NumComponents', 25);
 
 X_trainPCA = score;
-X_testPCA = score2;
+%X_testPCA = score2;
+
+
+X_trainMean = mean(X_train); %Get the mean to centre the data
+
+X_testMinus = bsxfun(@minus, X_test, X_trainMean); %subtract the means from the test data
+
+X_testPCA = X_testMinus*coeff;
 
 %% Option 2: Slice the feature vector into more manageable size(s)
 X_trainSlice1 = X_train(:, 1:3328);
