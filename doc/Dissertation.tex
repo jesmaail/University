@@ -133,7 +133,7 @@ Signed:
 	%concludes with how the rest of the dissertation is organised.	
 \bigskip
 
-\section{Aims and objectives}
+\subsection{Aims and objectives}
 	%restate the aims and objectives from the intial and interim docs
 	To be able to successfully produce a neural network that can play video games, the network will need a way to interact with the video games, both to receive information about the current game state and to send actions into the video game to play. So we will need methods to obtain the outputted game screen data and current score, as well as methods to input actions as a human player would via a game controller. The neural network needs to be able to interpret the input game state, and output a decision on what action to perform, this action hopefully being one that results in the best performance or score in the video game. The neural network will determine what action is the optimal one after performing a learning process using reinforcement learning, on the particular video game in question. After the network is capable of performing optimal actions to the best of its ability, the performance will be evaluated against human players to make a decision on how successful it was at learning to play the video game.\\
 	
@@ -427,7 +427,7 @@ Signed:
 		In this project, Git has been used for both version control and backups with the service GitHub being used for the repository. To perform the version control, local repositories will be created on development devices. There are also two main branches, master for working code, and dev for code that is being implemented and not yet confirmed to works. Whenever an existing file has been edited or a new file has been created, the following steps will be carried out in the operating system command line (when located in repository directory):
 		\begin{lstlisting}
   git add FILE
-  git commit -m ``description of changes to file(s)"
+  git commit -m ``comment on changes"
   git push
 		\end{lstlisting}
 		This means I can track what changes have been made for each update in the commit message, and have the ability to safely roll back if the implemented changes are no good.
@@ -460,7 +460,9 @@ Signed:
 	
 		The intelligence agent in this case will be where the neural network and the interface for arcade learning environment interface will be instantiated. In this agent they will then communicate with each other, while going through the algorithm for performing Q-learning. This intelligence agent is what will be called from the final programs \textit{main} method, and it will handle the rest.\\
 		
-		As outlined in the work from DeepMind in regard to a Deep-Q learner, the intelligence agent will use something known as \textit{exploration-exploitation}. \textbf{DISCUSS HOW THIS WORKS, AS WELL AS THE EPOCHS AND HYPERPARAMETERS.... LIFT FROM PAPER AND REFERENCE}
+		As outlined in the work from DeepMind in regard to a Deep-Q learner, the intelligence agent will use something known as \textit{exploration-exploitation}. \textbf{DISCUSS HOW THIS WORKS, AS WELL AS THE EPOCHS AND HYPERPARAMETERS.... LIFT FROM PAPER AND REFERENCE}\\
+		
+		\textbf{Could include the algorithm with a reference, and then discuss}
 	
 	\bigskip
 	
@@ -471,18 +473,36 @@ Signed:
 	
 	\bigskip
 	
-	\subsection{Network structure}
-	Network topology, why it is is, and a graphic of the structure
+	\subsection{Network network}
+	%Network topology, why it is is, and a graphic of the structure
+		The chosen topology for the neural network for this project is a deep convolutional neural network. This is due to both their proven ability to work well with image recognition problems, and the usage in the work of DeepMind.\\
+		
+		\textbf{HAVE THE STRUCTURE DIAGRAM FROM THE TECH REPORT HERE}\\
+		
+		In the 2013 paper from DeepMind \cite{ataridrl}, the network structure seen in figure \textbf{ref it} was used. This was later extended to the network structure seen in figure \textbf{ref it} in 2015 when published in Nature.\\
+		
+		\textbf{MAKE OWN STRUCTURE DIAGRAM FOR NATURE TOPOLOGY}\\
+		
+		For this implementation, I have chosen the 2013 DeepMind topology, as it has been proven to work in this application to a broad set of video games, and is less complex than it's 2015 counterpart in terms of computation. This topology takes in four greyscale images of size 84x84, and then applies four filters of size 8x8, with stride of 4 \textbf{MAY NEED TO EXPLAIN STRIDE IN EARLIER SECTION}, to produce sixteen feature maps of size 20x20 in the second layer. These filters are applied as local receptive fields, which as explained in the earlier section on neural networks, sweep across the image with many pixels of the image, or neurons in the case of the network, sharing the weights of the filter(s).\textbf{This could be explained above instead if not already?!?} The second layer then is also a convolutional layer, and applies two filters of size 4x4, with stride 2, to produce thirty-two feature maps of size 9x9 in the third layer. This third layer is then connected to the fourth layer, which is a fully connected layer of size 256. \textbf{Explain FullConn Layer in NN theory?!?!} The fourth layer then connects to the final layer which is fully connected and is of varying size depending on the amount of actions available in the game the network is being applied to.\\
+		
+		It's worth noting that this convolutional neural network does not have any pooling layers. This is due to the nature of the images being used for this network application.\\
+		
+		\textbf{Example image from atari, maybe have a real-life photo to compare against (if so, make it applicable e.g. of a game controller or console} 
 	
 	\bigskip
 	
 	\subsection{Learning}
-	Replay memory, rmsprop/backprop, q learning.
+	%Replay memory, rmsprop/backprop, q learning.
+		The network will learn overall using the reinforcement learning method of Q-learning, making it a deep q-network. The backpropagation learning for the network will use a technique known as RMSProp \textbf{REFERENCE THE HINTON SLIDES}.\\
+		
+		\textbf{Explain how the Q-Learning works, reiterate the main formula for it, and pull the Q-learning part of main algo/agent}\\
+		
+		\textbf{Explain how RMSProp works in theory as well as how it fits in}
 	
 	\bigskip
 
 \section{Implementation sprints}
-	Use algorithm figures here to show how things have been implemented!
+	Use algorithm figures here to show how things have been implemented! As well as the dates from GDrive for sprints
 	\subsection{Methods to manipulate I/O}
 	%See Gregynog presentation and beyond
 	

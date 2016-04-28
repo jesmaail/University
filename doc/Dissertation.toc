@@ -1,0 +1,67 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Introduction}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1}Aims and objectives}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Background}{5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1}Related work}{5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2}Neural networks}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3}Reinforcement learning}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Project Management}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1}Software life-cycle}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2}Development}{14}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3}Project timeline}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.4}Risks}{16}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Technologies}{17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1}C++}{17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2}Git}{17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3}The Arcade learning environment}{18}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Analysis of problem}{18}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1}Video games}{18}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2}Intelligence agent}{19}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.3}Preprocessor}{19}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.4}Network network}{19}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.5}Learning}{20}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Implementation sprints}{20}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1}Methods to manipulate I/O}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2}Preprocessor}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.3}Network generation}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.4}Network feedforward}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.5}Backpropagation}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.6}Replay Memory}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.7}Artificial Intelligence Agent}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}Reflection of results}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}Suggestions for further work}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{References}{22}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A}Appendix: Class diagrams}{24}
