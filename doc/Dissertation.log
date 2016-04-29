@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.2.8)  29 APR 2016 13:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.2.8)  29 APR 2016 15:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -893,7 +893,7 @@ Package logreq Info: Writing requests to 'Dissertation.run.xml'.
 Here is how much of TeX's memory you used:
  8152 strings out of 494957
  136440 string characters out of 6180029
- 553282 words of memory out of 5000000
+ 553290 words of memory out of 5000000
  11313 multiletter control sequences out of 15000+600000
  7186 words of font info for 26 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
@@ -912,7 +912,7 @@ mr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Dissertation.pdf (25 pages, 633824 bytes).
+Output written on Dissertation.pdf (25 pages, 633831 bytes).
 PDF statistics:
  165 PDF objects out of 1000 (max. 8388607)
  103 compressed objects within 2 object streams

@@ -1,15 +1,15 @@
 [0] Config.pm:325> INFO - This is Biber 2.1
 [0] Config.pm:328> INFO - Logfile is 'Dissertation.blg'
-[32] biber:276> INFO - === Fri Apr 29, 2016, 13:40:25
-[33] Biber.pm:334> INFO - Reading 'Dissertation.bcf'
-[118] Biber.pm:646> INFO - Found 18 citekeys in bib section 0
-[131] Biber.pm:2978> INFO - Processing section 0
-[142] Biber.pm:3116> INFO - Looking for bibtex format file 'references.bib' for section 0
-[144] bibtex.pm:1010> INFO - Decoding LaTeX character macros into UTF-8
-[145] bibtex.pm:884> INFO - Found BibTeX data source 'references.bib'
-[325] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[325] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[325] Biber.pm:2855> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'en-US'
-[325] Biber.pm:2859> INFO - No sort tailoring available for locale 'en-US'
-[356] bbl.pm:505> INFO - Writing 'Dissertation.bbl' with encoding 'ascii'
-[359] bbl.pm:596> INFO - Output to Dissertation.bbl
+[32] biber:276> INFO - === Fri Apr 29, 2016, 15:26:43
+[32] Biber.pm:334> INFO - Reading 'Dissertation.bcf'
+[140] Biber.pm:646> INFO - Found 18 citekeys in bib section 0
+[154] Biber.pm:2978> INFO - Processing section 0
+[166] Biber.pm:3116> INFO - Looking for bibtex format file 'references.bib' for section 0
+[168] bibtex.pm:1010> INFO - Decoding LaTeX character macros into UTF-8
+[168] bibtex.pm:884> INFO - Found BibTeX data source 'references.bib'
+[353] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[353] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[353] Biber.pm:2855> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'en-US'
+[353] Biber.pm:2859> INFO - No sort tailoring available for locale 'en-US'
+[386] bbl.pm:505> INFO - Writing 'Dissertation.bbl' with encoding 'ascii'
+[389] bbl.pm:596> INFO - Output to Dissertation.bbl

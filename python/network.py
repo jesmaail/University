@@ -112,7 +112,7 @@ action_choice = tf.reduce_sum(tf.mul(net_out, ph_out), reduction_indices = 1)
 cost = tf.reduce_mean(tf.square(ph_target - action_choice))
 optimizer = tf.train.RMSPropOptimizer(0.99).minimize(cost)
 
-# init = tf.initialise_all_variables()
+#init = tf.initialise_all_variables()
 
 
 global action
@@ -127,6 +127,8 @@ screen2 = np.reshape(screen2, (84, 84))
 
 # state = [screen, screeneen2]
 state = np.stack((screen, screen2), axis=2)
+state_t = []
+state_t.append(state)
 
 
 
@@ -134,7 +136,7 @@ for i in range(EPOCH_COUNT):
 
 	#input_img = tf.convert_to_tensor(screens)
 
-	net_result = net_out.eval(feed_dict={net_in : [state]})[0]
+	net_result = net_out.eval(feed_dict={net_in : state_t})
 
 	while ale.game_over() == False:
 		if randrange(100)+1 < EPSILON:
