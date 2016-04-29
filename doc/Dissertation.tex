@@ -149,10 +149,10 @@ Signed:
 	
 	\bigskip
 
-\section{Background}
+\section{Literature review}
 	%research done in order to prepare for the project
 	
-	\subsection{Related work}
+	%\subsection{Related work}
 		%choose proper scope, choose which books/papers to refer to and which to ignore. Each previous publication gets a one paragraph description.
 		
 		An early use of a neural network to play a game can be seen in the paper `Temporal difference learning and TD-Gammon' by Gerald Tesauro. In this Tesauro applies the neural network (known as TD-Gammon) to the game backgammon, and trained itself using reinforcement learning, in particular \textit{temporal-difference learning}. The neural network would train itself ``by playing against itself and learning from the outcome" \cite{tdgammon}. Tesauro concludes that the temporal difference learning proved to be ``a promising general-purpose technique" \cite{tdgammon}. TD-Gammon successfully learnt to play backgammon, successfully enough that ``by version 2.1 TD-Gammon was regarded as playing at a level extremely close to equalling that of the best human player, and had even started to influence the way expert backgammon players played" \cite{tdgammon}. This particular implementation of reinforcement learning to neural networks however would not be possible to implement across a broad selection of games as it requires a game with two players.\\
@@ -174,7 +174,7 @@ Signed:
 		
 	\bigskip
 	
-	\subsection{Neural networks}
+	\section{Neural networks}
 	%From the ground up, how nns work. Talk about various different types of neural networks and training methods.
 		Neural networks (also known as artificial neural networks) are machine learning models based on the structure of the brain in animals such as humans.\\
 		
@@ -316,7 +316,7 @@ Signed:
 		The learning method that will be used for this dissertation is backpropagation but implemented using a method known as RMSProp \cite{rms}\ a variant of Stochastic gradient descent. Stochastic gradient descent differs from normal gradient descent by applying to a random subset of training data as opposed to all of it. This approach is advantageous when you have a very large training set and/or a large amount of weights to update. RMSProp then builds upon this, it will ``divide the learning rate for a weight by a running average of the magnitudes of recent gradients for that weight" \cite{rms}. This particular method has been chosen as it has been proven to work in the application of neural networks to video games in the paper `Human-level control through deep reinforcement learning' \cite{humanlevel}.\\
 	
 	\bigskip
-	\subsection{Reinforcement learning}
+	\section{Reinforcement learning}
 	%Discuss the general idea of reinforcement learning, then Q-learning and then DQNs
 		The learning method that will be utilised for the neural network in this project is Reinforcement learning. Reinforcement learning, as mentioned above, uses the idea of states, actions, and rewards to encourage the network to perform actions that produce the best possible reward for their current state. It is a learning model reminiscent of how animals learn, ``learning what to do - how to map situations to actions - so as to maximise a numerical reward signal" \cite{rlintro}. A machine learning model using reinforcement learning is able to enter an unknown situation and ``learn from it's own experience" \cite{rlintro}.\\
 		
@@ -367,6 +367,8 @@ Signed:
 	%Rename to development and discuss windows dev and linux run?
 	%BCCC
 	
+	\textbf{IS THIS SECTION NECESSARY?}
+	
 	This project is developed in the C++ language. The development will be performed within the Windows Operating System and the project will be compiled and run within Linux. Windows is being used for development because it allows for usage of the Visual studio 2013 integrated development environment. This is preferable as it offers a built-in compiler and debugger for C++ as well as Intellisense code completion. Linux is then used for the final compilation and running of the project as tool to access video games and their data, the Arcade learning environment, is not compatible with Windows.\\
 	
 	All code produced for this project will conform to `Bob's concide coding conventions' \cite{bc3} as outlined by Dr. Robert S Laramee of Swansea University.\\
@@ -395,6 +397,8 @@ Signed:
 		The project schedule, as seen in figure \ref{fig:newSchedule}, has 2 kinds of tasks. Tasks set by the Computer Science department are those with blue bars, and tasks as set out by myself are those with orange bars. There are also 2 kinds of milestones, green milestones which represent the end of the intial and closure phases of scrum, and red milestones which represent the two holiday breaks in University term time. This breaks have allowed me to allocate more time to the development of the project and/or completion of documentation for the project.\\
 		The bulk of my time in this project has been dedicated to the development of the neural network in C++. This is both because it is the most integral component of this project, and because I required to learn the C++ language as I had no prior usage of it until this project.
 		
+		\textbf{ADD AN ACTUAL PROJECT TIMELINE}
+		
 	\bigskip
 		
 	\subsection{Risks}
@@ -421,13 +425,6 @@ Signed:
 	
 	\bigskip
 \section{Technologies}
-	\subsection{C++}
-	%why this language is chosen, and issues getting to grips with it after coming from Java.
-		This project has been developed using the C++ language. This choice was made as C++ is both object-oriented, and low level. As well as this C++ is compatible with CUDA, so it would be possible to be able to GPU-accelerate the neural network.\\
-	
-		As this was my first time using the C++ language, there were a few hiccups along the way. For example object scope, new neurons are created within loops, as many are potentially being made for each layer. These neurons are then stored in vectors for their layer, however when trying to reference these neurons later, they no longer existed. This is because when C++ left the loop, garbage collection was performed to remove the neuron objects as they went out of scope. \textbf{As I am more experienced in Java, I did not expect this issue, so after realising what was causing the issue, the object scope, I fixed it by using the New keyword. This new keyword means that all garbage collection is performed manually, and scope is no longer an issue.}
-	
-	\bigskip
 	
 	\subsection{Git}
 	%Use for backups and version control
@@ -438,15 +435,33 @@ Signed:
   git push
 		\end{lstlisting}
 		This means I can track what changes have been made for each update in the commit message, and have the ability to safely roll back if the implemented changes are no good.
+		
+	\bigskip
+	
+	\subsection{C++}
+	%why this language is chosen, and issues getting to grips with it after coming from Java.
+		This project has been developed using the C++ language. This choice was made as C++ is both object-oriented, and low level. As well as this C++ is compatible with CUDA, so it would be possible to be able to GPU-accelerate the neural network.\\
+	
+		As this was my first time using the C++ language, there were a few hiccups along the way. For example object scope, new neurons are created within loops, as many are potentially being made for each layer. These neurons are then stored in vectors for their layer, however when trying to reference these neurons later, they no longer existed. This is because when C++ left the loop, garbage collection was performed to remove the neuron objects as they went out of scope. \textbf{As I am more experienced in Java, I did not expect this issue, so after realising what was causing the issue, the object scope, I fixed it by using the New keyword. This new keyword means that all garbage collection is performed manually, and scope is no longer an issue.}
+	
+	\bigskip
+	
+	\subsection{Python}
+	\textbf{TALK ABOUT LATE USAGE OF PYTHON}
 	
 	\bigskip
 	
 	\subsection{The Arcade learning environment}
 	%Developed by deepmind, discuss how to interact with it.
 	
-		The neural network needs a way of interfacing with video games, and this can be done using a tool know as the Arcade learning environment. The arcade learning environment is built an Atari 2600 games console emulator known as Stella, so it is limited to only allowing interface to games for that games console. This environment was created alongside the paper `The Arcade learning environment: An evaluation platform for general agents' \cite{ale} by DeepMind, and was used in both aforementioned DeepMind papers. It has been made freely available online for use by ``researchers and hobbyists to develop AI agents for the Atari 2500" \cite{ale}.\\
+		The neural network needs a way of interfacing with video games, and this can be done using a tool know as the Arcade learning environment. The arcade learning environment is built an Atari 2600 games console emulator known as Stella, so it is limited to only allowing interface to games for that games console. This environment was created alongside the paper `The Arcade learning environment: An evaluation platform for general agents' \cite{ale} by DeepMind, and was used in both aforementioned DeepMind papers. It has been made freely available online for use by ``researchers and hobbyists to develop AI agents for the Atari 2600" \cite{ale}.\\
 		
 		The arcade learning environment is compatible with a languages such as C++, Java, and Python and presents several interfaces for these languages to communicate with it and therefore with the video games. \textbf{CHECK THE MANUAL, THE FIFO PIPS ARE DIFFERENT TO WHAT IS BEING USED NOW?!?}
+	\bigskip
+	
+	\subsection{TensorFlow}
+	\textbf{Discuss Late usage of tf and python}
+	
 	\bigskip
 
 \section{Analysis of problem}
