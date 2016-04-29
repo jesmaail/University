@@ -10,13 +10,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2}Neural networks}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3}Reinforcement learning}{12}
+\contentsline {subsection}{\numberline {2.3}Reinforcement learning}{13}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3}Project Management}{13}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1}Software life-cycle}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Development}{14}
+\contentsline {subsection}{\numberline {3.2}Development}{15}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3}Project timeline}{15}
 \defcounter {refsection}{0}\relax 
@@ -26,7 +26,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.1}C++}{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2}Git}{17}
+\contentsline {subsection}{\numberline {4.2}Git}{18}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3}The Arcade learning environment}{18}
 \defcounter {refsection}{0}\relax 
@@ -38,30 +38,30 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.3}Preprocessor}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4}Network network}{19}
+\contentsline {subsection}{\numberline {5.4}Network network}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.5}Learning}{20}
+\contentsline {subsection}{\numberline {5.5}Learning}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Implementation sprints}{20}
+\contentsline {section}{\numberline {6}Implementation sprints}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1}Methods to manipulate I/O}{21}
+\contentsline {subsection}{\numberline {6.1}Methods to manipulate I/O}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2}Preprocessor}{21}
+\contentsline {subsection}{\numberline {6.2}Preprocessor}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3}Network generation}{21}
+\contentsline {subsection}{\numberline {6.3}Network generation}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.4}Network feedforward}{21}
+\contentsline {subsection}{\numberline {6.4}Network feedforward}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.5}Backpropagation}{21}
+\contentsline {subsection}{\numberline {6.5}Backpropagation}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.6}Replay Memory}{21}
+\contentsline {subsection}{\numberline {6.6}Replay Memory}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.7}Artificial Intelligence Agent}{21}
+\contentsline {subsection}{\numberline {6.7}Artificial Intelligence Agent}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Reflection of results}{21}
+\contentsline {section}{\numberline {7}Reflection of results}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Suggestions for further work}{21}
+\contentsline {section}{\numberline {8}Suggestions for further work}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{22}
+\contentsline {section}{References}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A}Appendix: Class diagrams}{24}
+\contentsline {section}{\numberline {A}Appendix: Class diagrams}{25}

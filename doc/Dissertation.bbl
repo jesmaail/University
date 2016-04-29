@@ -19,6 +19,23 @@
 
 \refsection{0}
   \sortlist{nty}{nty}
+    \entry{repli}{report}{}
+      \name{author}{1}{}{%
+        {{hash=d636c80b3b7f98ae421c5913f9354d8f}{al.}{a\bibinitperiod}{Korjus}{K\bibinitperiod}{et}{e\bibinitperiod}{}{}}%
+      }
+      \list{institution}{1}{%
+        {University of Tartu}%
+      }
+      \strng{namehash}{d636c80b3b7f98ae421c5913f9354d8f}
+      \strng{fullhash}{d636c80b3b7f98ae421c5913f9354d8f}
+      \field{sortinit}{a}
+      \field{sortinithash}{b685c7856330eaee22789815b49de9bb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Replicating the paper playing Atari with deep reinforcement learning}
+      \field{type}{techreport}
+      \field{year}{2014}
+    \endentry
     \entry{sigGraph}{online}{}
       \name{author}{1}{}{%
         {{hash=6f932f9dbe477a4f31beee35c8c622c6}{Alpha}{A\bibinitperiod}{Wolfram}{W\bibinitperiod}{}{}{}{}}%

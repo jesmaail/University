@@ -26,7 +26,7 @@ FIRST_F_SIZE = 8
 FIRST_F_COUNT = 2
 FIRST_F_STRIDE = 4
 
-FIRST_FILTER = [8, 8, 1, 2]
+FIRST_FILTER = [8, 8, 2, 2]
 
 SECOND_F_SIZE = 4
 SECOND_F_COUNT = 2
@@ -51,7 +51,7 @@ def full_conn_layer(input, filter):
 
 def init_network():
 	#weights = init_weights()
-	ph_in = tf.placeholder(tf.float32, [None, 84, 84, 1]) #84*84
+	ph_in = tf.placeholder(tf.float32, shape=(None, 84, 84, 2))#[None, 84, 84, 2]) #84*84
 	second_layer = conv_layer(ph_in, weights['w1'], FIRST_F_STRIDE)
 	third_layer = conv_layer(second_layer, weights['w2'], SECOND_F_STRIDE)
 	third_reshape = tf.reshape(third_layer, [-1, 484])
@@ -118,14 +118,15 @@ optimizer = tf.train.RMSPropOptimizer(0.99).minimize(cost)
 global action
 action = 0
 screen = get_screen()
-screen = np.reshape(screen, (1, 84, 84))
+screen = np.reshape(screen, (84, 84))
+#screen = np.reshape(screen, (1,7 84, 84, 1))
 ale.act(legal_actions[0])
 screen2 = get_screen()
-screen2 = np.reshape(screen2, (1, 84, 84))
+screen2 = np.reshape(screen2, (84, 84))
+#screen2 = np.reshape(screen2, (1, 84, 84))
 
 # state = [screen, screeneen2]
-state = [[[]]]
-state.append(screen)
+state = np.stack((screen, screen2), axis=2)
 
 
 
@@ -133,7 +134,7 @@ for i in range(EPOCH_COUNT):
 
 	#input_img = tf.convert_to_tensor(screens)
 
-	net_result = net_out.eval(feed_dict={net_in : screen})
+	net_result = net_out.eval(feed_dict={net_in : [state]})[0]
 
 	while ale.game_over() == False:
 		if randrange(100)+1 < EPSILON:

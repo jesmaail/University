@@ -163,6 +163,13 @@ Signed:
 		
 		The most recent and relevant work in developing neural networks to play video games comes from DeepMind, who were recently acquired by Google. Initially in their paper `Playing Atari with deep reinforcement learning' in 2013 and then expanded upon in 2015 in `Human-level control through deep reinforcement learning', a paper which made the front page of Nature. In these papers they refer to their neural network as a Deep Q network (DQN), which is a deep convolutional neural network trained using a variant of Q-learning. This network is then applied to Atari 2600 games via the \textit{Arcade learning environment}, which was also developed by DeepMind. A convolutional neural network was chosen here because it ``mimics the effects of receptive fields"\cite{humanlevel}, so it is more equipped for the task of pattern recognition within images. A deep network was chosen because ``several layers of nodes are used to build up progressively more abstract representations of the data"\cite{humanlevel}, allowing the network to ``learn concepts such as object categories directly from the raw sensory data"\cite{humanlevel}. The results of this paper show \textbf{COMPLETE THIS PART}.\\
 		
+		\begin{figure}[h]				
+			\includegraphics[scale=0.7]{img/deepMindPerformance}
+			\centering
+			\caption{DQN performance with regard to human performance \cite{humanlevel}.}
+			\label{fig:performance}
+		\end{figure}
+		
 		This related work confirmed that a neural network is a suitable model of machine learning to apply to the task of learning to play video games. In particular a deep convolutional neural network trained with a Q-learning variant has been proven as capable of learning to play multiple video games as opposed to just one, with no changes to the structure of the neural network.\\
 		
 	\bigskip
@@ -477,11 +484,21 @@ Signed:
 	%Network topology, why it is is, and a graphic of the structure
 		The chosen topology for the neural network for this project is a deep convolutional neural network. This is due to both their proven ability to work well with image recognition problems, and the usage in the work of DeepMind.\\
 		
-		\textbf{HAVE THE STRUCTURE DIAGRAM FROM THE TECH REPORT HERE}\\
+		\begin{figure}[h]				
+			\includegraphics[scale=0.7]{img/structure}
+			\centering
+			\caption{DeepMind original topology \cite{repli}}
+			\label{fig:topology13}
+		\end{figure}
 		
-		In the 2013 paper from DeepMind \cite{ataridrl}, the network structure seen in figure \textbf{ref it} was used. This was later extended to the network structure seen in figure \textbf{ref it} in 2015 when published in Nature.\\
+		In the 2013 paper from DeepMind \cite{ataridrl}, the network structure seen in figure \ref{fig:topology13} was used. This was later extended to the network structure seen in figure \ref{fig:topology15} in 2015 when published in Nature.\\
 		
-		\textbf{MAKE OWN STRUCTURE DIAGRAM FOR NATURE TOPOLOGY}\\
+		\begin{figure}[h]				
+			\includegraphics[scale=0.27]{img/structure2}
+			\centering
+			\caption{DeepMind extended topology}
+			\label{fig:topology15}
+		\end{figure}
 		
 		For this implementation, I have chosen the 2013 DeepMind topology, as it has been proven to work in this application to a broad set of video games, and is less complex than it's 2015 counterpart in terms of computation. This topology takes in four greyscale images of size 84x84, and then applies four filters of size 8x8, with stride of 4 \textbf{MAY NEED TO EXPLAIN STRIDE IN EARLIER SECTION}, to produce sixteen feature maps of size 20x20 in the second layer. These filters are applied as local receptive fields, which as explained in the earlier section on neural networks, sweep across the image with many pixels of the image, or neurons in the case of the network, sharing the weights of the filter(s).\textbf{This could be explained above instead if not already?!?} The second layer then is also a convolutional layer, and applies two filters of size 4x4, with stride 2, to produce thirty-two feature maps of size 9x9 in the third layer. This third layer is then connected to the fourth layer, which is a fully connected layer of size 256. \textbf{Explain FullConn Layer in NN theory?!?!} The fourth layer then connects to the final layer which is fully connected and is of varying size depending on the amount of actions available in the game the network is being applied to.\\
 		
