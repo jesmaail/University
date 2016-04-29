@@ -20,56 +20,56 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.1}Software life-cycle*}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2}Development*}{16}
+\contentsline {subsection}{\numberline {5.2}Development}{16}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.3}Project timeline*}{16}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.4}Risks*}{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Technologies}{19}
+\contentsline {section}{\numberline {6}Technologies}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1}Git}{19}
+\contentsline {subsection}{\numberline {6.1}Git}{18}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.2}C++*}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3}Python*}{20}
+\contentsline {subsection}{\numberline {6.3}Python*}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.4}The Arcade learning environment*}{20}
+\contentsline {subsection}{\numberline {6.4}The Arcade learning environment*}{19}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.5}TensorFlow*}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Analysis of problem}{21}
+\contentsline {section}{\numberline {7}Analysis of problem}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1}Video games*}{21}
+\contentsline {subsection}{\numberline {7.1}Video games*}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2}Intelligence agent*}{21}
+\contentsline {subsection}{\numberline {7.2}Intelligence agent*}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.3}Preprocessor}{22}
+\contentsline {subsection}{\numberline {7.3}Preprocessor}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.4}Network network*}{22}
+\contentsline {subsection}{\numberline {7.4}Network network*}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.5}Learning*}{23}
+\contentsline {subsection}{\numberline {7.5}Learning*}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Implementation sprints*}{24}
+\contentsline {section}{\numberline {8}Implementation sprints*}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1}Methods to manipulate I/O*}{24}
+\contentsline {subsection}{\numberline {8.1}Methods to manipulate I/O*}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2}Preprocessor*}{24}
+\contentsline {subsection}{\numberline {8.2}Preprocessor*}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.3}Network generation*}{24}
+\contentsline {subsection}{\numberline {8.3}Network generation*}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.4}Network feedforward*}{24}
+\contentsline {subsection}{\numberline {8.4}Network feedforward*}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.5}Backpropagation*}{24}
+\contentsline {subsection}{\numberline {8.5}Backpropagation*}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.6}Replay Memory*}{24}
+\contentsline {subsection}{\numberline {8.6}Replay Memory*}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.7}Artificial Intelligence Agent*}{24}
+\contentsline {subsection}{\numberline {8.7}Artificial Intelligence Agent*}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Reflection of results*}{24}
+\contentsline {section}{\numberline {9}Reflection of results*}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10}Suggestions for further work*}{24}
+\contentsline {section}{\numberline {10}Suggestions for further work*}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{25}
+\contentsline {section}{References}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A}Appendix: Class diagrams}{27}
+\contentsline {section}{\numberline {A}Appendix: Class diagrams}{26}

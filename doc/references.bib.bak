@@ -1,0 +1,200 @@
+@article{humanlevel,
+  title={Human-level control through deep reinforcement learning},
+  author={Mnih, Volodymyr and Kavukcuoglu, Koray and Silver, David and Rusu, Andrei A and Veness, Joel and Bellemare, Marc G and Graves, Alex and Riedmiller, Martin and Fidjeland, Andreas K and Ostrovski, Georg and others},
+  journal={Nature},
+  volume={518},
+  number={7540},
+  pages={529--533},
+  year={2015},
+  publisher={Nature Publishing Group}
+}
+
+@article{ataridrl,
+  title={Playing Atari with deep reinforcement learning},
+  author={Mnih, Volodymyr and Kavukcuoglu, Koray and Silver, David and Graves, Alex and Antonoglou, Ioannis and Wierstra, Daan and Riedmiller, Martin},
+  journal={arXiv preprint arXiv:1312.5602},
+  year={2013}
+}
+
+@inproceedings{imagenet,
+  title={Imagenet classification with deep convolutional neural networks},
+  author={Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E},
+  booktitle={Advances in neural information processing systems},
+  pages={1097--1105},
+  year={2012}
+}
+
+@article{changingml,
+  title={The changing science of machine learning},
+  author={Langley, Pat},
+  journal={Machine Learning},
+  volume={82},
+  number={3},
+  pages={275--279},
+  year={2011},
+  publisher={Springer}
+}
+
+@article{ale,
+  author = {{Bellemare}, M.~G. and {Naddaf}, Y. and {Veness}, J. and {Bowling}, M.},
+  title = {The Arcade Learning Environment: An Evaluation Platform for General Agents},
+  journal = {Journal of Artificial Intelligence Research},
+  year = 2013,
+  month = 06,
+  volume = 47,
+  pages = {253--279}
+}
+
+@online{qwiki,
+  author = {Wikipedia},
+  title = {Q-Learning},
+  url = {https://en.wikipedia.org/wiki/Q-learning},
+  urldate = {2015-12-10}
+}
+
+
+@article{fft,
+  title={Fast training of convolutional networks through ffts},
+  author={Mathieu, Michael and Henaff, Mikael and LeCun, Yann},
+  journal={arXiv preprint arXiv:1312.5851},
+  year={2013}
+}
+
+@misc{rlintro,
+  title={Reinforcement learning: An introduction},
+  author={Sutton, Richard S and Barto, Andrew G},
+  year={2011},
+  publisher={Cambridge Univ Press}
+}
+
+@online{nndl,
+  author = {Michael A. Nielson},
+  title = {Neural Networks and Deep Learning},
+  url = {http://neuralnetworksanddeeplearning.com/},
+  urldate = {2015-12-10}
+}
+
+@online{sigGraph,
+  author = {Wolfram Alpha},
+  title = {Sigmoid Function},
+  url = {http://mathworld.wolfram.com/SigmoidFunction.html},
+  urldate = {2015-13-10}
+}
+
+@online{bpexample,
+  author = {Mazur, Matt},
+  title = {A Step by Step Backpropagation Example},
+  url = {http://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/},
+  urldate = {2015-12-10}
+}
+
+@online{convNN,
+  author = {Gibiansky, Andrew},
+  title = {Convolutional Neural Networks},
+  url = {http://andrew.gibiansky.com/blog/machine-learning/convolutional-neural-networks/},
+  urldate = {2015-14-10}
+}
+
+@book{swengi,
+  address = {Harlow, England},
+  author = {Sommerville, Ian},
+  edition = 9,
+  isbn = {978-0-13-703515-1},
+  publisher = {Addison-Wesley},
+  title = {Software Engineering},
+  year = {2010}
+}
+
+@book{nnintell,
+ author = {Fu, LiMin},
+ title = {Neural Networks in Computer Intelligence},
+ year = {1994},
+ isbn = {0079118178},
+ publisher = {McGraw-Hill, Inc.},
+ address = {New York, NY, USA}
+}
+
+@TechReport{repli,
+ author = {Korjus et al.},
+ title = {Replicating the paper playing Atari with deep reinforcement learning},
+ institution = {University of Tartu},
+ year = {2014}
+}
+ 	
+@book{nncomp,
+  author = {Haykin, Simon},
+  title = {Neural Networks, A Comprehensive Foundation},
+  edition = {2},
+  year = {1999},
+  publisher = {Prentice Hall},
+  isbn = {0139083855}
+}
+
+@article{bc3,
+  title={Bob's Concise Coding Conventions (C3)},
+  author={Laramee, Robert S}
+}
+
+@article{qlearning,
+  title={Q-learning},
+  author={Watkins, Christopher JCH and Dayan, Peter},
+  journal={Machine learning},
+  volume={8},
+  number={3-4},
+  pages={279--292},
+  year={1992},
+  publisher={Springer}
+}
+
+@misc{initial,
+  title={Playing Video Games using Neural Networks and Reinforcement Learning - Initial Document},
+  author={Esmaail, Joseph}
+}
+
+@online{rms,
+  author = {Hinton, Geoffrey},
+  title = {Overview of mini-batch gradient descent},
+  url = {http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf},
+  urldate = {2016-08-01}
+}
+
+@article{tdgammon,
+  title={Temporal difference learning and TD-Gammon},
+  author={Tesauro, Gerald},
+  journal={Communications of the ACM},
+  volume={38},
+  number={3},
+  pages={58--68},
+  year={1995}
+}
+
+@article{rltetris,
+  title={Applying reinforcement learning to Tetris},
+  author={Carr, Donald},
+  journal={Department of Computer Science Rhodes University},
+  year={2005}
+}
+
+@inproceedings{rlrobot,
+  title={Reinforcement learning neural network to the problem of autonomous mobile robot obstacle avoidance},
+  author={Huang, Bing-Qiang and Cao, Guang-Yi and Guo, Min},
+  booktitle={Machine Learning and Cybernetics, 2005. Proceedings of 2005 International Conference on},
+  volume={1},
+  pages={85--89},
+  year={2005},
+  organization={IEEE}
+}
+
+@techreport{rlnntetris,
+  title={Reinforcement learning and neural networks for Tetris},
+  author={Lundgaard, Nicholas and McKee, Brian},
+  year={2007},
+  institution={Technical Report, University of Oklahoma}
+}
+
+@article{qlnnrobot,
+  title={Combining Q-Learning with Artificial Neural Networks in an Adaptive Light Seeking Robot},
+  author={Dini, Steve and Serrano, Mark},
+  year={2012},
+  publisher={Citeseer}
+}

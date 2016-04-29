@@ -77,22 +77,22 @@ Agent::Agent(string game){
 	}
 }
 
-
+//error exists in GetScreen() method
 void Agent::play(){
 	vector<transition> minibatch;
 	m_gameover = m_ale.game_over();
 	//double reward, cost;
 	//int target;
 
-	ALEScreen screen = m_ale.getScreen();
-	//m_current = GetPlaceholderScreen();
+	//ALEScreen screen = m_ale.getScreen();
+	m_current = GetPlaceholderScreen();
 
 	for (uint ep = 0; ep < EPOCH_COUNT; ep++){
 		//Set m_current  to a screenshot from game(preprocessed)
 
-		m_current.push_back(GetScreen());
-		m_ale.act(m_legalActs[0]);
-		m_current.push_back(GetScreen());
+		//m_current.push_back(GetScreen());
+		//m_ale.act(m_legalActs[0]);
+		//m_current.push_back(GetScreen());
 
 		while (!m_gameover){
 			if (rand() % 100 + 1 <= m_epsilon){
@@ -100,18 +100,18 @@ void Agent::play(){
 				PerformRandomAction();
 			}else{
 				//cout << "NN: ";
-				UseNeuralNetwork();
+				//UseNeuralNetwork();
 			}
 			//cout << m_action << endl;
 			m_reward = m_ale.act(m_legalActs[m_action]);
-			m_next = GetPlaceholderScreen();
+			//m_next = GetPlaceholderScreen();
 
 			if (m_gameover){
 				m_terminal = true;
 			}
-			m_replay.AddTransition(m_current, m_action, m_reward, m_next, m_terminal);
+			//m_replay.AddTransition(m_current, m_action, m_reward, m_next, m_terminal);
 
-			Learning();
+			//Learning();
 		}
 	}
 }
