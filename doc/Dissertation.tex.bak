@@ -380,7 +380,7 @@ Signed:
 	
 	\bigskip
 	
-	\subsection{Project timeline*}
+	\subsection{Project timeline}
 	%Discuss risks and how they have come in, and use the gantt chart!
 	
 		\begin{figure}[h]				
@@ -412,7 +412,7 @@ Signed:
 		
 	\bigskip
 		
-	\subsection{Risks*}
+	\subsection{Risks}
 	%Risk tables and perhaps discussion on risks that actually happened, if they were expected or not before outlined!
 	\begin{figure}[h]
 		\begin{tabular}{ p{4.5cm} | c | c | c | p{4.5cm} }
@@ -431,12 +431,11 @@ Signed:
 	
 	The risks involved in the development of this project can be seen in the risk table in figure \ref{fig:newRisks}, with `P' representing the Probability of the risk (scaled from 1 to 10), `I' representing the Impact of the risk (scaled from 1 to 10), and `Score' representing the Risk score, which is calculated as the product of the probability and impact of the risk, and the risks are ordered by this risk score.\\
 	
-	The risks of this project are all relating to some kind of down time. In the case of myself getting ill, be it in general or from migraines, or a close family member becoming ill, it results in slowed progress and can be mitigated by keeping up-to date with sprint tasks. The other kind of downtime comes from hardware downtime, either my own or on the end of a service such as GitHub, on which I host my version control and backups. These issues could result in loss of project data, potentially crucial, and can be mitigated by keeping sufficient backups of files, in several places, and having backup hardware.\\	
+	The risks of this project are mostly all relating to some kind of down time. In the case of myself getting ill, be it in general or from migraines, or a close family member becoming ill, it results in slowed progress and can be mitigated by keeping up-to date with sprint tasks. The other kind of downtime comes from hardware downtime, either my own or on the end of a service such as GitHub, on which I host my version control and backups. These issues could result in loss of project data, potentially crucial, and can be mitigated by keeping sufficient backups of files, in several places, and having backup hardware.\\		
 	
+	During the interim document stage for this project, I incorrectly decided to remove the risk `Project is too ambitious', as at the time I was on-track to complete the aims of the project. After the interim document stage, I started work on implementing the final component to the neural network, backpropagation. This task proved a lot more difficult than I had anticipated it would have been and halted progress on the network for multiple reasons. This to me was a factor in the project perhaps being `too ambitious'. The mitigation to this risk was to `scale back and/or adjust project aims', however this mitigation was hard to do as backpropagation is an integral part to a neural network. My solution to this was to change (albeit very late in the timeline) to using an existing neural network implementation for the purpose of playing the video games rather than creating my own.\\
 	
-	During the interim document stage for this project, I incorrectly decided to remove a risk
-	
-	Of these risks, some did come in to play during the development of the project. \textbf{COMPLETE THIS SECTION}\textit{COVER MIGRAINES COMING ON MORE FREQUENTLY !!!!!! AS WELL AS REMOVING TOO AMBITIOUS RISK IN THE INTERIM AND THEN THE PROBLEMS FACED}.
+	The only other risk to occur during the duration of this project was the slowing of development `due to migraines'. During the periods where I would perform a lot of implementation, I also got a lot of migraines due to the time spent at my computer. Early on in the implementation the mitigation of keeping `good time management to afford missed days' worked well. However when this then became coupled with the issues involved in implementing backpropagation, the mitigation was not very affecting, and productivity suffered as a result.
 	
 	\bigskip
 \section{Technologies}
@@ -572,6 +571,9 @@ Signed:
 	\subsection{Replay Memory*}
 	
 	\subsection{Artificial Intelligence Agent*}
+	
+	\subsection{Training the network}
+		\textit{Although this did not occur, existing implementations state that this process can take 3-5 days (make sure to get these as references). Explain why this was problematic late on in the project.}
 
 \section{Reflection of results*}
 

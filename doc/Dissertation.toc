@@ -22,15 +22,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.2}Development*}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3}Project timeline*}{16}
+\contentsline {subsection}{\numberline {5.3}Project timeline}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4}Risks*}{17}
+\contentsline {subsection}{\numberline {5.4}Risks}{17}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6}Technologies}{19}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.1}Git}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2}C++*}{19}
+\contentsline {subsection}{\numberline {6.2}C++*}{20}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.3}Python*}{20}
 \defcounter {refsection}{0}\relax 
@@ -66,10 +66,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.7}Artificial Intelligence Agent*}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Reflection of results*}{24}
+\contentsline {subsection}{\numberline {8.8}Training the network}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10}Suggestions for further work*}{24}
+\contentsline {section}{\numberline {9}Reflection of results*}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{25}
+\contentsline {section}{\numberline {10}Suggestions for further work*}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A}Appendix: Class diagrams}{27}
+\contentsline {section}{References}{26}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A}Appendix: Class diagrams}{28}
