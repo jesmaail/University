@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  30 APR 2016 16:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  30 APR 2016 19:12
 entering extended mode
 **Dissertation.tex
 (Dissertation.tex
@@ -488,12 +488,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 161--162
 
  []
 
-[6]
+
 Underfull \hbox (badness 10000) in paragraph at lines 163--164
 
  []
 
-
+[6]
 Underfull \hbox (badness 10000) in paragraph at lines 165--166
 
  []
@@ -610,57 +610,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 249--250
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--255
+Underfull \hbox (badness 10000) in paragraph at lines 255--257
 
  []
 
 [11 <./img/convNet1.png> <./img/convNet2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 263--265
+Underfull \hbox (badness 10000) in paragraph at lines 265--267
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 266--267
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 274--276
+Underfull \hbox (badness 10000) in paragraph at lines 276--278
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 286--287
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--292
+Underfull \hbox (badness 10000) in paragraph at lines 293--294
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--300
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 313--314
+Underfull \hbox (badness 10000) in paragraph at lines 315--316
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 318--320
+Underfull \hbox (badness 10000) in paragraph at lines 320--322
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--324
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 328--329
+Underfull \hbox (badness 10000) in paragraph at lines 330--331
 
  []
 
@@ -680,37 +680,37 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ¢ in font cmr10!
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 348--349
+Underfull \hbox (badness 10000) in paragraph at lines 352--353
 
  []
 
 <img/scrum.png, id=72, 291.0072pt x 103.1052pt>
 File: img/scrum.png Graphic file (type png)
  <use img/scrum.png>
-Package pdftex.def Info: img/scrum.png used on input line 351.
+Package pdftex.def Info: img/scrum.png used on input line 355.
 (pdftex.def)             Requested size: 291.00648pt x 103.10493pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 357--358
+Underfull \hbox (badness 10000) in paragraph at lines 361--362
 
  []
 
 [15 <./img/scrum.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 365--366
+Underfull \hbox (badness 10000) in paragraph at lines 369--370
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 368--369
+Underfull \hbox (badness 10000) in paragraph at lines 372--373
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 380--381
+Underfull \hbox (badness 10000) in paragraph at lines 384--385
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 382--383
+Underfull \hbox (badness 10000) in paragraph at lines 386--387
 
  []
 
@@ -718,10 +718,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 382--383
 File: img/newSchedule.png Graphic file (type png)
 
 <use img/newSchedule.png>
-Package pdftex.def Info: img/newSchedule.png used on input line 390.
+Package pdftex.def Info: img/newSchedule.png used on input line 394.
 (pdftex.def)             Requested size: 373.54845pt x 164.8672pt.
 
-Overfull \hbox (28.54845pt too wide) in paragraph at lines 390--392
+Overfull \hbox (28.54845pt too wide) in paragraph at lines 394--396
  [][] 
  []
 
@@ -729,17 +729,17 @@ Overfull \hbox (28.54845pt too wide) in paragraph at lines 390--392
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 400--400
+Underfull \hbox (badness 10000) in paragraph at lines 404--404
 []\OT1/cmr/m/n/10 Start of Christ-mas
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 405--406
+Underfull \hbox (badness 10000) in paragraph at lines 409--410
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 407--408
+Underfull \hbox (badness 10000) in paragraph at lines 411--412
 
  []
 
@@ -747,124 +747,129 @@ Underfull \hbox (badness 10000) in paragraph at lines 407--408
 File: img/finalSchedule.png Graphic file (type png)
 
 <use img/finalSchedule.png>
-Package pdftex.def Info: img/finalSchedule.png used on input line 410.
+Package pdftex.def Info: img/finalSchedule.png used on input line 414.
 (pdftex.def)             Requested size: 373.54845pt x 164.8672pt.
 
-Overfull \hbox (28.54845pt too wide) in paragraph at lines 410--412
+Overfull \hbox (28.54845pt too wide) in paragraph at lines 414--416
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[17 <./img/newSchedule.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 423--423
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--427
 []\OT1/cmr/m/n/10 Scale back-/ad-just project
  []
 
 
-Underfull \hbox (badness 2205) in paragraph at lines 429--430
+Underfull \hbox (badness 2205) in paragraph at lines 433--434
 []\OT1/cmr/m/n/10 Keep suf-fi-cient back-ups of
  []
 
 
-Overfull \hbox (11.1927pt too wide) in paragraph at lines 421--431
+Overfull \hbox (11.1927pt too wide) in paragraph at lines 425--435
 [][] 
  []
 
+[17 <./img/newSchedule.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 435--436
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 437--438
-
- []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 439--440
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 441--442
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 443--444
+
+ []
+
 [18 <./img/finalSchedule.png>] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 460--461
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 462--463
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 464--465
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 478--479
+Underfull \hbox (badness 10000) in paragraph at lines 466--467
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 480--481
+Underfull \hbox (badness 10000) in paragraph at lines 468--469
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 482--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--485
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 512--513
+Underfull \hbox (badness 10000) in paragraph at lines 517--518
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 519--520
 
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 514--515
+Underfull \hbox (badness 10000) in paragraph at lines 521--522
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 516--517
+Underfull \hbox (badness 10000) in paragraph at lines 529--530
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 524--525
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 526--527
+Underfull \hbox (badness 10000) in paragraph at lines 531--532
 
  []
 
 <img/agentAlgo.png, id=98, 408.77719pt x 210.03468pt>
 File: img/agentAlgo.png Graphic file (type png)
  <use img/agentAlgo.png>
-Package pdftex.def Info: img/agentAlgo.png used on input line 531.
-(pdftex.def)             Requested size: 327.02219pt x 168.02797pt.
+Package pdftex.def Info: img/agentAlgo.png used on input line 536.
+(pdftex.def)             Requested size: 367.89606pt x 189.02946pt.
+
+Overfull \hbox (22.89606pt too wide) in paragraph at lines 536--538
+ [][] 
+ []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 548--549
+Underfull \hbox (badness 10000) in paragraph at lines 553--554
 
  []
 
 <img/structure.png, id=102, 417.05812pt x 295.1025pt>
 File: img/structure.png Graphic file (type png)
  <use img/structure.png>
-Package pdftex.def Info: img/structure.png used on input line 551.
+Package pdftex.def Info: img/structure.png used on input line 556.
 (pdftex.def)             Requested size: 291.93869pt x 206.57033pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 557--558
+Underfull \hbox (badness 10000) in paragraph at lines 562--563
 
  []
 
@@ -872,56 +877,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 557--558
 File: img/structure2.png Graphic file (type png)
 
 <use img/structure2.png>
-Package pdftex.def Info: img/structure2.png used on input line 560.
+Package pdftex.def Info: img/structure2.png used on input line 565.
 (pdftex.def)             Requested size: 342.83539pt x 194.31856pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 566--567
+Underfull \hbox (badness 10000) in paragraph at lines 571--572
 
  []
 
 [23 <./img/agentAlgo.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 568--569
-
- []
-
 <img/screenshot.png, id=107, 323.70938pt x 243.15843pt>
 File: img/screenshot.png Graphic file (type png)
 
 <use img/screenshot.png>
-Package pdftex.def Info: img/screenshot.png used on input line 571.
+Package pdftex.def Info: img/screenshot.png used on input line 576.
 (pdftex.def)             Requested size: 161.8543pt x 121.57892pt.
 File: img/screenshot.png Graphic file (type png)
  <use img/screenshot.png>
-Package pdftex.def Info: img/screenshot.png used on input line 572.
+Package pdftex.def Info: img/screenshot.png used on input line 577.
 (pdftex.def)             Requested size: 161.8543pt x 121.57892pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 582--583
+Underfull \hbox (badness 10000) in paragraph at lines 587--588
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 584--585
+Underfull \hbox (badness 10000) in paragraph at lines 589--590
 
  []
 
 [24 <./img/structure.png>] [25 <./img/structure2.png>] [26 <./img/screenshot.pn
 g>]
-Overfull \hbox (0.17021pt too wide) in paragraph at lines 621--621
+Overfull \hbox (0.17021pt too wide) in paragraph at lines 643--643
 []\OT1/cmr/m/n/10 Andrew Gib-ian-sky. \OT1/cmr/m/it/10 Con-vo-lu-tional Neu-ral
  Net-works\OT1/cmr/m/n/10 . \OT1/cmr/m/sc/10 url\OT1/cmr/m/n/10 : $\OT1/cmtt/m/
 n/10 http : / / andrew .$
  []
 
 
-Overfull \hbox (0.51753pt too wide) in paragraph at lines 621--621
+Overfull \hbox (0.51753pt too wide) in paragraph at lines 643--643
 []\OT1/cmr/m/n/10 Ian Som-merville. \OT1/cmr/m/it/10 Soft-ware En-gi-neer-ing\O
 T1/cmr/m/n/10 . 9th ed. Har-low, Eng-land: Addison-
  []
@@ -932,7 +933,7 @@ Package logreq Info: Writing requests to 'Dissertation.run.xml'.
 Here is how much of TeX's memory you used:
  9138 strings out of 493673
  148536 string characters out of 3141506
- 573429 words of memory out of 3000000
+ 574429 words of memory out of 3000000
  12395 multiletter control sequences out of 15000+200000
  7640 words of font info for 28 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
@@ -953,7 +954,7 @@ iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Dissertation.pdf (29 pages, 700892 bytes).
+Output written on Dissertation.pdf (29 pages, 701530 bytes).
 PDF statistics:
  181 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
