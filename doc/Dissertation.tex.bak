@@ -526,18 +526,37 @@ Signed:
 	%How it will use ALE, the nn, the main algorithm, Q learning, and exploration-exploitation.
 	%How the nn will be able to have initial observations from random actions and then able to backprop from this.
 	
-		The intelligence agent in this case will be where the neural network and the interface for arcade learning environment interface will be instantiated. In this agent they will then communicate with each other, while going through the algorithm seen in figure \ref{fig:agentAlgo} for performing Q-learning. This intelligence agent is what will be called from the final programs \textit{main} method, and it will handle the rest.\\
+		The intelligence agent in this case will be where the neural network and the interface for arcade learning environment interface will be instantiated. In this agent they will then communicate with each other, while going through the algorithm seen in algorithm \ref{algo:agentAlgo} for performing Q-learning. This intelligence agent is what will be called from the final programs \textit{main} method, and it will handle the rest.\\
 		
 		As outlined in the work from DeepMind in regard to their Deep-Q learner, the intelligence agent will use something known as \textit{exploration-exploitation}. This means that the agent will initially perform random actions the majority of the time, and gradually begin to use the neural network more and more. This is used as ``it is necessary to sometimes pick a random action to not get stuck in local reward maxima" \cite{repli}, so the network will be able to explore more options than just the action it is currently thinking is the most advantageous.\\
 		
 		The 2015 DeepMind paper also provides us with a table of hyperparameters and their optimal values for the Deep Q-network intelligence agent. Most of these will remain the same in our implementation, however some have been scaled down to allow easier implementation. These can be found in figure \textbf{add it} in the abstract of this document.
 		
-		\begin{figure}[h]				
-			\includegraphics[scale=0.9]{img/agentAlgo}
-			\centering
-			\caption{Main algorithm performed by the intelligence agent \cite{ataridrl}.}
-			\label{fig:agentAlgo}
-		\end{figure}
+		\begin{algorithm}
+			\caption{Deep Q-learning with Experience Replay \cite{humanlevel}}
+			\label{algo:agentAlgo}
+			\begin{algorithmic}[]
+				\State Initialize replay memory $\mathcal{D}$ to capacity $N$
+				\State Initialize action value $Q$ with random weights				
+				\For{episode = 1, $M$}
+					\State Initialise sequence $s_1 = {x_1}$ and preprocessed sequence $\phi = \phi(s_1)$
+					\For{t = 1, $T$}
+						\State With probability $\epsilon$ select a random action $a_t$
+						\State otherwise select $a_t$ = max$_aQ^*(\phi(s_t),a;\theta)$
+						\State Execute action $a_t$ in emulator and observe reward $r_t$ and image $x_{t+1}$
+						\State Set $S_{t+1} = s_t,a_t,x_{t+1}$ and preprocess $\phi_{t+1} = \phi(s_{t+1})$
+						\State Store transition ($\phi_t,a_t,r_t,\phi_{t+1}$) in $\mathcal{D}$
+						\State Sample random minibatch of transitions ($\phi_j,a_j,r_j,\phi_{j+1}$) from $\mathcal{D}$
+						\State Set $y_j =
+							\begin{cases}
+   								r_j& \text{for terminal } \phi_{j+1}\\
+    							r_j + \gamma \text{max}_{a'}Q(\phi_{j+1},a';\theta),& \text{for non-terminal } \phi_{j+1}
+							\end{cases}$
+						\State Perform a gradient descent step on $(y_j - Q(\phi_j,a_j;\theta))^2$
+					\EndFor
+				\EndFor
+			\end{algorithmic}
+		\end{algorithm}
 	
 	\medskip
 	
@@ -584,11 +603,29 @@ Signed:
 	
 	\subsection{Learning*}
 	%Replay memory, rmsprop/backprop, q learning.
-		The network will learn overall using the reinforcement learning method of Q-learning, making it a deep q-network. The backpropagation learning for the network will use a technique known as RMSProp \textbf{REFERENCE THE HINTON SLIDES}.\\
+		The network will learn overall using the reinforcement learning method of Q-learning, making it a deep q-network. The backpropagation learning for the network will use a technique known as RMSProp \cite{rms}.
+		\begin{algorithm}
+			\caption{Q-Learning element \cite{humanlevel}}
+			\label{algo:qlearn}
+			\begin{algorithmic}[1]
+				\State Sample random minibatch of transitions ($\phi_j,a_j,r_j,\phi_{j+1}$) from $\mathcal{D}$
+				\State Set $y_j =
+					\begin{cases}
+   						r_j& \text{for terminal } \phi_{j+1}\\
+    					r_j + \gamma \text{max}_{a'}Q(\phi_{j+1},a';\theta),& \text{for non-terminal } \phi_{j+1}
+					\end{cases}$
+				\State Perform a gradient descent step on $(y_j - Q(\phi_j,a_j;\theta))^2$
+			\end{algorithmic}
+		\end{algorithm}
 		
-		\textbf{Explain how the Q-Learning works, reiterate the main formula for it, and pull the Q-learning part of main algo/agent}\\
+		From the main algorithm in algorithm \ref{algo:agentAlgo}, the learning is done in the section extracted in algorithm \ref{algo:qlearn}. Here, after stochastically selecting samples from the minibatch in line 1, we get an estimate on future rewards from line 2, and then perform a gradient descent step in line 3. The gradient descent step is based off the gradient shown in equation \ref{Qlearn} \cite{ataridrl}. 
 		
-		\textbf{Explain how RMSProp works in theory as well as how it fits in}
+		\begin{equation}
+			\label{Qlearn}
+			\nabla_{\theta}L_i(\theta_i) = \mathbf{E}[(r+\gamma\text{max}'Q(s',a';\theta_{i-1})-Q(s,a,\theta_i)) \nabla_{\theta}Q(s,a;\theta_i)]
+		\end{equation}
+		
+		\textbf{Explain how the Q-Learning works and how RMSProp works in theory as well as how it fits in}
 	
 	\bigskip
 

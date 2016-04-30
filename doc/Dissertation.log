@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  30 APR 2016 19:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  30 APR 2016 20:44
 entering extended mode
 **Dissertation.tex
 (Dissertation.tex
@@ -841,88 +841,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 531--532
 
  []
 
-<img/agentAlgo.png, id=98, 408.77719pt x 210.03468pt>
-File: img/agentAlgo.png Graphic file (type png)
- <use img/agentAlgo.png>
-Package pdftex.def Info: img/agentAlgo.png used on input line 536.
-(pdftex.def)             Requested size: 367.89606pt x 189.02946pt.
-
-Overfull \hbox (22.89606pt too wide) in paragraph at lines 536--538
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 553--554
+Underfull \hbox (badness 10000) in paragraph at lines 572--573
 
  []
 
-<img/structure.png, id=102, 417.05812pt x 295.1025pt>
+<img/structure.png, id=101, 417.05812pt x 295.1025pt>
 File: img/structure.png Graphic file (type png)
  <use img/structure.png>
-Package pdftex.def Info: img/structure.png used on input line 556.
+Package pdftex.def Info: img/structure.png used on input line 575.
 (pdftex.def)             Requested size: 291.93869pt x 206.57033pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 562--563
+Underfull \hbox (badness 10000) in paragraph at lines 581--582
 
  []
 
-<img/structure2.png, id=103, 1269.74374pt x 719.68875pt>
+<img/structure2.png, id=102, 1269.74374pt x 719.68875pt>
 File: img/structure2.png Graphic file (type png)
 
 <use img/structure2.png>
-Package pdftex.def Info: img/structure2.png used on input line 565.
+Package pdftex.def Info: img/structure2.png used on input line 584.
 (pdftex.def)             Requested size: 342.83539pt x 194.31856pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 571--572
+Underfull \hbox (badness 10000) in paragraph at lines 590--591
 
  []
 
-[23 <./img/agentAlgo.png>]
-<img/screenshot.png, id=107, 323.70938pt x 243.15843pt>
+[23] <img/screenshot.png, id=107, 323.70938pt x 243.15843pt>
 File: img/screenshot.png Graphic file (type png)
 
 <use img/screenshot.png>
-Package pdftex.def Info: img/screenshot.png used on input line 576.
+Package pdftex.def Info: img/screenshot.png used on input line 595.
 (pdftex.def)             Requested size: 161.8543pt x 121.57892pt.
 File: img/screenshot.png Graphic file (type png)
  <use img/screenshot.png>
-Package pdftex.def Info: img/screenshot.png used on input line 577.
+Package pdftex.def Info: img/screenshot.png used on input line 596.
 (pdftex.def)             Requested size: 161.8543pt x 121.57892pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 587--588
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 589--590
+Underfull \hbox (badness 10000) in paragraph at lines 621--622
 
  []
 
 [24 <./img/structure.png>] [25 <./img/structure2.png>] [26 <./img/screenshot.pn
 g>]
-Overfull \hbox (0.17021pt too wide) in paragraph at lines 643--643
+Overfull \hbox (0.17021pt too wide) in paragraph at lines 675--675
 []\OT1/cmr/m/n/10 Andrew Gib-ian-sky. \OT1/cmr/m/it/10 Con-vo-lu-tional Neu-ral
  Net-works\OT1/cmr/m/n/10 . \OT1/cmr/m/sc/10 url\OT1/cmr/m/n/10 : $\OT1/cmtt/m/
 n/10 http : / / andrew .$
  []
 
 
-Overfull \hbox (0.51753pt too wide) in paragraph at lines 643--643
+Overfull \hbox (0.51753pt too wide) in paragraph at lines 675--675
 []\OT1/cmr/m/n/10 Ian Som-merville. \OT1/cmr/m/it/10 Soft-ware En-gi-neer-ing\O
 T1/cmr/m/n/10 . 9th ed. Har-low, Eng-land: Addison-
  []
@@ -931,13 +912,13 @@ T1/cmr/m/n/10 . 9th ed. Har-low, Eng-land: Addison-
 Package logreq Info: Writing requests to 'Dissertation.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 9138 strings out of 493673
- 148536 string characters out of 3141506
- 574429 words of memory out of 3000000
- 12395 multiletter control sequences out of 15000+200000
- 7640 words of font info for 28 fonts, out of 3000000 for 9000
+ 9154 strings out of 493673
+ 148744 string characters out of 3141506
+ 574437 words of memory out of 3000000
+ 12411 multiletter control sequences out of 15000+200000
+ 7939 words of font info for 29 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 44i,9n,48p,1483b,977s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,12n,48p,1483b,977s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/P
@@ -949,14 +930,16 @@ ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program
  Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Fi
 les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Dissertation.pdf (29 pages, 701530 bytes).
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Dissertation.pdf (29 pages, 688633 bytes).
 PDF statistics:
- 181 PDF objects out of 1000 (max. 8388607)
+ 188 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

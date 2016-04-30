@@ -1,15 +1,15 @@
 [0] Config.pm:324> INFO - This is Biber 2.1
 [0] Config.pm:327> INFO - Logfile is 'Dissertation.blg'
 [50] biber-MSWIN:273> INFO - === %a %b %e, %Y, %H:%M:%S
-[51] Biber.pm:333> INFO - Reading 'Dissertation.bcf'
-[266] Biber.pm:645> INFO - Found 19 citekeys in bib section 0
-[285] Biber.pm:2977> INFO - Processing section 0
-[304] Biber.pm:3115> INFO - Looking for bibtex format file 'references.bib' for section 0
-[336] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
-[356] bibtex.pm:895> INFO - Found BibTeX data source 'references.bib'
-[586] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[586] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[586] Biber.pm:2854> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'en-US'
-[586] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-US'
-[618] bbl.pm:505> INFO - Writing 'Dissertation.bbl' with encoding 'ascii'
-[732] bbl.pm:596> INFO - Output to Dissertation.bbl
+[50] Biber.pm:333> INFO - Reading 'Dissertation.bcf'
+[281] Biber.pm:645> INFO - Found 19 citekeys in bib section 0
+[301] Biber.pm:2977> INFO - Processing section 0
+[320] Biber.pm:3115> INFO - Looking for bibtex format file 'references.bib' for section 0
+[355] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
+[379] bibtex.pm:895> INFO - Found BibTeX data source 'references.bib'
+[640] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[640] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[640] Biber.pm:2854> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'en-US'
+[640] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-US'
+[676] bbl.pm:505> INFO - Writing 'Dissertation.bbl' with encoding 'ascii'
+[798] bbl.pm:596> INFO - Output to Dissertation.bbl
