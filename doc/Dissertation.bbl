@@ -326,6 +326,24 @@
       \field{title}{Reinforcement learning: An introduction}
       \field{year}{2011}
     \endentry
+    \entry{biz}{online}{}
+      \name{author}{1}{}{%
+        {{hash=c084170f8d82b01a43c8f6269624747f}{TASVideos}{T\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{c084170f8d82b01a43c8f6269624747f}
+      \strng{fullhash}{c084170f8d82b01a43c8f6269624747f}
+      \field{sortinit}{T}
+      \field{sortinithash}{423d138a005a533b47e6475e39378bf2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Bizhawk emulator}
+      \field{urlday}{10}
+      \field{urlmonth}{09}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb http://tasvideos.org/BizHawk.html
+      \endverb
+    \endentry
     \entry{tdgammon}{article}{}
       \name{author}{1}{}{%
         {{hash=778694b9dda05914a1456df10efb774c}{Tesauro}{T\bibinitperiod}{Gerald}{G\bibinitperiod}{}{}{}{}}%
