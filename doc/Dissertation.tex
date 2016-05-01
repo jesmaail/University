@@ -481,27 +481,7 @@ Signed:
 	
 		The neural network needs a way of interfacing with video games, and this can be done using a tool know as the Arcade learning environment. The arcade learning environment is built an Atari 2600 games console emulator known as Stella, so it is limited to only allowing interface to games for that games console. This environment was created alongside the paper `The Arcade learning environment: An evaluation platform for general agents' \cite{ale} by DeepMind, and was used in both aforementioned DeepMind papers. It has been made freely available online for use by ``researchers and hobbyists to develop AI agents for the Atari 2600" \cite{ale}.\\
 		
-		The arcade learning environment is compatible with a languages such as C++, Java, and Python and presents several interfaces for these languages to communicate with it and therefore with the video games. Communication with the arcade learning environment is done using a class known as the \textit{ALEInterface}, with consistent methods across both the C++ and Python such as those seen in Code Listing 1.\\
-		
-		\renewcommand{\lstlistingname}{Code Listing}
-			\begin{lstlisting}[caption={Arcade Learning Environment I/O},label={ALEIO}]	
-	ALEInterface ale;
-
-	//loads selected game
-	ale.loadROM('romname.bin'); 
-
-	//gets legal actions for game
-	ale.getLegalActionSet();
-
-	//performs action and returns reward
-	ale.act(0);
-
-	//returns game screen data
-	ale.getScreen();
-
-	//returns whether game has ended or not
-	ale.gameOver();
-			\end{lstlisting}
+		The arcade learning environment is compatible with a languages such as C++, Java, and Python and presents several interfaces for these languages to communicate with it and therefore with the video games.
 			
 	\medskip
 	
@@ -601,9 +581,9 @@ Signed:
 	
 	\medskip
 	
-	\subsection{Learning*}
+	\subsection{Learning}
 	%Replay memory, rmsprop/backprop, q learning.
-		The network will learn overall using the reinforcement learning method of Q-learning, making it a deep q-network. The backpropagation learning for the network will use a technique known as RMSProp \cite{rms}.
+		The network will learn overall using the reinforcement learning method of Q-learning, making it a deep q-network. The backpropagation learning for the network will use a technique known as RMSProp (Root mean square propagation) \cite{rms}.
 		\begin{algorithm}
 			\caption{Q-Learning element \cite{humanlevel}}
 			\label{algo:qlearn}
@@ -620,15 +600,52 @@ Signed:
 		
 		From the main algorithm in algorithm \ref{algo:agentAlgo}, the learning is done in the section extracted in algorithm \ref{algo:qlearn}. Here, after stochastically selecting samples from the minibatch in line 1, we get an estimate on future rewards from line 2, and then perform a gradient descent step in line 3.\\
 		
-		\textbf{Explain how the Q-Learning works and how RMSProp works in theory as well as how it fits in}
+		The gradient descent step allows the network to know how much to alter the weights in the network when it performs backpropagation. The technique of RMSProp being used for the backpropagation is a variation of Stochastic gradient descent which will ``divide the learning rate for a weight by a running average of the magnitudes of recent gradients for that weight" \cite{rms}.
 	
 	\bigskip
 
-\section{Implementation sprints*}
-	Use algorithm figures here to show how things have been implemented! As well as the dates from GDrive for sprints
-	\subsection{Methods to manipulate I/O*}
-	%See Gregynog presentation and beyond
+\section{Implementation sprints}
+	The development of this project was done in a series of sprints, as it was done using the agile software model (See section 5.1 - Software life-cycle).
 	
+	\subsection{Methods to manipulate I/O}
+	%See Gregynog presentation and beyond
+		The first sprint for the implementation was establishing a method to enable communication between C++ and the Arcade learning environment. This is accomplished by including and using a class known as the \textit{ALEInterface}, with consistent methods across both the C++ and Python such as those seen in the example code in Code Listing 1.\\
+		
+		The interface with ale needs to be initialised, from that we can then load in the game ROM (a .bin file specified either in the code itself or when run from the command line) and then get information about this game. We can get either the legal or minimal set of actions for the video game (both stored in a structure known as \textit{ActionVect}). The legal action set are all actions available to the player when playing the game whereas the minimal action set is the smallest subset of the legal actions needed to play the game. In the context of the neural network, the action set will be the size of the output layer. Once we have a decision on the action to be taken, we will perform the act command with the chosen action, which will return the reward obtained in the game from the given action. 	 
+		
+		\renewcommand{\lstlistingname}{Code Listing}
+		\begin{lstlisting}[caption={ALEInterface in C++},label={ALEIO}]	
+#include <ale_interface.hpp>
+
+int main(int argc, char* argv[]) {
+
+	//Initialise interface with environment
+	ALEInterface ale;
+	
+	//Set whether game screen/sound will be displayed
+	#ifdef __USE_SDL
+		ale.setBool("display_screen", false);
+		ale.setBool("sound", false);
+	#endif
+
+	//loads specified game 
+	ale.loadROM(argv[1]); 
+
+	//gets legal actions for game
+	ActionVect legalAct = ale.getLegalActionSet();
+
+	//performs action and returns reward
+	int reward = ale.act(legalAct[0]);
+	
+	//returns whether game has ended or not
+	bool gameOver = ale.gameOver();
+
+	//returns game screen data
+	ALEScreen screen = ale.getScreen();	
+
+		\end{lstlisting}
+			
+		We can then also get a boolean value of whether the game has reached a game over state, as well as getting game screen information. This is output as a size 210x160 \textit{ALEScreen} structure of unsigned characters, which are 8-bit hexadecimal values representing a corresponding colour from a 128-colour palette specific to the Atari 2600.
 	\medskip
 	
 	\subsection{Preprocessor*}

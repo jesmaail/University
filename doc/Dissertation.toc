@@ -42,38 +42,38 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {7.1}Video games}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2}Intelligence agent}{22}
+\contentsline {subsection}{\numberline {7.2}Intelligence agent}{21}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {7.3}Preprocessor}{22}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {7.4}Network network*}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.5}Learning*}{24}
+\contentsline {subsection}{\numberline {7.5}Learning}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Implementation sprints*}{25}
+\contentsline {section}{\numberline {8}Implementation sprints}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1}Methods to manipulate I/O*}{26}
+\contentsline {subsection}{\numberline {8.1}Methods to manipulate I/O}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2}Preprocessor*}{26}
+\contentsline {subsection}{\numberline {8.2}Preprocessor*}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.3}Network generation*}{26}
+\contentsline {subsection}{\numberline {8.3}Network generation*}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.4}Network feedforward*}{26}
+\contentsline {subsection}{\numberline {8.4}Network feedforward*}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.5}Backpropagation*}{26}
+\contentsline {subsection}{\numberline {8.5}Backpropagation*}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.6}Replay Memory*}{26}
+\contentsline {subsection}{\numberline {8.6}Replay Memory*}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.7}Artificial Intelligence Agent*}{26}
+\contentsline {subsection}{\numberline {8.7}Artificial Intelligence Agent*}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.8}Training the network*}{26}
+\contentsline {subsection}{\numberline {8.8}Training the network*}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Reflection of results*}{26}
+\contentsline {section}{\numberline {9}Reflection of results*}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10}Suggestions for further work*}{26}
+\contentsline {section}{\numberline {10}Suggestions for further work*}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{27}
+\contentsline {section}{References}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A}Appendix: Facts and figures}{29}
+\contentsline {section}{\numberline {A}Appendix: Facts and figures}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B}Appendix: Class diagrams}{29}
+\contentsline {section}{\numberline {B}Appendix: Class diagrams}{30}
