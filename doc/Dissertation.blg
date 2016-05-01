@@ -1,15 +1,15 @@
 [0] Config.pm:324> INFO - This is Biber 2.1
 [0] Config.pm:327> INFO - Logfile is 'Dissertation.blg'
-[48] biber-MSWIN:273> INFO - === %a %b %e, %Y, %H:%M:%S
-[48] Biber.pm:333> INFO - Reading 'Dissertation.bcf'
-[263] Biber.pm:645> INFO - Found 19 citekeys in bib section 0
-[282] Biber.pm:2977> INFO - Processing section 0
-[300] Biber.pm:3115> INFO - Looking for bibtex format file 'references.bib' for section 0
-[333] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
-[353] bibtex.pm:895> INFO - Found BibTeX data source 'references.bib'
-[582] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[582] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[582] Biber.pm:2854> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'en-US'
-[582] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-US'
-[616] bbl.pm:505> INFO - Writing 'Dissertation.bbl' with encoding 'ascii'
-[732] bbl.pm:596> INFO - Output to Dissertation.bbl
+[55] biber-MSWIN:273> INFO - === %a %b %e, %Y, %H:%M:%S
+[56] Biber.pm:333> INFO - Reading 'Dissertation.bcf'
+[295] Biber.pm:645> INFO - Found 19 citekeys in bib section 0
+[317] Biber.pm:2977> INFO - Processing section 0
+[338] Biber.pm:3115> INFO - Looking for bibtex format file 'references.bib' for section 0
+[382] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
+[404] bibtex.pm:895> INFO - Found BibTeX data source 'references.bib'
+[673] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[673] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[673] Biber.pm:2854> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'en-US'
+[673] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-US'
+[707] bbl.pm:505> INFO - Writing 'Dissertation.bbl' with encoding 'ascii'
+[835] bbl.pm:596> INFO - Output to Dissertation.bbl

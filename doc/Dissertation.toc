@@ -46,7 +46,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {7.3}Preprocessor}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.4}Network network*}{23}
+\contentsline {subsection}{\numberline {7.4}Neural network*}{23}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {7.5}Learning}{25}
 \defcounter {refsection}{0}\relax 
@@ -54,26 +54,26 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.1}Methods to manipulate I/O}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2}Preprocessor*}{27}
+\contentsline {subsection}{\numberline {8.2}Preprocessor}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.3}Network generation*}{27}
+\contentsline {subsection}{\numberline {8.3}Network generation*}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.4}Network feedforward*}{27}
+\contentsline {subsection}{\numberline {8.4}Network feedforward*}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.5}Backpropagation*}{27}
+\contentsline {subsection}{\numberline {8.5}Backpropagation*}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.6}Replay Memory*}{27}
+\contentsline {subsection}{\numberline {8.6}Replay Memory*}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.7}Artificial Intelligence Agent*}{27}
+\contentsline {subsection}{\numberline {8.7}Artificial Intelligence Agent*}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.8}Training the network*}{27}
+\contentsline {subsection}{\numberline {8.8}Training the network*}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Reflection of results*}{27}
+\contentsline {section}{\numberline {9}Reflection of results*}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10}Suggestions for further work*}{27}
+\contentsline {section}{\numberline {10}Suggestions for further work*}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{28}
+\contentsline {section}{References}{29}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A}Appendix: Facts and figures}{30}
+\contentsline {section}{\numberline {A}Appendix: Facts and figures}{31}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B}Appendix: Class diagrams}{30}
+\contentsline {section}{\numberline {B}Appendix: Class diagrams}{31}

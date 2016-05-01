@@ -1,5 +1,6 @@
 \documentclass[10pt]{article}
 
+%\usepackage[a4paper,left=2cm,right=2cm,top=1.5cm,bottom=2cm]{geometry}
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{amsmath}
@@ -547,7 +548,7 @@ Signed:
 	
 	\medskip
 	
-	\subsection{Network network*}
+	\subsection{Neural network*}
 	%Network topology, why it is is, and a graphic of the structure
 		The chosen topology for the neural network for this project is a deep convolutional neural network. This is due to both their proven ability to work well with image recognition problems, and the usage in the work of DeepMind.\\
 		
@@ -642,21 +643,75 @@ int main(int argc, char* argv[]) {
 
 	//returns game screen data
 	ALEScreen screen = ale.getScreen();	
+}
 
 		\end{lstlisting}
 			
-		We can then also get a boolean value of whether the game has reached a game over state, as well as getting game screen information. This is output as a size 210x160 \textit{ALEScreen} structure of unsigned characters, which are 8-bit hexadecimal values representing a corresponding colour from a 128-colour palette specific to the Atari 2600.
+		We can then also get a boolean value of whether the game has reached a game over state, as well as getting game screen information. This is output as a size 210x160 \textit{ALEScreen} structure of unsigned characters, which are 8-bit hexadecimal values representing a corresponding colour from a 128-colour palette specific to the Atari 2600.\\
+		
+		Initially small dummy C++ classes were made to test communication with the Arcade learning environment, with it being attached to the neural network at a later sprint.
 	\medskip
 	
-	\subsection{Preprocessor*}
+	\subsection{Preprocessor}
 	%Discuss how it later got implemented to newer version of ALE (prerelease version on Git).
 	
+	As the output from the Arcade learning environment does not exactly match the expected input to the neural network, some preprocessing steps are required. Much like with the communication with the arcade learning environment, this was at first done with some dummy C++ classes before being added the the larger network later on.\\
+	
+	The preprocessor crops the image and converts to greyscale (with use of a look-up table) using Algorithm \ref{algo:preprocess}.
+	
+		\begin{algorithm}
+			\caption{Region of Interest and greyscale conversion}
+			\label{algo:preprocess}
+			\begin{algorithmic}[]
+				\State ALEScreen screen = ale.getScreen()
+				\State constant int ROI\textunderscore TOP = 32
+				\State constant int ROI\textunderscore BOT = 18			
+				\State int width = screen.width()
+				\State int height = screen.height()
+				\State Image img
+				\State
+				\State int jt = 0
+				\For{(int j = ROI\textunderscore TOP; j \textless height - ROI\textunderscore BOT; j++)}
+					\For{(int i =0; j \textless width; j++)}
+						\State int pix = screen.get(j, i)
+						\State img[jt][i] = GREYSCALE[pix]				
+					\EndFor
+					\State jt++
+				\EndFor
+			\end{algorithmic}
+		\end{algorithm} 
+	It then downscales the resulting image by a rate of 0.525 using Algorithm \ref{algo:downscale}.
+		
+		\begin{algorithm}
+			\caption{Image downscaling}
+			\label{algo:downscale}
+			\begin{algorithmic}[]
+				\State constant int DESIRED\textunderscore IMAGE\textunderscore XY = 84
+				\State constant int INPUT\textunderscore IMAGE\textunderscore XY = 120
+				\State double scaleRatio = INPUT\textunderscore IMAGE\textunderscore XY/(double)DESIRED\textunderscore IMAGE\textunderscore XY
+				\State int newX, newY
+				\State Image newImg
+				\State
+				\For{(int y=0; y \textless DESIRED\textunderscore IMAGE\textunderscore XY; y++)}
+					\For{(int x=0; x \textless DESIRED\textunderscore IMAGE\textunderscore XY; x++)}
+						\State newY = floor(y*scaleRatio)
+						\State newX = floor(x*scaleRatio)
+						\State newImg[y][x] = img[newY][newX]					
+					\EndFor
+				\EndFor
+			\end{algorithmic}
+		\end{algorithm} 
+		
+	The resulting data is now ready to be input to the neural network.\\
+	
+	It is worth noting that the data type \textit{Image} is defined as $vector<vector<int>>$ in this project.
 	\medskip
 	
 	\subsection{Network generation*}
 	%Algorithms, standardised functions, library?
 	%initially hard coded, now extendable/standardised
 	
+	The neural network structure, based off the work of DeepMind and as seen in figure \ref{fig:topology13}, has 3 convolutional layers, followed by two fully connected layers. The convolutional (input, first hidden, and second hidden) layers hold information on the filter(s) to be applied, that is the amount of filters, the size of the filter(s), the stride at which to apply them and the filter(s) themselves. A \textit{Filter} data type in the case of this project is defined as $vector<vector<double>>$ and are held in the data type \textit{Filters}, which is defined as $vector<Filter>$.
 	\medskip
 	
 	\subsection{Network feedforward*}
