@@ -711,7 +711,16 @@ int main(int argc, char* argv[]) {
 	%Algorithms, standardised functions, library?
 	%initially hard coded, now extendable/standardised
 	
-	The neural network structure, based off the work of DeepMind and as seen in figure \ref{fig:topology13}, has 3 convolutional layers, followed by two fully connected layers. The convolutional (input, first hidden, and second hidden) layers hold information on the filter(s) to be applied, that is the amount of filters, the size of the filter(s), the stride at which to apply them and the filter(s) themselves. A \textit{Filter} data type in the case of this project is defined as $vector<vector<double>>$ and are held in the data type \textit{Filters}, which is defined as $vector<Filter>$.
+	The neural network structure, based off the work of DeepMind and as seen in figure \ref{fig:topology13}, has 3 convolutional layers, followed by two fully connected layers.\\ 
+	
+	As a result, there exists two kinds of neurons, a standard Neuron to be used in fully connected layers, and a Convolutional Neuron to be used in convolutional layers. The convolutional neuron, defined as class \textit{ConvNeuron}, inherits from the standard \textit{Neuron} class for this Neural network project. Both kinds of neurons hold information on their value and their connections.\\
+	
+	The convolutional (input, first hidden, and second hidden) layers hold information on the filter(s) to be applied, that is the amount of filters, the size of the filter(s), the stride at which to apply them and the filter(s) themselves. A \textit{Filter} data type in the case of this project is defined as $vector<vector<double>>$ and are held in the data type \textit{Filters}, which is defined as $vector<Filter>$. The convolutional layers also hold the neurons for that layer, stored in a data type called \textit{FeatureMap} which is defined as $vector<vector<ConvNeuron^*>>$.\\
+	
+	The fully connected (third hidden, and output) layers hold a \textit{Weights} data structure which is defined as $vector<double>$, as well as a \textit{NeuronSet} defined as $vector<Neuron^*>$.\\
+	
+	The constructor for the neural network will feed in the input image(s), weights, and game actions size). The input image(s) are recieved from the pr
+	The weights for the neural network are intialised outside of the neural network and fed in through the constructor
 	\medskip
 	
 	\subsection{Network feedforward*}
