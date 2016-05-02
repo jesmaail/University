@@ -56,24 +56,24 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.2}Preprocessor}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.3}Network generation*}{28}
+\contentsline {subsection}{\numberline {8.3}Network generation}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.4}Network feedforward*}{29}
+\contentsline {subsection}{\numberline {8.4}Network feedforward*}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.5}Backpropagation*}{29}
+\contentsline {subsection}{\numberline {8.5}Backpropagation*}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.6}Replay Memory*}{29}
+\contentsline {subsection}{\numberline {8.6}Replay Memory*}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.7}Artificial Intelligence Agent*}{29}
+\contentsline {subsection}{\numberline {8.7}Artificial Intelligence Agent*}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.8}Training the network*}{29}
+\contentsline {subsection}{\numberline {8.8}Training the network*}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Reflection of results*}{29}
+\contentsline {section}{\numberline {9}Reflection of results*}{31}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10}Suggestions for further work*}{29}
+\contentsline {section}{\numberline {10}Suggestions for further work*}{31}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{30}
+\contentsline {section}{References}{32}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A}Appendix: Facts and figures}{32}
+\contentsline {section}{\numberline {A}Appendix: Facts and figures}{34}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B}Appendix: Class diagrams}{32}
+\contentsline {section}{\numberline {B}Appendix: Class diagrams}{34}

@@ -659,44 +659,42 @@ int main(int argc, char* argv[]) {
 	
 	The preprocessor crops the image and converts to greyscale (with use of a look-up table) using Algorithm \ref{algo:preprocess}.
 	
-		\begin{algorithm}
+		\begin{algorithm}[h]
 			\caption{Region of Interest and greyscale conversion}
 			\label{algo:preprocess}
-			\begin{algorithmic}[]
-				\State ALEScreen screen = ale.getScreen()
-				\State constant int ROI\textunderscore TOP = 32
-				\State constant int ROI\textunderscore BOT = 18			
-				\State int width = screen.width()
-				\State int height = screen.height()
-				\State Image img
+			\begin{algorithmic}[1]
+				\State ALEScreen screen = ale.getScreen();
+				\State constant int ROI\textunderscore TOP = 32; constant int ROI\textunderscore BOT = 18;	
+				\State int width = screen.width(); int height = screen.height();
+				\State Image img;
 				\State
-				\State int jt = 0
+				\State int jt = 0;
 				\For{(int j = ROI\textunderscore TOP; j \textless height - ROI\textunderscore BOT; j++)}
 					\For{(int i =0; j \textless width; j++)}
-						\State int pix = screen.get(j, i)
-						\State img[jt][i] = GREYSCALE[pix]				
+						\State int pix = screen.get(j, i);
+						\State img[jt][i] = GREYSCALE[pix];		
 					\EndFor
-					\State jt++
+					\State jt++;
 				\EndFor
 			\end{algorithmic}
 		\end{algorithm} 
 	It then downscales the resulting image by a rate of 0.525 using Algorithm \ref{algo:downscale}.
 		
-		\begin{algorithm}
+		\begin{algorithm}[h]
 			\caption{Image downscaling}
 			\label{algo:downscale}
-			\begin{algorithmic}[]
-				\State constant int DESIRED\textunderscore IMAGE\textunderscore XY = 84
-				\State constant int INPUT\textunderscore IMAGE\textunderscore XY = 120
-				\State double scaleRatio = INPUT\textunderscore IMAGE\textunderscore XY/(double)DESIRED\textunderscore IMAGE\textunderscore XY
-				\State int newX, newY
-				\State Image newImg
+			\begin{algorithmic}[1]
+				\State constant int DESIRED\textunderscore IMAGE\textunderscore XY = 84;
+				\State constant int INPUT\textunderscore IMAGE\textunderscore XY = 120;
+				\State double scaleRatio = INPUT\textunderscore IMAGE\textunderscore XY;(double)DESIRED\textunderscore IMAGE\textunderscore XY;
+				\State int newX, newY;
+				\State Image newImg;
 				\State
 				\For{(int y=0; y \textless DESIRED\textunderscore IMAGE\textunderscore XY; y++)}
 					\For{(int x=0; x \textless DESIRED\textunderscore IMAGE\textunderscore XY; x++)}
-						\State newY = floor(y*scaleRatio)
-						\State newX = floor(x*scaleRatio)
-						\State newImg[y][x] = img[newY][newX]					
+						\State newY = floor(y*scaleRatio);
+						\State newX = floor(x*scaleRatio);
+						\State newImg[y][x] = img[newY][newX];				
 					\EndFor
 				\EndFor
 			\end{algorithmic}
@@ -707,7 +705,7 @@ int main(int argc, char* argv[]) {
 	It is worth noting that the data type \textit{Image} is defined as $vector<vector<int>>$ in this project.
 	\medskip
 	
-	\subsection{Network generation*}
+	\subsection{Network generation}
 	%Algorithms, standardised functions, library?
 	%initially hard coded, now extendable/standardised
 	
@@ -719,13 +717,102 @@ int main(int argc, char* argv[]) {
 	
 	The fully connected (third hidden, and output) layers hold a \textit{Weights} data structure which is defined as $vector<double>$, as well as a \textit{NeuronSet} defined as $vector<Neuron^*>$.\\
 	
-	The constructor for the neural network will feed in the input image(s), weights, and game actions size). The input image(s) are received from the game after being preprocessed, the game actions size is also received from the game. The weights are randomly initialised outside of the network before being fed in. The weights are held in a structure known as \textit{weightStruct} which holds two \textit{Filters} data types and 2 \textit{Weights} data types. \textbf{Talk about how they are intialised, the method to do so.}
+	The constructor for the neural network will feed in the input image(s), weights, and game actions size). The input image(s) are received from the game after being preprocessed, the game actions size is also received from the game. The weights are randomly initialised outside of the network before being fed in. The weights are held in a structure known as \textit{weightStruct} which holds two \textit{Filters} data types and 2 \textit{Weights} data types. The weights for the first pass of the neural network are initialised randomly, and will be tuned then as the network learns. The structure to hold to weights is outside of the network so that the agent can update then as it learns and then feed them into the network.\\
 	
+	As for the creation of the neural network itself, the methods to generate the network are generalised, allowing the network structure to be altered at any time easily, granted that the input layer is convolutional and the network consists of only convolutional and fully connected layers. The pseudo code for generation of a input convolutional layer can be seen in algorithm \ref{algo:inputLayer}.\\
+		
+		\begin{algorithm}[h]
+			\caption{Input convolutional layer generation pseudocode}
+			\label{algo:inputLayer}
+			\begin{algorithmic}[1]
+				\Procedure{ConvLayer(Images, filter size, number of filters, stride)}{}	
+				\For{each image}
+					\For{y-axis values of image}
+						\For{x-axis values of image}
+							\State Create new convolutional-Neuron
+							\State Set value to pixel at [j][i] in image
+							\State Store convolutional-neuron in feature map
+						\EndFor
+					\EndFor
+					\State Add feature map to feature map collection in layer
+				\EndFor
+				\EndProcedure
+			\end{algorithmic}
+		\end{algorithm}
+		
+		The input convolutional layer differs from it's non-input counterparts in that it have no previous layer, it will take in the Images instead of the outputted feature maps of a previous layer, and does not need to take into consideration any weights, summation or activations to it's neurons. The pseudo-code for the generation of a non-input convolutional layer can be seen in algorith \ref{algo:noninputLayer}.\\
+		
+		\begin{algorithm}[h]
+			\caption{Non-input convolutional layer generation pseudocode}
+			\label{algo:noninputLayer}
+			\begin{algorithmic}[1]
+				\Procedure{ConvLayer(Previous layer, filter size, number of filters, stride)}{}	
+				\State Store pointer to previous layer
+				\For{each feature map}				
+					\For{each filter to be applied}					
+						\For{y-axis values within image where filter is applied}						
+							\For{x-axis values within image where filter is applied}							
+								\State Create new convolutional-neuron
+								
+								\For{y-axis of filter}								
+									\For{x-axis of filter}
+										\State Add connection to previous layer using weight from filter										
+									\EndFor									
+								\EndFor
+								\State Store convolutional-neuron
+							\EndFor							
+						\EndFor
+						\State Add feature map to feature map collection in layer
+					\EndFor					
+				\EndFor
+				
+				\EndProcedure
+			\end{algorithmic}
+		\end{algorithm}
+		The amount of non-input convolutional layers can be easily specified then in the neural network, so the network is not stuck to one static structure.\\		
+		
+		The pseudocode for the creation of a fully connected layer that is connected to from a convolutional layer can been seen in algorithm \ref{algo:convtofcLayer}. 
+
+		\begin{algorithm}[h]
+			\caption{Fully connected layer generation  pseudocode}
+			\label{algo:convtofcLayer}
+			\begin{algorithmic}[1]
+				\Procedure{FullConnLayer(previous layer, layer size)}{}	
+				\For{size of layer}
+					Create new Neuron 
+					\For{each neuron in previous layer}
+						\State add connection between new neuron and previous convolutional neuron
+					\EndFor
+					\State Add Neuron to layer
+				\EndFor
+				\EndProcedure
+			\end{algorithmic}
+		\end{algorithm}
+		
+		These constructors are then called in the neural network to define the structure of the neural network and create it. In the case of my neural network, class variables are used in the network class to hold the layers, constants are defined for variables such as filter sizes and counts, and the generation of the layers is done in the layer class constructors. The code to generate the network topology outlined in the 2013 DeepMind paper would look like code listing \ref{netGen} if no constants were used.
+				\renewcommand{\lstlistingname}{Code Listing}
+		\begin{lstlisting}[caption={Network generation},label={netGen}]	
+SetInputLayer(ConvLayer(m_input, 8, 4, 4));
+m_inputLayer.SetFilters(m_firstWeights);
+
+SetSecondLayer(ConvLayer(m_inputLayer, 4, 2, 2));
+m_secondLayer.SetFilters(m_secondWeights);
+
+SetThirdLayer(ConvLayer(m_secondLayer, 0, 0, 0));
+
+SetFourthLayer(FullConnLayer(m_thirdLayer, 256));
+m_fourthLayer.SetWeights(m_thirdWeights);
+
+SetOutputLayer(FullConnLayer(m_fourthLayer, GetActionSetSize()));
+m_outputLayer.SetWeights(m_fourthWeights);
+}
+
+		\end{lstlisting}
 
 	\medskip
 	
 	\subsection{Network feedforward*}
-	
+	Now that we can generate the network, 
 	\medskip
 	
 	\subsection{Backpropagation*}
