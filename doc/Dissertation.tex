@@ -832,17 +832,32 @@ m_outputLayer.SetWeights(m_fourthWeights);
 		As a result of this element of the network being missing, the neural network being developed in C++ is not viable to be able to learn to play video games, as the fundamental \textit{learning} element of the network is missing, the network would only be able to make random actions with no ability to improve it's efforts.
 	\medskip
 	
-	\subsection{Replay Memory*}
+	\subsection{Replay Memory}
+		The replay memory for the intelligence agent allows us to keep a collection of previous transitions taken by the agent. These transitions consist of:
+		\begin{itemize}
+			\item Current state (screen) of the game.
+			\item Action chosen by network.
+			\item Reward received from game.
+			\item Following state (screen) of the game.
+			\item Whether the current state of the game is terminal.
+		\end{itemize}
+		
+		This replay memory has two main functions, \textit{AddTransition()}, and \textit{GetMiniBatch()}.\\
+		
+		The \textit{AddTransition()} function takes in the transition as a parameter, and will store it within the replay memory data structure. The replay memory itself has a finite size, so if it is at capacity, it has will remove replace existing transitions, in a first-in-first-out fashion.\\
+		
+		The \textit{GetMinibatch()} function will return a $vector<transition>$ structure holding a stochastic sample of transitions known as a \textit{minibatch}, with the size of the minibatch specified as a constant.\\
+		
+		The replay memory of the network was implemented, however the learning process in the agent that would have utilised it was not.
+	\medskip
+	
+	\subsection{Python library*}
 	
 	\medskip
 	
 	\subsection{Artificial Intelligence Agent*}
 		%when plugging the network on, issue with images/weights input to network.
-	\medskip
-	
-	\subsection{Python library}
-	
-	\medskip
+	\medskip	
 	
 	\subsection{Training the network*}
 		\textit{Although this did not occur, existing implementations state that this process can take 3-5 days (make sure to get these as references). Explain why this was problematic late on in the project.}

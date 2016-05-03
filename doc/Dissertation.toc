@@ -60,11 +60,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.5}Backpropagation}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.6}Replay Memory*}{32}
+\contentsline {subsection}{\numberline {8.6}Replay Memory}{31}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.7}Artificial Intelligence Agent*}{32}
+\contentsline {subsection}{\numberline {8.7}Python library*}{32}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.8}Python library}{32}
+\contentsline {subsection}{\numberline {8.8}Artificial Intelligence Agent*}{32}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.9}Training the network*}{32}
 \defcounter {refsection}{0}\relax 

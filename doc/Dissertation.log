@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  3 MAY 2016 13:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  3 MAY 2016 16:25
 entering extended mode
 **Dissertation.tex
 (Dissertation.tex
@@ -984,15 +984,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 829--830
 
  []
 
-[31] [32]
-Overfull \hbox (0.17021pt too wide) in paragraph at lines 861--861
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 845--846
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 847--848
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 849--850
+
+ []
+
+[32]
+Overfull \hbox (0.17021pt too wide) in paragraph at lines 876--876
 []\OT1/cmr/m/n/10 Andrew Gib-ian-sky. \OT1/cmr/m/it/10 Con-vo-lu-tional Neu-ral
  Net-works\OT1/cmr/m/n/10 . \OT1/cmr/m/sc/10 url\OT1/cmr/m/n/10 : $\OT1/cmtt/m/
 n/10 http : / / andrew .$
  []
 
 
-Overfull \hbox (0.51753pt too wide) in paragraph at lines 861--861
+Overfull \hbox (0.51753pt too wide) in paragraph at lines 876--876
 []\OT1/cmr/m/n/10 Ian Som-merville. \OT1/cmr/m/it/10 Soft-ware En-gi-neer-ing\O
 T1/cmr/m/n/10 . 9th ed. Har-low, Eng-land: Addison-
  []
@@ -1026,7 +1041,7 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Dissertation.pdf (35 pages, 699111 bytes).
+Output written on Dissertation.pdf (35 pages, 700464 bytes).
 PDF statistics:
  207 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
