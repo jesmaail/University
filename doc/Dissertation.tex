@@ -376,17 +376,17 @@ Signed:
 	
 	\medskip
 	
-	\subsection{Development*}
-	%Rename to development and discuss windows dev and linux run?
-	%BCCC
-	
-	\textbf{IS THIS SECTION NECESSARY?}
-	
-	This project is developed in the C++ language. The development will be performed within the Windows Operating System and the project will be compiled and run within Linux. Windows is being used for development because it allows for usage of the Visual studio 2013 integrated development environment. This is preferable as it offers a built-in compiler and debugger for C++ as well as Intellisense code completion. Linux is then used for the final compilation and running of the project as tool to access video games and their data, the Arcade learning environment, is not compatible with Windows.\\
-	
-	All code produced for this project will conform to `Bob's concide coding conventions' \cite{bc3} as outlined by Dr. Robert S Laramee of Swansea University.\\
-	
-	\medskip
+%	\subsection{Development*}
+%	%Rename to development and discuss windows dev and linux run?
+%	%BCCC
+%	
+%	\textbf{IS THIS SECTION NECESSARY?}
+%	
+%	This project is developed in the C++ language. The development will be performed within the Windows Operating System and the project will be compiled and run within Linux. Windows is being used for development because it allows for usage of the Visual studio 2013 integrated development environment. This is preferable as it offers a built-in compiler and debugger for C++ as well as Intellisense code completion. Linux is then used for the final compilation and running of the project as tool to access video games and their data, the Arcade learning environment, is not compatible with Windows.\\
+%	
+%	All code produced for this project will conform to `Bob's concide coding conventions' \cite{bc3} as outlined by Dr. Robert S Laramee of Swansea University.\\
+%	
+%	\medskip
 	
 	\subsection{Project timeline}
 	%Discuss risks and how they have come in, and use the gantt chart!
@@ -771,7 +771,7 @@ int main(int argc, char* argv[]) {
 		\end{algorithm}
 		The amount of non-input convolutional layers can be easily specified then in the neural network, so the network is not stuck to one static structure.\\		
 		
-		The pseudocode for the creation of a fully connected layer that is connected to from a convolutional layer can been seen in algorithm \ref{algo:convtofcLayer}. 
+		The pseudocode for the creation of a fully connected layer that is connected to from a convolutional layer can been seen in algorithm \ref{algo:convtofcLayer}. \\
 
 		\begin{algorithm}[h]
 			\caption{Fully connected layer generation  pseudocode}
@@ -811,12 +811,25 @@ m_outputLayer.SetWeights(m_fourthWeights);
 
 	\medskip
 	
-	\subsection{Network feedforward*}
-	Now that we can generate the network, 
+	\subsection{Network feedforward}
+	Now that we can generate the network, the network needs to have data input and then propagate that data forward to make a decision. The forward propagation of the network is done by calling the \textit{activateNeurons()} function of each non-input layer in sequential order.\\
+	
+	 The \textit{activateNeurons()} function of a layer will loop through every neuron in the layer and call the neuron's \textit{CalculateValue()} function. This function loops through all of the connections in the neuron, at performs a summation on them to get the value for the neuron. After that, the \textit{Activation} function is called on the neuron which performs the non-linear rectifier activation on the Neuron.\\
+	
+	Once this has been performed all the way up to the output layer, the network will have it's decision values in each neuron of the output layer. To get the decision of the network in the agent, the agent calls the network's \textit{getDecision()} function which returns the index of the neuron which has the highest value.
 	\medskip
 	
-	\subsection{Backpropagation*}
-	
+	\subsection{Backpropagation}
+		This crucial element of the neural network was sadly not completed and implemented, due to time constraints couple with several difficulties in understanding how to implement it for a network of this kind.\\		
+		
+		One such difficulty is the first step of error backpropagation, determining the error for each of the output neurons. The target value for the network, as determined by the intelligence agent, is the index of the neuron that the network should have given the highest value to. However, in error backpropagation, each individual output neuron needs to have a an individual error calculated. I am unsure how to do so when we are only trying to determine that one of the neurons should have a higher value than the others.\\
+		
+		Another difficulty was in implementing the propagation back through the network. The objective of backpropagation is to tune the weights of the network to be able to achieve a more accurate output decision of the network. However in the first implementation of the network, the connections just stored the values of the weights, so when propagating backwards the network was unable to tell where the weights came from to be able to update them. As well as this, in the case of convolutional layers, weights are shared across multiple neurons, so it is necessary to store either a pointer to the weights or an index value.\\
+		
+		When implementing a pointer to the weight, the network generated much slower, which would become detrimental when it came to applying this network to the game. An attempted solution using the index values of the weights was implemented, however due to time constraints it was unable to be verified working and then have the backpropagation implemented with it. One issue I foresaw using the index value in the connection for the weights was that the convolutional layers used 2-dimensional weight (and neuron) structures whereas the fully connected layers used 1-dimensional weight (and neuron) structures. This would mean I may have had to hard code the backpropagation process rather than having a preferred generalised version of the code so that the implementation could be easily extended with a network structure change.\\
+
+		
+		As a result of this element of the network being missing, the neural network being developed in C++ is not viable to be able to learn to play video games, as the fundamental \textit{learning} element of the network is missing, the network would only be able to make random actions with no ability to improve it's efforts.
 	\medskip
 	
 	\subsection{Replay Memory*}
@@ -824,6 +837,10 @@ m_outputLayer.SetWeights(m_fourthWeights);
 	\medskip
 	
 	\subsection{Artificial Intelligence Agent*}
+		%when plugging the network on, issue with images/weights input to network.
+	\medskip
+	
+	\subsection{Python library}
 	
 	\medskip
 	

@@ -171,18 +171,6 @@
       \field{pages}{85\bibrangedash 89}
       \range{pages}{5}
     \endentry
-    \entry{bc3}{article}{}
-      \name{author}{1}{}{%
-        {{hash=c141d8fc332293a496988ef2c6822dd5}{Laramee}{L\bibinitperiod}{Robert\bibnamedelima S}{R\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{c141d8fc332293a496988ef2c6822dd5}
-      \strng{fullhash}{c141d8fc332293a496988ef2c6822dd5}
-      \field{sortinit}{L}
-      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Bob's Concise Coding Conventions (C3)}
-    \endentry
     \entry{rlnntetris}{report}{}
       \name{author}{2}{}{%
         {{hash=24654c61c6e637692f0cd827ac1c0312}{Lundgaard}{L\bibinitperiod}{Nicholas}{N\bibinitperiod}{}{}{}{}}%
