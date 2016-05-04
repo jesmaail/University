@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  3 MAY 2016 16:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  4 MAY 2016 12:01
 entering extended mode
 **Dissertation.tex
 (Dissertation.tex
@@ -787,12 +787,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 469--470
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 483--484
+Underfull \hbox (badness 10000) in paragraph at lines 476--477
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 498--499
+Underfull \hbox (badness 10000) in paragraph at lines 485--486
 
  []
 
@@ -807,7 +807,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 502--503
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 510--511
+Underfull \hbox (badness 10000) in paragraph at lines 504--505
 
  []
 
@@ -816,110 +816,96 @@ Underfull \hbox (badness 10000) in paragraph at lines 512--513
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 514--515
+
+ []
+
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 553--554
+Underfull \hbox (badness 10000) in paragraph at lines 555--556
 
  []
 
 <img/structure.png, id=98, 417.05812pt x 295.1025pt>
 File: img/structure.png Graphic file (type png)
  <use img/structure.png>
-Package pdftex.def Info: img/structure.png used on input line 556.
+Package pdftex.def Info: img/structure.png used on input line 558.
 (pdftex.def)             Requested size: 291.93869pt x 206.57033pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 562--563
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 564--565
 
  []
 
-<img/structure2.png, id=99, 1269.74374pt x 719.68875pt>
+<img/structure2.png, id=103, 1269.74374pt x 719.68875pt>
 File: img/structure2.png Graphic file (type png)
 
 <use img/structure2.png>
-Package pdftex.def Info: img/structure2.png used on input line 565.
+Package pdftex.def Info: img/structure2.png used on input line 567.
 (pdftex.def)             Requested size: 342.83539pt x 194.31856pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 571--572
+Underfull \hbox (badness 10000) in paragraph at lines 573--574
 
  []
 
-[22] <img/screenshot.png, id=104, 323.70938pt x 243.15843pt>
+[23 <./img/structure.png>]
+<img/screenshot.png, id=108, 323.70938pt x 243.15843pt>
 File: img/screenshot.png Graphic file (type png)
 
 <use img/screenshot.png>
-Package pdftex.def Info: img/screenshot.png used on input line 576.
+Package pdftex.def Info: img/screenshot.png used on input line 578.
 (pdftex.def)             Requested size: 161.8543pt x 121.57892pt.
 File: img/screenshot.png Graphic file (type png)
  <use img/screenshot.png>
-Package pdftex.def Info: img/screenshot.png used on input line 577.
+Package pdftex.def Info: img/screenshot.png used on input line 579.
 (pdftex.def)             Requested size: 161.8543pt x 121.57892pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[23 <./img/structure.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 602--603
+Underfull \hbox (badness 10000) in paragraph at lines 604--605
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 613--614
+[24 <./img/structure2.png> <./img/screenshot.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 615--616
 
  []
 
-[24 <./img/structure2.png>]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 619.
-
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 621.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 619.
- [25 <./img/screenshot.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 650--651
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 621.
+ [25]
+Underfull \hbox (badness 10000) in paragraph at lines 652--653
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 658--659
-
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 703--704
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 712--713
+Underfull \hbox (badness 10000) in paragraph at lines 660--661
 
  []
 
 [26]
+Underfull \hbox (badness 10000) in paragraph at lines 705--706
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 714--715
 
  []
 
-
+[27]
 Underfull \hbox (badness 10000) in paragraph at lines 716--717
 
  []
 
-[27]
+
 Underfull \hbox (badness 10000) in paragraph at lines 718--719
 
  []
@@ -935,28 +921,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 722--723
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 743--744
+Underfull \hbox (badness 10000) in paragraph at lines 724--725
 
  []
 
-[28]
-Underfull \hbox (badness 10000) in paragraph at lines 772--773
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 745--746
 
  []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 774--775
 
  []
 
-[29]
-Overfull \hbox (45.00397pt too wide) in paragraph at lines 806--807
-[][][][][][][][][][][] 
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 776--777
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 815--816
+LaTeX Warning: `h' float specifier changed to `ht'.
 
+
+Overfull \hbox (45.00397pt too wide) in paragraph at lines 808--809
+[][][][][][][][][][][] 
  []
 
 
@@ -964,17 +959,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 817--818
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 823--824
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 819--820
 
  []
 
-[30]
+
 Underfull \hbox (badness 10000) in paragraph at lines 825--826
 
  []
 
-
+[30]
 Underfull \hbox (badness 10000) in paragraph at lines 827--828
 
  []
@@ -984,12 +979,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 829--830
 
  []
 
-[31]
-Underfull \hbox (badness 10000) in paragraph at lines 845--846
+
+Underfull \hbox (badness 10000) in paragraph at lines 831--832
 
  []
 
-
+[31]
 Underfull \hbox (badness 10000) in paragraph at lines 847--848
 
  []
@@ -999,30 +994,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 849--850
 
  []
 
-[32]
-Overfull \hbox (0.17021pt too wide) in paragraph at lines 876--876
+
+Underfull \hbox (badness 10000) in paragraph at lines 851--852
+
+ []
+
+[32] [33]
+Overfull \hbox (0.17021pt too wide) in paragraph at lines 878--878
 []\OT1/cmr/m/n/10 Andrew Gib-ian-sky. \OT1/cmr/m/it/10 Con-vo-lu-tional Neu-ral
  Net-works\OT1/cmr/m/n/10 . \OT1/cmr/m/sc/10 url\OT1/cmr/m/n/10 : $\OT1/cmtt/m/
 n/10 http : / / andrew .$
  []
 
 
-Overfull \hbox (0.51753pt too wide) in paragraph at lines 876--876
+Overfull \hbox (0.51753pt too wide) in paragraph at lines 878--878
 []\OT1/cmr/m/n/10 Ian Som-merville. \OT1/cmr/m/it/10 Soft-ware En-gi-neer-ing\O
 T1/cmr/m/n/10 . 9th ed. Har-low, Eng-land: Addison-
  []
 
-[33] [34] [35] (Dissertation.aux)
+[34] [35] [36] (Dissertation.aux)
 Package logreq Info: Writing requests to 'Dissertation.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  9198 strings out of 493673
  149488 string characters out of 3141506
- 580487 words of memory out of 3000000
+ 582487 words of memory out of 3000000
  12452 multiletter control sequences out of 15000+200000
  7939 words of font info for 29 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 44i,12n,48p,1483b,1413s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,12n,48p,1483b,1411s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/P
@@ -1041,9 +1041,9 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Dissertation.pdf (35 pages, 700464 bytes).
+Output written on Dissertation.pdf (36 pages, 700719 bytes).
 PDF statistics:
- 207 PDF objects out of 1000 (max. 8388607)
+ 210 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

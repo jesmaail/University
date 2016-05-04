@@ -205,3 +205,10 @@
   url = {http://tasvideos.org/BizHawk.html},
   urldate = {2015-09-10}
 }
+
+@article{tensor,
+  title={TensorFlow: Large-Scale Machine Learning on Heterogeneous Distributed Systems},
+  author={Abadi, Mart{\i}n and Agarwal, Ashish and Barham, Paul and Brevdo, Eugene and Chen, Zhifeng and Citro, Craig and Corrado, Greg S and Davis, Andy and Dean, Jeffrey and Devin, Matthieu and others},
+  journal={arXiv preprint arXiv:1603.04467},
+  year={2016}
+}
