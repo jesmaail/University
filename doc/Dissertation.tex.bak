@@ -489,7 +489,7 @@ Signed:
 	\medskip
 	
 	\subsection{TensorFlow*}
-	\textbf{Discuss Late usage of tf and python}
+		The library I chose to use in python is known as TensorFlow \cite{tensor}. This library 
 	
 	\bigskip
 
@@ -576,9 +576,9 @@ Signed:
 		
 		\begin{figure}[h]				
 			\includegraphics[scale=0.5]{img/screenshot}
-			\includegraphics[scale=0.5]{img/screenshot}
+			\includegraphics[scale=0.06]{img/real}
 			\centering
-			\caption{Screenshot of the Atari 2600 game `Breakout' compared to a real-life image.\textbf{CHANGE TO REAL LIFE IMAGE (2ND ONE)}}
+			\caption{Screenshot of the Atari 2600 game `Breakout' compared to a real-life image.}
 			\label{fig:screenshot}
 		\end{figure}
 	

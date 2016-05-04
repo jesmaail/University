@@ -34,7 +34,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.4}The Arcade learning environment}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.5}TensorFlow*}{21}
+\contentsline {subsection}{\numberline {6.5}TensorFlow}{21}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7}Analysis of problem}{21}
 \defcounter {refsection}{0}\relax 
@@ -44,7 +44,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {7.3}Preprocessor}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.4}Neural network*}{22}
+\contentsline {subsection}{\numberline {7.4}Neural network*}{23}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {7.5}Learning}{24}
 \defcounter {refsection}{0}\relax 
@@ -52,21 +52,21 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.1}Methods to manipulate I/O}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2}Preprocessor}{26}
+\contentsline {subsection}{\numberline {8.2}Preprocessor}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.3}Network generation}{28}
+\contentsline {subsection}{\numberline {8.3}Network generation}{27}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.4}Network feedforward}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.5}Backpropagation}{30}
+\contentsline {subsection}{\numberline {8.5}Backpropagation}{31}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.6}Replay Memory}{32}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.7}Python library*}{32}
+\contentsline {subsection}{\numberline {8.7}Artificial Intelligence Agent*}{33}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.8}Artificial Intelligence Agent*}{32}
+\contentsline {subsection}{\numberline {8.8}TensorFlow*}{33}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.9}Training the network*}{32}
+\contentsline {subsection}{\numberline {8.9}Training the network*}{33}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {9}Reflection of results*}{33}
 \defcounter {refsection}{0}\relax 

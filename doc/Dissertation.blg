@@ -1,15 +1,17 @@
 [0] Config.pm:324> INFO - This is Biber 2.1
 [0] Config.pm:327> INFO - Logfile is 'Dissertation.blg'
-[53] biber-MSWIN:273> INFO - === %a %b %e, %Y, %H:%M:%S
-[53] Biber.pm:333> INFO - Reading 'Dissertation.bcf'
-[282] Biber.pm:645> INFO - Found 18 citekeys in bib section 0
-[303] Biber.pm:2977> INFO - Processing section 0
-[323] Biber.pm:3115> INFO - Looking for bibtex format file 'references.bib' for section 0
-[362] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
-[396] bibtex.pm:895> INFO - Found BibTeX data source 'references.bib'
-[644] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[644] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[644] Biber.pm:2854> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'en-US'
-[644] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-US'
-[676] bbl.pm:505> INFO - Writing 'Dissertation.bbl' with encoding 'ascii'
-[787] bbl.pm:596> INFO - Output to Dissertation.bbl
+[50] biber-MSWIN:273> INFO - === %a %b %e, %Y, %H:%M:%S
+[50] Biber.pm:333> INFO - Reading 'Dissertation.bcf'
+[317] Biber.pm:645> INFO - Found 19 citekeys in bib section 0
+[337] Biber.pm:2977> INFO - Processing section 0
+[356] Biber.pm:3115> INFO - Looking for bibtex format file 'references.bib' for section 0
+[392] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
+[421] bibtex.pm:895> INFO - Found BibTeX data source 'references.bib'
+[661] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[661] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[661] Biber.pm:2854> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'en-US'
+[661] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-US'
+[694] bbl.pm:505> INFO - Writing 'Dissertation.bbl' with encoding 'ascii'
+[703] Utils.pm:146> WARN - The entry 'tensor' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[818] bbl.pm:596> INFO - Output to Dissertation.bbl
+[820] Biber.pm:106> INFO - WARNINGS: 1

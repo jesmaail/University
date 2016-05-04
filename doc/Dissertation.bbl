@@ -19,6 +19,30 @@
 
 \refsection{0}
   \sortlist{nty}{nty}
+    \entry{tensor}{article}{}
+      \true{moreauthor}
+      \name{author}{10}{}{%
+        {{hash=49f22d42a06a47b002a851177a5d0ced}{Abadi}{A\bibinitperiod}{Mart{\i{}}n}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=37e1df772f97a2e492755e2006294387}{Agarwal}{A\bibinitperiod}{Ashish}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=08cf514c08137f94d73b590060797f5b}{Barham}{B\bibinitperiod}{Paul}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=a79c0c4b084471b2c8e0e9a38b4cb2b7}{Brevdo}{B\bibinitperiod}{Eugene}{E\bibinitperiod}{}{}{}{}}%
+        {{hash=c0d10aaf985cebf8d0497e1828f9313f}{Chen}{C\bibinitperiod}{Zhifeng}{Z\bibinitperiod}{}{}{}{}}%
+        {{hash=6f712ddfd730736ee54fdc87a4abf7a2}{Citro}{C\bibinitperiod}{Craig}{C\bibinitperiod}{}{}{}{}}%
+        {{hash=d07609f7580c5f06cf743ebef86d1663}{Corrado}{C\bibinitperiod}{Greg\bibnamedelima S}{G\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+        {{hash=a4c859221cc41e2db6d63b486f955ba2}{Davis}{D\bibinitperiod}{Andy}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=4aecfb0cc2e1e3b7899129fa2a94e2b8}{Dean}{D\bibinitperiod}{Jeffrey}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=bd7f88635b51bc5abb3d5a2cab967724}{Devin}{D\bibinitperiod}{Matthieu}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{90189b459b14e65fd1bd0fba6b345960}
+      \strng{fullhash}{a513ef88ca841285d4fe3d1535309cb1}
+      \field{sortinit}{A}
+      \field{sortinithash}{b685c7856330eaee22789815b49de9bb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1603.04467}
+      \field{title}{TensorFlow: Large-Scale Machine Learning on Heterogeneous Distributed Systems}
+      \field{year}{2016}
+    \endentry
     \entry{repli}{report}{}
       \name{author}{1}{}{%
         {{hash=d636c80b3b7f98ae421c5913f9354d8f}{al.}{a\bibinitperiod}{Korjus}{K\bibinitperiod}{et}{e\bibinitperiod}{}{}}%
