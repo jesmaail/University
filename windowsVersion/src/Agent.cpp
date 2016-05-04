@@ -9,6 +9,9 @@
 	#include <SDL.h>
 #endif
 
+const bool DISPLAY_SCREEN = true;
+const bool PLAY_SOUND = false;
+
 const int EPISODE_COUNT = 5;
 
 const int FIRST_FILT_SIZE = 8;
@@ -24,11 +27,11 @@ const int IMAGE_COUNT = 2;
 const int INPUT_IMAGE_X = 120;
 const int INPUT_IMAGE_Y = 180;
 const int DESIRED_IMAGE_XY = 84;
-const int Y_BOUND_TOP = 32;
-const int Y_BOUND_BOT = 18;
+const int ROI_TOP = 32;
+const int ROI_BOT = 18;
 
 
-const int grayscaleValue[256] = 
+const int GREYSCALE[256] = 
 {0, 0, 63, 63, 106, 106, 143, 143, 174, 174, 200, 200, 219, 219, 234, 234, 62, 62, 94, 94, 124, 124, 151, 151, 174, 174, 197, 197, 221, 221,
  240, 240, 51, 51, 76, 76, 99, 99, 126, 126, 144, 144, 163, 163, 182, 182, 201, 201, 44, 44, 69, 69, 96, 96, 119, 119, 141, 141, 160, 160,
  177, 177, 197, 197, 28, 28, 57, 57, 83, 83, 109, 109, 130, 130, 153, 153, 175, 175, 193, 193, 31, 31, 60, 60, 85, 85, 109, 109, 132, 132,
@@ -45,13 +48,6 @@ int main(int argc, char* argv[]) {
 
 	Agent a(m_game);
 
-	
-	//################################
-	// Just to keep debug window open!
-	int ph;
-	std::cin >> ph;
-	//################################
-
 	return 0;
 }
 
@@ -59,40 +55,32 @@ Agent::Agent(string game){
 	m_weights[0] = InitRandWeights();
 
 	#ifdef __USE_SDL	//Simple Direct Media Layer, for observing game as it is played
-		m_ale.setBool("display_screen", true);
-		m_ale.setBool("sound", false);
+		m_ale.setBool("display_screen", DISPLAY_SCREEN);
+		m_ale.setBool("sound", PLAY_SOUND);
 	#endif
 
 	m_ale.loadROM(game);
 	m_legalActs = m_ale.getLegalActionSet();
-	//int actionSize = legalActions.size();
 	m_numActions = m_legalActs.size();
-
-
-	//placeholder
-	//m_numActions = 4;
 
 	for(uint ep = 0; ep < EPISODE_COUNT; ep++){
 		play();
 	}
 }
 
-//error exists in GetScreen() method
+
 void Agent::play(){
 	vector<transition> minibatch;
 	m_gameover = m_ale.game_over();
-	//double reward, cost;
-	//int target;
-
-	//ALEScreen screen = m_ale.getScreen();
-	m_current = GetPlaceholderScreen();
+	m_current.clear();
+	m_next.clear();
+	m_next.push_back(GetScreen());
+	m_ale.act(m_legalActs[0]);
+	m_next.push_back(GetScreen());
 
 	for (uint ep = 0; ep < EPOCH_COUNT; ep++){
-		//Set m_current  to a screenshot from game(preprocessed)
-
-		//m_current.push_back(GetScreen());
-		//m_ale.act(m_legalActs[0]);
-		//m_current.push_back(GetScreen());
+		
+		m_current = m_next;
 
 		while (!m_gameover){
 			if (rand() % 100 + 1 <= m_epsilon){
@@ -100,43 +88,22 @@ void Agent::play(){
 				PerformRandomAction();
 			}else{
 				//cout << "NN: ";
-				//UseNeuralNetwork();
+				UseNeuralNetwork();
 			}
 			//cout << m_action << endl;
 			m_reward = m_ale.act(m_legalActs[m_action]);
-			//m_next = GetPlaceholderScreen();
+			m_next.push_back(GetScreen());
+			m_ale.act(m_legalActs[0]);
+			m_next.push_back(GetScreen());
 
 			if (m_gameover){
 				m_terminal = true;
 			}
-			//m_replay.AddTransition(m_current, m_action, m_reward, m_next, m_terminal);
+			m_replay.AddTransition(m_current, m_action, m_reward, m_next, m_terminal);
 
 			//Learning();
 		}
 	}
-}
-
-Images Agent::Preprocess(Images in){
-	//perform preprocess (should just be downscaling and ROI)
-	//!!!!NEEDS ROI ADDED!!!!
-	int newX, newY;
-	int xRatio = (int)(INPUT_IMAGE_X << 16 / DESIRED_IMAGE_XY) + 1;
-	int yRatio = (int)(INPUT_IMAGE_Y << 16 / DESIRED_IMAGE_XY) + 1;
-	Image newImg;
-	Images out;
-
-	for (Image img : in){
-		for (int y = 0; y < DESIRED_IMAGE_XY; y++){
-			for (int x = 0; x < DESIRED_IMAGE_XY; x++){
-				newY = ((y*yRatio) >> 16);
-				newX = ((x*xRatio) >> 16);
-				newImg[x][y] = img[newX][newY];
-			}
-		}
-		out.push_back(newImg);
-		newImg.clear();
-	}
-	return out;
 }
 
 void Agent::PerformRandomAction(){
@@ -148,7 +115,7 @@ void Agent::UseNeuralNetwork(){
 	m_action = nn.getDecision();
 }
 
-void Agent::Backprop(){//change to gradDescent?
+void Agent::Backprop(){
 
 }
 
@@ -224,42 +191,45 @@ Images Agent::GetPlaceholderScreen(){//TESTING PURPOSES ONLY
 }
 
 Image Agent::GetScreen(){
-	ALEScreen screen = m_ale.getScreen(); //Gets Screen.
+	ALEScreen screen = m_ale.getScreen();
 	int width = INPUT_IMAGE_X;
 	int height = screen.height();
-	//int img[INPUT_IMAGE_X][INPUT_IMAGE_X];
 	Image img;
 
-	//int newImg[DESIRED_IMAGE_XY][DESIRED_IMAGE_XY];
 	Image newImg;
 	int newX, newY;
 
-	double xRatio = INPUT_IMAGE_X / (double)DESIRED_IMAGE_XY;
-	double yRatio = INPUT_IMAGE_Y / (double)DESIRED_IMAGE_XY;
+	double newRatio = INPUT_IMAGE_X / (double)DESIRED_IMAGE_XY;
 	int xCount, yCount = 0;
 
-	int jt = 0;							//Gets ROI
-	for (int j = 32; j<height - 18; j++){
+	vector<int> imgRow;
+
+	int jt = 0;			
+	for (int j = ROI_TOP; j<height - ROI_BOT; j++){
 		for (int i = 0; i<width; i++){
 			int intPix = screen.get(j, i);
-			img[jt][i] = grayscaleValue[intPix];
+			imgRow.push_back(GREYSCALE[intPix]);
 		}
+		img.push_back(imgRow);
+		imgRow.clear();
 		jt++;
 	}
 
-	for (int y = 0; y < DESIRED_IMAGE_XY; y++){  //Scales!
+	for (int y = 0; y < DESIRED_IMAGE_XY; y++){
 		for (int x = 0; x < DESIRED_IMAGE_XY; x++){
-			newY = floor(y*yRatio);
-			newX = floor(x*xRatio);
-			newImg[y][x] = img[newY][newX];
+			newY = floor(y*newRatio);
+			newX = floor(x*newRatio);
+			imgRow.push_back(img[newY][newX]);
 		}
+		newImg.push_back(imgRow);
+		imgRow.clear();
 	}
 
 	return newImg;
 
 }
 
-void Agent::Learning(){
+void Agent::Learning(){ //not working
 	int target, action, yield, cost;
 	vector<transition> minibatch = m_replay.GetMiniBatch();
 	int mbMax = minibatch.size();

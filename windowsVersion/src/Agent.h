@@ -7,14 +7,14 @@
 class Agent{
 private:
 	const int REPLAY_MEM_SIZE = 10000;
-	const double LEARNING_RATE = 0.99;
+	const double LEARNING_RATE = 0.00025;
 	const int EPOCH_COUNT = 5;
 	ALEInterface m_ale;
 	bool m_gameover;
 
 	int m_numActions;
 	ActionVect m_legalActs;
-	int m_epsilon = 99;
+	int m_epsilon = 80;
 	double discount = 0.99;
 	Images m_current;
 	Images m_next;
@@ -30,8 +30,6 @@ public:
 	Agent(string game);
 
 	void play();
-
-	Images Preprocess(Images in);
 
 	void PerformRandomAction();
 

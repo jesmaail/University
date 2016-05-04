@@ -22,7 +22,6 @@ NeuralNetwork::NeuralNetwork(Images imgs, weightStruct weights, int actionSize){
 	m_secondWeights = weights.weightLayer2;
 	m_thirdWeights = weights.weightLayer3;
 	m_fourthWeights = weights.weightLayer4;
-	//std::cout << "Filters set" << std::endl;
 
 	ForwardProp();
 	//BackProp();
@@ -32,34 +31,33 @@ void::NeuralNetwork::ForwardProp(){
 
 	SetInputLayer(ConvLayer(m_input, FIRST_FILT_SIZE, FIRST_FILT_COUNT, FIRST_FILT_STRIDE));
 	m_inputLayer.SetFilters(m_firstWeights);
-	testConvLayer(m_inputLayer, 1); //Test
+	//testConvLayer(m_inputLayer, 1); //Test
 
 
 	SetSecondLayer(ConvLayer(m_inputLayer, SECOND_FILT_SIZE, SECOND_FILT_COUNT, SECOND_FILT_STRIDE));
 	m_secondLayer.SetFilters(m_secondWeights);
-	testConvLayer(m_secondLayer, 2); //Test
+	//testConvLayer(m_secondLayer, 2); //Test
 	m_secondLayer.activateNeurons();
 
 	SetThirdLayer(ConvLayer(m_secondLayer, 0, 0, 0));
-	testConvLayer(m_thirdLayer, 3); //Test
+	//testConvLayer(m_thirdLayer, 3); //Test
 	m_thirdLayer.activateNeurons();
 
 	SetFourthLayer(FullConnLayer(m_thirdLayer, FOURTH_LAYER_SIZE));
 	m_fourthLayer.SetWeights(m_thirdWeights);
-	testFCLayer(m_fourthLayer, 4); // Test
+	//testFCLayer(m_fourthLayer, 4); // Test
 	m_fourthLayer.activateNeurons();
 
 	SetOutputLayer(FullConnLayer(m_fourthLayer, GetActionSetSize()));
 	m_outputLayer.SetWeights(m_fourthWeights);
-	testFCLayer(m_outputLayer, 5); // Test
+	//testFCLayer(m_outputLayer, 5); // Test
 	m_outputLayer.activateNeurons();
 }
 
 void NeuralNetwork::BackProp(int cost){
 	//Want to feed in the target value to this function, when called from the agent.
 	//Calculate the loss function
-	//...
-	//profit
+
 }
 
 

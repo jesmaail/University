@@ -7,20 +7,11 @@ Neuron::Neuron(){
 	//SetBias(0);
 }
 
-/*double Neuron::Activation(){
-	if (m_value > 0){
-		return m_value;
-	}else{
-		return 0;
-	}
-	//return std::max(m_value, 0.0);
-}*/
-
 void Neuron::Activation(){
 	m_value = std::max(0.0, m_value);
 }
 
-double Neuron::CalculateValue(Layer* prev){ //pass in previous layer as param? to access the index val/weights?
+double Neuron::CalculateValue(Layer* prev){
 	ThrIndex weight;
 	int nVal, wVal;
 	double newVal = 0;
@@ -80,14 +71,3 @@ void ConvNeuron::SetWeights(Filter w){
 Filter ConvNeuron::GetWeights(){
 	return m_weights;
 }
-
-/*double ConvNeuron::Activation(){
-	//rectifier nonlinearity
-	if (m_value > 0){
-		return m_value;
-	}
-	else{
-		return 0;
-	}
-	//return std::max(m_value, 0.0);
-}*/

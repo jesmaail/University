@@ -937,26 +937,40 @@ def init_network():
 	\subsection{DeepMind 2015 network hyperparameters}
 		\begin{table}[h]
 \centering
-\caption{My caption}
-\label{my-label}
-\begin{tabular}{r c p{8cm}}
+\scriptsize
+\begin{tabular}{p{3cm} l p{8cm}}
 \textbf{Hyperparameter} & \textbf{Value} & \textbf{Description} \\ \hline
-minibatch size                              & 32                                 & Number of  training cases over which each stochastic gradient descent (SGD) update is computed.                                                     \\
-replay memory size                          & 1000000                   & SGD updates are sampled from this number of most recent frames.                                                                                     \\
-agent history length                        & 4                         & The number of most recent frames experienced by the agent that are given as input to the Q network.                                                 \\
-target network update frequency             & 10000                     & The frequency (measured in number of parameter updates) with which the target network is updated.                                                   \\
-discount factor                             & 0.99                      & Discount factor gamma used in the Q-learning update.                                                                                                \\
-action repeat                               & 4                        & Repeat each action selected by the agent this many times.                                                                                           \\
-update frequency                            & 4                   & The number of actions selected by the agent between successive SGD updates.                                                                         \\
-learning rate                               & 0.00025                            & The learning rate used by RMSProp.                                                                                                                  \\
-gradient momentum                           & 0.95                               & Gradient momentum used by RMSProp.                                                                                                                  \\
-squared gradient momentum                   & 0.95                               & Squared gradient momentum used by RMSProp.                                                                                                          \\
-min squared gradient                        & 0.01                               & Constant added to the squared gradient in the denominator of the RMSProp update.                                                                    \\
-initial exploration                         & 1                                  & Initial exploration value.                                                                                                                          \\
-final exploration                           & 0.1                                & Final exploration value.                                                                                                                            \\
-final exploration frame                     & 1000000                            & The number of frames it takes to take exploration value to final value.                                                                             \\
-replay start size                           & 50000                              & A uniform random policy is run for this number of frames before learning starts and the resulting experience is used to populate the replay memory. \\
-no-op max                                   & 30                                 & Maximum number of "do nothing" actions to be performed by the agent at the start of an episode.                                                    
+minibatch size & 32 & Number of  training cases over which each stochastic gradient descent (SGD) update is computed.\\
+ & & \\
+replay memory size & 1000000 & SGD updates are sampled from this number of most recent frames.\\
+ & & \\
+agent history length & 4 & The number of most recent frames experienced by the agent that are given as input to the Q network.\\
+ & & \\
+target network update frequency & 10000 & The frequency (measured in number of parameter updates) with which the target network is updated.\\
+ & & \\
+discount factor & 0.99 & Discount factor gamma used in the Q-learning update.\\
+ & & \\
+action repeat & 4 & Repeat each action selected by the agent this many times.\\
+ & & \\
+update frequency & 4 & The number of actions selected by the agent between successive SGD updates.\\
+ & & \\
+learning rate & 0.00025 & The learning rate used by RMSProp.\\
+ & & \\
+gradient momentum & 0.95 & Gradient momentum used by RMSProp.\\
+ & & \\
+squared gradient momentum & 0.95 & Squared gradient momentum used by RMSProp.\\
+ & & \\
+min squared gradient & 0.01 & Constant added to the squared gradient in the denominator of the RMSProp update.\\
+ & & \\
+initial exploration & 1 & Initial exploration value.\\
+ & & \\
+final exploration & 0.1 & Final exploration value.\\
+ & & \\
+final exploration frame & 1000000 & The number of frames it takes to take exploration value to final value.\\
+ & & \\
+replay start size & 50000 & A uniform random policy is run for this number of frames before learning starts and the resulting experience is used to populate the replay memory.\\
+ & & \\
+no-op max & 30 & Maximum number of "do nothing" actions to be performed by the agent at the start of an episode.                                                    
 \end{tabular}
 \end{table}
 \newpage

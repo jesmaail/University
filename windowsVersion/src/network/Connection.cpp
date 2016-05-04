@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include "NeuralNetwork.h"
 
 
@@ -38,4 +38,4 @@ ConvConnection::ConvConnection(ConvNeuron n, double w){
 
 ConvNeuron* ConvConnection::GetNeuron(){
 	return m_neuron;
-}
+}*/

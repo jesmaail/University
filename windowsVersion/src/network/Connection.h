@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include "Neuron.h"
 
 class Neuron;
@@ -37,4 +37,4 @@ public:
 
 	ConvNeuron* GetNeuron();
 	void SetNeuron(ConvNeuron* n);
-};
+};*/

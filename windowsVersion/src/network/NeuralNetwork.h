@@ -2,7 +2,7 @@
 #include "Preprocessor.h"
 #include "Neuron.h"
 #include "Layers.h"
-#include "Connection.h"
+//#include "Connection.h"
 #include <vector>
 
 using std::vector;
