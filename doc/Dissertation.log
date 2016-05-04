@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  4 MAY 2016 16:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  4 MAY 2016 23:29
 entering extended mode
 **Dissertation.tex
 (Dissertation.tex
@@ -479,22 +479,22 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 145.
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--161
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--163
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 164--165
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 166--167
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
  []
 
@@ -502,14 +502,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--167
 File: img/deepMindPerformance.png Graphic file (type png)
 
 <use img/deepMindPerformance.png>
-Package pdftex.def Info: img/deepMindPerformance.png used on input line 171.
+Package pdftex.def Info: img/deepMindPerformance.png used on input line 172.
 (pdftex.def)             Requested size: 318.81392pt x 179.16814pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--178
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
 
  []
 
@@ -595,81 +595,80 @@ Package pdftex.def Info: img/convNet2.png used on input line 237.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--247
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 248--249
+Underfull \hbox (badness 10000) in paragraph at lines 242--243
 
  []
 
 [10 <./img/sigmoid.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 247--249
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 250--251
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--258
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--260
 
  []
 
 [11 <./img/convNet1.png> <./img/convNet2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 266--268
+Underfull \hbox (badness 10000) in paragraph at lines 268--270
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--270
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 277--279
+Underfull \hbox (badness 10000) in paragraph at lines 279--281
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 289--290
+Underfull \hbox (badness 10000) in paragraph at lines 291--292
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--295
+Underfull \hbox (badness 10000) in paragraph at lines 296--297
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 302--303
+Underfull \hbox (badness 10000) in paragraph at lines 304--305
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 316--317
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 321--323
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 326--327
+Underfull \hbox (badness 10000) in paragraph at lines 323--325
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 331--332
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
 
  []
 
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¢ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¢ in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--334
+
+ []
+
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ¢ in font cmr10!
@@ -680,27 +679,34 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ¢ in font cmr10!
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 353--354
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ¢ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ¢ in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
 
  []
 
 <img/scrum.png, id=72, 291.0072pt x 103.1052pt>
 File: img/scrum.png Graphic file (type png)
  <use img/scrum.png>
-Package pdftex.def Info: img/scrum.png used on input line 356.
+Package pdftex.def Info: img/scrum.png used on input line 358.
 (pdftex.def)             Requested size: 291.00648pt x 103.10493pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 362--363
+Underfull \hbox (badness 10000) in paragraph at lines 364--365
 
  []
 
 [15 <./img/scrum.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 370--371
+Underfull \hbox (badness 10000) in paragraph at lines 372--373
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 373--374
+Underfull \hbox (badness 10000) in paragraph at lines 375--376
 
  []
 
@@ -708,21 +714,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 373--374
 File: img/newSchedule.png Graphic file (type png)
 
 <use img/newSchedule.png>
-Package pdftex.def Info: img/newSchedule.png used on input line 395.
+Package pdftex.def Info: img/newSchedule.png used on input line 397.
 (pdftex.def)             Requested size: 373.54845pt x 164.8672pt.
 
-Overfull \hbox (28.54845pt too wide) in paragraph at lines 395--397
+Overfull \hbox (28.54845pt too wide) in paragraph at lines 397--399
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--405
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 407--407
 []\OT1/cmr/m/n/10 Start of Christ-mas
- []
-
-[16 <./img/newSchedule.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 410--411
-
  []
 
 
@@ -730,36 +734,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 412--413
 
  []
 
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 414--415
+
+ []
+
 <img/finalSchedule.png, id=81, 622.57594pt x 274.77657pt>
 File: img/finalSchedule.png Graphic file (type png)
 
 <use img/finalSchedule.png>
-Package pdftex.def Info: img/finalSchedule.png used on input line 415.
+Package pdftex.def Info: img/finalSchedule.png used on input line 417.
 (pdftex.def)             Requested size: 373.54845pt x 164.8672pt.
 
-Overfull \hbox (28.54845pt too wide) in paragraph at lines 415--417
+Overfull \hbox (28.54845pt too wide) in paragraph at lines 417--419
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--428
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 430--430
 []\OT1/cmr/m/n/10 Scale back-/ad-just project
  []
 
 
-Underfull \hbox (badness 2205) in paragraph at lines 434--435
+Underfull \hbox (badness 2205) in paragraph at lines 436--437
 []\OT1/cmr/m/n/10 Keep suf-fi-cient back-ups of
  []
 
 
-Overfull \hbox (11.1927pt too wide) in paragraph at lines 426--436
+Overfull \hbox (11.1927pt too wide) in paragraph at lines 428--438
 [][] 
  []
 
-[17 <./img/finalSchedule.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 440--441
 
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 442--443
@@ -771,12 +781,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 444--445
 
  []
 
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 465--466
+[17 <./img/newSchedule.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 446--447
 
  []
 
-
+[18 <./img/finalSchedule.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 467--468
 
  []
@@ -857,6 +867,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 575--576
  []
 
 [23 <./img/structure.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 577--578
+
+ []
+
 <img/screenshot.png, id=108, 323.70938pt x 243.15843pt>
 File: img/screenshot.png Graphic file (type png)
 
@@ -874,31 +888,31 @@ Package pdftex.def Info: img/real.jpg used on input line 581.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 606--607
+Underfull \hbox (badness 10000) in paragraph at lines 608--609
 
  []
 
 [24 <./img/structure2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 617--618
+Underfull \hbox (badness 10000) in paragraph at lines 619--620
 
  []
 
 [25 <./img/screenshot.png> <./img/real.jpg>]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 623.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 625.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 623.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 625.
 
-Underfull \hbox (badness 10000) in paragraph at lines 654--655
+Underfull \hbox (badness 10000) in paragraph at lines 656--657
 
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 662--663
+Underfull \hbox (badness 10000) in paragraph at lines 664--665
 
  []
 
@@ -906,12 +920,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 662--663
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 707--708
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 716--717
+Underfull \hbox (badness 10000) in paragraph at lines 709--710
 
  []
 
@@ -920,12 +929,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 718--719
 
  []
 
-[27]
+
 Underfull \hbox (badness 10000) in paragraph at lines 720--721
 
  []
 
-
+[27]
 Underfull \hbox (badness 10000) in paragraph at lines 722--723
 
  []
@@ -940,18 +949,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 726--727
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 728--729
+
+ []
+
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 747--748
+Underfull \hbox (badness 10000) in paragraph at lines 749--750
 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 776--777
-
- []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 778--779
@@ -959,16 +968,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 778--779
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 780--781
 
-[29]
-Overfull \hbox (45.00397pt too wide) in paragraph at lines 810--811
-[][][][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 819--820
+LaTeX Warning: `h' float specifier changed to `ht'.
 
+[29]
+Overfull \hbox (45.00397pt too wide) in paragraph at lines 812--813
+[][][][][][][][][][][] 
  []
 
 
@@ -976,12 +985,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 821--822
 
  []
 
-[30]
-Underfull \hbox (badness 10000) in paragraph at lines 827--828
+
+Underfull \hbox (badness 10000) in paragraph at lines 823--824
 
  []
 
-
+[30]
 Underfull \hbox (badness 10000) in paragraph at lines 829--830
 
  []
@@ -996,12 +1005,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 833--834
 
  []
 
-[31]
-Underfull \hbox (badness 10000) in paragraph at lines 849--850
+
+Underfull \hbox (badness 10000) in paragraph at lines 835--836
 
  []
 
-
+[31]
 Underfull \hbox (badness 10000) in paragraph at lines 851--852
 
  []
@@ -1011,24 +1020,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 853--854
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 855--856
+
+ []
+
 [32]
-Overfull \hbox (21.00372pt too wide) in paragraph at lines 863--864
+Overfull \hbox (21.00372pt too wide) in paragraph at lines 865--866
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (3.00354pt too wide) in paragraph at lines 865--866
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 867--868
 [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (27.00378pt too wide) in paragraph at lines 867--868
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 869--870
 [][][][][][][][][][][][][][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 872--873
-
  []
 
 
@@ -1042,7 +1051,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 876--877
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 884--885
+Underfull \hbox (badness 10000) in paragraph at lines 878--879
 
  []
 
@@ -1051,15 +1060,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 886--887
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 888--889
+
+ []
+
 [33] [34]
-Overfull \hbox (0.17021pt too wide) in paragraph at lines 905--905
+Overfull \hbox (0.17021pt too wide) in paragraph at lines 910--910
 []\OT1/cmr/m/n/10 Andrew Gib-ian-sky. \OT1/cmr/m/it/10 Con-vo-lu-tional Neu-ral
  Net-works\OT1/cmr/m/n/10 . \OT1/cmr/m/sc/10 url\OT1/cmr/m/n/10 : $\OT1/cmtt/m/
 n/10 http : / / andrew .$
  []
 
 
-Overfull \hbox (0.51753pt too wide) in paragraph at lines 905--905
+Overfull \hbox (0.51753pt too wide) in paragraph at lines 910--910
 []\OT1/cmr/m/n/10 Ian Som-merville. \OT1/cmr/m/it/10 Soft-ware En-gi-neer-ing\O
 T1/cmr/m/n/10 . 9th ed. Har-low, Eng-land: Addison-
  []
@@ -1093,7 +1107,7 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Dissertation.pdf (37 pages, 2573704 bytes).
+Output written on Dissertation.pdf (37 pages, 2579814 bytes).
 PDF statistics:
  217 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

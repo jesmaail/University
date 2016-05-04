@@ -151,7 +151,8 @@ Signed:
 	
 	\bigskip
 
-\section{Literature review}
+\section{Background}
+	\subsection{Literature review}
 	%research done in order to prepare for the project
 	
 	%\subsection{Related work}
@@ -177,8 +178,7 @@ Signed:
 		This related work confirmed that a neural network is a suitable model of machine learning to apply to the task of learning to play video games. In particular a deep convolutional neural network trained with a Q-learning variant has been proven as capable of learning to play multiple video games as opposed to just one, with no changes to the structure of the neural network.\\
 		
 	\bigskip
-	
-	\section{Neural networks}
+	\subsection{Neural networks}
 	%From the ground up, how nns work. Talk about various different types of neural networks and training methods.
 		Neural networks (also known as artificial neural networks) are machine learning models based on the structure of the brain in animals such as humans.\\
 		
@@ -239,7 +239,9 @@ Signed:
 			\caption{How local receptive fields work \cite{nndl}}
 			\label{fig:lrf}
 		\end{figure}
-		Figure \ref{fig:lrf} visualises how a local receptive field of size 5x5 with a stride length of 1 works. The stride length is the amount of pixels we shift the local receptive field when applying pixels to the next hidden layer neuron. The size of the local receptive field is also then the size of the shared weights for the convolutional layer. These shared weights are used for every local receptive field in the current layer as well as a shared bias. The process for summation and activation of the result of a convolutional layer can expressed as \cite{nndl}:
+		Figure \ref{fig:lrf} visualises how a local receptive field of size 5x5 with a stride length of 1 works. The stride length is the amount of pixels we shift the local receptive field when applying pixels to the next hidden layer neuron. So in the case of a stride length of 3, we would move 3 pixels to the right when moving the filter across, and then 3 pixels down when moving the filter down the image. The size of the local receptive field is also then the size of the shared weights for the convolutional layer. The collection of these shared weights is known as a filter. Each filter sweeps across the pixels of the image, or neurons in the case of the network, where each weight of the filter will then be used for several of the pixels/neurons in the image/layer. Each filter is then also used on each image in the case of a multiple image input convolutional network, this will produce multiple processed images, known as feature maps, for each filter applied. For the next layer then, each filter is applied to each feature map, resulting in more feature maps being output.\\
+		
+		The process for summation and activation for the result of a convolutional layer can expressed as \cite{nndl}:
 		\begin{equation}
 			\sigma (b + \sum^4_{l=0} \sum^4_{m=0} w_{l, m} x_{j+l, k+m})
 		\end{equation}
@@ -247,7 +249,7 @@ Signed:
 		
 		Convolutional neural networks can also have pooling layers, which can be ``used immediately after convolutional layers" \cite{nndl}. While these layers do no actual learning, they can perform a process known as max pooling. A max pooling layer will take the output of the convolutional layer (size $N*N$), extract the maximum of a $k8k$ region, and output a $\frac{N}{k} * \frac{N}{k}$ layer \cite{convNN}.\\
 		
-		A Convolutional network can be made up of a sequence of convolutional layer followed by pooling layers and then normal feed-forward neural network layers such as fully connected layers, where every neuron in the current layer is connected to every neuron on the previous layer. You can also omit the pooling layer, particularly in the case of applying to low resolution images, and just use a sequence of convolutional layers followed by normal feed-forward layers.\\
+		A Convolutional network can be made up of a sequence of convolutional layers followed by pooling layers and then normal feed-forward neural network layers such as fully connected layers, where every neuron in the current layer is connected to every neuron on the previous layer. You can also omit the pooling layer, particularly in the case of applying to low resolution images, and just use a sequence of convolutional layers followed by normal feed-forward layers.\\
 		
 		\medskip
 		
@@ -326,7 +328,7 @@ Signed:
 		The learning method that will be used for this dissertation is backpropagation but implemented using a method known as RMSProp \cite{rms}\ a variant of Stochastic gradient descent. Stochastic gradient descent differs from normal gradient descent by applying to a random subset of training data as opposed to all of it. This approach is advantageous when you have a very large training set and/or a large amount of weights to update. RMSProp then builds upon this, it will ``divide the learning rate for a weight by a running average of the magnitudes of recent gradients for that weight" \cite{rms}. This particular method has been chosen as it has been proven to work in the application of neural networks to video games in the paper `Human-level control through deep reinforcement learning' \cite{humanlevel}.\\
 	
 	\bigskip
-	\section{Reinforcement learning}
+	\subsection{Reinforcement learning}
 	%Discuss the general idea of reinforcement learning, then Q-learning and then DQNs
 		The learning method that will be utilised for the neural network in this project is Reinforcement learning. Reinforcement learning, as mentioned above, uses the idea of states, actions, and rewards to encourage the network to perform actions that produce the best possible reward for their current state. It is a learning model reminiscent of how animals learn, ``learning what to do - how to map situations to actions - so as to maximise a numerical reward signal" \cite{rlintro}. A machine learning model using reinforcement learning is able to enter an unknown situation and ``learn from it's own experience" \cite{rlintro}.\\
 		
@@ -460,11 +462,9 @@ Signed:
 		
 	\medskip
 	
-	\subsection{C++*}
+	\subsection{C++}
 	%why this language is chosen, and issues getting to grips with it after coming from Java.
 		This project has been developed using the C++ language. This choice was made as C++ is both object-oriented, and low level. As well as this C++ is compatible with CUDA, so it would be possible to be able to GPU-accelerate the neural network.\\
-	
-		\textit{Perhaps move this to implementation sprints}\\
 		
 		As this was my first time using the C++ language, there were a few hiccups along the way. For example object scope, new neurons are created within loops, as many are potentially being made for each layer. These neurons are then stored in vectors for their layer, however when trying to reference these neurons later, they no longer existed. This is because when the program left the loop, garbage collection was performed to remove the neuron objects as they went out of scope.\\
 		
@@ -503,7 +503,7 @@ Signed:
 		
 		Another option I had was to use video game console emulation software, such as the `BizHawk emulator'\cite{biz} which can emulate several consoles. Communication to video games being played within this emulator would be through the memory addresses. This can be done via scripting in \textit{Lua}, however it would be very cumbersome, as the memory addresses are different on a game-by-game basis, and they aren't very well documented.\\
 		
-		Building on top of the idea of using video game console emulation software, the Arcade learning environment was considered and then later chosen as the way to access video games. This is due to it's use in existing work by DeepMind, and that it allows a unified interface for many different video games, albeit limited to the Atari 2600 console.\\	
+		Building on top of the idea of using video game console emulation software, the Arcade learning environment was considered and then later chosen as the way to access video games. This is due to its use in existing work by DeepMind, and that it allows a unified interface for many different video games, albeit limited to the Atari 2600 console.\\	
 	
 	\medskip	
 	
@@ -572,9 +572,9 @@ Signed:
 			\label{fig:topology15}
 		\end{figure}
 		
-		For this implementation, I have chosen the 2013 DeepMind topology, as it has been proven to work in this application to a broad set of video games, and is less complex than it's 2015 counterpart in terms of computation. This topology takes in four greyscale images of size 84x84, and then applies four filters of size 8x8, with stride of 4 \textbf{MAY NEED TO EXPLAIN STRIDE IN EARLIER SECTION}, to produce sixteen feature maps of size 20x20 in the second layer. These filters are applied as local receptive fields, which as explained in the earlier section on neural networks, sweep across the image with many pixels of the image, or neurons in the case of the network, sharing the weights of the filter(s).\textbf{This could be explained above instead if not already?!?} The second layer then is also a convolutional layer, and applies two filters of size 4x4, with stride 2, to produce thirty-two feature maps of size 9x9 in the third layer. This third layer is then connected to the fourth layer, which is a fully connected layer of size 256. \textbf{Explain FullConn Layer in NN theory?!?!} The fourth layer then connects to the final layer which is fully connected and is of varying size depending on the amount of actions available in the game the network is being applied to.\\
+		For this implementation, I have chosen the 2013 DeepMind topology, as it has been proven to work in this application to a broad set of video games, and is less complex than it's 2015 counterpart in terms of computation. This topology takes in four greyscale images of size 84x84, and then applies four filters of size 8x8, with stride of four, to produce sixteen feature maps of size 20x20 in the second layer. These filters are applied as local receptive fields, which are explained in the background section on Convolutional neural networks. The second layer then is also a convolutional layer, and applies two filters of size 4x4, with stride 2, to produce thirty-two feature maps of size 9x9 in the third layer. This third layer is then connected to the fourth layer, which is a fully connected layer of size 256. The fourth layer then connects to the final layer which is fully connected and is of varying size depending on the amount of actions available in the game the network is being applied to.\\
 		
-		It's worth noting that this convolutional neural network does not have any pooling layers. This is due to the nature of the images being used for this network application, Atari 2600 games screens are low resolution images. Max pooling layers would have been used had this network been applied to images that were of a higher resolution.
+		It's worth noting that this convolutional neural network does not have any pooling layers. This is due to the nature of the images being used for this network application, Atari 2600 games screens are low resolution images. Max pooling layers would have been used had this network been applied to images that were of a higher resolution.\\
 		
 		\begin{figure}[h]				
 			\includegraphics[scale=0.5]{img/screenshot}
@@ -583,7 +583,9 @@ Signed:
 			\caption{Screenshot of the Atari 2600 game `Breakout' compared to a real-life image.}
 			\label{fig:screenshot}
 		\end{figure}
-	
+		
+		The activation function to be used in the network is a non-linear rectifier function. this function works as follows:
+		
 	\medskip
 	
 	\subsection{Learning}
@@ -603,7 +605,7 @@ Signed:
 			\end{algorithmic}
 		\end{algorithm}
 		
-		From the main algorithm in algorithm \ref{algo:agentAlgo}, the learning is done in the section extracted in algorithm \ref{algo:qlearn}. Here, after stochastically selecting samples from the minibatch in line 1, we get an estimate on future rewards from line 2, and then perform a gradient descent step in line 3.\\
+		From the main algorithm in algorithm \ref{algo:agentAlgo}, the learning is done in the excerpt extracted in algorithm \ref{algo:qlearn}. Here, after stochastically selecting samples from the minibatch in line 1, we get an estimate on future rewards from line 2, and then perform a gradient descent step in line 3.\\
 		
 		The gradient descent step allows the network to know how much to alter the weights in the network when it performs backpropagation. The technique of RMSProp being used for the backpropagation is a variation of Stochastic gradient descent which will ``divide the learning rate for a weight by a running average of the magnitudes of recent gradients for that weight" \cite{rms}.
 	
@@ -659,7 +661,7 @@ int main(int argc, char* argv[]) {
 	\subsection{Preprocessor}
 	%Discuss how it later got implemented to newer version of ALE (prerelease version on Git).
 	
-	As the output from the Arcade learning environment does not exactly match the expected input to the neural network, some preprocessing steps are required. Much like with the communication with the arcade learning environment, this was at first done with some dummy C++ classes before being added the the larger network later on.\\
+	As the output from the Arcade learning environment does not exactly match the expected input to the neural network, some preprocessing steps are required. Much like with the communication with the arcade learning environment, this was at first done with some dummy C++ classes before being added to the larger network later on.\\
 	
 	The preprocessor crops the image and converts to greyscale (with use of a look-up table) using Algorithm \ref{algo:preprocess}.
 	
@@ -833,7 +835,7 @@ m_outputLayer.SetWeights(m_fourthWeights);
 		When implementing a pointer to the weight, the network generated much slower, which would become detrimental when it came to applying this network to the game. An attempted solution using the index values of the weights was implemented, however due to time constraints it was unable to be verified working and then have the backpropagation implemented with it. One issue I foresaw using the index value in the connection for the weights was that the convolutional layers used 2-dimensional weight (and neuron) structures whereas the fully connected layers used 1-dimensional weight (and neuron) structures. This would mean I may have had to hard code the backpropagation process rather than having a preferred generalised version of the code so that the implementation could be easily extended with a network structure change.\\
 
 		
-		As a result of this element of the network being missing, the neural network being developed in C++ is not viable to be able to learn to play video games, as the fundamental \textit{learning} element of the network is missing, the network would only be able to make random actions with no ability to improve it's efforts.
+		As a result of this element of the network being missing, the neural network being developed in C++ is not viable to be able to learn to play video games, as the fundamental \textit{learning} element of the network is missing, the network would only be able to make random actions with no ability to improve its efforts.
 	\medskip
 	
 	\subsection{Replay Memory}
@@ -888,15 +890,18 @@ def init_network():
 		The Python implementation of the agent has similar functionality to the C++ implementation, and also then suffers from a similar problem. The agent is able to perform the random actions, and build the neural network, however the preprocessed images from the arcade learning environment have issues being input into the neural network. The input for the neural network is expecting a \textbf{get the error details on tensor size from laptop}.
 	\medskip	
 	
+	
 	\subsection{Training the network*}
 		\textit{Although this did not occur, existing implementations state that this process can take 3-5 days (make sure to get these as references). Explain why this was problematic late on in the project.}
 
 	\bigskip
-\section{Reflection of results*}
+	
+\section{Conclusion}
+	\subsection{Reflection of results*}
 
-	\bigskip
+	\medskip
 
-\section{Suggestions for further work*}
+	\subsection{Suggestions for further work*}
 
 \newpage
 \printbibliography[

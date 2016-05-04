@@ -1,17 +1,17 @@
 [0] Config.pm:324> INFO - This is Biber 2.1
 [0] Config.pm:327> INFO - Logfile is 'Dissertation.blg'
-[49] biber-MSWIN:273> INFO - === %a %b %e, %Y, %H:%M:%S
-[49] Biber.pm:333> INFO - Reading 'Dissertation.bcf'
-[267] Biber.pm:645> INFO - Found 20 citekeys in bib section 0
-[287] Biber.pm:2977> INFO - Processing section 0
-[305] Biber.pm:3115> INFO - Looking for bibtex format file 'references.bib' for section 0
-[341] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
-[371] bibtex.pm:895> INFO - Found BibTeX data source 'references.bib'
-[626] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[626] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[626] Biber.pm:2854> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'en-US'
-[626] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-US'
-[661] bbl.pm:505> INFO - Writing 'Dissertation.bbl' with encoding 'ascii'
-[670] Utils.pm:146> WARN - The entry 'tensor' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[793] bbl.pm:596> INFO - Output to Dissertation.bbl
-[795] Biber.pm:106> INFO - WARNINGS: 1
+[51] biber-MSWIN:273> INFO - === %a %b %e, %Y, %H:%M:%S
+[51] Biber.pm:333> INFO - Reading 'Dissertation.bcf'
+[274] Biber.pm:645> INFO - Found 20 citekeys in bib section 0
+[294] Biber.pm:2977> INFO - Processing section 0
+[326] Biber.pm:3115> INFO - Looking for bibtex format file 'references.bib' for section 0
+[365] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
+[396] bibtex.pm:895> INFO - Found BibTeX data source 'references.bib'
+[666] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[666] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[666] Biber.pm:2854> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'en-US'
+[666] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-US'
+[704] bbl.pm:505> INFO - Writing 'Dissertation.bbl' with encoding 'ascii'
+[714] Utils.pm:146> WARN - The entry 'tensor' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[845] bbl.pm:596> INFO - Output to Dissertation.bbl
+[848] Biber.pm:106> INFO - WARNINGS: 1
