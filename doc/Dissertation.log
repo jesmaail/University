@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  4 MAY 2016 23:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  5 MAY 2016 00:16
 entering extended mode
 **Dissertation.tex
 (Dissertation.tex
@@ -887,32 +887,41 @@ Package pdftex.def Info: img/real.jpg used on input line 581.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+<img/linearity.png, id=110, 269.50688pt x 174.6525pt>
+File: img/linearity.png Graphic file (type png)
+ <use img/linearity.png>
+Package pdftex.def Info: img/linearity.png used on input line 605.
+(pdftex.def)             Requested size: 215.60579pt x 139.72218pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 608--609
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 628--629
 
  []
 
 [24 <./img/structure2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 619--620
+Underfull \hbox (badness 10000) in paragraph at lines 639--640
 
  []
 
 [25 <./img/screenshot.png> <./img/real.jpg>]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 625.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 645.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 625.
-
-Underfull \hbox (badness 10000) in paragraph at lines 656--657
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 645.
+ [26 <./img/linearity.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 676--677
 
  []
 
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 664--665
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--685
 
  []
 
@@ -920,93 +929,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 664--665
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 709--710
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 729--730
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 718--719
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 720--721
+Underfull \hbox (badness 10000) in paragraph at lines 738--739
 
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 722--723
+Underfull \hbox (badness 10000) in paragraph at lines 740--741
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 724--725
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 726--727
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 728--729
+Underfull \hbox (badness 10000) in paragraph at lines 742--743
 
  []
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 749--750
+Underfull \hbox (badness 10000) in paragraph at lines 744--745
 
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 778--779
+Underfull \hbox (badness 10000) in paragraph at lines 746--747
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 780--781
+Underfull \hbox (badness 10000) in paragraph at lines 748--749
 
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 769--770
+
+ []
 
 [29]
-Overfull \hbox (45.00397pt too wide) in paragraph at lines 812--813
-[][][][][][][][][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 821--822
+Underfull \hbox (badness 10000) in paragraph at lines 798--799
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 823--824
+Underfull \hbox (badness 10000) in paragraph at lines 800--801
 
  []
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 829--830
+Overfull \hbox (45.00397pt too wide) in paragraph at lines 832--833
+[][][][][][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 841--842
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 831--832
+Underfull \hbox (badness 10000) in paragraph at lines 843--844
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 833--834
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 835--836
+Underfull \hbox (badness 10000) in paragraph at lines 849--850
 
  []
 
@@ -1026,90 +1017,127 @@ Underfull \hbox (badness 10000) in paragraph at lines 855--856
  []
 
 [32]
-Overfull \hbox (21.00372pt too wide) in paragraph at lines 865--866
+Underfull \hbox (badness 10000) in paragraph at lines 871--872
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 873--874
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 875--876
+
+ []
+
+
+Overfull \hbox (21.00372pt too wide) in paragraph at lines 885--886
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (3.00354pt too wide) in paragraph at lines 867--868
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 887--888
 [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (27.00378pt too wide) in paragraph at lines 869--870
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 889--890
 [][][][][][][][][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 874--875
+Underfull \hbox (badness 10000) in paragraph at lines 894--895
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 876--877
+Underfull \hbox (badness 10000) in paragraph at lines 896--897
+
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 898--899
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 878--879
+Underfull \hbox (badness 10000) in paragraph at lines 906--907
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 886--887
+Underfull \hbox (badness 10000) in paragraph at lines 908--909
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 888--889
-
- []
-
-[33] [34]
-Overfull \hbox (0.17021pt too wide) in paragraph at lines 910--910
+[34] [35]
+Overfull \hbox (0.17021pt too wide) in paragraph at lines 930--930
 []\OT1/cmr/m/n/10 Andrew Gib-ian-sky. \OT1/cmr/m/it/10 Con-vo-lu-tional Neu-ral
  Net-works\OT1/cmr/m/n/10 . \OT1/cmr/m/sc/10 url\OT1/cmr/m/n/10 : $\OT1/cmtt/m/
 n/10 http : / / andrew .$
  []
 
 
-Overfull \hbox (0.51753pt too wide) in paragraph at lines 910--910
+Overfull \hbox (0.51753pt too wide) in paragraph at lines 930--930
 []\OT1/cmr/m/n/10 Ian Som-merville. \OT1/cmr/m/it/10 Soft-ware En-gi-neer-ing\O
 T1/cmr/m/n/10 . 9th ed. Har-low, Eng-land: Addison-
  []
 
-[35] [36] [37] (Dissertation.aux)
+[36] [37]
+Underfull \hbox (badness 2205) in paragraph at lines 949--949
+[]\OT1/cmr/m/n/7 target net-work up-date
+ []
+
+
+Underfull \hbox (badness 8113) in paragraph at lines 961--961
+[]\OT1/cmr/m/n/7 squared gra-di-ent mo-
+ []
+
+
+Overfull \hbox (31.88322pt too wide) in paragraph at lines 941--975
+ [][] 
+ []
+
+[38] <img/dmResults.png, id=165, 408.02437pt x 515.67656pt>
+File: img/dmResults.png Graphic file (type png)
+
+<use img/dmResults.png>
+Package pdftex.def Info: img/dmResults.png used on input line 980.
+(pdftex.def)             Requested size: 285.61511pt x 360.97113pt.
+ [39 <./img/dmResults.png>] [40] (Dissertation.aux)
 Package logreq Info: Writing requests to 'Dissertation.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 9207 strings out of 493673
- 149618 string characters out of 3141506
- 580509 words of memory out of 3000000
- 12459 multiletter control sequences out of 15000+200000
- 7939 words of font info for 29 fonts, out of 3000000 for 9000
+ 9223 strings out of 493673
+ 149886 string characters out of 3141506
+ 580549 words of memory out of 3000000
+ 12472 multiletter control sequences out of 15000+200000
+ 8249 words of font info for 30 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 44i,12n,48p,1483b,1407s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,12n,48p,1483b,1413s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Dissertation.pdf (37 pages, 2579814 bytes).
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Dissertation.pdf (40 pages, 2661507 bytes).
 PDF statistics:
- 217 PDF objects out of 1000 (max. 8388607)
+ 233 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

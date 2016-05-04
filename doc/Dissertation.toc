@@ -20,7 +20,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3}Project Management}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Software life-cycle*}{15}
+\contentsline {subsection}{\numberline {3.1}Software life-cycle}{15}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2}Project timeline}{16}
 \defcounter {refsection}{0}\relax 
@@ -46,19 +46,19 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.3}Preprocessor}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4}Neural network*}{23}
+\contentsline {subsection}{\numberline {5.4}Neural network}{23}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.5}Learning}{24}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6}Implementation sprints}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1}Methods to manipulate I/O}{25}
+\contentsline {subsection}{\numberline {6.1}Methods to manipulate I/O}{26}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.2}Preprocessor}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3}Network generation}{27}
+\contentsline {subsection}{\numberline {6.3}Network generation}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.4}Network feedforward}{30}
+\contentsline {subsection}{\numberline {6.4}Network feedforward}{31}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.5}Backpropagation}{31}
 \defcounter {refsection}{0}\relax 
@@ -66,18 +66,22 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.7}TensorFlow}{33}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.8}Artificial Intelligence Agent*}{33}
+\contentsline {subsection}{\numberline {6.8}Artificial Intelligence Agent*}{34}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.9}Training the network*}{34}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Conclusion}{34}
+\contentsline {section}{\numberline {7}Conclusion}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1}Reflection of results*}{34}
+\contentsline {subsection}{\numberline {7.1}Reflection of results*}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2}Suggestions for further work*}{34}
+\contentsline {subsection}{\numberline {7.2}Suggestions for further work*}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{35}
+\contentsline {section}{References}{36}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A}Appendix: Facts and figures}{37}
+\contentsline {section}{\numberline {A}Appendix: Facts and figures}{38}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B}Appendix: Class diagrams}{37}
+\contentsline {subsection}{\numberline {A.1}DeepMind 2015 network hyperparameters}{38}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.2}DeepMind 2015 Results}{39}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {B}Appendix: Class diagrams}{40}

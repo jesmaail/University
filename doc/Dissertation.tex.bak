@@ -177,7 +177,7 @@ Signed:
 		
 		This related work confirmed that a neural network is a suitable model of machine learning to apply to the task of learning to play video games. In particular a deep convolutional neural network trained with a Q-learning variant has been proven as capable of learning to play multiple video games as opposed to just one, with no changes to the structure of the neural network.\\
 		
-	\bigskip
+	\medskip
 	\subsection{Neural networks}
 	%From the ground up, how nns work. Talk about various different types of neural networks and training methods.
 		Neural networks (also known as artificial neural networks) are machine learning models based on the structure of the brain in animals such as humans.\\
@@ -327,7 +327,7 @@ Signed:
 
 		The learning method that will be used for this dissertation is backpropagation but implemented using a method known as RMSProp \cite{rms}\ a variant of Stochastic gradient descent. Stochastic gradient descent differs from normal gradient descent by applying to a random subset of training data as opposed to all of it. This approach is advantageous when you have a very large training set and/or a large amount of weights to update. RMSProp then builds upon this, it will ``divide the learning rate for a weight by a running average of the magnitudes of recent gradients for that weight" \cite{rms}. This particular method has been chosen as it has been proven to work in the application of neural networks to video games in the paper `Human-level control through deep reinforcement learning' \cite{humanlevel}.\\
 	
-	\bigskip
+	\medskip
 	\subsection{Reinforcement learning}
 	%Discuss the general idea of reinforcement learning, then Q-learning and then DQNs
 		The learning method that will be utilised for the neural network in this project is Reinforcement learning. Reinforcement learning, as mentioned above, uses the idea of states, actions, and rewards to encourage the network to perform actions that produce the best possible reward for their current state. It is a learning model reminiscent of how animals learn, ``learning what to do - how to map situations to actions - so as to maximise a numerical reward signal" \cite{rlintro}. A machine learning model using reinforcement learning is able to enter an unknown situation and ``learn from it's own experience" \cite{rlintro}.\\
@@ -351,8 +351,8 @@ Signed:
 		\bigskip
 	
 \section{Project Management}
-	\subsection{Software life-cycle*}
-		The software life-cycle used for this project is the agile development model, in particular the scrum model. The choice of agile for this project is advantageous compared to a more traditional model such as waterfall. This is because in the Waterfall model ``as the requirements change or as requirements problems are discovered, the system design or implementation has to be reworked and retested" \cite{swengi}. This would be particularly problematic and result in a prolonged development process if and when errors occur, especially in earlier stages as it may in a undergraduate project such as this.\\
+	\subsection{Software life-cycle}
+		The software life-cycle used for this project is the agile development model, in particular the scrum model. The choice of agile for this project is advantageous compared to a more traditional model such as waterfall. This is because in the Waterfall model ``as the requirements change or as requirements problems are discovered, the system design or implementation has to be reworked and retested" \cite{swengi}. This would be particularly problematic and result in a prolonged development process if and when errors occur, especially in earlier stages as did occur in this project.\\
 		
 		\begin{figure}[h]			
 			\includegraphics[scale=1]{img/scrum}
@@ -552,7 +552,7 @@ Signed:
 	
 	\medskip
 	
-	\subsection{Neural network*}
+	\subsection{Neural network}
 	%Network topology, why it is is, and a graphic of the structure
 		The chosen topology for the neural network for this project is a deep convolutional neural network. This is due to both their proven ability to work well with image recognition problems, and the usage in the work of DeepMind.\\
 		
@@ -584,8 +584,28 @@ Signed:
 			\label{fig:screenshot}
 		\end{figure}
 		
+		The activation function to be used in the network is a non-linear rectifier function. this function works as follows:
 		
-	
+		\begin{equation}\label{eq:activ2}
+				f(x) = max (0, x)
+		\end{equation}
+		
+		\begin{equation}\label{eq:activ1}
+			f(x) =
+			\begin{cases}
+   				x,& \text{if } x > 1\\
+    			0,& \text{if } x \leq 0
+			\end{cases}
+		\end{equation}	
+		
+		The non-linear rectifier function can also then be visualised in figure \ref{fig:nlrf}.		
+		
+		\begin{figure}[h]
+    		\centering
+			\includegraphics[scale=0.8]{img/linearity}
+			\caption{Non-linear rectifier}
+			\label{fig:nlrf}
+		\end{figure}
 	\medskip
 	
 	\subsection{Learning}
@@ -912,10 +932,42 @@ def init_network():
 \appendix
 
 \section{Appendix: Facts and figures}
-	Use the table from human level control paper, however also include any changes to values for the implementation, i.e. minibatch size. [hyperparameters]
-	
-	Also include the results graph from human level.
-
+	%Use the table from human level control paper, however also include any changes to values for the implementation, i.e. minibatch size. [hyperparameters]	
+		
+	\subsection{DeepMind 2015 network hyperparameters}
+		\begin{table}[h]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{r c p{8cm}}
+\textbf{Hyperparameter} & \textbf{Value} & \textbf{Description} \\ \hline
+minibatch size                              & 32                                 & Number of  training cases over which each stochastic gradient descent (SGD) update is computed.                                                     \\
+replay memory size                          & 1000000                   & SGD updates are sampled from this number of most recent frames.                                                                                     \\
+agent history length                        & 4                         & The number of most recent frames experienced by the agent that are given as input to the Q network.                                                 \\
+target network update frequency             & 10000                     & The frequency (measured in number of parameter updates) with which the target network is updated.                                                   \\
+discount factor                             & 0.99                      & Discount factor gamma used in the Q-learning update.                                                                                                \\
+action repeat                               & 4                        & Repeat each action selected by the agent this many times.                                                                                           \\
+update frequency                            & 4                   & The number of actions selected by the agent between successive SGD updates.                                                                         \\
+learning rate                               & 0.00025                            & The learning rate used by RMSProp.                                                                                                                  \\
+gradient momentum                           & 0.95                               & Gradient momentum used by RMSProp.                                                                                                                  \\
+squared gradient momentum                   & 0.95                               & Squared gradient momentum used by RMSProp.                                                                                                          \\
+min squared gradient                        & 0.01                               & Constant added to the squared gradient in the denominator of the RMSProp update.                                                                    \\
+initial exploration                         & 1                                  & Initial exploration value.                                                                                                                          \\
+final exploration                           & 0.1                                & Final exploration value.                                                                                                                            \\
+final exploration frame                     & 1000000                            & The number of frames it takes to take exploration value to final value.                                                                             \\
+replay start size                           & 50000                              & A uniform random policy is run for this number of frames before learning starts and the resulting experience is used to populate the replay memory. \\
+no-op max                                   & 30                                 & Maximum number of "do nothing" actions to be performed by the agent at the start of an episode.                                                    
+\end{tabular}
+\end{table}
+\newpage
+\subsection{DeepMind 2015 Results}
+		\begin{figure}[h]
+    		\centering
+			\includegraphics[scale=0.7]{img/dmResults}
+			\caption{Observed results of DeepMind Deep Q-network normalised with respect to random play (0\%), and professional human games testers (100\%) \cite{humanlevel}.}
+			\label{fig:2015results}
+		\end{figure}
+\newpage
 \section{Appendix: Class diagrams}
 
 
