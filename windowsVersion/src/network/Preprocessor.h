@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include <vector>
 
 using std::vector;
@@ -16,4 +16,4 @@ public:
 	~Preprocessor(){};
 
 	Image GetPPImg();
-};
+};*/

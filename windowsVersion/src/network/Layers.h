@@ -1,9 +1,12 @@
 #pragma once
 #include "Neuron.h"
+#include "NeuralNetwork.h"
 #include <vector>
 
 using std::vector;
 
+typedef vector<vector<int>> Image;
+typedef vector<Image> Images;
 typedef vector<Image> Images;
 typedef vector<Neuron*> NeuronSet;
 typedef vector<ConvNeuron*> ConvRow;

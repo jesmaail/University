@@ -7,6 +7,7 @@
 
 using std::vector;
 
+typedef vector<vector<int>> Image;
 typedef vector<Image> Images;
 typedef unsigned int uint;
 
