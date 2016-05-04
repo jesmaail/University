@@ -99,6 +99,24 @@
       \field{pages}{253\bibrangedash 279}
       \range{pages}{27}
     \endentry
+    \entry{tfTut}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b444f7ef0491297f880b1c3379f3102f}{Damien}{D\bibinitperiod}{Aymeric}{A\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{b444f7ef0491297f880b1c3379f3102f}
+      \strng{fullhash}{b444f7ef0491297f880b1c3379f3102f}
+      \field{sortinit}{D}
+      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Convolutional Network MNIST Tutorial}
+      \field{urlday}{05}
+      \field{urlmonth}{25}
+      \field{urlyear}{2016}
+      \verb{url}
+      \verb https://github.com/aymericdamien/TensorFlow-Examples/blob/master/examples/3%20-%20Neural%20Networks/convolutional_network.py
+      \endverb
+    \endentry
     \entry{nnintell}{book}{}
       \name{author}{1}{}{%
         {{hash=72467de41592a1684e480b1f7b00e62c}{Fu}{F\bibinitperiod}{LiMin}{L\bibinitperiod}{}{}{}{}}%

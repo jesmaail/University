@@ -212,3 +212,10 @@
   journal={arXiv preprint arXiv:1603.04467},
   year={2016}
 }
+
+@online{tfTut,
+  author={Aymeric Damien},
+  title={Convolutional Network MNIST Tutorial},
+  url = {https://github.com/aymericdamien/TensorFlow-Examples/blob/master/examples/3%20-%20Neural%20Networks/convolutional_network.py},
+  urldate = {2016-25-05}
+}

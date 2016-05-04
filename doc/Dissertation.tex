@@ -855,13 +855,38 @@ m_outputLayer.SetWeights(m_fourthWeights);
 		The replay memory of the network was implemented, however the learning process in the agent that would have utilised it was not.
 	\medskip	
 	
+	\subsection{TensorFlow}
+		When creating a neural network using TensorFlow, you must first define the network structure, using a placeholder for the input of the neural network. Following a tutorial for using a convolutional neural network in TensorFlow applied to the MNIST handwritten digits problem \cite{tfTut} I created a slightly modified version of the 2013 DeepMind network. This can be seen in Code listing \ref{netGenTf}.
+						\renewcommand{\lstlistingname}{Code Listing}
+		\begin{lstlisting}[caption={Network generation in TensorFlow},label={netGenTf}]	
+def init_network():
+  ph_in = tf.placeholder(tf.float32, shape=(None, 84, 84, 2))
+  second_layer = conv_layer(ph_in, weights['w1'], 4)
+  third_layer = conv_layer(second_layer, weights['w2'], 2)
+  third_reshape = tf.reshape(third_layer, [-1, 484])
+  fourth_layer = full_conn_layer(third_reshape, weights['w3'])
+  output_layer = tf.matmul(fourth_layer, weights['w4'])
+  return ph_in, output_layer
+		\end{lstlisting}
+		
+		Here, the weights are created as a weight structure, similar to the approach I took in the C++ neural network. The structure of the network is different to the structure of the 2013 DeepMind network in that it takes 2 input images rather than 4, and applies less filters then in the convolutional layers.\\
+		
+		Now that the network is constructed, we need to be able to forward propagate through it. In TensorFlow this is performed by having a session ongoing (started using the \textit{tf.InteractiveSession()} method in this implementation), and then getting the \textit{ph\textunderscore in} and \textit{output \textunderscore layer} returns from \textit{init\textunderscore network()}. Then the \textit{net\textunderscore out.eval()} function is performed, with the networks input defined as the game screens. This should then propagate forward through the network and return a result/decision.\\
+		
+		The cost function and optimizer for the network are also defined in TensorFlow, and in this implementation they are done before the network is forward propagated, as the functions use the placeholder variables in their creation, and will therefore adapt as the values of the network change over time.\\
+		
+		The TensorFlow network is now ready to be acted upon by the Intelligence Agent.
+		
+	\medskip
+	
 	\subsection{Artificial Intelligence Agent*}
 		%when plugging the network on, issue with images/weights input to network.
+		The intelligence agent for this project has been implemented in both C++, for use with the neural network I created, and Python, for use with a machine learning library neural network.The intelligence agent is the implementation of the process shown in algorithm \ref{algo:agentAlgo}.\\
+		
+		For the C++ implementation of the agent, it is possible to run the agent with placeholder values for input images to the network, however there are issues present when inputting the preprocessed images received from the arcade learning environment. The process of performing actions and receiving output works as intended, however as the network does not learn, even with the preprocessed images being input to the network and it then forward propagating, the resulting actions would be as good as those taken randomly for exploration-exploitation.\\
+		
+		The Python implementation of the agent has similar functionality to the C++ implementation, and also then suffers from a similar problem. The agent is able to perform the random actions, and build the neural network, however the preprocessed images from the arcade learning environment have issues being input into the neural network. The input for the neural network is expecting a \textbf{get the error details on tensor size from laptop}.
 	\medskip	
-	
-	\subsection{TensorFlow*}
-	
-	\medskip
 	
 	\subsection{Training the network*}
 		\textit{Although this did not occur, existing implementations state that this process can take 3-5 days (make sure to get these as references). Explain why this was problematic late on in the project.}

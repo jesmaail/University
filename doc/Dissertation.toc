@@ -62,18 +62,18 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.6}Replay Memory}{32}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.7}Artificial Intelligence Agent*}{33}
+\contentsline {subsection}{\numberline {8.7}TensorFlow}{33}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.8}TensorFlow*}{33}
+\contentsline {subsection}{\numberline {8.8}Artificial Intelligence Agent*}{33}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.9}Training the network*}{33}
+\contentsline {subsection}{\numberline {8.9}Training the network*}{34}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Reflection of results*}{33}
+\contentsline {section}{\numberline {9}Reflection of results*}{34}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10}Suggestions for further work*}{33}
+\contentsline {section}{\numberline {10}Suggestions for further work*}{34}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{34}
+\contentsline {section}{References}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A}Appendix: Facts and figures}{36}
+\contentsline {section}{\numberline {A}Appendix: Facts and figures}{37}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B}Appendix: Class diagrams}{36}
+\contentsline {section}{\numberline {B}Appendix: Class diagrams}{37}

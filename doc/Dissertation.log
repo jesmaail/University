@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  4 MAY 2016 12:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  4 MAY 2016 15:44
 entering extended mode
 **Dissertation.tex
 (Dissertation.tex
@@ -1011,27 +1011,67 @@ Underfull \hbox (badness 10000) in paragraph at lines 853--854
 
  []
 
-[32] [33]
-Overfull \hbox (0.17021pt too wide) in paragraph at lines 880--880
+[32]
+Overfull \hbox (21.00372pt too wide) in paragraph at lines 863--864
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 865--866
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 867--868
+[][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 872--873
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 874--875
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 876--877
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 884--885
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 886--887
+
+ []
+
+[33] [34]
+Overfull \hbox (0.17021pt too wide) in paragraph at lines 905--905
 []\OT1/cmr/m/n/10 Andrew Gib-ian-sky. \OT1/cmr/m/it/10 Con-vo-lu-tional Neu-ral
  Net-works\OT1/cmr/m/n/10 . \OT1/cmr/m/sc/10 url\OT1/cmr/m/n/10 : $\OT1/cmtt/m/
 n/10 http : / / andrew .$
  []
 
 
-Overfull \hbox (0.51753pt too wide) in paragraph at lines 880--880
+Overfull \hbox (0.51753pt too wide) in paragraph at lines 905--905
 []\OT1/cmr/m/n/10 Ian Som-merville. \OT1/cmr/m/it/10 Soft-ware En-gi-neer-ing\O
 T1/cmr/m/n/10 . 9th ed. Har-low, Eng-land: Addison-
  []
 
-[34] [35] [36] (Dissertation.aux)
+[35] [36] [37] (Dissertation.aux)
 Package logreq Info: Writing requests to 'Dissertation.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 9205 strings out of 493673
- 149588 string characters out of 3141506
- 580494 words of memory out of 3000000
- 12457 multiletter control sequences out of 15000+200000
+ 9207 strings out of 493673
+ 149618 string characters out of 3141506
+ 580509 words of memory out of 3000000
+ 12459 multiletter control sequences out of 15000+200000
  7939 words of font info for 29 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  44i,12n,48p,1483b,1407s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1053,9 +1093,9 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Dissertation.pdf (36 pages, 2561944 bytes).
+Output written on Dissertation.pdf (37 pages, 2555657 bytes).
 PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
+ 217 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
