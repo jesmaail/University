@@ -7,25 +7,27 @@ Neuron::Neuron(){
 	//SetBias(0);
 }
 
+/*double Neuron::Activation(){
+	if (m_value > 0){
+		return m_value;
+	}else{
+		return 0;
+	}
+	//return std::max(m_value, 0.0);
+}*/
+
 void Neuron::Activation(){
 	m_value = std::max(0.0, m_value);
 }
 
-double Neuron::CalculateValue(Layer* prev){
-	ThrIndex weight;
-	int nVal, wVal;
+double Neuron::CalculateValue(Layer* prev){ //pass in previous layer as param? to access the index val/weights?
+	//ThrIndex weight;
+	double nVal, wVal;
 	double newVal = 0;
 
 	for (Conn c : m_connections){
-		weight = c.second;
-		nVal = c.first;
-		//wVal = prev->GetFilters
-		//nVal = prev->GetFeatureMaps[std::get<0>(neuron)][std::get<1>(neuron)][std::get<2>(neuron)];
-		//wVal = prev->
 		//newVal += c.first * c.second;
 	}
-	newVal *= m_bias;
-	//m_connections.clear(); //maybe
 	return newVal; 
 }
 
@@ -71,3 +73,14 @@ void ConvNeuron::SetWeights(Filter w){
 Filter ConvNeuron::GetWeights(){
 	return m_weights;
 }
+
+/*double ConvNeuron::Activation(){
+	//rectifier nonlinearity
+	if (m_value > 0){
+		return m_value;
+	}
+	else{
+		return 0;
+	}
+	//return std::max(m_value, 0.0);
+}*/

@@ -1,6 +1,7 @@
 #pragma once
 #include "Neuron.h"
 #include "Layers.h"
+//#include "Connection.h"
 #include <vector>
 
 using std::vector;
@@ -10,10 +11,10 @@ typedef vector<Image> Images;
 typedef unsigned int uint;
 
 struct weightStruct{
-	Filters weightLayer1;
-	Filters weightLayer2;
-	Weights weightLayer3;
-	Weights weightLayer4;
+	Filters wl1;
+	Filters wl2;
+	Weights wl3;
+	Weights wl4;
 };
 
 class NeuralNetwork{
@@ -26,10 +27,11 @@ private:
 	FullConnLayer m_fourthLayer;
 	FullConnLayer m_outputLayer;
 
-	Filters m_firstWeights;
+	weightStruct m_weights;
+	/*Filters m_firstWeights;
 	Filters m_secondWeights;
 	Weights m_thirdWeights;
-	Weights m_fourthWeights;
+	Weights m_fourthWeights;*/
 
 public:
 	NeuralNetwork(Images imgs, weightStruct weights, int actionSize);
@@ -60,7 +62,7 @@ public:
 	void ForwardProp();
 	void BackProp(int c);
 
-	int getDecision();
+	int GetDecision();
 };
 
 

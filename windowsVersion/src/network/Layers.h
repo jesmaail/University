@@ -1,12 +1,10 @@
 #pragma once
 #include "Neuron.h"
-#include "NeuralNetwork.h"
 #include <vector>
 
 using std::vector;
 
 typedef vector<vector<int>> Image;
-typedef vector<Image> Images;
 typedef vector<Image> Images;
 typedef vector<Neuron*> NeuronSet;
 typedef vector<ConvNeuron*> ConvRow;
@@ -34,7 +32,7 @@ public:
 	void AddNeuron(Neuron n);
 	void AddNeuronVector(NeuronSet ns);
 
-	virtual void activateNeurons() = 0;
+	virtual void ActivateNeurons() = 0;
 };
 
 
@@ -93,7 +91,7 @@ public:
 	void SetFeatureMaps(FMS f);
 	void addFeatureMap(FeatureMap f);
 
-	virtual void activateNeurons();
+	virtual void ActivateNeurons();
 };
 
 
@@ -121,5 +119,5 @@ public:
 	void AddWeight(double d);
 	double GetWeightAt(int i);
 
-	virtual void activateNeurons();
+	virtual void ActivateNeurons();
 };

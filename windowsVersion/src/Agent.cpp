@@ -53,7 +53,7 @@ int main(int argc, char* argv[]) {
 }
 
 Agent::Agent(string game){
-	m_weights[0] = InitRandWeights();
+	
 
 	#ifdef __USE_SDL	//Simple Direct Media Layer, for observing game as it is played
 		m_ale.setBool("display_screen", DISPLAY_SCREEN);
@@ -63,6 +63,8 @@ Agent::Agent(string game){
 	m_ale.loadROM(game);
 	m_legalActs = m_ale.getLegalActionSet();
 	m_numActions = m_legalActs.size();
+
+	m_weights[0] = InitRandWeights();
 
 	for(uint ep = 0; ep < EPISODE_COUNT; ep++){
 		play();
@@ -113,7 +115,7 @@ void Agent::PerformRandomAction(){
 
 void Agent::UseNeuralNetwork(){
 	NeuralNetwork nn(m_current, m_weights[0], m_numActions);
-	m_action = nn.getDecision();
+	m_action = nn.GetDecision();
 }
 
 void Agent::Backprop(){
@@ -138,7 +140,7 @@ weightStruct Agent::InitRandWeights(){
 		fs.push_back(f);
 		f.clear();
 	}
-	temp.weightLayer1 = fs;
+	temp.wl1 = fs;
 	fs.clear();
 
 	//Layer 2
@@ -153,21 +155,21 @@ weightStruct Agent::InitRandWeights(){
 		fs.push_back(f);
 		f.clear();
 	}
-	temp.weightLayer2 = fs;
+	temp.wl2 = fs;
 	fs.clear();
 
 	//Layer 3
 	for (uint c = 0; c < FOURTH_LAYER_SIZE; c++){
 		ws.push_back(rand() % 100 + 1);
 	}
-	temp.weightLayer3 = ws;
+	temp.wl3 = ws;
 	ws.clear();
 
 	//Layer 4
-	for (uint c = 0; c < OUTPUT_LAYER_SIZE; c++){
+	for (uint c = 0; c < m_numActions; c++){
 		ws.push_back(rand() % 100 + 1);
 	}
-	temp.weightLayer4 = ws;
+	temp.wl4 = ws;
 	ws.clear();
 
 	return temp;
@@ -204,8 +206,7 @@ Image Agent::GetScreen(){
 	int xCount, yCount = 0;
 
 	vector<int> imgRow;
-
-	int jt = 0;			
+		
 	for (int j = ROI_TOP; j<height - ROI_BOT; j++){
 		for (int i = 0; i<width; i++){
 			int intPix = screen.get(j, i);
@@ -213,7 +214,6 @@ Image Agent::GetScreen(){
 		}
 		img.push_back(imgRow);
 		imgRow.clear();
-		jt++;
 	}
 
 	for (int y = 0; y < DESIRED_IMAGE_XY; y++){
@@ -242,12 +242,12 @@ void Agent::Learning(){ //not working
 		target = randTran.reward;
 	}else{
 		NeuralNetwork nn(randTran.nextState, m_weights[0], m_numActions);
-		action = nn.getDecision();
+		action = nn.GetDecision();
 		target = randTran.reward + (discount * action);
 	}
 
 	NeuralNetwork learnn(randTran.state, m_weights[0], m_numActions);
-	yield = learnn.getDecision();
+	yield = learnn.GetDecision();
 	
 	cost = (target - yield) * (target - yield);
 

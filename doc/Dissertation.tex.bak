@@ -842,7 +842,13 @@ m_outputLayer.SetWeights(m_fourthWeights);
 	
 	 The \textit{activateNeurons()} function of a layer will loop through every neuron in the layer and call the neuron's \textit{CalculateValue()} function. This function loops through all of the connections in the neuron and performs a summation on them to get the value for the neuron. After that, the \textit{Activation} function is called on the neuron which performs the non-linear rectifier activation on the Neuron.\\
 	
-	Once this has been performed all the way up to the output layer, the network will have it's decision values in each neuron of the output layer. To get the decision of the network in the agent, the agent calls the network's \textit{getDecision()} function which returns the index of the neuron which has the highest value.
+	Once this has been performed all the way up to the output layer, the network will have it's decision values in each neuron of the output layer. To get the decision of the network in the agent, the agent calls the network's \textit{getDecision()} function which returns the index of the neuron which has the highest value.\\
+	
+	The feedforward of the network was however broken when trying to accommodate a new method of establishing connections between layers so that it would be able to back propagate. This new method would, instead of storing just the value of the weight, store the index of the weight, so that it could be accessed by this index for activation and backpropagation.\\
+	
+	The part where the feedforward started to break was trying to access the index of the weights. As the network was created with weights that were randomly initiated within the network, the addition of externally initiated weights has caused errors in accessing the weights when attempting to calculate neuron values.\\
+	
+	As the network can not feedforward without reverting to having the weights randomly initialised every time the network is called, this network is not viable for the problem as i
 	\medskip
 	
 	\subsection{Backpropagation}
@@ -852,10 +858,9 @@ m_outputLayer.SetWeights(m_fourthWeights);
 		
 		Another difficulty was in implementing the propagation back through the network. The objective of backpropagation is to tune the weights of the network to be able to achieve a more accurate output decision of the network. However in the first implementation of the network, the connections just stored the values of the weights, so when propagating backwards the network was unable to tell where the weights came from to be able to update them. As well as this, in the case of convolutional layers, weights are shared across multiple neurons, so it is necessary to store either a pointer to the weights or an index value.\\
 		
-		When implementing a pointer to the weight, the network generated much slower, which would become detrimental when it came to applying this network to the game. An attempted solution using the index values of the weights was implemented, however due to time constraints it was unable to be verified working and then have the backpropagation implemented with it. One issue I foresaw using the index value in the connection for the weights was that the convolutional layers used 2-dimensional weight (and neuron) structures whereas the fully connected layers used 1-dimensional weight (and neuron) structures. This would mean I may have had to hard code the backpropagation process rather than having a preferred generalised version of the code so that the implementation could be easily extended with a network structure change.\\
-
+		When implementing a pointer to the weight, the network generated much slower, which would become detrimental when it came to applying this network to the game. An attempted solution using the index values of the weights was implemented, however as mentioned in the network feedforward section, this presented issues when trying to access the weights.\\
 		
-		As a result of this element of the network being missing, the neural network being developed in C++ is not viable to be able to learn to play video games, as the fundamental \textit{learning} element of the network is missing, the network would only be able to make random actions with no ability to improve its efforts.
+		As a result of this element of the network being missing, the neural network being developed in C++ is not viable to be able to learn to play video games, as the fundamental \textit{learning} element of the network is missing.
 	\medskip
 	
 	\subsection{Replay Memory}
@@ -905,7 +910,7 @@ def init_network():
 		%when plugging the network on, issue with images/weights input to network.
 		The intelligence agent for this project has been implemented in both C++, for use with the neural network I created, and Python, for use with a machine learning library neural network.The intelligence agent is the implementation of the process shown in algorithm \ref{algo:agentAlgo}.\\
 		
-		For the C++ implementation of the agent, it is possible to run the agent with placeholder values for input images to the network, however there are issues present when inputting the preprocessed images received from the arcade learning environment. The process of performing actions and receiving output works as intended, however as the network does not learn, even with the preprocessed images being input to the network and it then forward propagating, the resulting actions would be as good as those taken randomly for exploration-exploitation.\\
+		For the C++ implementation of the agent, it is possible to run the agent with placeholder values for input images to the network, however there are issues present when inputting the preprocessed images received from the arcade learning environment. The process of performing actions and receiving output works as intended, however as there existed errors in the neural network itself, the agent wasn't completed. This is evident in the exploration-exploitation value never decreasing to allow more learning for the network. All the agent is capable of doing is performing random actions in the game environment.\\
 		
 		The Python implementation of the agent has similar functionality to the C++ implementation, and also then suffers from a similar problem. The agent is able to perform the random actions, and build the neural network, however the preprocessed images from the arcade learning environment have issues being input into the neural network. The input for the neural network is expecting a \textbf{get the error details on tensor size from laptop}.
 	\medskip	

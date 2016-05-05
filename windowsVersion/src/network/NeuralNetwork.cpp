@@ -18,10 +18,7 @@ NeuralNetwork::NeuralNetwork(Images imgs, weightStruct weights, int actionSize){
 	SetActionSetSize(actionSize);
 	m_input = imgs;
 
-	m_firstWeights = weights.weightLayer1;
-	m_secondWeights = weights.weightLayer2;
-	m_thirdWeights = weights.weightLayer3;
-	m_fourthWeights = weights.weightLayer4;
+	m_weights = weights;
 
 	ForwardProp();
 	//BackProp();
@@ -30,28 +27,28 @@ NeuralNetwork::NeuralNetwork(Images imgs, weightStruct weights, int actionSize){
 void::NeuralNetwork::ForwardProp(){
 
 	SetInputLayer(ConvLayer(m_input, FIRST_FILT_SIZE, FIRST_FILT_COUNT, FIRST_FILT_STRIDE));
-	m_inputLayer.SetFilters(m_firstWeights);
+	m_inputLayer.SetFilters(m_weights.wl1);
 	//testConvLayer(m_inputLayer, 1); //Test
 
 
 	SetSecondLayer(ConvLayer(m_inputLayer, SECOND_FILT_SIZE, SECOND_FILT_COUNT, SECOND_FILT_STRIDE));
-	m_secondLayer.SetFilters(m_secondWeights);
+	m_secondLayer.SetFilters(m_weights.wl2);
 	//testConvLayer(m_secondLayer, 2); //Test
-	m_secondLayer.activateNeurons();
+	m_secondLayer.ActivateNeurons();
 
 	SetThirdLayer(ConvLayer(m_secondLayer, 0, 0, 0));
 	//testConvLayer(m_thirdLayer, 3); //Test
-	m_thirdLayer.activateNeurons();
+	m_thirdLayer.ActivateNeurons();
 
 	SetFourthLayer(FullConnLayer(m_thirdLayer, FOURTH_LAYER_SIZE));
-	m_fourthLayer.SetWeights(m_thirdWeights);
+	m_fourthLayer.SetWeights(m_weights.wl3);
 	//testFCLayer(m_fourthLayer, 4); // Test
-	m_fourthLayer.activateNeurons();
+	m_fourthLayer.ActivateNeurons();
 
 	SetOutputLayer(FullConnLayer(m_fourthLayer, GetActionSetSize()));
-	m_outputLayer.SetWeights(m_fourthWeights);
+	m_outputLayer.SetWeights(m_weights.wl4);
 	//testFCLayer(m_outputLayer, 5); // Test
-	m_outputLayer.activateNeurons();
+	m_outputLayer.ActivateNeurons();
 }
 
 void NeuralNetwork::BackProp(int cost){
@@ -138,7 +135,7 @@ void NeuralNetwork::SetActionSetSize(int s){
 	m_actionSetSize = s;
 }
 
-int NeuralNetwork::getDecision(){
+int NeuralNetwork::GetDecision(){
 	int count = 0;
 	double max = -9999;
 	int maxNum = 0;

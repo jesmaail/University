@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  5 MAY 2016 00:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  5 MAY 2016 02:34
 entering extended mode
 **Dissertation.tex
 (Dissertation.tex
@@ -997,105 +997,125 @@ Underfull \hbox (badness 10000) in paragraph at lines 843--844
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 849--850
+Underfull \hbox (badness 10000) in paragraph at lines 845--846
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 847--848
 
  []
 
 [31]
+Underfull \hbox (badness 10000) in paragraph at lines 849--850
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 851--852
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 853--854
+Underfull \hbox (badness 10000) in paragraph at lines 857--858
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 855--856
+Underfull \hbox (badness 10000) in paragraph at lines 859--860
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 861--862
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 863--864
 
  []
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 871--872
+Underfull \hbox (badness 10000) in paragraph at lines 878--879
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 873--874
+Underfull \hbox (badness 10000) in paragraph at lines 880--881
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 875--876
+Underfull \hbox (badness 10000) in paragraph at lines 882--883
 
  []
 
 
-Overfull \hbox (21.00372pt too wide) in paragraph at lines 885--886
+Overfull \hbox (21.00372pt too wide) in paragraph at lines 892--893
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (3.00354pt too wide) in paragraph at lines 887--888
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 894--895
 [][][][][][][][][][][][][][][][][][] 
  []
 
-
-Overfull \hbox (27.00378pt too wide) in paragraph at lines 889--890
+[33]
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 896--897
 [][][][][][][][][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 894--895
+Underfull \hbox (badness 10000) in paragraph at lines 901--902
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 896--897
-
- []
-
-[33]
-Underfull \hbox (badness 10000) in paragraph at lines 898--899
+Underfull \hbox (badness 10000) in paragraph at lines 903--904
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 906--907
+Underfull \hbox (badness 10000) in paragraph at lines 905--906
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 908--909
+Underfull \hbox (badness 10000) in paragraph at lines 913--914
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 915--916
 
  []
 
 [34] [35]
-Overfull \hbox (0.17021pt too wide) in paragraph at lines 930--930
+Overfull \hbox (0.17021pt too wide) in paragraph at lines 939--939
 []\OT1/cmr/m/n/10 Andrew Gib-ian-sky. \OT1/cmr/m/it/10 Con-vo-lu-tional Neu-ral
  Net-works\OT1/cmr/m/n/10 . \OT1/cmr/m/sc/10 url\OT1/cmr/m/n/10 : $\OT1/cmtt/m/
 n/10 http : / / andrew .$
  []
 
 
-Overfull \hbox (0.51753pt too wide) in paragraph at lines 930--930
+Overfull \hbox (0.51753pt too wide) in paragraph at lines 939--939
 []\OT1/cmr/m/n/10 Ian Som-merville. \OT1/cmr/m/it/10 Soft-ware En-gi-neer-ing\O
 T1/cmr/m/n/10 . 9th ed. Har-low, Eng-land: Addison-
  []
 
 [36] [37]
-Underfull \hbox (badness 2205) in paragraph at lines 949--949
+Underfull \hbox (badness 2205) in paragraph at lines 958--958
 []\OT1/cmr/m/n/7 target net-work up-date
  []
 
 
-Underfull \hbox (badness 8113) in paragraph at lines 961--961
+Underfull \hbox (badness 8113) in paragraph at lines 970--970
 []\OT1/cmr/m/n/7 squared gra-di-ent mo-
  []
 
 
-Overfull \hbox (31.88322pt too wide) in paragraph at lines 941--975
+Overfull \hbox (31.88322pt too wide) in paragraph at lines 950--984
  [][] 
  []
 
@@ -1103,7 +1123,7 @@ Overfull \hbox (31.88322pt too wide) in paragraph at lines 941--975
 File: img/dmResults.png Graphic file (type png)
 
 <use img/dmResults.png>
-Package pdftex.def Info: img/dmResults.png used on input line 980.
+Package pdftex.def Info: img/dmResults.png used on input line 989.
 (pdftex.def)             Requested size: 285.61511pt x 360.97113pt.
  [39 <./img/dmResults.png>] [40] (Dissertation.aux)
 Package logreq Info: Writing requests to 'Dissertation.run.xml'.
@@ -1135,7 +1155,7 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2
 nts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Dissertation.pdf (40 pages, 2661507 bytes).
+Output written on Dissertation.pdf (40 pages, 2662291 bytes).
 PDF statistics:
  233 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
