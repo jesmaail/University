@@ -32,7 +32,7 @@ May 2016
 \vspace{2.5cm}
 
 \begin{abstract}
-This is a Technical Computer Science project, which aims to develop a neural network, trained with reinforcement learning, that is able to learn to play video games. This document outlines a background the related work and theory, the management of the project itself, the technologies used, an analysis of the problem, how the problem was then implemented, and a reflection on the results as well as how it could be improved in future work.
+This is a Technical Computer Science project, which aims to develop a neural network, trained with reinforcement learning, that is able to learn to play video games. This document outlines a background of the related work and theory, the management of the project itself, the technologies used, an analysis of the problem, how the problem was then implemented, and a reflection on the results as well as how it could be improved in future work.
 \end{abstract}
 
 
@@ -350,7 +350,7 @@ Signed:
 			\item $\alpha$ is the learning rate,
 			\item $\gamma$ is the discount factor.
 		\end{list}
-		This dissertation will use the neural network as a function approximator for Q-learning. This means that each input to the network (game screen data) will be treated as a state, and the output of the network (the action to perform in game) will be treated as an action, with an associated reward. The value update as seen in equation \ref{eq:qlearn} will then be applied. The neural network used is therefore referred to as a Deep Q network.
+		This dissertation will use the neural network as a function approximator for Q-learning. This means that each input to the network (game screen data) will be treated as a state, and the output of the network (the action to perform in the game) will be treated as an action, with an associated reward. The value update as seen in equation \ref{eq:qlearn} will then be applied. The neural network used is therefore referred to as a Deep Q network.
 		
 		\bigskip
 	
@@ -449,14 +449,14 @@ Signed:
 	
 	During the interim document stage for this project, I incorrectly decided to remove the risk `Project is too ambitious', as at the time I was on-track to complete the aims of the project. After the interim document stage, I started work on implementing the final component to the neural network, backpropagation. This task proved a lot more difficult than I had anticipated it would have been and halted progress on the network for multiple reasons. This to me was a factor in the project perhaps being `too ambitious'. The mitigation to this risk was to `scale back and/or adjust project aims', however this mitigation was hard to do as backpropagation is an integral part to a neural network. My solution to this was to change (albeit very late in the timeline) to using an existing neural network implementation for the purpose of playing the video games rather than creating my own.\\
 	
-	The only other risk to occur during the duration of this project was the slowing of development `due to migraines'. During the periods where I would perform a lot of implementation I also got a lot of migraines due to the amount of time spent at my computer. Early on in the implementation the mitigation of keeping `good time management to afford missed days' worked well. However when this then became coupled with the issues involved in implementing backpropagation, the mitigation was not very effective, and productivity suffered as a result.
+	The only other risk to occur during the duration of this project was the slowing of development `due to migraines'. During the periods where I would perform a lot of implementation I would have more frequent migraines due to the amount of time spent at my computer. Early on in the implementation the mitigation of keeping `good time management to afford missed days' worked well. However when this then became coupled with the issues involved in implementing backpropagation, the mitigation was not very effective, and productivity suffered as a result.
 	
 	\bigskip
 \section{Technologies}
 	
 	\subsection{Git}
 	%Use for backups and version control
-		In this project, Git has been used for both version control and backups with the service GitHub being used for the repository. To perform the version control, local repositories will be created on development devices. There are also two main branches, master for working code, and dev for code that is being implemented and not yet confirmed to works. Whenever an existing file has been edited or a new file has been created, the following steps will be carried out in the operating system command line (when located in repository directory):
+		In this project, Git has been used for both version control and backups with the service GitHub being used for the repository. To perform the version control, local repositories will be created on development devices. There are also two main branches, \textit{master} for working code, and \textit{dev} for code that is being implemented and not yet confirmed to works. Whenever an existing file has been edited or a new file has been created, the following steps will be carried out in the operating system command line (when located in repository directory):
 		\begin{lstlisting}
   git add FILE
   git commit -m ``comment on changes"
@@ -486,7 +486,7 @@ Signed:
 	\subsection{The Arcade learning environment}
 	%Developed by deepmind, discuss how to interact with it.
 	
-		The neural network needs a way of interfacing with video games, and this can be done using a tool know as the Arcade learning environment. The arcade learning environment is built an Atari 2600 games console emulator known as Stella, so it is limited to only allowing interface to games for that games console. This environment was created alongside the paper `The Arcade learning environment: An evaluation platform for general agents' \cite{ale} by DeepMind, and was used in both aforementioned DeepMind papers. It has been made freely available online for use by ``researchers and hobbyists to develop AI agents for the Atari 2600" \cite{ale}.\\
+		The neural network needs a way of interfacing with video games, and this can be done using a tool known as the Arcade learning environment. The arcade learning environment is built around an Atari 2600 games console emulator known as Stella, so it is limited to only allowing interface to games for that games console. This environment was created alongside the paper `The Arcade learning environment: An evaluation platform for general agents' \cite{ale} by DeepMind, and was used in both aforementioned DeepMind papers. It has been made freely available online for use by ``researchers and hobbyists to develop AI agents for the Atari 2600" \cite{ale}.\\
 		
 		The arcade learning environment is compatible with languages such as C++, Java, and Python and presents several interfaces for these languages to communicate with it and therefore with the video games.
 			
@@ -517,7 +517,7 @@ Signed:
 	
 		The intelligence agent in this case will be where the neural network and the interface for arcade learning environment interface will be instantiated. In this agent they will then communicate with each other, while going through the algorithm seen in algorithm \ref{algo:agentAlgo} for performing Q-learning. This intelligence agent is what will be called from the final programs \textit{main} method, and it will handle the rest.\\
 		
-		As outlined in the work from DeepMind in regard to their Deep-Q learner, the intelligence agent will use something known as \textit{exploration-exploitation}. This means that the agent will initially perform random actions the majority of the time, and gradually begin to use the neural network more and more. This is used as ``it is necessary to sometimes pick a random action to not get stuck in local reward maxima" \cite{repli}, so the network is be able to explore more options than just those actions it currently believes are the most advantageous.\\
+		As outlined in the work from DeepMind in regard to their Deep-Q learner, the intelligence agent will use something known as \textit{exploration-exploitation}. This means that the agent will initially perform random actions the majority of the time, and gradually begin to use the neural network more and more. This is used as ``it is necessary to sometimes pick a random action to not get stuck in local reward maxima" \cite{repli}, so the network is able to explore more options than just those actions it currently believes are the most advantageous.\\
 		
 		The 2015 DeepMind paper also provides us with a table of hyperparameters and their optimal values for the Deep Q-network intelligence agent, available in the abstract of this document. Most of these will remain the same in our implementation, however some have been scaled down to allow easier implementation. For example, the minibatch size will be reduced from 32 to 16, and the replay memory size reduced from 1000000 to 1000.
 		
@@ -576,7 +576,7 @@ Signed:
 			\label{fig:topology15}
 		\end{figure}
 		
-		For this implementation, I have chosen the 2013 DeepMind topology, as it has been proven to work in this application to a broad set of video games, and is less complex than it's 2015 counterpart in terms of computation. This topology takes in four greyscale images of size 84x84, and then applies four filters of size 8x8, with stride of four, to produce sixteen feature maps of size 20x20 in the second layer. These filters are applied as local receptive fields, which are explained in the background section on Convolutional neural networks. The second layer then is also a convolutional layer, and applies two filters of size 4x4, with stride 2, to produce thirty-two feature maps of size 9x9 in the third layer. This third layer is then connected to the fourth layer, which is a fully connected layer of size 256. The fourth layer then connects to the final layer which is fully connected and is of varying size depending on the amount of actions available in the game the network is being applied to.\\
+		For this implementation, I have chosen the 2013 DeepMind topology, as it has been proven to work in this application to a broad set of video games, and is less complex than its 2015 counterpart in terms of computation. This topology takes in four greyscale images of size 84x84, and then applies four filters of size 8x8, with stride of four, to produce sixteen feature maps of size 20x20 in the second layer. These filters are applied as local receptive fields, which are explained in the background section on Convolutional neural networks. The second layer then is also a convolutional layer, and applies two filters of size 4x4, with stride 2, to produce thirty-two feature maps of size 9x9 in the third layer. This third layer is then connected to the fourth layer, which is a fully connected layer of size 256. The fourth layer then connects to the final layer which is fully connected and is of varying size depending on the amount of actions available in the game the network is being applied to.\\
 		
 		It's worth noting that this convolutional neural network does not have any pooling layers. This is due to the nature of the images being used for this network application, Atari 2600 games screens are low resolution images. Max pooling layers would have been used had this network been applied to images that were of a higher resolution.\\
 		
@@ -756,7 +756,7 @@ int main(int argc, char* argv[]) {
 	
 	The fully connected (third hidden, and output) layers hold a \textit{Weights} data structure which is defined as $vector<double>$, as well as a \textit{NeuronSet} defined as $vector<Neuron^*>$.\\
 	
-	The constructor for the neural network will feed in the input image(s), weights, and game actions size). The input image(s) are received from the game after being preprocessed, the game actions size is also received from the game. The weights are randomly initialised outside of the network before being fed in. The weights are held in a structure known as \textit{weightStruct} which holds two \textit{Filters} data types and 2 \textit{Weights} data types. The weights for the first pass of the neural network are initialised randomly, and will be tuned then as the network learns. The structure to hold to weights is outside of the network so that the agent can update then as it learns and then feed them into the network.\\
+	The constructor for the neural network will feed in the input image(s), weights, and game actions size). The input image(s) are received from the game after being preprocessed, the game actions size is also received from the game. The weights are randomly initialised outside of the network before being fed in. The weights are held in a structure known as \textit{weightStruct} which holds two \textit{Filters} data types and 2 \textit{Weights} data types. The weights for the first pass of the neural network are initialised randomly, and will be tuned then as the network learns. The structure to hold these weights is outside of the network so that the agent can update them as it learns and then feed them into the network.\\
 	
 	As for the creation of the neural network itself, the methods to generate the network are generalised, allowing the network structure to be altered at any time easily, granted that the input layer is convolutional and the network consists of only convolutional and fully connected layers. The pseudo code for generation of a input convolutional layer can be seen in algorithm \ref{algo:inputLayer}.\\
 		
@@ -779,7 +779,7 @@ int main(int argc, char* argv[]) {
 			\end{algorithmic}
 		\end{algorithm}
 		
-		The input convolutional layer differs from it's non-input counterparts in that it have no previous layer, it will take in the Images instead of the outputted feature maps of a previous layer, and does not need to take into consideration any weights, summation or activations to it's neurons. The pseudo-code for the generation of a non-input convolutional layer can be seen in algorithm \ref{algo:noninputLayer}.\\
+		The input convolutional layer differs from it's non-input counterparts in that it has no previous layer, it will take in the Images instead of the outputted feature maps of a previous layer, and does not need to take into consideration any weights, summation or activations to it's neurons. The pseudo-code for the generation of a non-input convolutional layer can be seen in algorithm \ref{algo:noninputLayer}.\\
 		
 		\begin{algorithm}[h]
 			\caption{Non-input convolutional layer generation pseudocode}
