@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  5 MAY 2016 18:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  5 MAY 2016 19:10
 entering extended mode
 **Dissertation.tex
 (Dissertation.tex
@@ -501,114 +501,100 @@ Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
  []
 
-<img/deepMindPerformance.png, id=30, 455.45157pt x 255.95625pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--170
+
+ []
+
+[7] <img/deepMindPerformance.png, id=34, 455.45157pt x 255.95625pt>
 File: img/deepMindPerformance.png Graphic file (type png)
 
 <use img/deepMindPerformance.png>
-Package pdftex.def Info: img/deepMindPerformance.png used on input line 172.
+Package pdftex.def Info: img/deepMindPerformance.png used on input line 174.
 (pdftex.def)             Requested size: 318.81392pt x 179.16814pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 178--179
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
 
  []
 
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 183--184
 
- []
-
-<img/network.png, id=35, 607.51968pt x 344.78813pt>
-File: img/network.png Graphic file (type png)
- <use img/network.png>
-Package pdftex.def Info: img/network.png used on input line 186.
-(pdftex.def)             Requested size: 303.7591pt x 172.39363pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 192--193
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
 
  []
 
 [8 <./img/deepMindPerformance.png (PNG copy)>]
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¢ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¢ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¢ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¢ in font cmr10!
+<img/network.png, id=38, 607.51968pt x 344.78813pt>
+File: img/network.png Graphic file (type png)
+ <use img/network.png>
+Package pdftex.def Info: img/network.png used on input line 188.
+(pdftex.def)             Requested size: 303.7591pt x 172.39363pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 205--206
+Underfull \hbox (badness 10000) in paragraph at lines 194--195
 
  []
 
-<img/sigmoid.png, id=39, 173.89969pt x 108.405pt>
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ¢ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ¢ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ¢ in font cmr10!
+[9 <./img/network.png>]
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ¢ in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
+
+ []
+
+<img/sigmoid.png, id=46, 173.89969pt x 108.405pt>
 File: img/sigmoid.png Graphic file (type png)
  <use img/sigmoid.png>
-Package pdftex.def Info: img/sigmoid.png used on input line 211.
+Package pdftex.def Info: img/sigmoid.png used on input line 213.
 (pdftex.def)             Requested size: 130.42442pt x 81.30354pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--226
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 231--232
-
- []
-
-[9 <./img/network.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 233--234
 
  []
 
-<img/convNet1.png, id=51, 398.99063pt x 203.25937pt>
-File: img/convNet1.png Graphic file (type png)
- <use img/convNet1.png>
-Package pdftex.def Info: img/convNet1.png used on input line 236.
-(pdftex.def)             Requested size: 219.44553pt x 111.79298pt.
 
-<img/convNet2.png, id=52, 411.03563pt x 201.75375pt>
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
+
+ []
+
+[10 <./img/sigmoid.png>] <img/convNet1.png, id=55, 398.99063pt x 203.25937pt>
+File: img/convNet1.png Graphic file (type png)
+
+<use img/convNet1.png>
+Package pdftex.def Info: img/convNet1.png used on input line 238.
+(pdftex.def)             Requested size: 219.44553pt x 111.79298pt.
+ <img/convNet2.png, id=56, 411.03563pt x 201.75375pt>
 File: img/convNet2.png Graphic file (type png)
- <use img/convNet2.png>
-Package pdftex.def Info: img/convNet2.png used on input line 237.
+
+<use img/convNet2.png>
+Package pdftex.def Info: img/convNet2.png used on input line 239.
 (pdftex.def)             Requested size: 226.07028pt x 110.96489pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
 
  []
 
-[10 <./img/sigmoid.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 247--249
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 250--251
+[11 <./img/convNet1.png> <./img/convNet2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 249--251
 
  []
 
@@ -618,69 +604,65 @@ Underfull \hbox (badness 10000) in paragraph at lines 252--253
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--260
-
- []
-
-[11 <./img/convNet1.png> <./img/convNet2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 268--270
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 271--272
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 279--281
+Underfull \hbox (badness 10000) in paragraph at lines 260--262
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 291--292
+Underfull \hbox (badness 10000) in paragraph at lines 270--272
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 296--297
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--305
+Underfull \hbox (badness 10000) in paragraph at lines 281--283
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 318--319
+Underfull \hbox (badness 10000) in paragraph at lines 293--294
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--325
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 328--329
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--334
+Underfull \hbox (badness 10000) in paragraph at lines 320--321
 
  []
 
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¢ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¢ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¢ in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 325--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 330--331
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 335--336
+
+ []
+
 [14]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
@@ -688,86 +670,89 @@ Missing character: There is no ¢ in font cmr10!
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ¢ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ¢ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ¢ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ¢ in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 355--356
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
 
  []
 
-<img/scrum.png, id=72, 291.0072pt x 103.1052pt>
+[15] <img/scrum.png, id=75, 291.0072pt x 103.1052pt>
 File: img/scrum.png Graphic file (type png)
  <use img/scrum.png>
-Package pdftex.def Info: img/scrum.png used on input line 358.
+Package pdftex.def Info: img/scrum.png used on input line 360.
 (pdftex.def)             Requested size: 291.00648pt x 103.10493pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 364--365
-
- []
-
-[15 <./img/scrum.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 372--373
+Underfull \hbox (badness 10000) in paragraph at lines 366--367
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 375--376
+Underfull \hbox (badness 10000) in paragraph at lines 374--375
 
  []
 
-<img/newSchedule.png, id=77, 622.57594pt x 274.77657pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 377--378
+
+ []
+
+[16 <./img/scrum.png>] <img/newSchedule.png, id=80, 622.57594pt x 274.77657pt>
 File: img/newSchedule.png Graphic file (type png)
 
 <use img/newSchedule.png>
-Package pdftex.def Info: img/newSchedule.png used on input line 397.
+Package pdftex.def Info: img/newSchedule.png used on input line 399.
 (pdftex.def)             Requested size: 373.54845pt x 164.8672pt.
 
-Overfull \hbox (28.54845pt too wide) in paragraph at lines 397--399
+Overfull \hbox (28.54845pt too wide) in paragraph at lines 399--401
  [][] 
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 407--407
+Underfull \hbox (badness 10000) in paragraph at lines 409--409
 []\OT1/cmr/m/n/10 Start of Christ-mas
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 412--413
-
- []
-
-[16]
 Underfull \hbox (badness 10000) in paragraph at lines 414--415
 
  []
 
-<img/finalSchedule.png, id=81, 622.57594pt x 274.77657pt>
+[17 <./img/newSchedule.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 416--417
+
+ []
+
+<img/finalSchedule.png, id=84, 622.57594pt x 274.77657pt>
 File: img/finalSchedule.png Graphic file (type png)
 
 <use img/finalSchedule.png>
-Package pdftex.def Info: img/finalSchedule.png used on input line 417.
+Package pdftex.def Info: img/finalSchedule.png used on input line 419.
 (pdftex.def)             Requested size: 373.54845pt x 164.8672pt.
 
-Overfull \hbox (28.54845pt too wide) in paragraph at lines 417--419
+Overfull \hbox (28.54845pt too wide) in paragraph at lines 419--421
  [][] 
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 430--430
+Underfull \hbox (badness 10000) in paragraph at lines 432--432
 []\OT1/cmr/m/n/10 Scale back-/ad-just project
  []
 
 
-Underfull \hbox (badness 2205) in paragraph at lines 436--437
+Underfull \hbox (badness 2205) in paragraph at lines 438--439
 []\OT1/cmr/m/n/10 Keep suf-fi-cient back-ups of
  []
 
 
-Overfull \hbox (11.1927pt too wide) in paragraph at lines 428--438
+Overfull \hbox (11.1927pt too wide) in paragraph at lines 430--440
 [][] 
  []
 
@@ -775,47 +760,42 @@ Overfull \hbox (11.1927pt too wide) in paragraph at lines 428--438
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 442--443
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 444--445
 
  []
 
-[17 <./img/newSchedule.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 446--447
 
  []
 
 [18 <./img/finalSchedule.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 467--468
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 469--470
+Underfull \hbox (badness 10000) in paragraph at lines 448--449
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 476--477
+Underfull \hbox (badness 10000) in paragraph at lines 469--470
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 485--486
+Underfull \hbox (badness 10000) in paragraph at lines 471--472
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 492--493
+Underfull \hbox (badness 10000) in paragraph at lines 478--479
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 502--503
+Underfull \hbox (badness 10000) in paragraph at lines 487--488
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--495
 
  []
 
@@ -824,105 +804,117 @@ Underfull \hbox (badness 10000) in paragraph at lines 504--505
 
  []
 
-
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 506--507
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 514--515
+Underfull \hbox (badness 10000) in paragraph at lines 508--509
 
  []
 
-[21]
+
 Underfull \hbox (badness 10000) in paragraph at lines 516--517
 
  []
 
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 557--558
+
+Underfull \hbox (badness 10000) in paragraph at lines 518--519
 
  []
 
-<img/structure.png, id=102, 417.05812pt x 295.1025pt>
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 559--560
+
+ []
+
+<img/structure.png, id=101, 417.05812pt x 295.1025pt>
 File: img/structure.png Graphic file (type png)
  <use img/structure.png>
-Package pdftex.def Info: img/structure.png used on input line 560.
+Package pdftex.def Info: img/structure.png used on input line 562.
 (pdftex.def)             Requested size: 291.93869pt x 206.57033pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--567
-
- []
-
-<img/structure2.png, id=103, 1269.74374pt x 719.68875pt>
-File: img/structure2.png Graphic file (type png)
-
-<use img/structure2.png>
-Package pdftex.def Info: img/structure2.png used on input line 569.
-(pdftex.def)             Requested size: 342.83539pt x 194.31856pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 575--576
+Underfull \hbox (badness 10000) in paragraph at lines 568--569
 
  []
 
-[23 <./img/structure.png>]
+<img/structure2.png, id=102, 1269.74374pt x 719.68875pt>
+File: img/structure2.png Graphic file (type png)
+
+<use img/structure2.png>
+Package pdftex.def Info: img/structure2.png used on input line 571.
+(pdftex.def)             Requested size: 342.83539pt x 194.31856pt.
+ [23]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 577--578
 
  []
 
-<img/screenshot.png, id=108, 323.70938pt x 243.15843pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 579--580
+
+ []
+
+<img/screenshot.png, id=107, 323.70938pt x 243.15843pt>
 File: img/screenshot.png Graphic file (type png)
 
 <use img/screenshot.png>
-Package pdftex.def Info: img/screenshot.png used on input line 580.
+Package pdftex.def Info: img/screenshot.png used on input line 582.
 (pdftex.def)             Requested size: 161.8543pt x 121.57892pt.
- <img/real.jpg, id=109, 2457.18pt x 3276.24pt>
+ <img/real.jpg, id=108, 2457.18pt x 3276.24pt>
 File: img/real.jpg Graphic file (type jpg)
 
 <use img/real.jpg>
-Package pdftex.def Info: img/real.jpg used on input line 581.
+Package pdftex.def Info: img/real.jpg used on input line 583.
 (pdftex.def)             Requested size: 147.42444pt x 196.56592pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/linearity.png, id=110, 269.50688pt x 174.6525pt>
+[24 <./img/structure.png>]
+<img/linearity.png, id=113, 269.50688pt x 174.6525pt>
 File: img/linearity.png Graphic file (type png)
  <use img/linearity.png>
-Package pdftex.def Info: img/linearity.png used on input line 614.
+Package pdftex.def Info: img/linearity.png used on input line 616.
 (pdftex.def)             Requested size: 215.60579pt x 139.72218pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[24 <./img/structure2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 637--638
+
+Underfull \hbox (badness 10000) in paragraph at lines 639--640
 
  []
 
-[25 <./img/screenshot.png> <./img/real.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 648--649
+[25 <./img/structure2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 650--651
 
  []
 
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 654.
+[26 <./img/screenshot.png> <./img/real.jpg>]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 656.
+
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 654.
- [26 <./img/linearity.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 685--686
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 656.
+ [27 <./img/linearity.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 687--688
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 693--694
+Underfull \hbox (badness 10000) in paragraph at lines 695--696
 
  []
 
@@ -933,12 +925,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 738--739
-
- []
-
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 747--748
+Underfull \hbox (badness 10000) in paragraph at lines 740--741
 
  []
 
@@ -947,12 +934,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 749--750
 
  []
 
-[28]
+
 Underfull \hbox (badness 10000) in paragraph at lines 751--752
 
  []
 
-
+[28]
 Underfull \hbox (badness 10000) in paragraph at lines 753--754
 
  []
@@ -962,20 +949,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 755--756
 
  []
 
-
+[29]
 Underfull \hbox (badness 10000) in paragraph at lines 757--758
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 778--779
+Underfull \hbox (badness 10000) in paragraph at lines 759--760
 
  []
 
-[29]
-Underfull \hbox (badness 10000) in paragraph at lines 807--808
+
+Underfull \hbox (badness 10000) in paragraph at lines 780--781
 
  []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 809--810
@@ -983,16 +973,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 809--810
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 811--812
 
-[30]
-Overfull \hbox (45.00397pt too wide) in paragraph at lines 841--842
-[][][][][][][][][][][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 850--851
-
+[30] [31]
+Overfull \hbox (45.00397pt too wide) in paragraph at lines 843--844
+[][][][][][][][][][][] 
  []
 
 
@@ -1010,7 +997,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 856--857
 
  []
 
-[31]
+
 Underfull \hbox (badness 10000) in paragraph at lines 858--859
 
  []
@@ -1020,8 +1007,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 860--861
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 866--867
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 862--863
 
  []
 
@@ -1040,12 +1027,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 872--873
 
  []
 
-[32]
-Underfull \hbox (badness 10000) in paragraph at lines 887--888
+
+Underfull \hbox (badness 10000) in paragraph at lines 874--875
 
  []
 
-
+[33]
 Underfull \hbox (badness 10000) in paragraph at lines 889--890
 
  []
@@ -1055,24 +1042,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 891--892
 
  []
 
-[33]
-Overfull \hbox (21.00372pt too wide) in paragraph at lines 901--902
+
+Underfull \hbox (badness 10000) in paragraph at lines 893--894
+
+ []
+
+
+Overfull \hbox (21.00372pt too wide) in paragraph at lines 903--904
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (3.00354pt too wide) in paragraph at lines 903--904
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 905--906
 [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (27.00378pt too wide) in paragraph at lines 905--906
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 907--908
 [][][][][][][][][][][][][][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 910--911
-
  []
 
 
@@ -1080,13 +1067,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 912--913
 
  []
 
-
+[34]
 Underfull \hbox (badness 10000) in paragraph at lines 914--915
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 922--923
+Underfull \hbox (badness 10000) in paragraph at lines 916--917
 
  []
 
@@ -1095,144 +1082,149 @@ Underfull \hbox (badness 10000) in paragraph at lines 924--925
 
  []
 
-[34]
-Underfull \hbox (badness 10000) in paragraph at lines 931--932
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 941--942
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 948--949
+Underfull \hbox (badness 10000) in paragraph at lines 926--927
 
  []
 
 [35]
+Underfull \hbox (badness 10000) in paragraph at lines 933--934
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 943--944
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 950--951
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 957--958
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 952--953
 
  []
 
-[36]
-Overfull \hbox (0.17021pt too wide) in paragraph at lines 966--966
+
+Underfull \hbox (badness 10000) in paragraph at lines 959--960
+
+ []
+
+[37]
+Overfull \hbox (0.17021pt too wide) in paragraph at lines 968--968
 []\OT1/cmr/m/n/10 Andrew Gib-ian-sky. \OT1/cmr/m/it/10 Con-vo-lu-tional Neu-ral
  Net-works\OT1/cmr/m/n/10 . \OT1/cmr/m/sc/10 url\OT1/cmr/m/n/10 : $\OT1/cmtt/m/
 n/10 http : / / andrew .$
  []
 
-
-Overfull \hbox (0.51753pt too wide) in paragraph at lines 966--966
+[38]
+Overfull \hbox (0.51753pt too wide) in paragraph at lines 968--968
 []\OT1/cmr/m/n/10 Ian Som-merville. \OT1/cmr/m/it/10 Soft-ware En-gi-neer-ing\O
 T1/cmr/m/n/10 . 9th ed. Har-low, Eng-land: Addison-
  []
 
-[37] [38]
-Underfull \hbox (badness 2205) in paragraph at lines 985--985
+[39]
+Underfull \hbox (badness 2205) in paragraph at lines 987--987
 []\OT1/cmr/m/n/7 target net-work up-date
  []
 
 
-Underfull \hbox (badness 8113) in paragraph at lines 997--997
+Underfull \hbox (badness 8113) in paragraph at lines 999--999
 []\OT1/cmr/m/n/7 squared gra-di-ent mo-
  []
 
 
-Overfull \hbox (31.88322pt too wide) in paragraph at lines 977--1011
+Overfull \hbox (31.88322pt too wide) in paragraph at lines 979--1013
  [][] 
  []
 
-[39] <img/dmResults.png, id=168, 408.02437pt x 515.67656pt>
+[40] <img/dmResults.png, id=171, 408.02437pt x 515.67656pt>
 File: img/dmResults.png Graphic file (type png)
 
 <use img/dmResults.png>
-Package pdftex.def Info: img/dmResults.png used on input line 1016.
+Package pdftex.def Info: img/dmResults.png used on input line 1018.
 (pdftex.def)             Requested size: 285.61511pt x 360.97113pt.
- [40 <./img/dmResults.png>]
-<img/typesOfLayers.png, id=172, 365.11406pt x 161.10187pt>
+ [41 <./img/dmResults.png>]
+<img/typesOfLayers.png, id=175, 365.11406pt x 161.10187pt>
 File: img/typesOfLayers.png Graphic file (type png)
 
 <use img/typesOfLayers.png>
-Package pdftex.def Info: img/typesOfLayers.png used on input line 1025.
+Package pdftex.def Info: img/typesOfLayers.png used on input line 1027.
 (pdftex.def)             Requested size: 365.11316pt x 161.10147pt.
 
-Overfull \hbox (20.11316pt too wide) in paragraph at lines 1025--1026
+Overfull \hbox (20.11316pt too wide) in paragraph at lines 1027--1028
  [][] 
  []
 
-<img/typesOfNeuron.png, id=173, 112.16907pt x 161.10187pt>
+<img/typesOfNeuron.png, id=176, 112.16907pt x 161.10187pt>
 File: img/typesOfNeuron.png Graphic file (type png)
 
 <use img/typesOfNeuron.png>
-Package pdftex.def Info: img/typesOfNeuron.png used on input line 1034.
+Package pdftex.def Info: img/typesOfNeuron.png used on input line 1036.
 (pdftex.def)             Requested size: 112.16878pt x 161.10147pt.
- [41 <./img/typesOfLayers.png> <./img/typesOfNeuron.png>] <img/classNN.png, id=
-177, 310.91156pt x 490.83376pt>
+ [42 <./img/typesOfLayers.png> <./img/typesOfNeuron.png>] <img/classNN.png, id=
+180, 310.91156pt x 490.83376pt>
 File: img/classNN.png Graphic file (type png)
 
 <use img/classNN.png>
-Package pdftex.def Info: img/classNN.png used on input line 1043.
+Package pdftex.def Info: img/classNN.png used on input line 1045.
 (pdftex.def)             Requested size: 248.72957pt x 392.66753pt.
- <img/classNeuron.png, id=178, 202.50656pt x 282.30469pt>
+ <img/classNeuron.png, id=181, 202.50656pt x 282.30469pt>
 File: img/classNeuron.png Graphic file (type png)
 
 <use img/classNeuron.png>
-Package pdftex.def Info: img/classNeuron.png used on input line 1049.
+Package pdftex.def Info: img/classNeuron.png used on input line 1051.
 (pdftex.def)             Requested size: 202.50604pt x 282.30399pt.
 
-<img/classConvNeuron.png, id=179, 166.37157pt x 194.22563pt>
+<img/classConvNeuron.png, id=182, 166.37157pt x 194.22563pt>
 File: img/classConvNeuron.png Graphic file (type png)
 
 <use img/classConvNeuron.png>
-Package pdftex.def Info: img/classConvNeuron.png used on input line 1050.
+Package pdftex.def Info: img/classConvNeuron.png used on input line 1052.
 (pdftex.def)             Requested size: 166.37114pt x 194.22514pt.
 
-Overfull \hbox (26.0994pt too wide) in paragraph at lines 1049--1051
+Overfull \hbox (26.0994pt too wide) in paragraph at lines 1051--1053
 [][] [] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/classLayer.png, id=180, 220.57407pt x 240.14719pt>
+<img/classLayer.png, id=183, 220.57407pt x 240.14719pt>
 File: img/classLayer.png Graphic file (type png)
 
 <use img/classLayer.png>
-Package pdftex.def Info: img/classLayer.png used on input line 1056.
+Package pdftex.def Info: img/classLayer.png used on input line 1058.
 (pdftex.def)             Requested size: 198.51482pt x 216.13045pt.
 
-<img/classFCLayer.png, id=181, 220.57407pt x 319.1925pt>
+<img/classFCLayer.png, id=184, 220.57407pt x 319.1925pt>
 File: img/classFCLayer.png Graphic file (type png)
 
 <use img/classFCLayer.png>
-Package pdftex.def Info: img/classFCLayer.png used on input line 1057.
+Package pdftex.def Info: img/classFCLayer.png used on input line 1059.
 (pdftex.def)             Requested size: 198.51482pt x 287.27058pt.
 
-Overfull \hbox (54.25185pt too wide) in paragraph at lines 1056--1058
+Overfull \hbox (54.25185pt too wide) in paragraph at lines 1058--1060
 [][] [] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/classConvLayer.png, id=182, 292.84406pt x 624.83438pt>
+<img/classConvLayer.png, id=185, 292.84406pt x 624.83438pt>
 File: img/classConvLayer.png Graphic file (type png)
 
 <use img/classConvLayer.png>
-Package pdftex.def Info: img/classConvLayer.png used on input line 1064.
+Package pdftex.def Info: img/classConvLayer.png used on input line 1066.
 (pdftex.def)             Requested size: 234.27556pt x 499.86818pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[42 <./img/classNN.png>] [43 <./img/classNeuron.png> <./img/classConvNeuron.png
->] [44 <./img/classLayer.png> <./img/classFCLayer.png>] [45 <./img/classConvLay
+[43 <./img/classNN.png>] [44 <./img/classNeuron.png> <./img/classConvNeuron.png
+>] [45 <./img/classLayer.png> <./img/classFCLayer.png>] [46 <./img/classConvLay
 er.png>] (Dissertation.aux)
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1240,13 +1232,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package logreq Info: Writing requests to 'Dissertation.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 9269 strings out of 493673
- 150875 string characters out of 3141506
- 582648 words of memory out of 3000000
- 12510 multiletter control sequences out of 15000+200000
+ 9270 strings out of 493673
+ 150895 string characters out of 3141506
+ 578654 words of memory out of 3000000
+ 12511 multiletter control sequences out of 15000+200000
  8249 words of font info for 30 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 44i,12n,48p,1483b,1413s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,12n,48p,1535b,1413s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/P
@@ -1266,9 +1258,9 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2
 nts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Dissertation.pdf (45 pages, 2742252 bytes).
+Output written on Dissertation.pdf (46 pages, 2753919 bytes).
 PDF statistics:
- 257 PDF objects out of 1000 (max. 8388607)
+ 260 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
