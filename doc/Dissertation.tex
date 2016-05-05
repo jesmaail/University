@@ -593,12 +593,21 @@ Signed:
 		\begin{equation}\label{eq:activ1}
 			f(x) =
 			\begin{cases}
-   				x,& \text{if } x > 1\\
-    			0,& \text{if } x \leq 0
+   				x,& \text{if } x > 0\\
+    			0,& \text{if } otherwise
 			\end{cases}
 		\end{equation}	
 		
-		The non-linear rectifier function can also then be visualised in figure \ref{fig:nlrf}.		
+		For the purposes of backpropagation, we need the derivative of this function, which is the following:
+		\begin{equation}\label{eq:activ1}
+			f'(x) =
+			\begin{cases}
+   				1,& \text{if } x > 0\\
+    			0,& \text{if } otherwise
+			\end{cases}
+		\end{equation}
+		
+		The non-linear rectifier function can also then be visualised in figure \ref{fig:nlrf}.	
 		
 		\begin{figure}[h]
     		\centering
@@ -925,9 +934,10 @@ def init_network():
 	
 \section{Conclusion}
 	\subsection{Reflection of results*}
-		%Implementation suffered as a result of learning as I was going.
-		%For example, the network was first built initialising the values randomly every time it was called/generated, when very late on in the timeline I corrected this, it caused horrible issues at a stage where there was not enough time to fix them.
-		%With the knowledge from using the python library, I now know that the network should first have it's structure intialised only once, and then have values propagated through forwards and backwards when needed, instead of constantly re-generating the network.
+		The main deliverable of this dissertation, the C++ neural network, regrettably did not come to fruition. While prior to beginning the implementation of the network I made every effort to thoroughly learn convolutional neural networks, I still found myself needed to brush up on vital information throughout. For example the network was designed and implemented to be generated every time it was called, and initially had the weights initialised on this generation process, purely for testing. When I began work on implementing backpropagation, I attempted to change the nature of the weights in the network by externalising them, and this caused a chain reaction of errors throughout the network. This happened very late in the project timeline, so I did not have enough available time to fix it, let alone fix it and finish the backpropagation implementation.\\
+		
+		The network being designed to generate and then propagate when called meant that the network was slow to present it's decision, which is not ideal for the application to video games. Since working with the TensorFlow library, and implementing a convolutional neural network, I now know it would be more beneficial to have the network initialised once. Then once the network has been initialised, have available methods to propagate data forward to get a decision, and propagate data backward to train the weights of the network.
+	
 	\medskip
 
 	\subsection{Suggestions for further work*}

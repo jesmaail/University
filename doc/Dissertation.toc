@@ -48,9 +48,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.4}Neural network}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.5}Learning}{24}
+\contentsline {subsection}{\numberline {5.5}Learning}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Implementation sprints}{25}
+\contentsline {section}{\numberline {6}Implementation sprints}{26}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.1}Methods to manipulate I/O}{26}
 \defcounter {refsection}{0}\relax 
