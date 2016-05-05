@@ -162,7 +162,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
-    <ClCompile Include="dumbAgent.cpp" />
     <ClCompile Include="ale_interface.cpp" />
     <ClCompile Include="common\ColourPalette.cpp" />
     <ClCompile Include="common\Constants.cpp" />
@@ -247,11 +246,9 @@
     <ClCompile Include="games\supported\SirLancelot.cpp" />
     <ClCompile Include="games\supported\SpaceInvaders.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="network\Connection.cpp" />
     <ClCompile Include="network\Layers.cpp" />
     <ClCompile Include="network\NeuralNetwork.cpp" />
     <ClCompile Include="network\Neurons.cpp" />
-    <ClCompile Include="network\Preprocess.cpp" />
     <ClCompile Include="os_dependent\FSNodeWin32.cxx" />
     <ClCompile Include="os_dependent\OSystemWin32.cxx" />
     <ClCompile Include="os_dependent\SettingsWin32.cxx" />
@@ -486,11 +483,9 @@
     <ClInclude Include="games\supported\WizardOfWor.hpp" />
     <ClInclude Include="games\supported\YarsRevenge.hpp" />
     <ClInclude Include="games\supported\Zaxxon.hpp" />
-    <ClInclude Include="network\Connection.h" />
     <ClInclude Include="network\Layers.h" />
     <ClInclude Include="network\NeuralNetwork.h" />
     <ClInclude Include="network\Neuron.h" />
-    <ClInclude Include="network\Preprocessor.h" />
     <ClInclude Include="network\ReplayMem.h" />
     <ClInclude Include="os_dependent\OSystemWin32.hxx" />
     <ClInclude Include="os_dependent\SettingsWin32.hxx" />

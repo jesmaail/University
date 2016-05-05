@@ -5,6 +5,7 @@
 #include "network/ReplayMem.h"
 #include <stdlib.h>
 #include <ale_interface.hpp>
+
 #ifdef __USE_SDL
 	#include <SDL.h>
 #endif

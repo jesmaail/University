@@ -282,16 +282,7 @@
     <ClCompile Include="network\Neurons.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="network\Preprocess.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="network\Connection.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="network\Layers.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="dumbAgent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Agent.cpp">
@@ -994,13 +985,7 @@
     <ClInclude Include="network\Neuron.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="network\Preprocessor.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="network\ReplayMem.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="network\Connection.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Agent.h">
