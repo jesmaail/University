@@ -2,18 +2,25 @@ import tensorflow as tf
 import numpy as np
 import scipy.ndimage
 import sys
+import random
 import math
 from random import randrange
 from ale_python_interface import ALEInterface
 from collections import deque
 
 USE_SDL = True
-DISP_SCREEN = False
+DISP_SCREEN = True
 PLAY_SOUND = False
 
 EPOCH_COUNT = 1
 EPISODE_COUNT = 1
-EPSILON = 90
+
+START_EPSILON = 99
+FINAL_EPSILON = 1
+
+MINIBATCH_SIZE = 16
+
+INITIAL_RUN = 17
 
 IMAGE_COUNT = 2
 INPUT_X = 160
@@ -112,47 +119,87 @@ action_choice = tf.reduce_sum(tf.mul(net_out, ph_out), reduction_indices = 1)
 cost = tf.reduce_mean(tf.square(ph_target - action_choice))
 optimizer = tf.train.RMSPropOptimizer(0.99).minimize(cost)
 
-#init = tf.initialise_all_variables()
+sess.run(tf.initialize_all_variables())
+
 
 
 global action
 action = 0
+state = []
+next_state = []
+count =0
+epsilon = START_EPSILON
+
 screen = get_screen()
 screen = np.reshape(screen, (84, 84))
-#screen = np.reshape(screen, (1,7 84, 84, 1))
+
 ale.act(legal_actions[0])
 screen2 = get_screen()
 screen2 = np.reshape(screen2, (84, 84))
-#screen2 = np.reshape(screen2, (1, 84, 84))
 
-# state = [screen, screeneen2]
-state = np.stack((screen, screen2), axis=2)
-state_t = []
-state_t.append(state)
+screens = np.stack((screen, screen2), axis=2)
+
+next_state.append(screens)
+
 
 
 
 for i in range(EPOCH_COUNT):
 
-	#input_img = tf.convert_to_tensor(screens)
+	state = next_state
 
-	net_result = net_out.eval(feed_dict={net_in : state_t})
+	net_result = net_out.eval(feed_dict={net_in : state})
 
 	while ale.game_over() == False:
-		if randrange(100)+1 < EPSILON:
+		if randrange(100)+1 < epsilon:
 			action = perform_random_action()
-			#print "r:", action
+			print "r:", action
 		else:
 			#net_out = run_network(screen, weights)
-			#action = np.argmax(net_out)
+			action = np.argmax(net_result)
 			print "n:", action
+
+		if epsilon > FINAL_EPSILON:
+			epsilon -= 0.01
 
 		reward = ale.act(legal_actions[action])
 
-		next_screen = get_screen()
+		screen = get_screen()
+		screen = np.reshape(screen, (84, 84))
+
+		ale.act(legal_actions[0])
+		screen2 = get_screen()
+		screen2 = np.reshape(screen2, (84, 84))
+
+		screens = np.stack((screen, screen2), axis=2)
+
+		next_state.append(screens)
+
 		terminal = ale.game_over()
 
 		if ale.game_over():
 			print "game over"
 
-		replay_mem.append((screen, action, reward, next_screen, terminal))
+		replay_mem.append((state, action, reward, next_state, terminal))
+
+		count += 1
+
+		if count > INITIAL_RUN:
+			minibatch = random.sample(replay_mem, 16)
+
+			state_train = [d[0] for d in minibatch]
+			action_train = [d[1] for d in minibatch]
+			reward_train = [d[2] for d in minibatch]
+			next_train = [d[3] for d in minibatch]
+
+			y_batch_val = []
+
+			batch_run = net_out.eval(feed_dict={net_in : next_train})
+
+			for i in range(0, len(minibatch)):
+				terminal = minibatch[i][4]
+
+				if terminal:
+					y_batch_val.append(reward_train[i])
+				else:
+					y_batch_val.append(reward_train[i] + 0.99 ++ np.max(batch_run[i]))
