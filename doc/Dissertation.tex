@@ -917,23 +917,31 @@ def init_network():
 		
 	\medskip
 	
-	\subsection{Artificial Intelligence Agent*}
+	\subsection{Artificial Intelligence Agent}
 		%when plugging the network on, issue with images/weights input to network.
-		The intelligence agent for this project has been implemented in both C++, for use with the neural network I created, and Python, for use with a machine learning library neural network.The intelligence agent is the implementation of the process shown in algorithm \ref{algo:agentAlgo}.\\
+		The intelligence agent for this project has been implemented in both C++, for use with the neural network I created, and Python, for use with a machine learning library neural network. The intelligence agent is the implementation of the process shown in algorithm \ref{algo:agentAlgo}.\\
 		
-		For the C++ implementation of the agent, it is possible to run the agent with placeholder values for input images to the network, however there are issues present when inputting the preprocessed images received from the arcade learning environment. The process of performing actions and receiving output works as intended, however as there existed errors in the neural network itself, the agent wasn't completed. This is evident in the exploration-exploitation value never decreasing to allow more learning for the network. All the agent is capable of doing is performing random actions in the game environment.\\
+		For the C++ implementation of the agent, it is possible to run the agent with preprocessed game screens for input images to the network, however there are issues present in the feedforward and generation of the network after attempting to alter the implementation to accommodate backpropagation. The process of performing actions and receiving output works as intended, however as there existed errors in the neural network itself, the agent wasn't completed. This is evident in the exploration-exploitation value never decreasing to allow more learning for the network. All the agent is capable of doing is performing random actions in the game environment.\\
 		
-		The Python implementation of the agent has similar functionality to the C++ implementation, and also then suffers from a similar problem. The agent is able to perform the random actions, and build the neural network, however the preprocessed images from the arcade learning environment have issues being input into the neural network. The input for the neural network is expecting a \textbf{get the error details on tensor size from laptop}.
+		The Python implementation of the agent has similar functionality to the C++ implementation, however it is able to forward propagate through the network and make decisions based on the preprocessed screen inputs. It can't yet however learn, which is purely because of time constraints on the project and this implementation being used late in the project timeline as a `last resort'. The Python agent works similarly to the C++ agent, in that it can perform random actions in the game, with the exception that some of these random actions are now coming from the network forward propagating with the randomly initialised weights. If the learning process were to be implemented to this network, it could then function as intended.
 	\medskip	
 	
 	
 	\subsection{Training the network*}
-		\textit{Although this did not occur, existing implementations state that this process can take 3-5 days (make sure to get these as references). Explain why this was problematic late on in the project.}
-
+		Sadly, due to implementation issues with the C++ implementation, and time constraints with the Python implementation, no training was able to be performed on the neural network(s) against video games. If either of the networks were to have been able to have been trained against neural network, the process could have taken several days.\\
+		
+		Existing TensorFlow implementations of Deep Q-networks applied to this problem using the Arcade learning environment state that the networks require either 
+		
+		%Although this did not occur, existing implementations state that this process can take 3-5 days (make sure to get these as references). Explain why this was problematic late on in the project.
+	
+	\medskip
+	
+	\subsection{Testing the network*}
+	%using outputs for the gradient descent to ensure it was implemented properly, no available toy box problems expect for MNIST? which is implemented differently to DQN (CNN but no DW
 	\bigskip
 	
 \section{Conclusion}
-	\subsection{Reflection of results*}
+	\subsection{Reflection on results*}
 		The main deliverable of this dissertation, the C++ neural network, regrettably did not come to fruition. While prior to beginning the implementation of the network I made every effort to thoroughly learn convolutional neural networks, I still found myself needed to brush up on vital information throughout. For example the network was designed and implemented to be generated every time it was called, and initially had the weights initialised on this generation process, purely for testing. When I began work on implementing backpropagation, I attempted to change the nature of the weights in the network by externalising them, and this caused a chain reaction of errors throughout the network. This happened very late in the project timeline, so I did not have enough available time to fix it, let alone fix it and finish the backpropagation implementation.\\
 		
 		The network being designed to generate and then propagate when called meant that the network was slow to present it's decision, which is not ideal for the application to video games. Since working with the TensorFlow library, and implementing a convolutional neural network, I now know it would be more beneficial to have the network initialised once. Then once the network has been initialised, have available methods to propagate data forward to get a decision, and propagate data backward to train the weights of the network.
@@ -941,6 +949,7 @@ def init_network():
 	\medskip
 
 	\subsection{Suggestions for further work*}
+		As was attempting with the, albeit late, attempt at the use of an existing machine learning library, I feel the best way to get working implementation for this problem would be the use of 
 
 \newpage
 \printbibliography[

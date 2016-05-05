@@ -66,26 +66,28 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.7}TensorFlow}{33}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.8}Artificial Intelligence Agent*}{34}
+\contentsline {subsection}{\numberline {6.8}Artificial Intelligence Agent}{34}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.9}Training the network*}{35}
 \defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.10}Testing the network*}{35}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7}Conclusion}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1}Reflection of results*}{35}
+\contentsline {subsection}{\numberline {7.1}Reflection on results*}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2}Suggestions for further work*}{35}
+\contentsline {subsection}{\numberline {7.2}Suggestions for further work*}{36}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{36}
+\contentsline {section}{References}{37}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A}Appendix: Facts and figures}{38}
+\contentsline {section}{\numberline {A}Appendix: Facts and figures}{39}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.1}DeepMind 2015 network hyperparameters \cite {humanlevel}}{38}
+\contentsline {subsection}{\numberline {A.1}DeepMind 2015 network hyperparameters \cite {humanlevel}}{39}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2}DeepMind 2015 Results}{39}
+\contentsline {subsection}{\numberline {A.2}DeepMind 2015 Results}{40}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B}Appendix: Class diagrams}{40}
+\contentsline {section}{\numberline {B}Appendix: Class diagrams}{41}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1}Class types}{40}
+\contentsline {subsection}{\numberline {B.1}Class types}{41}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2}Class interfaces}{41}
+\contentsline {subsection}{\numberline {B.2}Class interfaces}{42}
