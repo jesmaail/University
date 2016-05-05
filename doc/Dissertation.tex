@@ -118,6 +118,8 @@ Signed:
 	Neural Networks are a model within the field of Machine learning which is currently a major buzzword in the Computer Science Discipline, owing a lot to the recent growth of big data. It has also gained increasing public presence through efforts such as IBM's Watson, which won against two former champions in Jeopardy in 2011, and Google's DeepDream program which displayed how convolutional neural networks interpret images.\\
 	Machine learning is also a major player in our day to day lives with Apple, Microsoft, and Google all using it for their smartphone digital assistants, Google using it for their search engine, and social media such as Facebook using it to cater it's service to each individual user. This will also extend in the coming future with autonomous vehicles such as Google's self-driving car project and motor companies such as Tesla starting to incorporate self-driving systems into their cars.\\
 	
+	Very recently, Google DeepMind created a program known as AlphaGo which was able to play Go, a board game that originated more than 2500 years ago and has proven difficult for the application of computer players. The AlphaGo program did not just play Go however, it managed to seize a victory over a human champion play, winning four out of the five games played.\\
+	
 	This project aims to apply machine learning, in particular neural networks, to the task of learning to play video games. Video games have been an almost constantly growing phenomenon since their inception in the 1970's with Pong, recently entering the mainstream with the growth of the eSports industry which hosts tournaments with prize pools in the region of a million US dollars. The application of machine learning to video games has the potential to enable a greater interest in machine learning, as it's current implementations are very pervasive.\\
 	
 	 This dissertation will provide the reader with a background to neural networks, reinforcement learning and relating work to these and their application to video games, as well as how this project has been organised, what technologies are utilised, how the task has been approached and implemented, as well as what results are produced.
@@ -943,6 +945,13 @@ def init_network():
 		Much like with the training of the network, this was not able to be performed. What was planned for the testing of the neural network implementation was to monitor the values being altered by gradient descent to ensure that it was being performed correctly. This would normally be done by plotting the values on a graph.\\
 		
 		What would have been better is to have a testing method to be able to check the functionality of the neural network itself, however in regards to a deep q-network I could not find any methods. With a convolutional neural network a problem such as the MNIST handwritten digits database could have been used, however as the convolutional neural network being used was as a deep q-network, this would require substantial changes in the way that the network would have been trained.
+		
+	\medskip
+	
+	\subsection{GPU-acceleration}
+		Sadly, another element of this project that could not be completed was the GPU-acceleration of the neural network. This was planned as the final stage of the project, purely to optimise the network and hopefully improve its performance.\\
+		
+		As was seen in the runs of the C++ network even unfinished, the network could have benefited greatly from GPU-acceleration for the generation of the network, and perhaps even in the forward and backward propagation steps. The main place I considered applying GPU-acceleration was to the first fully connected layer, which connected the most amount of neurons with the most amount of connections, regardless of network topology scale downs.
 	\bigskip
 	
 \section{Conclusion}
@@ -958,7 +967,9 @@ def init_network():
 	\subsection{Suggestions for further work}
 		In terms of further work, I feel the C++ implementation could benefit from a fundamental change in the way the network generates, as mentioned in the reflection of results section above. As well as this, implementing a better way to define connections between neurons would enable backpropagation to be better implemented when the theory is better understood.\\
 		
-		Most of all however, I feel that the best course of action for future work would be to use an existing machine learning library such as TensorFlow for the deep q-network. The DeepMind papers, in which I have partially based this dissertation on, did not create their own neural network for their implementation, rather they used an existing library known as \textit{torch}. This I feel is the best approach as when there are existing, open-source, libraries available, it is not worth `reinventing the wheel'.
+		Most of all however, I feel that the best course of action for future work would be to use an existing machine learning library such as TensorFlow for the deep q-network. The DeepMind papers, in which I have partially based this dissertation on, did not create their own neural network for their implementation, rather they used an existing library known as \textit{torch}. This I feel is the best approach as when there are existing, open-source, libraries available, it is not worth `reinventing the wheel'.\\
+		
+		I will be continuing to work on the Python/Tensorflow implementation of the neural network, in hopes to have some presentable results for the Project Demonstration fair.
 
 
 \newpage

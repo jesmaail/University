@@ -10,7 +10,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2}Neural networks}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3}Convolutional neural network}{10}
+\contentsline {subsection}{\numberline {2.3}Convolutional neural network}{11}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4}Backpropagation}{12}
 \defcounter {refsection}{0}\relax 
@@ -18,13 +18,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.6}Q-learning}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Project Management}{15}
+\contentsline {section}{\numberline {3}Project Management}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Software life-cycle}{15}
+\contentsline {subsection}{\numberline {3.1}Software life-cycle}{16}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2}Project timeline}{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}Risks}{18}
+\contentsline {subsection}{\numberline {3.3}Risks}{19}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4}Technologies}{20}
 \defcounter {refsection}{0}\relax 
@@ -32,11 +32,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2}C++}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3}Python}{20}
+\contentsline {subsection}{\numberline {4.3}Python}{21}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.4}The Arcade learning environment}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5}TensorFlow}{21}
+\contentsline {subsection}{\numberline {4.5}TensorFlow}{22}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5}Analysis of problem}{22}
 \defcounter {refsection}{0}\relax 
@@ -46,17 +46,17 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.3}Preprocessor}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4}Neural network}{23}
+\contentsline {subsection}{\numberline {5.4}Neural network}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.5}Learning}{25}
+\contentsline {subsection}{\numberline {5.5}Learning}{26}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Implementation sprints}{26}
+\contentsline {section}{\numberline {6}Implementation sprints}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1}Methods to manipulate I/O}{26}
+\contentsline {subsection}{\numberline {6.1}Methods to manipulate I/O}{27}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.2}Preprocessor}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3}Network generation}{28}
+\contentsline {subsection}{\numberline {6.3}Network generation}{29}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.4}Network feedforward}{32}
 \defcounter {refsection}{0}\relax 
@@ -72,22 +72,24 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.10}Testing the network}{36}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Conclusion}{36}
+\contentsline {subsection}{\numberline {6.11}GPU-acceleration}{37}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1}Reflection of results}{36}
+\contentsline {section}{\numberline {7}Conclusion}{37}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2}Suggestions for further work}{37}
+\contentsline {subsection}{\numberline {7.1}Reflection of results}{37}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{38}
+\contentsline {subsection}{\numberline {7.2}Suggestions for further work}{38}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A}Appendix: Facts and figures}{40}
+\contentsline {section}{References}{39}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.1}DeepMind 2015 network hyperparameters \cite {humanlevel}}{40}
+\contentsline {section}{\numberline {A}Appendix: Facts and figures}{41}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2}DeepMind 2015 Results}{41}
+\contentsline {subsection}{\numberline {A.1}DeepMind 2015 network hyperparameters \cite {humanlevel}}{41}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B}Appendix: Class diagrams}{42}
+\contentsline {subsection}{\numberline {A.2}DeepMind 2015 Results}{42}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1}Class types}{42}
+\contentsline {section}{\numberline {B}Appendix: Class diagrams}{43}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2}Class interfaces}{43}
+\contentsline {subsection}{\numberline {B.1}Class types}{43}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {B.2}Class interfaces}{44}
