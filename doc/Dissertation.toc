@@ -85,3 +85,7 @@
 \contentsline {subsection}{\numberline {A.2}DeepMind 2015 Results}{39}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {B}Appendix: Class diagrams}{40}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {B.1}Class types}{40}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {B.2}Class interfaces}{41}

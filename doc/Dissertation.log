@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  5 MAY 2016 02:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  5 MAY 2016 02:57
 entering extended mode
 **Dissertation.tex
 (Dissertation.tex
@@ -1125,14 +1125,93 @@ File: img/dmResults.png Graphic file (type png)
 <use img/dmResults.png>
 Package pdftex.def Info: img/dmResults.png used on input line 989.
 (pdftex.def)             Requested size: 285.61511pt x 360.97113pt.
- [39 <./img/dmResults.png>] [40] (Dissertation.aux)
+ [39 <./img/dmResults.png>]
+<img/typesOfLayers.png, id=169, 365.11406pt x 161.10187pt>
+File: img/typesOfLayers.png Graphic file (type png)
+
+<use img/typesOfLayers.png>
+Package pdftex.def Info: img/typesOfLayers.png used on input line 998.
+(pdftex.def)             Requested size: 365.11316pt x 161.10147pt.
+
+Overfull \hbox (20.11316pt too wide) in paragraph at lines 998--999
+ [][] 
+ []
+
+<img/typesOfNeuron.png, id=170, 112.16907pt x 161.10187pt>
+File: img/typesOfNeuron.png Graphic file (type png)
+
+<use img/typesOfNeuron.png>
+Package pdftex.def Info: img/typesOfNeuron.png used on input line 1007.
+(pdftex.def)             Requested size: 112.16878pt x 161.10147pt.
+ [40 <./img/typesOfLayers.png> <./img/typesOfNeuron.png>] <img/classNN.png, id=
+174, 310.91156pt x 490.83376pt>
+File: img/classNN.png Graphic file (type png)
+
+<use img/classNN.png>
+Package pdftex.def Info: img/classNN.png used on input line 1016.
+(pdftex.def)             Requested size: 248.72957pt x 392.66753pt.
+ <img/classNeuron.png, id=175, 202.50656pt x 282.30469pt>
+File: img/classNeuron.png Graphic file (type png)
+
+<use img/classNeuron.png>
+Package pdftex.def Info: img/classNeuron.png used on input line 1022.
+(pdftex.def)             Requested size: 202.50604pt x 282.30399pt.
+
+<img/classConvNeuron.png, id=176, 166.37157pt x 194.22563pt>
+File: img/classConvNeuron.png Graphic file (type png)
+
+<use img/classConvNeuron.png>
+Package pdftex.def Info: img/classConvNeuron.png used on input line 1023.
+(pdftex.def)             Requested size: 166.37114pt x 194.22514pt.
+
+Overfull \hbox (26.0994pt too wide) in paragraph at lines 1022--1024
+[][] [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<img/classLayer.png, id=177, 220.57407pt x 240.14719pt>
+File: img/classLayer.png Graphic file (type png)
+
+<use img/classLayer.png>
+Package pdftex.def Info: img/classLayer.png used on input line 1029.
+(pdftex.def)             Requested size: 198.51482pt x 216.13045pt.
+
+<img/classFCLayer.png, id=178, 220.57407pt x 319.1925pt>
+File: img/classFCLayer.png Graphic file (type png)
+
+<use img/classFCLayer.png>
+Package pdftex.def Info: img/classFCLayer.png used on input line 1030.
+(pdftex.def)             Requested size: 198.51482pt x 287.27058pt.
+
+Overfull \hbox (54.25185pt too wide) in paragraph at lines 1029--1031
+[][] [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<img/classConvLayer.png, id=179, 292.84406pt x 624.83438pt>
+File: img/classConvLayer.png Graphic file (type png)
+
+<use img/classConvLayer.png>
+Package pdftex.def Info: img/classConvLayer.png used on input line 1037.
+(pdftex.def)             Requested size: 234.27556pt x 499.86818pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[41 <./img/classNN.png>] [42 <./img/classNeuron.png> <./img/classConvNeuron.png
+>] [43 <./img/classLayer.png> <./img/classFCLayer.png>] [44 <./img/classConvLay
+er.png>] (Dissertation.aux)
 Package logreq Info: Writing requests to 'Dissertation.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 9223 strings out of 493673
- 149886 string characters out of 3141506
- 580549 words of memory out of 3000000
- 12472 multiletter control sequences out of 15000+200000
+ 9269 strings out of 493673
+ 150875 string characters out of 3141506
+ 580609 words of memory out of 3000000
+ 12510 multiletter control sequences out of 15000+200000
  8249 words of font info for 30 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  44i,12n,48p,1483b,1413s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1155,9 +1234,9 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2
 nts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Dissertation.pdf (40 pages, 2662291 bytes).
+Output written on Dissertation.pdf (44 pages, 2740238 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
+ 254 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
