@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  5 MAY 2016 17:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.30)  5 MAY 2016 18:09
 entering extended mode
 **Dissertation.tex
 (Dissertation.tex
@@ -1101,35 +1101,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 931--932
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 945--946
+Underfull \hbox (badness 10000) in paragraph at lines 941--942
 
  []
 
-[35] [36]
-Overfull \hbox (0.17021pt too wide) in paragraph at lines 958--958
+
+Underfull \hbox (badness 10000) in paragraph at lines 948--949
+
+ []
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 950--951
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 957--958
+
+ []
+
+[36]
+Overfull \hbox (0.17021pt too wide) in paragraph at lines 966--966
 []\OT1/cmr/m/n/10 Andrew Gib-ian-sky. \OT1/cmr/m/it/10 Con-vo-lu-tional Neu-ral
  Net-works\OT1/cmr/m/n/10 . \OT1/cmr/m/sc/10 url\OT1/cmr/m/n/10 : $\OT1/cmtt/m/
 n/10 http : / / andrew .$
  []
 
 
-Overfull \hbox (0.51753pt too wide) in paragraph at lines 958--958
+Overfull \hbox (0.51753pt too wide) in paragraph at lines 966--966
 []\OT1/cmr/m/n/10 Ian Som-merville. \OT1/cmr/m/it/10 Soft-ware En-gi-neer-ing\O
 T1/cmr/m/n/10 . 9th ed. Har-low, Eng-land: Addison-
  []
 
 [37] [38]
-Underfull \hbox (badness 2205) in paragraph at lines 977--977
+Underfull \hbox (badness 2205) in paragraph at lines 985--985
 []\OT1/cmr/m/n/7 target net-work up-date
  []
 
 
-Underfull \hbox (badness 8113) in paragraph at lines 989--989
+Underfull \hbox (badness 8113) in paragraph at lines 997--997
 []\OT1/cmr/m/n/7 squared gra-di-ent mo-
  []
 
 
-Overfull \hbox (31.88322pt too wide) in paragraph at lines 969--1003
+Overfull \hbox (31.88322pt too wide) in paragraph at lines 977--1011
  [][] 
  []
 
@@ -1137,17 +1152,17 @@ Overfull \hbox (31.88322pt too wide) in paragraph at lines 969--1003
 File: img/dmResults.png Graphic file (type png)
 
 <use img/dmResults.png>
-Package pdftex.def Info: img/dmResults.png used on input line 1008.
+Package pdftex.def Info: img/dmResults.png used on input line 1016.
 (pdftex.def)             Requested size: 285.61511pt x 360.97113pt.
  [40 <./img/dmResults.png>]
 <img/typesOfLayers.png, id=172, 365.11406pt x 161.10187pt>
 File: img/typesOfLayers.png Graphic file (type png)
 
 <use img/typesOfLayers.png>
-Package pdftex.def Info: img/typesOfLayers.png used on input line 1017.
+Package pdftex.def Info: img/typesOfLayers.png used on input line 1025.
 (pdftex.def)             Requested size: 365.11316pt x 161.10147pt.
 
-Overfull \hbox (20.11316pt too wide) in paragraph at lines 1017--1018
+Overfull \hbox (20.11316pt too wide) in paragraph at lines 1025--1026
  [][] 
  []
 
@@ -1155,30 +1170,30 @@ Overfull \hbox (20.11316pt too wide) in paragraph at lines 1017--1018
 File: img/typesOfNeuron.png Graphic file (type png)
 
 <use img/typesOfNeuron.png>
-Package pdftex.def Info: img/typesOfNeuron.png used on input line 1026.
+Package pdftex.def Info: img/typesOfNeuron.png used on input line 1034.
 (pdftex.def)             Requested size: 112.16878pt x 161.10147pt.
  [41 <./img/typesOfLayers.png> <./img/typesOfNeuron.png>] <img/classNN.png, id=
 177, 310.91156pt x 490.83376pt>
 File: img/classNN.png Graphic file (type png)
 
 <use img/classNN.png>
-Package pdftex.def Info: img/classNN.png used on input line 1035.
+Package pdftex.def Info: img/classNN.png used on input line 1043.
 (pdftex.def)             Requested size: 248.72957pt x 392.66753pt.
  <img/classNeuron.png, id=178, 202.50656pt x 282.30469pt>
 File: img/classNeuron.png Graphic file (type png)
 
 <use img/classNeuron.png>
-Package pdftex.def Info: img/classNeuron.png used on input line 1041.
+Package pdftex.def Info: img/classNeuron.png used on input line 1049.
 (pdftex.def)             Requested size: 202.50604pt x 282.30399pt.
 
 <img/classConvNeuron.png, id=179, 166.37157pt x 194.22563pt>
 File: img/classConvNeuron.png Graphic file (type png)
 
 <use img/classConvNeuron.png>
-Package pdftex.def Info: img/classConvNeuron.png used on input line 1042.
+Package pdftex.def Info: img/classConvNeuron.png used on input line 1050.
 (pdftex.def)             Requested size: 166.37114pt x 194.22514pt.
 
-Overfull \hbox (26.0994pt too wide) in paragraph at lines 1041--1043
+Overfull \hbox (26.0994pt too wide) in paragraph at lines 1049--1051
 [][] [] 
  []
 
@@ -1189,17 +1204,17 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: img/classLayer.png Graphic file (type png)
 
 <use img/classLayer.png>
-Package pdftex.def Info: img/classLayer.png used on input line 1048.
+Package pdftex.def Info: img/classLayer.png used on input line 1056.
 (pdftex.def)             Requested size: 198.51482pt x 216.13045pt.
 
 <img/classFCLayer.png, id=181, 220.57407pt x 319.1925pt>
 File: img/classFCLayer.png Graphic file (type png)
 
 <use img/classFCLayer.png>
-Package pdftex.def Info: img/classFCLayer.png used on input line 1049.
+Package pdftex.def Info: img/classFCLayer.png used on input line 1057.
 (pdftex.def)             Requested size: 198.51482pt x 287.27058pt.
 
-Overfull \hbox (54.25185pt too wide) in paragraph at lines 1048--1050
+Overfull \hbox (54.25185pt too wide) in paragraph at lines 1056--1058
 [][] [] 
  []
 
@@ -1210,7 +1225,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: img/classConvLayer.png Graphic file (type png)
 
 <use img/classConvLayer.png>
-Package pdftex.def Info: img/classConvLayer.png used on input line 1056.
+Package pdftex.def Info: img/classConvLayer.png used on input line 1064.
 (pdftex.def)             Requested size: 234.27556pt x 499.86818pt.
 
 
@@ -1251,7 +1266,7 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2
 nts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Dissertation.pdf (45 pages, 2741410 bytes).
+Output written on Dissertation.pdf (45 pages, 2742252 bytes).
 PDF statistics:
  257 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

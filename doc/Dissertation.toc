@@ -68,13 +68,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.8}Artificial Intelligence Agent}{34}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.9}Training the network*}{35}
+\contentsline {subsection}{\numberline {6.9}Training the network}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.10}Testing the network*}{35}
+\contentsline {subsection}{\numberline {6.10}Testing the network}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Conclusion}{35}
+\contentsline {section}{\numberline {7}Conclusion}{36}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1}Reflection on results*}{35}
+\contentsline {subsection}{\numberline {7.1}Reflection of results}{36}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {7.2}Suggestions for further work*}{36}
 \defcounter {refsection}{0}\relax 

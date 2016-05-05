@@ -927,29 +927,37 @@ def init_network():
 	\medskip	
 	
 	
-	\subsection{Training the network*}
+	\subsection{Training the network}
 		Sadly, due to implementation issues with the C++ implementation, and time constraints with the Python implementation, no training was able to be performed on the neural network(s) against video games. If either of the networks were to have been able to have been trained against neural network, the process could have taken several days.\\
 		
-		Existing TensorFlow implementations of Deep Q-networks applied to this problem using the Arcade learning environment state that the networks require either 
+		Existing TensorFlow implementations of Deep Q-networks applied to this problem using the Arcade learning environment state that the networks require several days of training, even when GPU accelerated. As a result, even if the late TensorFlow/Python implementation was completed on time, it may not have been trained in time to discuss the results.
 		
 		%Although this did not occur, existing implementations state that this process can take 3-5 days (make sure to get these as references). Explain why this was problematic late on in the project.
 	
 	\medskip
 	
-	\subsection{Testing the network*}
+	\subsection{Testing the network}
 	%using outputs for the gradient descent to ensure it was implemented properly, no available toy box problems expect for MNIST? which is implemented differently to DQN (CNN but no DW
+		Much like with the training of the network, this was not able to be performed. What was planned for the testing of the neural network implementation was to monitor the values being altered by gradient descent to ensure that it was being performed correctly. This would normally be done by plotting the values on a graph.\\
+		
+		What would have been better is to have a testing method to be able to check the functionality of the neural network itself, however in regards to a deep q-network I could not find any methods. With a convolutional neural network a problem such as the MNIST handwritten digits database could have been used, however as the convolutional neural network being used was as a deep q-network, this would require substantial changes in the way that the network would have been trained.
 	\bigskip
 	
 \section{Conclusion}
-	\subsection{Reflection on results*}
-		The main deliverable of this dissertation, the C++ neural network, regrettably did not come to fruition. While prior to beginning the implementation of the network I made every effort to thoroughly learn convolutional neural networks, I still found myself needed to brush up on vital information throughout. For example the network was designed and implemented to be generated every time it was called, and initially had the weights initialised on this generation process, purely for testing. When I began work on implementing backpropagation, I attempted to change the nature of the weights in the network by externalising them, and this caused a chain reaction of errors throughout the network. This happened very late in the project timeline, so I did not have enough available time to fix it, let alone fix it and finish the backpropagation implementation.\\
+	\subsection{Reflection of results}
+		The main deliverable of this dissertation, the C++ neural network, regrettably did not come to fruition. While prior to beginning the implementation of the network I made every effort to thoroughly learn convolutional neural networks, I still found myself needing to brush up on vital information throughout. For example the network was designed and implemented to be generated every time it was called, and initially had the weights initialised within this generation process, purely for the purposes of testing. When I began work on implementing backpropagation, I attempted to change the nature of the weights in the network by externalising them, and this caused a chain reaction of errors throughout the network. As this happened very late in the project timeline, I did not have enough available time to fix the errors, let alone fix the errors and then finish the backpropagation implementation.\\
 		
-		The network being designed to generate and then propagate when called meant that the network was slow to present it's decision, which is not ideal for the application to video games. Since working with the TensorFlow library, and implementing a convolutional neural network, I now know it would be more beneficial to have the network initialised once. Then once the network has been initialised, have available methods to propagate data forward to get a decision, and propagate data backward to train the weights of the network.
+		The network being designed to generate and then propagate when called meant that the network was slow to present it's decision, which is not ideal for the application to video games. Since working with the TensorFlow library, and implementing a convolutional neural network, I now know it would be more beneficial to have the network initialised once at the start. Then once the network has been initialised, use available methods to propagate data forward to get a decision, and propagate data backwards then to train the weights of the network.\\
+		
+		In regards to the Python/TensorFlow, this approach could have yielded some results for the dissertation had it been used sooner in the project timeline. However as the aim of this project was to develop a neural network, I felt it best to make every effort to finalised that implementation before considering the alternative of using a library.
 	
 	\medskip
 
 	\subsection{Suggestions for further work*}
-		As was attempting with the, albeit late, attempt at the use of an existing machine learning library, I feel the best way to get working implementation for this problem would be the use of 
+		In terms of further work, I feel the C++ implementation could benefit from a fundamental change in the way the network generates, as mentioned in the reflection of results section above. As well as this, implementing a better way to define connections between neurons would enable backpropagation to be better implemented when the theory is better understood.\\
+		
+		Most of all however, I feel that the best course of action for future work would be to use an existing machine learning library such as TensorFlow for the deep q-network. The DeepMind papers, in which I have partially based this dissertation on, did not create their own neural network for their implementation, rather they used an existing library known as \textit{torch}. This I feel is the best approach as when there are existing, open-source, libraries available, it is not worth `reinventing the wheel'.
+
 
 \newpage
 \printbibliography[
