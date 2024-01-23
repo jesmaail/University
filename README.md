@@ -4,3 +4,10 @@
 Joseph Shihab Esmaail
 
 Swansea University
+
+
+# Terminal quick Make & Run instructions
+(just incase I forget)
+
+rm agentName && make -f Makefile.agentName
+reset && ./agentName '../rom.bin' 
