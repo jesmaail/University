@@ -1,6 +1,9 @@
 # University
 Archive of University repositories
 
+## CS250-PHP
+Database module coursework using PHP and MySQL
+
 ## CS230-Group
 Group Project to develop Snakes &amp; Ladders and a Tic-Tac-Toe variant in Java for CS230: Software Engineering module.
 
