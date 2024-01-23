@@ -1,6 +1,9 @@
 # University
 Archive of University repositories
 
+## Final Year Dissertation
+Playing Video Games using Neural Networks and Reinforcement Learning
+
 ## CSC345-BigData-MachineLearning
 Lab exercises and Coursework for Big Data &amp; Machine Learning module.
 
