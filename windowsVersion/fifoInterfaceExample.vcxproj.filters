@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\diss\altALE\Arcade-Learning-Environment\doc\examples\fifoInterfaceExample.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\diss\altALE\Arcade-Learning-Environment\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{DDA3315F-4048-3DDE-A11A-1AD7254588E2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
