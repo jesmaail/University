@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # University
 Archive of University repositories
 
@@ -17,3 +18,6 @@ Group Project to develop Snakes &amp; Ladders and a Tic-Tac-Toe variant in Java 
 
 Full commits and more available at:
 https://bitbucket.org/jesmaail/230a3
+
+## CS205-Declarative-Programming
+Contains labs, examples and coursework for Prolog.
